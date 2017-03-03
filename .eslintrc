@@ -1,0 +1,14 @@
+{
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "ecmaFeatures": {
+        "classes": true,
+    },
+    "rules": {
+    },
+    "globals": {
+        "Headers": true,
+        "FormData": true,
+        "fetch": true,
+    }
+}
