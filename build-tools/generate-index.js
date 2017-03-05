@@ -7,6 +7,12 @@ if (fs.existsSync('./lib/modules/index.js')) {
   fs.unlinkSync('./lib/modules/index.js');
 }
 
+/**
+ * Capitalize string
+ *
+ * @param {String} string   String to capitalize
+ * @returns {String}
+ */
 function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
