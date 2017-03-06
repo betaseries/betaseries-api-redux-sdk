@@ -36,9 +36,7 @@ describe('Retrieve episodes of the show', () => {
 
     it('validate episodes reducer', () => {
       const stateEpisodesReducer = episodesReducer(undefined, action);
-      expect(Object.keys(stateEpisodesReducer)).to.deep.equal(['10212']);
-      expect(Object.keys(stateEpisodesReducer[10212])).to.deep.equal(['1']);
-      expect(Object.keys(stateEpisodesReducer[10212][1])).to.have.lengthOf(12);
+      expect(Object.keys(stateEpisodesReducer)).to.have.lengthOf(12);
     });
   });
 

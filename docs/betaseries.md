@@ -3,12 +3,20 @@
 # BetaSeries
 
 * [BetaSeries](#module_BetaSeries)
+    * [.api](#module_BetaSeries.api)
     * [.init(obj)](#module_BetaSeries.init)
     * [.setToken(token)](#module_BetaSeries.setToken)
     * [.getAction(module, action)](#module_BetaSeries.getAction) ⇒ {Func}
     * [.getConstants(module)](#module_BetaSeries.getConstants) ⇒ {Object}
     * [.getReducer(module, reducer)](#module_BetaSeries.getReducer) ⇒ {Func}
 
+<a name="module_BetaSeries.api"></a>
+
+### .api
+
+API provider
+
+**Category**: static  
 <a name="module_BetaSeries.init"></a>
 
 ### .init(obj)

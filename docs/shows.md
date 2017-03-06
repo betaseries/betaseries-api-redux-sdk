@@ -4,7 +4,11 @@
 
 * [Shows](#module_Shows)
     * _actions_
+        * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
+        * [.doFetchEpisodeByCode([obj])](#module_Shows.doFetchEpisodeByCode) ⇒ {Promise}
         * [.doFetchFavoriteShows([obj])](#module_Shows.doFetchFavoriteShows) ⇒ {Promise}
+        * [.doFetchLatestEpisode([obj])](#module_Shows.doFetchLatestEpisode) ⇒ {Promise}
+        * [.doFetchManyEpisodes([obj])](#module_Shows.doFetchManyEpisodes) ⇒ {Promise}
         * [.doFetchManyShows([obj])](#module_Shows.doFetchManyShows) ⇒ {Promise}
         * [.doFetchShow([obj])](#module_Shows.doFetchShow) ⇒ {Promise}
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
@@ -14,8 +18,56 @@
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
         * [.favorites(state, action)](#module_Shows.favorites) ⇒ {Object}
+        * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
+
+<a name="module_Shows.doFetchEpisode"></a>
+
+### .doFetchEpisode([obj])
+
+Retrieve episode
+
+**Dispatch**: `FETCH_EPISODE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchEpisode')({ episodeId: 123 });
+```
+
+<a name="module_Shows.doFetchEpisodeByCode"></a>
+
+### .doFetchEpisodeByCode([obj])
+
+Retrieve episode
+
+**Dispatch**: `FETCH_EPISODE_BY_CODE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.showId] | {Number} | Episode ID |
+| [obj.code] | {String} | Episode code like `SO3E15` |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchEpisodeByCode')({ showId: 123, code: 'SO3E15' });
+```
 
 <a name="module_Shows.doFetchFavoriteShows"></a>
 
@@ -38,6 +90,52 @@ Retrieve favorite shows of the member
 
 ```js
 BetaSeries.getAction('shows', 'doFetchFavoriteShows')({ memberId: 1 });
+```
+
+<a name="module_Shows.doFetchLatestEpisode"></a>
+
+### .doFetchLatestEpisode([obj])
+
+Retrieve episode
+
+**Dispatch**: `FETCH_LATEST_EPISODE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.showId] | {Number} | Show ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchLatestEpisode')({ showId: 481 });
+```
+
+<a name="module_Shows.doFetchManyEpisodes"></a>
+
+### .doFetchManyEpisodes([obj])
+
+Retrieve many episodes
+
+**Dispatch**: `FETCH_MANY_EPISODES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.episodeIds] | {Array} | List of episodes ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchManyEpisodes')({ episodeIds: [ 1, 2, 3 ] });
 ```
 
 <a name="module_Shows.doFetchManyShows"></a>
@@ -207,6 +305,10 @@ List of the show episodes group by season and episode number
 **Actions listened**:
 
  * `FETCH_SHOW_EPISODES`
+ * `FETCH_MANY_EPISODES`
+ * `FETCH_LATEST_EPISODE`
+ * `FETCH_EPISODE_BY_CODE`
+ * `FETCH_EPISODE`
 
 **Returns**: {Object}
 
@@ -225,13 +327,9 @@ BetaSeries.getReducer('shows', 'episodes');
 
 // state example
 {
-  '1275': {           // show ID
-    '1': {            // season number
-      '1': {          // episode number
-        id: 1,        // episode element
-        ...episode,
-      },
-    },
+  '3215': {            // episode ID
+    id: 3215,          // episode ID
+    ...episode,        // episode element
   },
   ...,
 }
@@ -267,6 +365,38 @@ BetaSeries.getReducer('shows', 'favorites');
   '12': [            // member ID
     1275, 481, ...   // list of shows ID
   ],
+  ...,
+}
+```
+
+<a name="module_Shows.latestEpisodes"></a>
+
+### .latestEpisodes(state, action)
+
+List the latest episode of show
+
+**Actions listened**:
+
+ * `FETCH_LATEST_EPISODE`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'latestEpisodes');
+
+// state example
+{
+  '12': 568786372645,  // Show ID : Episode ID
   ...,
 }
 ```
