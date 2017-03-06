@@ -1,0 +1,374 @@
+[
+  {
+    "id":239475,
+    "thetvdb_id":349232,
+    "youtube_id":null,
+    "title":"Pilot",
+    "season":1,
+    "episode":1,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E01",
+    "global":1,
+    "special":0,
+    "description":"Walter White commence \u00e0 produire de la methamphetamine pour subvenir aux besoins de sa famille le jour o\u00f9 il d\u00e9couvre qu'il a un cancer des poumons. Il se met en \u00e9quipe avec un de ses anciens \u00e9tudiant, Jesse Pinkman, qui est dealer de meth.",
+    "date":"2008-01-21",
+    "note":{
+      "total":3442,
+      "mean":4.4131,
+      "user":5
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"35",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":239476,
+    "thetvdb_id":349233,
+    "youtube_id":null,
+    "title":"Cat's in the Bag...",
+    "season":1,
+    "episode":2,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E02",
+    "global":2,
+    "special":0,
+    "description":"Walter et Jesse doivent g\u00e9rer les deux corps qui se trouvent dans le camping-car. De plus Skyler s'inqui\u00e8te du comportement de Walter.",
+    "date":"2008-01-28",
+    "note":{
+      "total":2857,
+      "mean":4.36,
+      "user":4
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"22",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":239477,
+    "thetvdb_id":349235,
+    "youtube_id":null,
+    "title":"...And the Bag's in the River",
+    "season":1,
+    "episode":3,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E03",
+    "global":3,
+    "special":0,
+    "description":"Walter n'arrive pas a se d\u00e9cider s'il doit tuer ou non Krazy-8. Pendant ce temps, Marie pense que Walter Jr. fume de la marijuana et demande \u00e0 Hank de le d\u00e9courager \u00e0 se droguer.",
+    "date":"2008-02-11",
+    "note":{
+      "total":2697,
+      "mean":4.35,
+      "user":4
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"8",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":239478,
+    "thetvdb_id":349236,
+    "youtube_id":null,
+    "title":"Cancer Man",
+    "season":1,
+    "episode":4,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E04",
+    "global":4,
+    "special":0,
+    "description":"La brigade des stups est de plus en plus suspicieuse sur la pr\u00e9sense d'un nouveau roi de la drogue \u00e0 Albuquerque. Walt r\u00e9v\u00e8le \u00e0 Marie et Hank qu'il a un cancer. Pendant ce temps Jesse visite sa famille devenue si \u00e9trang\u00e8re.",
+    "date":"2008-02-18",
+    "note":{
+      "total":2563,
+      "mean":4.34,
+      "user":0
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"12",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":239479,
+    "thetvdb_id":349238,
+    "youtube_id":null,
+    "title":"Gray Matter",
+    "season":1,
+    "episode":5,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E05",
+    "global":5,
+    "special":0,
+    "description":"Un ancien ami de Walter lui propose un travail lucratif lui permettant de couvrir ses frais de traitement. Jesse essaie de produire de la meth lui-m\u00eame.",
+    "date":"2008-02-25",
+    "note":{
+      "total":2539,
+      "mean":4.33,
+      "user":0
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"17",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":239480,
+    "thetvdb_id":355100,
+    "youtube_id":null,
+    "title":"Crazy Handful of Nothin'",
+    "season":1,
+    "episode":6,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E06",
+    "global":6,
+    "special":0,
+    "description":"Walter recommence \u00e0 produire de la meth. Le beau fr\u00e8re de Walter le questionne \u00e0 propos du vol commis \u00e0 l'\u00e9cole. Walter et Jesse essaient de trouver un nouveau r\u00e9seau de distribution.",
+    "date":"2008-03-03",
+    "note":{
+      "total":2390,
+      "mean":4.49,
+      "user":0
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"20",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":239481,
+    "thetvdb_id":352534,
+    "youtube_id":null,
+    "title":"A No-Rough-Stuff-Type Deal",
+    "season":1,
+    "episode":7,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E07",
+    "global":7,
+    "special":0,
+    "description":"Walter et Jesse ont des probl\u00e8mes pour produire la grande quantit\u00e9 de meth promise \u00e0 Tuco. Skyler met Marie dos au mur concernant sa kleptomanie.",
+    "date":"2008-03-10",
+    "note":{
+      "total":2643,
+      "mean":4.48,
+      "user":0
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"14",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":573825,
+    "thetvdb_id":3859781,
+    "youtube_id":null,
+    "title":"Good Cop Bad Cop",
+    "season":1,
+    "episode":8,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E08",
+    "global":0,
+    "special":1,
+    "description":"Hank and Marie try to spice up their relationship on Valentine's Day.",
+    "date":"2009-02-18",
+    "note":{
+      "total":410,
+      "mean":4.49,
+      "user":0
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"1",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":573826,
+    "thetvdb_id":3859791,
+    "youtube_id":null,
+    "title":"Wedding Day",
+    "season":1,
+    "episode":9,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E09",
+    "global":0,
+    "special":1,
+    "description":"Walt and Hank have a talk before Hank gets married.",
+    "date":"2009-02-18",
+    "note":{
+      "total":366,
+      "mean":4.49,
+      "user":0
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"1",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":573827,
+    "thetvdb_id":3859801,
+    "youtube_id":null,
+    "title":"TwaughtHammer",
+    "season":1,
+    "episode":10,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E10",
+    "global":0,
+    "special":1,
+    "description":"Jesse and Badger make a behind the scenes video about their band \"TwaughtHammer\" and show a music video for their song \"Fallacies.\"",
+    "date":"2009-02-18",
+    "note":{
+      "total":402,
+      "mean":4.46,
+      "user":0
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"1",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":573828,
+    "thetvdb_id":3859811,
+    "youtube_id":null,
+    "title":"Marie's Confession",
+    "season":1,
+    "episode":11,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E11",
+    "global":0,
+    "special":1,
+    "description":"Marie records a video diary.",
+    "date":"2009-02-18",
+    "note":{
+      "total":369,
+      "mean":4.49,
+      "user":0
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"1",
+    "subtitles":[
+
+    ]
+  },
+  {
+    "id":573829,
+    "thetvdb_id":3859821,
+    "youtube_id":null,
+    "title":"The Break-In",
+    "season":1,
+    "episode":12,
+    "show":{
+      "id":481,
+      "thetvdb_id":81189,
+      "title":"Breaking Bad"
+    },
+    "code":"S01E12",
+    "global":0,
+    "special":1,
+    "description":"Walt and Badger attempt to retrieve a vacuum cleaner stuffed with drug money from an elderly woman's locked garage.",
+    "date":"2009-02-25",
+    "note":{
+      "total":548,
+      "mean":4.51,
+      "user":0
+    },
+    "user":{
+      "seen":true,
+      "downloaded":false
+    },
+    "comments":"1",
+    "subtitles":[
+
+    ]
+  }
+]

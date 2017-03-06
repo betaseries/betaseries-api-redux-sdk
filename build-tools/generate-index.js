@@ -83,7 +83,7 @@ Object.keys(computedFile).forEach((module) => {
 
   exportText += '  },\n';
 });
-exportText += '}';
+exportText += '};\n';
 
 
 fs.writeFileSync('./lib/modules/index.js', `${importText}\n${exportText}`);

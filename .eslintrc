@@ -15,8 +15,18 @@
         }],
     },
     "globals": {
+        # lib globals
         "Headers": true,
         "FormData": true,
         "fetch": true,
+
+        # tests units globals
+        "proxyquire": true,
+        "expect": true,
+        "mockStore": true,
+        "describe": true,
+        "beforeEach": true,
+        "before": true,
+        "it": true
     }
 }
