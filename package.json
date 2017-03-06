@@ -4,7 +4,8 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "build": "npm run test && npm run generate-index && npm run generate-doc",
+    "build": "npm run test && npm run generate-index && npm run generate-doc && npm run compile",
+    "compile": "babel ./lib --out-dir ./dist",
     "generate-index": "babel-node ./build-tools/generate-index.js",
     "generate-doc": "babel-node ./build-tools/generate-doc.js",
     "test:unit": "mocha --opts ./tests/mocha.opts ./tests/**/*.spec.js",

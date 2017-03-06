@@ -1,1 +1,1 @@
-module.exports = require('./lib/betaseries');
+module.exports = require('./dist/betaseries');
