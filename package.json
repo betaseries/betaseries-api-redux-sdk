@@ -10,7 +10,8 @@
     "generate-doc": "babel-node ./build-tools/generate-doc.js",
     "test:unit": "mocha --opts ./tests/mocha.opts ./tests/**/*.spec.js",
     "test:lint": "eslint ./lib ./build-tools ./tests/modules --fix",
-    "test": "npm run test:lint && npm run test:unit"
+    "test": "npm run test:lint && npm run test:unit",
+    "prepublish": "npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
