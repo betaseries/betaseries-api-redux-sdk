@@ -114,7 +114,7 @@ List of comments
 
 ```js
 // get reducer
-BetaSeries.getReducer('comments', 'comments');
+BetaSeries.getReducer('comments', 'comments').comments;
 
 // state example
 {
@@ -149,7 +149,7 @@ List the comments of the episode
 
 ```js
 // get reducer
-BetaSeries.getReducer('comments', 'episodes');
+BetaSeries.getReducer('comments', 'episodes').commentsEpisodes;
 
 // state value example
 {
@@ -183,7 +183,7 @@ List the comments of the show
 
 ```js
 // get reducer
-BetaSeries.getReducer('comments', 'shows');
+BetaSeries.getReducer('comments', 'shows').commentsShows;
 
 // state value example
 {

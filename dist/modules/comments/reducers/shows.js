@@ -34,7 +34,7 @@ var initialState = {};
  *
  * @example
  * // get reducer
- * BetaSeries.getReducer('comments', 'shows');
+ * BetaSeries.getReducer('comments', 'shows').commentsShows;
  *
  * // state value example
  * {

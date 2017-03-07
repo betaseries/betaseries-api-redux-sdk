@@ -42,7 +42,7 @@ Search show by title
 | --- | --- | --- |
 | [obj] | {Object} | Accept the folling: |
 | [obj.title] | {Number} | Title search |
-| [obj.summary] | {Number} | Returns only summary infos of the series (default `false`) |
+| [obj.summary] | {Bool} | Returns only summary infos of the show elements (default `false`) |
 | [obj.order] | {Number} | Return order (`title`|`popularity`|`followers`), (default `title`) |
 | [obj.nbpp] | {Number} | Number of results per page (default `5`, maximum `100`) |
 | [obj.page] | {Number} | Page number (default `1`) |
@@ -76,7 +76,7 @@ List of the search shows
 
 ```js
 // get reducer
-BetaSeries.getReducer('shows', 'characters');
+BetaSeries.getReducer('searchs', 'shows').searchShows;
 
 // state example
 [

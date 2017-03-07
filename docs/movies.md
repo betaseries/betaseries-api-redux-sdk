@@ -133,7 +133,7 @@ List of the movie characters
 
 ```js
 // get reducer
-BetaSeries.getReducer('movies', 'characters');
+BetaSeries.getReducer('movies', 'characters').moviesCharacters;
 
 // state value example
 {
@@ -170,7 +170,7 @@ List the favorite movies of the member
 
 ```js
 // get reducer
-BetaSeries.getReducer('movies', 'favorites');
+BetaSeries.getReducer('movies', 'favorites').moviesFavorites;
 
 // state value example
 {
@@ -204,7 +204,7 @@ List movies of the member
 
 ```js
 // get reducer
-BetaSeries.getReducer('movies', 'members');
+BetaSeries.getReducer('movies', 'members').moviesMembers;
 
 // state value example
 {
@@ -240,7 +240,7 @@ List of movies
 
 ```js
 // get reducer
-BetaSeries.getReducer('movies', 'movies');
+BetaSeries.getReducer('movies', 'movies').movies;
 
 // state value example
 {

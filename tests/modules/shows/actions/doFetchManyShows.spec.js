@@ -23,7 +23,9 @@ describe('Retrieve many shows', () => {
     }));
 
     before(async () => {
-      const store = mockStore({});
+      const store = mockStore({
+        shows: {},
+      });
       action = await store.dispatch(actionToDispatch({ showIds: [10212, 982] }));
     });
 
@@ -44,15 +46,43 @@ describe('Retrieve many shows', () => {
     let store;
 
     const actionToDispatch = getInstance(Promise.resolve({
-      shows: showsFixture.slice(0, 1),
+      shows: showsFixture.slice(0, 2),
     }));
 
     before(async () => {
       store = mockStore({
-        shows: { 982: { id: 982 } },
+        shows: { 481: { id: 481 } },
       });
 
-      action = await store.dispatch(actionToDispatch({ showIds: [10212, 982] }));
+      action = await store.dispatch(actionToDispatch({ showIds: [10212, 982, 481] }));
+    });
+
+    it('validate action', () => {
+      expect(action.type).to.equal('FETCH_MANY_SHOWS');
+      expect(action.payload.showIds).to.deep.equal([10212, 982]);
+      expect(action.payload.shows).to.have.lengthOf(2);
+    });
+
+    it('validate shows reducer', () => {
+      const stateShowsReducer = showsReducer(store.getState().shows, action);
+      expect(Object.keys(stateShowsReducer)).to.deep.equal(['481', '982', '10212']);
+    });
+  });
+
+  describe('api returns only one show', () => {
+    let action;
+    let store;
+
+    const actionToDispatch = getInstance(Promise.resolve({
+      show: showsFixture.slice(0, 1),
+    }));
+
+    before(async () => {
+      store = mockStore({
+        shows: { 481: { id: 481 } },
+      });
+
+      action = await store.dispatch(actionToDispatch({ showIds: [10212, 481] }));
     });
 
     it('validate action', () => {
@@ -63,7 +93,7 @@ describe('Retrieve many shows', () => {
 
     it('validate shows reducer', () => {
       const stateShowsReducer = showsReducer(store.getState().shows, action);
-      expect(Object.keys(stateShowsReducer)).to.deep.equal(['982', '10212']);
+      expect(Object.keys(stateShowsReducer)).to.deep.equal(['481', '10212']);
     });
   });
 });

@@ -22,7 +22,10 @@
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
     * _selectors_
+        * [.getEpisode](#module_Shows.getEpisode) ⇒ {Object}
         * [.getShow](#module_Shows.getShow) ⇒ {Object}
+        * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
+        * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Object}
 
 <a name="module_Shows.doFetchEpisode"></a>
 
@@ -284,7 +287,7 @@ List of the show characters
 
 ```js
 // get reducer
-BetaSeries.getReducer('shows', 'characters');
+BetaSeries.getReducer('shows', 'characters').showsCharacters;
 
 // state example
 {
@@ -325,7 +328,7 @@ List of the show episodes group by season and episode number
 
 ```js
 // get reducer
-BetaSeries.getReducer('shows', 'episodes');
+BetaSeries.getReducer('shows', 'episodes').showsEpisodes;
 
 // state example
 {
@@ -360,7 +363,7 @@ List the favorite shows of the member
 
 ```js
 // get reducer
-BetaSeries.getReducer('shows', 'favorites');
+BetaSeries.getReducer('shows', 'favorites').showsFavorites;
 
 // state example
 {
@@ -394,7 +397,7 @@ List the latest episode of show
 
 ```js
 // get reducer
-BetaSeries.getReducer('shows', 'latestEpisodes');
+BetaSeries.getReducer('shows', 'latestEpisodes').showsLatestEpisodes;
 
 // state example
 {
@@ -428,7 +431,7 @@ List of shows
 
 ```js
 // get reducer
-BetaSeries.getReducer('shows', 'shows');
+BetaSeries.getReducer('shows', 'shows').shows;
 
 // state example
 {
@@ -463,7 +466,7 @@ List of similar shows
 
 ```js
 // get reducer
-BetaSeries.getReducer('shows', 'similars');
+BetaSeries.getReducer('shows', 'similars').showsSimilars;
 
 // state value example
 {
@@ -472,6 +475,30 @@ BetaSeries.getReducer('shows', 'similars');
   ],
   ...,
 }
+```
+
+<a name="module_Shows.getEpisode"></a>
+
+### .getEpisode
+
+Select episode from state
+
+**Returns**: {Object} - Episode element or `null`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.episodeId] | {Object} | Episode ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getEpisode')(state, { episodeId: props.episodeId });
+});
 ```
 
 <a name="module_Shows.getShow"></a>
@@ -495,6 +522,58 @@ Select show from state
 ```js
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('shows', 'getShow')(state, { showId: props.showId });
+});
+```
+
+<a name="module_Shows.getShowEpisodeByCode"></a>
+
+### .getShowEpisodeByCode
+
+Select episode by code and show from state
+
+**Returns**: {Object} - Episode element or `null`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.showId] | {Object} | Show ID |
+| [obj.code] | {Object} | Episode code |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  episode: BetaSeries.getSelector('shows', 'getShowEpisodeByCode')(state, {
+    showId: props.showId,
+    code: 'SO4E01',
+  });
+});
+```
+
+<a name="module_Shows.getSimilarShows"></a>
+
+### .getSimilarShows
+
+Select similar shows from state
+
+**Returns**: {Object} - Show element or `null`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.showId] | {Object} | Show ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getSimilarShows')(state, { showId: props.showId });
 });
 ```
 

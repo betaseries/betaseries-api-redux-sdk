@@ -40,7 +40,7 @@ var doFetchManyShows = function doFetchManyShows(_ref) {
     var state = getState();
 
     // fetch shows only if does not exist on reducers
-    var cleanShowIds = !Object.prototype.hasOwnProperty.call(state, 'shows') ? showIds : (0, _difference3.default)(showIds, Object.keys(state.shows).map(function (show) {
+    var cleanShowIds = (0, _difference3.default)(showIds, Object.keys(state.shows).map(function (show) {
       return parseInt(show, 10);
     }));
 
@@ -53,7 +53,7 @@ var doFetchManyShows = function doFetchManyShows(_ref) {
         type: _constants2.default.FETCH_MANY_SHOWS,
         payload: {
           showIds: cleanShowIds,
-          shows: response.shows
+          shows: response[cleanShowIds.length === 1 ? 'show' : 'shows']
         }
       });
     });

@@ -8,7 +8,7 @@
     * [.setToken(token)](#module_BetaSeries.setToken)
     * [.getAction(module, action)](#module_BetaSeries.getAction) ⇒ {Func}
     * [.getConstants(module)](#module_BetaSeries.getConstants) ⇒ {Object}
-    * [.getReducer(module, reducer)](#module_BetaSeries.getReducer) ⇒ {Func}
+    * [.getReducer(module, reducer)](#module_BetaSeries.getReducer) ⇒ {Object}
     * [.getSelector(module, selector)](#module_BetaSeries.getSelector) ⇒ {Func}
 
 <a name="module_BetaSeries.api"></a>
@@ -64,7 +64,7 @@ API provider
 <a name="module_BetaSeries.getReducer"></a>
 
 ### .getReducer(module, reducer)
-**Returns**: {Func}
+**Returns**: {Object}
 
 **Category**: static  
 

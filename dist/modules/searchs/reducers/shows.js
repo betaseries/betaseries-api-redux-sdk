@@ -25,7 +25,7 @@ var initialState = [];
  *
  * @example
  * // get reducer
- * BetaSeries.getReducer('shows', 'characters');
+ * BetaSeries.getReducer('searchs', 'shows').searchShows;
  *
  * // state example
  * [

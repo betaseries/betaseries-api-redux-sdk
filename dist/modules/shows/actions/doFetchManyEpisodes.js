@@ -40,7 +40,7 @@ var doFetchManyEpisodes = function doFetchManyEpisodes(_ref) {
     var state = getState();
 
     // fetch episodes only if does not exist on reducers
-    var cleanEpisodeIds = !Object.prototype.hasOwnProperty.call(state, 'episodes') ? episodeIds : (0, _difference3.default)(episodeIds, Object.keys(state.episodes).map(function (episode) {
+    var cleanEpisodeIds = (0, _difference3.default)(episodeIds, Object.keys(state.showsEpisodes).map(function (episode) {
       return parseInt(episode, 10);
     }));
 
@@ -53,7 +53,7 @@ var doFetchManyEpisodes = function doFetchManyEpisodes(_ref) {
         type: _constants2.default.FETCH_MANY_EPISODES,
         payload: {
           episodeIds: cleanEpisodeIds,
-          episodes: response.episodes
+          episodes: response[cleanEpisodeIds.length === 1 ? 'episode' : 'episodes']
         }
       });
     });

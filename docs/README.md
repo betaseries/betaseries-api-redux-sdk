@@ -22,9 +22,9 @@ BetaSeries.setToken('*******');
 
 const store = createStore(
   combineReducers({
-    favoriteMovies: BetaSeries.getReducer('movies', 'favorites'),
-    memberMovies: BetaSeries.getReducer('movies', 'members'),
-    movies: BetaSeries.getReducer('movies', 'movies'),
+    ...BetaSeries.getReducer('movies', 'favorites'),    // moviesFavorites
+    ...BetaSeries.getReducer('movies', 'members'),      // moviesMembers
+    ...BetaSeries.getReducer('movies', 'movies'),       // movies
   }),
   compose(applyMiddleware(thunkMiddleware)),
 );

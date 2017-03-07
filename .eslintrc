@@ -23,6 +23,7 @@
         # tests units globals
         "proxyquire": true,
         "expect": true,
+        "assert": true,
         "mockStore": true,
         "describe": true,
         "beforeEach": true,

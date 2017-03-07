@@ -23,7 +23,9 @@ describe('Retrieve similar shows', () => {
     }));
 
     before(async () => {
-      const store = mockStore({});
+      const store = mockStore({
+        shows: {},
+      });
       action = await store.dispatch(actionToDispatch({ showId: 481 }));
     });
 

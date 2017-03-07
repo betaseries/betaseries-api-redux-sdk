@@ -23,7 +23,9 @@ describe('Retrieve many episodes', () => {
     }));
 
     before(async () => {
-      const store = mockStore({});
+      const store = mockStore({
+        showsEpisodes: {},
+      });
       action = await store.dispatch(actionToDispatch({ episodeIds: [239475, 239476] }));
     });
 
@@ -44,12 +46,40 @@ describe('Retrieve many episodes', () => {
     let store;
 
     const actionToDispatch = getInstance(Promise.resolve({
-      episodes: episodesFixture.slice(0, 1),
+      episodes: episodesFixture.slice(0, 2),
     }));
 
     before(async () => {
       store = mockStore({
-        episodes: { 982: { id: 982 } },
+        showsEpisodes: { 982: { id: 982 } },
+      });
+
+      action = await store.dispatch(actionToDispatch({ episodeIds: [239475, 982, 239476] }));
+    });
+
+    it('validate action', () => {
+      expect(action.type).to.equal('FETCH_MANY_EPISODES');
+      expect(action.payload.episodeIds).to.deep.equal([239475, 239476]);
+      expect(action.payload.episodes).to.have.lengthOf(2);
+    });
+
+    it('validate episodes reducer', () => {
+      const stateEpisodesReducer = episodesReducer(store.getState().showsEpisodes, action);
+      expect(Object.keys(stateEpisodesReducer)).to.deep.equal(['982', '239475', '239476']);
+    });
+  });
+
+  describe('api returns only one episode', () => {
+    let action;
+    let store;
+
+    const actionToDispatch = getInstance(Promise.resolve({
+      episode: episodesFixture.slice(0, 1),
+    }));
+
+    before(async () => {
+      store = mockStore({
+        showsEpisodes: { 982: { id: 982 } },
       });
 
       action = await store.dispatch(actionToDispatch({ episodeIds: [239475, 982] }));
@@ -62,7 +92,7 @@ describe('Retrieve many episodes', () => {
     });
 
     it('validate episodes reducer', () => {
-      const stateEpisodesReducer = episodesReducer(store.getState().episodes, action);
+      const stateEpisodesReducer = episodesReducer(store.getState().showsEpisodes, action);
       expect(Object.keys(stateEpisodesReducer)).to.deep.equal(['982', '239475']);
     });
   });
