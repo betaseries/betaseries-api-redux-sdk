@@ -20,6 +20,10 @@ var _getReducer = require('./utils/func/getReducer');
 
 var _getReducer2 = _interopRequireDefault(_getReducer);
 
+var _getSelector = require('./utils/func/getSelector');
+
+var _getSelector2 = _interopRequireDefault(_getSelector);
+
 var _getConstants = require('./utils/func/getConstants');
 
 var _getConstants2 = _interopRequireDefault(_getConstants);
@@ -86,7 +90,8 @@ var BetaSeries = {
   api: _ApiFetch2.default,
   getAction: (0, _getAction2.default)(_modules2.default),
   getReducer: (0, _getReducer2.default)(_modules2.default),
-  getConstants: (0, _getConstants2.default)(_modules2.default)
+  getConstants: (0, _getConstants2.default)(_modules2.default),
+  getSelector: (0, _getSelector2.default)(_modules2.default)
 };
 
 exports.default = BetaSeries;

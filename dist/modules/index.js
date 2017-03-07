@@ -148,6 +148,10 @@ var _similars = require('./shows/reducers/similars');
 
 var _similars2 = _interopRequireDefault(_similars);
 
+var _getShow = require('./shows/selectors/getShow');
+
+var _getShow2 = _interopRequireDefault(_getShow);
+
 var _constants7 = require('./shows/constants');
 
 var _constants8 = _interopRequireDefault(_constants7);
@@ -213,6 +217,9 @@ exports.default = {
       latestEpisodes: _latestEpisodes2.default,
       shows: _shows6.default,
       similars: _similars2.default
+    },
+    selectors: {
+      getShow: _getShow2.default
     },
     constants: _constants8.default
   }

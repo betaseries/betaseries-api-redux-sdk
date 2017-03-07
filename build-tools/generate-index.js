@@ -75,6 +75,18 @@ Object.keys(computedFile).forEach((module) => {
     exportText += '    },\n';
   }
 
+  if (Object.prototype.hasOwnProperty.call(computedFile[module], 'selectors')) {
+    exportText += '    selectors: {\n';
+
+    computedFile[module].selectors.forEach((selector) => {
+      const selectorName = selector + capitalize(module);
+      importText += `import ${selectorName} from './${module}/selectors/${selector}';\n`;
+      exportText += `      ${selector}: ${selectorName},\n`;
+    });
+
+    exportText += '    },\n';
+  }
+
   computedFile[module].files.forEach((file) => {
     const aliasFileName = file + capitalize(module);
     importText += `import ${aliasFileName} from './${module}/${file}';\n`;

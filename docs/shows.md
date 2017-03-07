@@ -21,6 +21,8 @@
         * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
+    * _selectors_
+        * [.getShow](#module_Shows.getShow) ⇒ {Object}
 
 <a name="module_Shows.doFetchEpisode"></a>
 
@@ -470,5 +472,29 @@ BetaSeries.getReducer('shows', 'similars');
   ],
   ...,
 }
+```
+
+<a name="module_Shows.getShow"></a>
+
+### .getShow
+
+Select show from state
+
+**Returns**: {Object} - Show element or null
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.showId] | {Object} | Show ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getShow')(state, { showId: props.showId });
+});
 ```
 

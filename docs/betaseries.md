@@ -9,6 +9,7 @@
     * [.getAction(module, action)](#module_BetaSeries.getAction) ⇒ {Func}
     * [.getConstants(module)](#module_BetaSeries.getConstants) ⇒ {Object}
     * [.getReducer(module, reducer)](#module_BetaSeries.getReducer) ⇒ {Func}
+    * [.getSelector(module, selector)](#module_BetaSeries.getSelector) ⇒ {Func}
 
 <a name="module_BetaSeries.api"></a>
 
@@ -71,4 +72,16 @@ API provider
 | --- | --- | --- |
 | module | {String} | Module name |
 | reducer | {String} | Reducer name |
+
+<a name="module_BetaSeries.getSelector"></a>
+
+### .getSelector(module, selector)
+**Returns**: {Func}
+
+**Category**: static  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| module | {String} | Module name |
+| selector | {String} | Selector name |
 
