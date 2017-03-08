@@ -28,6 +28,22 @@ var _shows = require('./comments/reducers/shows');
 
 var _shows2 = _interopRequireDefault(_shows);
 
+var _commons = require('./comments/selectors/commons');
+
+var _commons2 = _interopRequireDefault(_commons);
+
+var _getComment = require('./comments/selectors/getComment');
+
+var _getComment2 = _interopRequireDefault(_getComment);
+
+var _getEpisodeComments = require('./comments/selectors/getEpisodeComments');
+
+var _getEpisodeComments2 = _interopRequireDefault(_getEpisodeComments);
+
+var _getShowComments = require('./comments/selectors/getShowComments');
+
+var _getShowComments2 = _interopRequireDefault(_getShowComments);
+
 var _constants = require('./comments/constants');
 
 var _constants2 = _interopRequireDefault(_constants);
@@ -79,6 +95,14 @@ var _doSearchShows2 = _interopRequireDefault(_doSearchShows);
 var _shows3 = require('./searchs/reducers/shows');
 
 var _shows4 = _interopRequireDefault(_shows3);
+
+var _commons3 = require('./searchs/selectors/commons');
+
+var _commons4 = _interopRequireDefault(_commons3);
+
+var _getSearchShows = require('./searchs/selectors/getSearchShows');
+
+var _getSearchShows2 = _interopRequireDefault(_getSearchShows);
 
 var _constants5 = require('./searchs/constants');
 
@@ -148,13 +172,17 @@ var _similars = require('./shows/reducers/similars');
 
 var _similars2 = _interopRequireDefault(_similars);
 
-var _commons = require('./shows/selectors/commons');
+var _commons5 = require('./shows/selectors/commons');
 
-var _commons2 = _interopRequireDefault(_commons);
+var _commons6 = _interopRequireDefault(_commons5);
 
 var _getEpisode = require('./shows/selectors/getEpisode');
 
 var _getEpisode2 = _interopRequireDefault(_getEpisode);
+
+var _getLatestShowEpisode = require('./shows/selectors/getLatestShowEpisode');
+
+var _getLatestShowEpisode2 = _interopRequireDefault(_getLatestShowEpisode);
 
 var _getShow = require('./shows/selectors/getShow');
 
@@ -163,6 +191,10 @@ var _getShow2 = _interopRequireDefault(_getShow);
 var _getShowEpisodeByCode = require('./shows/selectors/getShowEpisodeByCode');
 
 var _getShowEpisodeByCode2 = _interopRequireDefault(_getShowEpisodeByCode);
+
+var _getShowEpisodes = require('./shows/selectors/getShowEpisodes');
+
+var _getShowEpisodes2 = _interopRequireDefault(_getShowEpisodes);
 
 var _getSimilarShows = require('./shows/selectors/getSimilarShows');
 
@@ -185,6 +217,12 @@ exports.default = {
       comments: _comments2.default,
       episodes: _episodes2.default,
       shows: _shows2.default
+    },
+    selectors: {
+      commons: _commons2.default,
+      getComment: _getComment2.default,
+      getEpisodeComments: _getEpisodeComments2.default,
+      getShowComments: _getShowComments2.default
     },
     constants: _constants2.default
   },
@@ -211,6 +249,10 @@ exports.default = {
     reducers: {
       shows: _shows4.default
     },
+    selectors: {
+      commons: _commons4.default,
+      getSearchShows: _getSearchShows2.default
+    },
     constants: _constants6.default
   },
   shows: {
@@ -235,10 +277,12 @@ exports.default = {
       similars: _similars2.default
     },
     selectors: {
-      commons: _commons2.default,
+      commons: _commons6.default,
       getEpisode: _getEpisode2.default,
+      getLatestShowEpisode: _getLatestShowEpisode2.default,
       getShow: _getShow2.default,
       getShowEpisodeByCode: _getShowEpisodeByCode2.default,
+      getShowEpisodes: _getShowEpisodes2.default,
       getSimilarShows: _getSimilarShows2.default
     },
     constants: _constants8.default

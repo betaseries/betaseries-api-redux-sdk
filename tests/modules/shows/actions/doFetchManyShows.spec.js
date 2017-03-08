@@ -74,7 +74,7 @@ describe('Retrieve many shows', () => {
     let store;
 
     const actionToDispatch = getInstance(Promise.resolve({
-      show: showsFixture.slice(0, 1),
+      show: showsFixture[0],
     }));
 
     before(async () => {

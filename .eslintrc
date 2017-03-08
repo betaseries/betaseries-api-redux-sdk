@@ -13,6 +13,7 @@
                 "ArrowFunctionExpression": true
             }
         }],
+        "import/prefer-default-export": 0
     },
     "globals": {
         # lib globals

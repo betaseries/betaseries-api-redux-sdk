@@ -25,6 +25,13 @@ var getSimilarShows = exports.getSimilarShows = function getSimilarShows(state) 
 };
 
 /**
+ * Retrieve latestEpisode shows from state
+ */
+var getLatestEpisodes = exports.getLatestEpisodes = function getLatestEpisodes(state) {
+  return state.showsLatestEpisodes;
+};
+
+/**
  * Retrieve show ID from parameters
  */
 var getShowId = exports.getShowId = function getShowId(state, _ref) {

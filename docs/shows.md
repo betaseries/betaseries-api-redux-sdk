@@ -23,9 +23,11 @@
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
     * _selectors_
         * [.getEpisode](#module_Shows.getEpisode) ⇒ {Object}
+        * [.getLatestShowEpisode](#module_Shows.getLatestShowEpisode) ⇒ {Object}
         * [.getShow](#module_Shows.getShow) ⇒ {Object}
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
-        * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Object}
+        * [.getShowEpisodes](#module_Shows.getShowEpisodes) ⇒ {Array}
+        * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Array}
 
 <a name="module_Shows.doFetchEpisode"></a>
 
@@ -501,13 +503,39 @@ const mapStateToProps = (state, props) => ({
 });
 ```
 
+<a name="module_Shows.getLatestShowEpisode"></a>
+
+### .getLatestShowEpisode
+
+Select last episode by show from state
+
+**Returns**: {Object} - Episode element or `null`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.showId] | {Object} | Show ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  episode: BetaSeries.getSelector('shows', 'getLatestShowEpisode')(state, {
+    showId: props.showId,
+  });
+});
+```
+
 <a name="module_Shows.getShow"></a>
 
 ### .getShow
 
 Select show from state
 
-**Returns**: {Object} - Show element or null
+**Returns**: {Object} - Show element or `null`
 
 **Category**: selectors  
 
@@ -553,13 +581,39 @@ const mapStateToProps = (state, props) => ({
 });
 ```
 
+<a name="module_Shows.getShowEpisodes"></a>
+
+### .getShowEpisodes
+
+Select episode by show from state
+
+**Returns**: {Array} - List of episodes element order by code
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.showId] | {Object} | Show ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  episode: BetaSeries.getSelector('shows', 'getShowEpisodes')(state, {
+    showId: props.showId,
+  });
+});
+```
+
 <a name="module_Shows.getSimilarShows"></a>
 
 ### .getSimilarShows
 
 Select similar shows from state
 
-**Returns**: {Object} - Show element or `null`
+**Returns**: {Array} - Shows list or `null`
 
 **Category**: selectors  
 

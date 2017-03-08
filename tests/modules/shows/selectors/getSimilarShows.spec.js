@@ -20,6 +20,6 @@ describe('Select show from state ', () => {
 
   it('returns empty array if show does not have similar shows', () => {
     const value = selector(state, { showId: 2 });
-    expect(value).to.deep.equal([]);
+    expect(value).to.deep.equal(null);
   });
 });

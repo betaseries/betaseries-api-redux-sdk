@@ -8,6 +8,8 @@
         * [.doSearchShows([obj])](#module_Searchs.doSearchShows) ⇒ {Promise}
     * _reducers_
         * [.shows(state, action)](#module_Searchs.shows) ⇒ {Object}
+    * _selectors_
+        * [.getSearchShows](#module_Searchs.getSearchShows) ⇒ {Object}
 
 <a name="module_Searchs.doClearSearchShows"></a>
 
@@ -82,5 +84,27 @@ BetaSeries.getReducer('searchs', 'shows').searchShows;
 [
   ...shows               // list of search shows
 ]
+```
+
+<a name="module_Searchs.getSearchShows"></a>
+
+### .getSearchShows
+
+Select episode from state
+
+**Returns**: {Object} - List of shows or empty array
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('searchs', 'getSearchShows')(state);
+});
 ```
 

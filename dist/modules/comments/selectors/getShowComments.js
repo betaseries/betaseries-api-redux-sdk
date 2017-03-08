@@ -19,32 +19,40 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Select similar shows from state
+ * Select show comments from state
  *
- * @alias module:Shows.getSimilarShows
+ * @alias module:Comments.getShowComments
  * @category selectors
  *
  * @example
  * const mapStateToProps = (state, props) => ({
- *   show: BetaSeries.getSelector('shows', 'getSimilarShows')(state, { showId: props.showId });
+ *   show: BetaSeries.getSelector('comments', 'getShowComments')(state, {
+ *     showId: props.showId
+ *   });
  * });
  *
  * @param {Object}  [state]           Redux state
  * @param {Object}  [obj]             Accept the folling:
  * @param {Object}  [obj.showId]      Show ID
  *
- * @returns {Array}                  Shows list or `null`
+ * @returns {Array}                   List of comments
  */
-var getSimilarShows = (0, _reselect.createSelector)([commons.getShows, commons.getSimilarShows, commons.getShowId], function (shows, similarShows, showId) {
-  var similarShowIds = !Object.prototype.hasOwnProperty.call(similarShows, showId) ? null : similarShows[showId];
+var getShowComments = (0, _reselect.createSelector)([commons.getComments, commons.getShowComments, commons.getShowId], function (comments, showComments, showId) {
+  var commentIds = !Object.prototype.hasOwnProperty.call(showComments, showId) ? null : showComments[showId];
 
-  if (!similarShowIds) {
+  if (!commentIds) {
     return null;
   }
 
-  return (0, _filter3.default)(shows, function (show) {
-    return similarShowIds.indexOf(show.id) !== -1;
+  var commentsFiltered = (0, _filter3.default)(comments, function (comment) {
+    return commentIds.indexOf(comment.id) !== -1;
   });
+
+  if (commentsFiltered.length === 0) {
+    return null;
+  }
+
+  return commentsFiltered;
 });
 
-exports.default = getSimilarShows;
+exports.default = getShowComments;

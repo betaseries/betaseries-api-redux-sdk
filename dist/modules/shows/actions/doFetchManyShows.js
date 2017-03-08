@@ -53,7 +53,7 @@ var doFetchManyShows = function doFetchManyShows(_ref) {
         type: _constants2.default.FETCH_MANY_SHOWS,
         payload: {
           showIds: cleanShowIds,
-          shows: response[cleanShowIds.length === 1 ? 'show' : 'shows']
+          shows: cleanShowIds.length === 1 ? [response.show] : response.shows
         }
       });
     });

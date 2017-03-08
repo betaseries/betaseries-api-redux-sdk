@@ -53,7 +53,7 @@ var doFetchManyEpisodes = function doFetchManyEpisodes(_ref) {
         type: _constants2.default.FETCH_MANY_EPISODES,
         payload: {
           episodeIds: cleanEpisodeIds,
-          episodes: response[cleanEpisodeIds.length === 1 ? 'episode' : 'episodes']
+          episodes: cleanEpisodeIds.length === 1 ? [response.episode] : response.episodes
         }
       });
     });

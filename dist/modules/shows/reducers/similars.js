@@ -12,10 +12,6 @@ var _constants = require('../constants');
 
 var _constants2 = _interopRequireDefault(_constants);
 
-var _arrayToID = require('../../../utils/func/arrayToID');
-
-var _arrayToID2 = _interopRequireDefault(_arrayToID);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -55,7 +51,7 @@ function showsSimilarReducer() {
 
   switch (action.type) {
     case _constants2.default.FETCH_SIMILAR_SHOWS:
-      return _extends({}, state, _defineProperty({}, action.payload.showId, (0, _arrayToID2.default)(action.payload.similars)));
+      return _extends({}, state, _defineProperty({}, action.payload.showId, action.payload.similars));
 
     default:
       return state;

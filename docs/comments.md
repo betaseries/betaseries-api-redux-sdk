@@ -11,6 +11,10 @@
         * [.comments(state, action)](#module_Comments.comments) ⇒ {Object}
         * [.episodes(state, action)](#module_Comments.episodes) ⇒ {Object}
         * [.shows(state, action)](#module_Comments.shows) ⇒ {Object}
+    * _selectors_
+        * [.getComment](#module_Comments.getComment) ⇒ {Object}
+        * [.getEpisodeComments](#module_Comments.getEpisodeComments) ⇒ {Array}
+        * [.getShowComments](#module_Comments.getShowComments) ⇒ {Array}
 
 <a name="module_Comments.doFetchComment"></a>
 
@@ -192,5 +196,81 @@ BetaSeries.getReducer('comments', 'shows').commentsShows;
   ],
   ...,
 }
+```
+
+<a name="module_Comments.getComment"></a>
+
+### .getComment
+
+Select comment from state
+
+**Returns**: {Object} - Comment element or `null`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.commentId] | {Object} | Comment ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('comments', 'getComment')(state, { commentId: props.commentId });
+});
+```
+
+<a name="module_Comments.getEpisodeComments"></a>
+
+### .getEpisodeComments
+
+Select show comments from state
+
+**Returns**: {Array} - List of comments or `null`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.episodeId] | {Object} | Episode ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('comments', 'getEpisodeComments')(state, {
+    episodeId: props.episodeId
+  });
+});
+```
+
+<a name="module_Comments.getShowComments"></a>
+
+### .getShowComments
+
+Select show comments from state
+
+**Returns**: {Array} - List of comments
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.showId] | {Object} | Show ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('comments', 'getShowComments')(state, {
+    showId: props.showId
+  });
+});
 ```
 

@@ -19,7 +19,10 @@ describe('Retrieve similar shows', () => {
     let action;
 
     const actionToDispatch = getInstance(Promise.resolve({
-      similars: showsFixture.slice(0, 5),
+      similars: showsFixture.slice(0, 5).map(show => ({
+        ...show,
+        show_id: show.id,
+      })),
     }));
 
     before(async () => {
