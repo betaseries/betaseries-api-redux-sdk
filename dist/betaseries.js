@@ -50,6 +50,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 * @module Searchs
 */
 
+/**
+* @module Members
+*/
+
 var config = {
   apiHost: null,
   apiKey: null

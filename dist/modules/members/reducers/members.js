@@ -6,47 +6,39 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-exports.default = movieMembersReducer;
-
-var _get2 = require('lodash/get');
-
-var _get3 = _interopRequireDefault(_get2);
+exports.default = moviesReducer;
 
 var _constants = require('../constants');
 
 var _constants2 = _interopRequireDefault(_constants);
 
-var _arrayToID = require('../../../utils/func/arrayToID');
-
-var _arrayToID2 = _interopRequireDefault(_arrayToID);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 var initialState = {};
 
 /**
- * List movies of the member
+ * List of members
  *
  * **Actions listened**:
  *
- *  * `FETCH_MEMBER_MOVIES`
+ *  * `FETCH_USER`
+ *  * `FETCH_MEMBER`
  *
- * @alias module:Movies.members
+ * @alias module:Members.members
  * @category reducers
  *
  * @example
  * // get reducer
- * BetaSeries.getReducer('movies', 'members').moviesMembers;
+ * BetaSeries.getReducer('members', 'members').members;
  *
  * // state value example
  * {
- *   '12': [               // member ID
- *     1234, 213, 2343,    // list of movies ID
- *   ],
+ *   '12': {      // member ID
+ *     id: 12,    // member element
+ *     ...member,
+ *   },
  *   ...,
  * }
  *
@@ -55,13 +47,14 @@ var initialState = {};
  *
  * @returns {Object}
  */
-function movieMembersReducer() {
+function moviesReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments[1];
 
   switch (action.type) {
-    case _constants2.default.FETCH_MEMBER_MOVIES:
-      return _extends({}, state, _defineProperty({}, action.payload.memberId, [].concat(_toConsumableArray((0, _get3.default)(state, action.payload.memberId, [])), _toConsumableArray((0, _arrayToID2.default)(action.payload.movies)))));
+    case _constants2.default.FETCH_USER:
+    case _constants2.default.FETCH_MEMBER:
+      return _extends({}, state, _defineProperty({}, action.payload.member.id, action.payload.member));
 
     default:
       return state;

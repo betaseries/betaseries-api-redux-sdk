@@ -48,6 +48,38 @@ var _constants = require('./comments/constants');
 
 var _constants2 = _interopRequireDefault(_constants);
 
+var _doFetchMember = require('./members/actions/doFetchMember');
+
+var _doFetchMember2 = _interopRequireDefault(_doFetchMember);
+
+var _doFetchUser = require('./members/actions/doFetchUser');
+
+var _doFetchUser2 = _interopRequireDefault(_doFetchUser);
+
+var _members = require('./members/reducers/members');
+
+var _members2 = _interopRequireDefault(_members);
+
+var _user = require('./members/reducers/user');
+
+var _user2 = _interopRequireDefault(_user);
+
+var _commons3 = require('./members/selectors/commons');
+
+var _commons4 = _interopRequireDefault(_commons3);
+
+var _getMember = require('./members/selectors/getMember');
+
+var _getMember2 = _interopRequireDefault(_getMember);
+
+var _getUser = require('./members/selectors/getUser');
+
+var _getUser2 = _interopRequireDefault(_getUser);
+
+var _constants3 = require('./members/constants');
+
+var _constants4 = _interopRequireDefault(_constants3);
+
 var _doFetchFavoriteMovies = require('./movies/actions/doFetchFavoriteMovies');
 
 var _doFetchFavoriteMovies2 = _interopRequireDefault(_doFetchFavoriteMovies);
@@ -72,17 +104,25 @@ var _favorites = require('./movies/reducers/favorites');
 
 var _favorites2 = _interopRequireDefault(_favorites);
 
-var _members = require('./movies/reducers/members');
+var _members3 = require('./movies/reducers/members');
 
-var _members2 = _interopRequireDefault(_members);
+var _members4 = _interopRequireDefault(_members3);
 
 var _movies = require('./movies/reducers/movies');
 
 var _movies2 = _interopRequireDefault(_movies);
 
-var _constants3 = require('./movies/constants');
+var _commons5 = require('./movies/selectors/commons');
 
-var _constants4 = _interopRequireDefault(_constants3);
+var _commons6 = _interopRequireDefault(_commons5);
+
+var _getMemberMovies = require('./movies/selectors/getMemberMovies');
+
+var _getMemberMovies2 = _interopRequireDefault(_getMemberMovies);
+
+var _constants5 = require('./movies/constants');
+
+var _constants6 = _interopRequireDefault(_constants5);
 
 var _doClearSearchShows = require('./searchs/actions/doClearSearchShows');
 
@@ -96,17 +136,17 @@ var _shows3 = require('./searchs/reducers/shows');
 
 var _shows4 = _interopRequireDefault(_shows3);
 
-var _commons3 = require('./searchs/selectors/commons');
+var _commons7 = require('./searchs/selectors/commons');
 
-var _commons4 = _interopRequireDefault(_commons3);
+var _commons8 = _interopRequireDefault(_commons7);
 
 var _getSearchShows = require('./searchs/selectors/getSearchShows');
 
 var _getSearchShows2 = _interopRequireDefault(_getSearchShows);
 
-var _constants5 = require('./searchs/constants');
+var _constants7 = require('./searchs/constants');
 
-var _constants6 = _interopRequireDefault(_constants5);
+var _constants8 = _interopRequireDefault(_constants7);
 
 var _doFetchEpisode = require('./shows/actions/doFetchEpisode');
 
@@ -172,9 +212,9 @@ var _similars = require('./shows/reducers/similars');
 
 var _similars2 = _interopRequireDefault(_similars);
 
-var _commons5 = require('./shows/selectors/commons');
+var _commons9 = require('./shows/selectors/commons');
 
-var _commons6 = _interopRequireDefault(_commons5);
+var _commons10 = _interopRequireDefault(_commons9);
 
 var _getEpisode = require('./shows/selectors/getEpisode');
 
@@ -200,9 +240,9 @@ var _getSimilarShows = require('./shows/selectors/getSimilarShows');
 
 var _getSimilarShows2 = _interopRequireDefault(_getSimilarShows);
 
-var _constants7 = require('./shows/constants');
+var _constants9 = require('./shows/constants');
 
-var _constants8 = _interopRequireDefault(_constants7);
+var _constants10 = _interopRequireDefault(_constants9);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -226,6 +266,22 @@ exports.default = {
     },
     constants: _constants2.default
   },
+  members: {
+    actions: {
+      doFetchMember: _doFetchMember2.default,
+      doFetchUser: _doFetchUser2.default
+    },
+    reducers: {
+      members: _members2.default,
+      user: _user2.default
+    },
+    selectors: {
+      commons: _commons4.default,
+      getMember: _getMember2.default,
+      getUser: _getUser2.default
+    },
+    constants: _constants4.default
+  },
   movies: {
     actions: {
       doFetchFavoriteMovies: _doFetchFavoriteMovies2.default,
@@ -236,10 +292,14 @@ exports.default = {
     reducers: {
       characters: _characters2.default,
       favorites: _favorites2.default,
-      members: _members2.default,
+      members: _members4.default,
       movies: _movies2.default
     },
-    constants: _constants4.default
+    selectors: {
+      commons: _commons6.default,
+      getMemberMovies: _getMemberMovies2.default
+    },
+    constants: _constants6.default
   },
   searchs: {
     actions: {
@@ -250,10 +310,10 @@ exports.default = {
       shows: _shows4.default
     },
     selectors: {
-      commons: _commons4.default,
+      commons: _commons8.default,
       getSearchShows: _getSearchShows2.default
     },
-    constants: _constants6.default
+    constants: _constants8.default
   },
   shows: {
     actions: {
@@ -277,7 +337,7 @@ exports.default = {
       similars: _similars2.default
     },
     selectors: {
-      commons: _commons6.default,
+      commons: _commons10.default,
       getEpisode: _getEpisode2.default,
       getLatestShowEpisode: _getLatestShowEpisode2.default,
       getShow: _getShow2.default,
@@ -285,6 +345,6 @@ exports.default = {
       getShowEpisodes: _getShowEpisodes2.default,
       getSimilarShows: _getSimilarShows2.default
     },
-    constants: _constants8.default
+    constants: _constants10.default
   }
 };
