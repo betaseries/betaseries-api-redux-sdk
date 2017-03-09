@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _constants = require('../constants');
 
 var _constants2 = _interopRequireDefault(_constants);
@@ -13,6 +15,15 @@ var _ApiFetch = require('../../../utils/fetch/ApiFetch');
 var _ApiFetch2 = _interopRequireDefault(_ApiFetch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var defaultProps = {
+  state: 0,
+  start: 0,
+  limit: 50,
+  order: 'alphabetical'
+};
 
 /**
  * Retrieve movies of the member
@@ -37,16 +48,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 var doFetchMemberMovies = function doFetchMemberMovies(_ref) {
   var memberId = _ref.memberId,
-      _ref$state = _ref.state,
-      state = _ref$state === undefined ? 0 : _ref$state,
-      _ref$start = _ref.start,
-      start = _ref$start === undefined ? 0 : _ref$start,
-      _ref$limit = _ref.limit,
-      limit = _ref$limit === undefined ? 50 : _ref$limit,
-      _ref$order = _ref.order,
-      order = _ref$order === undefined ? 'alphabetical' : _ref$order;
+      props = _objectWithoutProperties(_ref, ['memberId']);
+
   return function (dispatch) {
-    return _ApiFetch2.default.get('movies/member', { id: memberId, state: state, start: start, limit: limit, order: order }).then(function (response) {
+    return _ApiFetch2.default.get('movies/member', _extends({ id: memberId }, defaultProps, props)).then(function (response) {
       return dispatch({
         type: _constants2.default.FETCH_MEMBER_MOVIES,
         payload: {

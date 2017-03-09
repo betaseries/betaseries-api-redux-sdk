@@ -35,7 +35,7 @@ describe('Retrieve movie', () => {
 
     it('validate movies reducer', () => {
       const stateMoviesReducer = moviesReducer(undefined, action);
-      expect(Object.keys(stateMoviesReducer)).to.deep.equal(['30452']);
+      expect(Object.keys(stateMoviesReducer)).to.deep.equal(['7094']);
     });
   });
 });

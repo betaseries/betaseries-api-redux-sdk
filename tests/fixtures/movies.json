@@ -1,113 +1,32 @@
 [
   {
-    "id":30452,
-    "title":"Jack Reacher : Never Go Back",
-    "original_title":"Jack Reacher: Never Go Back",
-    "tmdb_id":343611,
-    "imdb_id":"tt3393786",
-    "url":"jack-reacher-never-go-back",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/30452.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/30452.jpg",
-    "production_year":"2016",
-    "release_date":"2016-10-19",
+    "id":7094,
+    "title":"Don Jon",
+    "original_title":"Don Jon",
+    "tmdb_id":138697,
+    "imdb_id":"tt2229499",
+    "url":"don-jons-addiction",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/7094.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/7094.jpg",
+    "production_year":"2013",
+    "release_date":"2013-12-25",
     "sale_date":"0000-00-00",
-    "director":"Edward Zwick",
-    "length":"7080",
+    "director":"Joseph Gordon-Levitt",
+    "length":"5400",
     "genres":[
-      "Thriller",
-      "Action",
-      "Crime",
-      "Drame",
-      "Myst\u00e8re"
+      "Com\u00e9die",
+      "Drame"
     ],
-    "synopsis":"Reacher retourne dans sa base militaire de Virginie pour d\u00eener avec une coll\u00e8gue. Mais il apprend que celle-ci a \u00e9t\u00e9 arr\u00eat\u00e9e et que lui-m\u00eame est accus\u00e9 de meurtres.",
+    "synopsis":"Jon Martello est un beau mec que ses amis ont surnomm\u00e9 Don Jon en raison de son talent \u00e0 s\u00e9duire une nouvelle fille chaque week-end. Mais pour lui, m\u00eame les rencontres les plus excitantes ne valent pas les moments solitaires qu'il passe devant son ordinateur \u00e0 regarder des films pornographiques. Barbara Sugarman est une jeune femme lumineuse, nourrie aux com\u00e9dies romantiques hollywoodiennes, bien d\u00e9cid\u00e9e \u00e0 trouver son Prince Charmant. Leur rencontre est un choc, une explosion dans la vie de chacun. Bourr\u00e9s d'illusions et d'id\u00e9es re\u00e7ues sur le sexe oppos\u00e9, Jon et Barbara vont devoir laisser tomber leurs fantasmes s'ils veulent avoir une chance de vivre enfin une vraie relation...",
     "language":"Anglais",
     "notes":{
-      "total":"225",
-      "mean":"3.0978",
+      "total":"626",
+      "mean":"2.8003",
       "user":0
     },
     "followers":0,
-    "comments":"1",
+    "comments":"16",
     "similars":"1",
-    "characters":"11",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/30452-jack-reacher-never-go-back"
-  },
-  {
-    "id":13494,
-    "title":"12 Years a Slave",
-    "original_title":"12 Years a Slave",
-    "tmdb_id":76203,
-    "imdb_id":"tt2024544",
-    "url":"12-years-a-slave",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/13494.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/13494.jpg",
-    "production_year":"2014",
-    "release_date":"2014-01-22",
-    "sale_date":"0000-00-00",
-    "director":"Steve McQueen",
-    "length":"8040",
-    "genres":[
-      "Drame",
-      "Histoire"
-    ],
-    "synopsis":"Les \u00c9tats-Unis, quelques ann\u00e9es avant la guerre de S\u00e9cession.  Solomon Northup, jeune homme noir originaire de l\u2019\u00c9tat de New York, est enlev\u00e9 et vendu comme esclave.  Face \u00e0 la cruaut\u00e9 d\u2019un propri\u00e9taire de plantation de coton, Solomon se bat pour rester en vie et garder sa dignit\u00e9.  Douze ans plus tard, il va croiser un abolitionniste canadien et cette rencontre va changer sa vie\u2026",
-    "language":"Anglais",
-    "notes":{
-      "total":"1006",
-      "mean":"4.3022",
-      "user":2
-    },
-    "followers":0,
-    "comments":"19",
-    "similars":"1",
-    "characters":"24",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/13494-12-years-a-slave"
-  },
-  {
-    "id":149,
-    "title":"Django Unchained",
-    "original_title":"Django Unchained",
-    "tmdb_id":68718,
-    "imdb_id":"tt1853728",
-    "url":"django-unchained",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/149.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/149.jpg",
-    "production_year":"2013",
-    "release_date":"2013-01-15",
-    "sale_date":"0000-00-00",
-    "director":"Quentin Tarantino",
-    "length":"9840",
-    "genres":[
-      "Drame",
-      "Western"
-    ],
-    "synopsis":"Dans le sud des \u00c9tats-Unis, deux ans avant la guerre de S\u00e9cession, le Dr King Schultz, un chasseur de primes allemand, fait l\u2019acquisition de Django, un esclave qui peut l\u2019aider \u00e0 traquer les fr\u00e8res Brittle, les meurtriers qu\u2019il recherche. Schultz promet \u00e0 Django de lui rendre sa libert\u00e9 lorsqu\u2019il aura captur\u00e9 les Brittle \u2013 morts ou vifs.  Alors que les deux hommes pistent les dangereux criminels, Django n\u2019oublie pas que son seul but est de retrouver Broomhilda, sa femme, dont il fut s\u00e9par\u00e9 \u00e0 cause du commerce des esclaves\u2026  Lorsque Django et Schultz arrivent dans l\u2019immense plantation du puissant Calvin Candie, ils \u00e9veillent les soup\u00e7ons de Stephen, un esclave qui sert Candie et a toute sa confiance. Le moindre de leurs mouvements est d\u00e9sormais \u00e9pi\u00e9 par une dangereuse organisation de plus en plus proche\u2026 Si Django et Schultz veulent esp\u00e9rer s\u2019enfuir avec Broomhilda, ils vont devoir choisir entre l\u2019ind\u00e9pendance et la solidarit\u00e9, entre le sacrifice et la survie\u2026",
-    "language":"Anglais",
-    "notes":{
-      "total":"3811",
-      "mean":"4.4209",
-      "user":5
-    },
-    "followers":0,
-    "comments":"35",
-    "similars":"4",
     "characters":"24",
     "user":{
       "in_account":true,
@@ -117,596 +36,419 @@
       "profile":true,
       "favorited":false
     },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/149-django-unchained"
-  },
-  {
-    "id":1957,
-    "title":"L'histoire sans fin",
-    "original_title":"Die unendliche Geschichte",
-    "tmdb_id":34584,
-    "imdb_id":"tt0088323",
-    "url":"lhistoire-sans-fin",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/1957.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/1957.jpg",
-    "production_year":"1984",
-    "release_date":"1984-11-21",
-    "sale_date":"0000-00-00",
-    "director":"Wolfgang Petersen",
-    "length":"5700",
-    "genres":[
-      "Familial",
-      "Fantastique"
-    ],
-    "synopsis":"Bastien, dix ans, est un passionn\u00e9 de romans d'aventures. Un jour, il d\u00e9robe un ouvrage merveilleux peupl\u00e9 d'extraordinaires cr\u00e9atures. Il s'enfonce f\u00e9brilement dans l'univers fantastique de ce livre qui le fascine.",
-    "language":"Anglais",
-    "notes":{
-      "total":"646",
-      "mean":"3.7678",
-      "user":5
-    },
-    "followers":0,
-    "comments":"1",
-    "similars":"3",
-    "characters":"17",
-    "user":{
+    "resource_url":"https:\/\/www.betaseries.com\/film\/7094-don-jons-addiction",
+    "auth_user":{
       "in_account":true,
-      "status":1,
+      "status":2,
       "mail":true,
-      "twitter":true,
+      "twitter":false,
       "profile":true,
       "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/1957-lhistoire-sans-fin"
+    }
   },
   {
-    "id":21753,
-    "title":"Les Huit salopards",
-    "original_title":"The Hateful Eight",
-    "tmdb_id":273248,
-    "imdb_id":"tt3460252",
-    "url":"les-huit-salopards",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/21753.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/21753.jpg",
-    "production_year":"2016",
-    "release_date":"2016-01-06",
+    "id":4656,
+    "title":"Du plomb dans la t\u00eate",
+    "original_title":"Bullet to the Head",
+    "tmdb_id":70074,
+    "imdb_id":"tt1308729",
+    "url":"du-plomb-dans-la-tete",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/4656.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/4656.jpg",
+    "production_year":"2012",
+    "release_date":"2012-11-14",
     "sale_date":"0000-00-00",
-    "director":"Quentin Tarantino",
-    "length":"10800",
+    "director":"Walter Hill",
+    "length":"5460",
     "genres":[
+      "Action",
       "Crime",
-      "Drame",
-      "Myst\u00e8re",
-      "Thriller",
-      "Western"
+      "Thriller"
     ],
-    "synopsis":"Apr\u00e8s la Guerre de S\u00e9cession, huit voyageurs se retrouvent coinc\u00e9s dans un refuge au milieu des montagnes. Alors que la temp\u00eate s'abat au-dessus du massif, ils r\u00e9alisent qu'ils n'arriveront peut-\u00eatre pas \u00e0 rallier Red Rock comme pr\u00e9vu...",
+    "synopsis":"Tueur \u00e0 gages \u00e0 La Nouvelle-Orl\u00e9ans, James Bonomo, dit \u00ab Jimmy Bobo \u00bb, a pour r\u00e8gle de ne jamais tuer un innocent. Apr\u00e8s l\u2019ex\u00e9cution d\u2019un contrat, il laisse derri\u00e8re lui un t\u00e9moin, vivant. Pour le punir de ce travail b\u00e2cl\u00e9, son partenaire Louis est abattu par un myst\u00e9rieux assassin. Lorsque l\u2019inspecteur de police Taylor Kwon arrive en ville pour rejoindre son \u00e9quipier et suivre une nouvelle piste sur une ancienne affaire, il d\u00e9couvre que celui-ci a \u00e9t\u00e9 tu\u00e9. Tous les indices accusent Jimmy et son complice d\u00e9sormais disparu, Louis. Pour trouver qui a tu\u00e9 leurs partenaires respectifs, le flic et le tueur \u00e0 gages vont \u00eatre forc\u00e9s de faire \u00e9quipe. Bien que chacun d\u2019un c\u00f4t\u00e9 de la loi, ils vont vite se rendre compte que la fronti\u00e8re est mince\u2026",
     "language":"Anglais",
     "notes":{
-      "total":"963",
-      "mean":"4.0260",
-      "user":4
-    },
-    "followers":0,
-    "comments":"0",
-    "similars":"1",
-    "characters":"18",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/21753-les-huit-salopards"
-  },
-  {
-    "id":5975,
-    "title":"L'Histoire sans fin II",
-    "original_title":"The NeverEnding Story II: The Next Chapter",
-    "tmdb_id":34636,
-    "imdb_id":"tt0100240",
-    "url":"lhistoire-sans-fin-ii",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/5975.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/5975.jpg",
-    "production_year":"1991",
-    "release_date":"1991-02-12",
-    "sale_date":"0000-00-00",
-    "director":"George T. Miller",
-    "length":"0",
-    "genres":[
-      "Drame",
-      "Familial",
-      "Fantastique",
-      "Aventure"
-    ],
-    "synopsis":"Bastien doit \u00e0 nouveau surmonter des difficult\u00e9s \u00e0 l'\u00e9cole et dans ses rapports avec son p\u00e8re. Une fois de plus il cherche refuge et consolation dans l'Histoire sans fin, un livre pr\u00e9cieusement conserv\u00e9 par l'antiquaire Coreander. Bastien est transport\u00e9 au pays fantastique o\u00f9 il retrouve ses vieux amis et la petite imp\u00e9ratrice. Mais il y a aussi les m\u00e9chants, la cruelle sorci\u00e8re et ses s\u00e9\u00efdes qui veulent d\u00e9truire le monde de l'imagination.",
-    "language":"Anglais",
-    "notes":{
-      "total":"201",
-      "mean":"3.1642",
-      "user":4
-    },
-    "followers":0,
-    "comments":"0",
-    "similars":"2",
-    "characters":"15",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/5975-lhistoire-sans-fin-ii"
-  },
-  {
-    "id":178,
-    "title":"Edward aux mains d'argent",
-    "original_title":"Edward Scissorhands",
-    "tmdb_id":162,
-    "imdb_id":"tt0099487",
-    "url":"edward-aux-mains-dargent",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/178.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/178.jpg",
-    "production_year":"1991",
-    "release_date":"1991-04-09",
-    "sale_date":"0000-00-00",
-    "director":"Tim Burton",
-    "length":"6300",
-    "genres":[
-      "Fantastique",
-      "Drame",
-      "Romance"
-    ],
-    "synopsis":"Edward n'est pas un gar\u00e7on ordinaire. Cr\u00e9ation d'un inventeur, il a re\u00e7u un c\u0153ur pour aimer, un cerveau pour comprendre. Mais son concepteur est mort avant d'avoir pu terminer son \u0153uvre et Edward se retrouve avec des lames de m\u00e9tal et des instruments tranchants en guise de doigts.",
-    "language":"Anglais",
-    "notes":{
-      "total":"2758",
-      "mean":"4.1827",
-      "user":5
-    },
-    "followers":0,
-    "comments":"6",
-    "similars":"3",
-    "characters":"18",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":true
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/178-edward-aux-mains-dargent"
-  },
-  {
-    "id":3828,
-    "title":"Cendrillon 2 - Une vie de princesse",
-    "original_title":"Cinderella II: Dreams Come True",
-    "tmdb_id":14128,
-    "imdb_id":"tt0291082",
-    "url":"cendrillon-2-une-vie-de-princesse-v",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/3828.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/3828.jpg",
-    "production_year":"2002",
-    "release_date":"2002-03-07",
-    "sale_date":"0000-00-00",
-    "director":"John Kafka",
-    "length":"4380",
-    "genres":[
-      "Animation",
-      "Familial",
-      "Fantastique",
-      "Romance"
-    ],
-    "synopsis":"Trois histoires sur la nouvelle vie de Cendrillon depuis son mariage avec le Prince charmant: ses premiers jours au palais o\u00f9 elle essaye tellement de faire bonne figure qu'elle en oublie d'\u00eatre elle-m\u00eame, le souhait de Jack de devenir un \u00eatre humain, et comment une des belles-s\u0153urs de Cendrillon va apprendre \u00e0 s'ouvrir aux autres et trouver l'amour...",
-    "language":"Anglais",
-    "notes":{
-      "total":"264",
-      "mean":"2.6667",
-      "user":4
-    },
-    "followers":0,
-    "comments":"0",
-    "similars":"2",
-    "characters":"10",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":true
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/3828-cendrillon-2-une-vie-de-princesse-v"
-  },
-  {
-    "id":237,
-    "title":"Aladdin",
-    "original_title":"Aladdin",
-    "tmdb_id":812,
-    "imdb_id":"tt0103639",
-    "url":"aladdin",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/237.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/237.jpg",
-    "production_year":"1993",
-    "release_date":"1993-11-24",
-    "sale_date":"0000-00-00",
-    "director":"Ron Clements",
-    "length":"5400",
-    "genres":[
-      "Animation",
-      "Familial",
-      "Com\u00e9die",
-      "Aventure",
-      "Fantastique",
-      "Romance"
-    ],
-    "synopsis":"Au c\u0153ur de l'Arabie, dans la ville d'Agrabah, un jeune homme orphelin du nom d'Aladdin vit en volant de la nourriture aux marchands des souks. M\u00eame s'il chaparde, Aladdin r\u00eave de prouver qu'il n'est pas qu'un vulgaire voleur mais bien un homme de valeur contraint \u00e0 enfreindre la loi pour survivre.",
-    "language":"Anglais",
-    "notes":{
-      "total":"2277",
-      "mean":"4.0861",
-      "user":5
-    },
-    "followers":0,
-    "comments":"1",
-    "similars":"4",
-    "characters":"10",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":true
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/237-aladdin"
-  },
-  {
-    "id":6175,
-    "title":"La vie d'Ad\u00e8le - Chapitres 1 et 2",
-    "original_title":"La vie d'Ad\u00e8le - Chapitres 1 et 2",
-    "tmdb_id":152584,
-    "imdb_id":"tt2278871",
-    "url":"le-bleu-est-une-couleur-chaude",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6175.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6175.jpg",
-    "production_year":"2013",
-    "release_date":"2013-10-09",
-    "sale_date":"0000-00-00",
-    "director":"Abdellatif Kechiche",
-    "length":"10740",
-    "genres":[
-      "Romance",
-      "Drame"
-    ],
-    "synopsis":"\u00c0 15 ans, Ad\u00e8le ne se pose pas de question: une fille, \u00e7a sort avec des gar\u00e7ons. Sa vie bascule le jour o\u00f9 elle rencontre Emma, une jeune femme aux cheveux bleus, qui lui fait d\u00e9couvrir le d\u00e9sir et lui permettra de s'affirmer en tant que femme et adulte. Face au regard des autres Ad\u00e8le grandit, se cherche, se perd, se trouve...",
-    "language":"Fran\u00e7ais",
-    "notes":{
-      "total":"664",
-      "mean":"3.4111",
-      "user":0
-    },
-    "followers":0,
-    "comments":"19",
-    "similars":"7",
-    "characters":"15",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/6175-le-bleu-est-une-couleur-chaude"
-  },
-  {
-    "id":140,
-    "title":"La liste de Schindler",
-    "original_title":"Schindler's List",
-    "tmdb_id":424,
-    "imdb_id":"tt0108052",
-    "url":"la-liste-de-schindler",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/140.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/140.jpg",
-    "production_year":"1994",
-    "release_date":"1994-03-02",
-    "sale_date":"0000-00-00",
-    "director":"Steven Spielberg",
-    "length":"11700",
-    "genres":[
-      "Drame",
-      "Histoire",
-      "Guerre"
-    ],
-    "synopsis":"\u00c9vocation des ann\u00e9es de guerre d'Oskar Schindler, fils d'industriel d'origine autrichienne rentr\u00e9 \u00e0 Cracovie en 1939 avec les troupes allemandes. Il va, tout au long de la guerre, prot\u00e9ger des juifs en les faisant travailler dans sa fabrique et en 1944 sauver huit cents hommes et trois cents femmes du camp d'extermination de Auschwitz-Birkenau.",
-    "language":"Anglais",
-    "notes":{
-      "total":"969",
-      "mean":"4.5015",
+      "total":"112",
+      "mean":"2.8393",
       "user":0
     },
     "followers":0,
     "comments":"3",
     "similars":"0",
-    "characters":"24",
+    "characters":"19",
     "user":{
       "in_account":true,
-      "status":1,
+      "status":0,
       "mail":true,
-      "twitter":true,
+      "twitter":false,
       "profile":true,
       "favorited":false
     },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/140-la-liste-de-schindler"
+    "resource_url":"https:\/\/www.betaseries.com\/film\/4656-du-plomb-dans-la-tete",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
   },
   {
-    "id":5847,
-    "title":"Star Wars, \u00e9pisode VII : Le R\u00e9veil de la force",
-    "original_title":"Star Wars: The Force Awakens",
-    "tmdb_id":140607,
-    "imdb_id":"tt2488496",
-    "url":"star-wars-episode-vii-le-reveil-de-la-force",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/5847.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/5847.jpg",
-    "production_year":"2015",
-    "release_date":"2015-12-16",
-    "sale_date":"2016-04-16",
-    "director":"J.J. Abrams",
-    "length":"8100",
+    "id":4444,
+    "title":"Spring Breakers",
+    "original_title":"Spring Breakers",
+    "tmdb_id":122081,
+    "imdb_id":"tt2101441",
+    "url":"spring-breakers",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/4444.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/4444.jpg",
+    "production_year":"2012",
+    "release_date":"2012-09-05",
+    "sale_date":"0000-00-00",
+    "director":"Harmony Korine",
+    "length":"5640",
     "genres":[
-      "Action",
-      "Aventure",
-      "Science-Fiction",
-      "Fantastique"
+      "Drame",
+      "Crime"
     ],
-    "synopsis":"Il y a bien longtemps, dans une galaxie lointaine? Luke Skywalker est port\u00e9 disparu. Le pilote Poe est en mission secr\u00e8te sur une plan\u00e8te pour le retrouver. Au moment o\u00f9 la diabolique arm\u00e9e \u00ab Premier Ordre \u00bb appara\u00eet en d\u00e9truisant tout sur son passage, il arrive \u00e0 cacher la position g\u00e9ographique de l'ancien ma\u00eetre Jedi dans son dro\u00efde BB-8. Captur\u00e9 par les larbins du machiav\u00e9lique Kylo Ren, Poe est lib\u00e9r\u00e9 par le soldat ennemi Finn qui est en pleine crise existentielle. Pendant ce temps, BB-8 est recueillie par Rey, une pilleuse d'\u00e9paves qui sera bient\u00f4t plong\u00e9e dans une qu\u00eate qui la d\u00e9passe.",
+    "synopsis":"Pour financer leur Spring Break, quatre filles aussi fauch\u00e9es que sexy d\u00e9cident de braquer un fast-food. Et ce n\u2019est que le d\u00e9but\u2026 Lors d\u2019une f\u00eate dans une chambre de motel, la soir\u00e9e d\u00e9rape et les filles sont embarqu\u00e9es par la police. En bikini et avec une gueule de bois d\u2019enfer, elles se retrouvent devant le juge, mais contre toute attente leur caution est pay\u00e9e par Alien, un malfrat local qui les prend sous son aile\u2026",
     "language":"Anglais",
     "notes":{
-      "total":"2098",
-      "mean":"4.1049",
-      "user":4
+      "total":"848",
+      "mean":"2.3927",
+      "user":0
     },
     "followers":0,
-    "comments":"47",
-    "similars":"8",
-    "characters":"24",
+    "comments":"23",
+    "similars":"3",
+    "characters":"9",
     "user":{
       "in_account":true,
-      "status":1,
+      "status":0,
       "mail":true,
-      "twitter":true,
+      "twitter":false,
       "profile":true,
       "favorited":false
     },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/5847-star-wars-episode-vii-le-reveil-de-la-force"
+    "resource_url":"https:\/\/www.betaseries.com\/film\/4444-spring-breakers",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
   },
   {
-    "id":323,
-    "title":"Big Fish",
-    "original_title":"Big Fish",
-    "tmdb_id":587,
-    "imdb_id":"tt0319061",
-    "url":"big-fish",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/323.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/323.jpg",
-    "production_year":"2004",
-    "release_date":"2004-03-03",
+    "id":4367,
+    "title":"Die Hard 5 - Belle journ\u00e9e pour mourir",
+    "original_title":"A Good Day to Die Hard",
+    "tmdb_id":47964,
+    "imdb_id":"tt1606378",
+    "url":"die-hard-5-belle-journee-pour-mourir",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/4367.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/4367.jpg",
+    "production_year":"2013",
+    "release_date":"2013-02-19",
     "sale_date":"0000-00-00",
-    "director":"Tim Burton",
-    "length":"7500",
+    "director":"John Moore",
+    "length":"5760",
     "genres":[
-      "Aventure",
-      "Fantastique",
-      "Drame"
+      "Action",
+      "Thriller"
     ],
-    "synopsis":"L'histoire \u00e0 la fois dr\u00f4le et poignante d'Edward Bloom, un p\u00e8re d\u00e9bordant d'imagination, et de son fils William. Ce dernier retourne au domicile familial apr\u00e8s l'avoir quitt\u00e9 longtemps auparavant, pour \u00eatre au chevet de son p\u00e8re, atteint d'un cancer. Il souhaite mieux le conna\u00eetre et d\u00e9couvrir ses secrets avant qu'il ne soit trop tard. L'aventure d\u00e9butera lorsque William tentera de discerner le vrai du faux dans les propos de son p\u00e8re mourant.",
+    "synopsis":"John McClane, le flic sans \u00e9tat d\u2019\u00e2me, est vraiment au mauvais endroit au mauvais moment, \u00e0 Moscou, pour aider son fils Jack qu\u2019il ne voit plus. Entre la mafia russe qui veut leur faire la peau et leur combat pour \u00e9viter le d\u00e9clenchement d\u2019une guerre, les McClane d\u00e9couvrent que leurs m\u00e9thodes pourtant bien diff\u00e9rentes font d\u2019eux des h\u00e9ros que rien ne peut arr\u00eater.",
     "language":"Anglais",
     "notes":{
-      "total":"1303",
-      "mean":"4.1573",
+      "total":"979",
+      "mean":"2.8304",
+      "user":0
+    },
+    "followers":0,
+    "comments":"9",
+    "similars":"4",
+    "characters":"18",
+    "user":{
+      "in_account":true,
+      "status":0,
+      "mail":true,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/4367-die-hard-5-belle-journee-pour-mourir",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":281,
+    "title":"Die Hard 1 : Pi\u00e8ge de cristal",
+    "original_title":"Die Hard",
+    "tmdb_id":562,
+    "imdb_id":"tt0095016",
+    "url":"piege-de-cristal",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/281.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/281.jpg",
+    "production_year":"1988",
+    "release_date":"1988-09-21",
+    "sale_date":"0000-00-00",
+    "director":"John McTiernan",
+    "length":"7920",
+    "genres":[
+      "Action",
+      "Thriller"
+    ],
+    "synopsis":"John McClane, policier new-yorkais, est venu rejoindre pour les f\u00eates de No\u00ebl sa femme Holly, dont il est s\u00e9par\u00e9 depuis plusieurs mois, dans le secret espoir d'une r\u00e9conciliation. Celle-ci est cadre dans une multinationale japonaise, la Nakatomi Corporation. Son patron, M. Takagi, donne une soir\u00e9e en l'honneur de ses employ\u00e9s, \u00e0 laquelle assiste McClane. Tandis qu'il s'isole pour t\u00e9l\u00e9phoner, un commando investit l'immeuble et coupe toutes les communications avec l'ext\u00e9rieur.",
+    "language":"Anglais",
+    "notes":{
+      "total":"1255",
+      "mean":"4.1458",
       "user":0
     },
     "followers":0,
     "comments":"6",
-    "similars":"2",
+    "similars":"4",
     "characters":"24",
     "user":{
       "in_account":true,
       "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":true
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/323-big-fish"
-  },
-  {
-    "id":34642,
-    "title":"Premier Contact",
-    "original_title":"Arrival",
-    "tmdb_id":329865,
-    "imdb_id":"tt2543164",
-    "url":"premier-contact",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/34642.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/34642.jpg",
-    "production_year":"2016",
-    "release_date":"2016-12-07",
-    "sale_date":"0000-00-00",
-    "director":"Denis Villeneuve",
-    "length":"6960",
-    "genres":[
-      "Drame",
-      "Science-Fiction"
-    ],
-    "synopsis":"Lorsque de myst\u00e9rieux vaisseaux venus du fond de l\u2019espace surgissent un peu partout sur Terre, une \u00e9quipe d\u2019experts est rassembl\u00e9e sous la direction de la linguiste Louise Banks afin de tenter de comprendre leurs intentions.  Face \u00e0 l\u2019\u00e9nigme que constituent leur pr\u00e9sence et leurs messages myst\u00e9rieux, les r\u00e9actions dans le monde sont extr\u00eames et l\u2019humanit\u00e9 se retrouve bient\u00f4t au bord d\u2019une guerre absolue. Louise Banks et son \u00e9quipe n\u2019ont que tr\u00e8s peu de temps pour trouver des r\u00e9ponses. Pour les obtenir, la jeune femme va prendre un risque qui pourrait non seulement lui co\u00fbter la vie, mais d\u00e9truire le genre humain\u2026",
-    "language":"Anglais",
-    "notes":{
-      "total":"547",
-      "mean":"4.2212",
-      "user":0
-    },
-    "followers":0,
-    "comments":"12",
-    "similars":"1",
-    "characters":"24",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
+      "mail":false,
+      "twitter":false,
       "profile":true,
       "favorited":false
     },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/34642-premier-contact"
+    "resource_url":"https:\/\/www.betaseries.com\/film\/281-piege-de-cristal",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
   },
   {
-    "id":203,
-    "title":"Into the Wild",
-    "original_title":"Into the Wild",
-    "tmdb_id":5915,
-    "imdb_id":"tt0758758",
-    "url":"into-the-wild",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/203.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/203.jpg",
-    "production_year":"2008",
-    "release_date":"2008-01-09",
+    "id":291,
+    "title":"Des hommes sans loi",
+    "original_title":"Lawless",
+    "tmdb_id":82633,
+    "imdb_id":"tt1212450",
+    "url":"des-hommes-sans-loi",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/291.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/291.jpg",
+    "production_year":"2012",
+    "release_date":"2012-09-12",
     "sale_date":"0000-00-00",
-    "director":"Sean Penn",
-    "length":"8820",
+    "director":"John Hillcoat",
+    "length":"6900",
     "genres":[
-      "Aventure",
+      "Crime",
       "Drame"
     ],
-    "synopsis":"Tout juste dipl\u00f4m\u00e9 de l'universit\u00e9, Christopher McCandless, 22 ans, est promis \u00e0 un brillant avenir. Pourtant, tournant le dos \u00e0 l'existence confortable et sans surprise qui l'attend, le jeune homme d\u00e9cide de prendre la route en laissant tout derri\u00e8re lui.Des champs de bl\u00e9 du Dakota aux flots tumultueux du Colorado, en passant par les communaut\u00e9s hippies de Californie, Christopher va rencontrer des personnages hauts en couleur. Chacun, \u00e0 sa mani\u00e8re, va fa\u00e7onner sa vision de la vie et des autres.Au bout de son voyage, Christopher atteindra son but ultime en s'aventurant seul dans les \u00e9tendues sauvages de l'Alaska pour vivre en totale communion avec la nature.",
-    "language":"Danois",
+    "synopsis":"1931. Au c\u0153ur de l\u2019Am\u00e9rique en pleine Prohibition, dans le comt\u00e9 de Franklin en Virginie, \u00e9tat c\u00e9l\u00e8bre pour sa production d\u2019alcool de contrebande, les trois fr\u00e8res Bondurant sont des trafiquants notoires : Jack, le plus jeune, ambitieux et impulsif, veut transformer la petite affaire familiale en trafic d\u2019envergure. Il r\u00eave de beaux costumes, d\u2019armes, et esp\u00e8re impressionner la sublime Bertha\u2026 Howard, le cadet, est le bagarreur de la famille. Loyal, son bon sens se dissout r\u00e9guli\u00e8rement dans l\u2019alcool qu\u2019il ne sait pas refuser\u2026 Forrest, l\u2019a\u00een\u00e9, fait figure de chef et reste d\u00e9termin\u00e9 \u00e0 prot\u00e9ger sa famille des nouvelles r\u00e8gles qu\u2019impose un nouveau monde \u00e9conomique. Lorsque Maggie d\u00e9barque fuyant Chicago, il la prend aussi sous sa protection. Seuls contre une police corrompue, une justice arbitraire et des gangsters rivaux, les trois fr\u00e8res \u00e9crivent leur l\u00e9gende : une lutte pour rester sur leur propre chemin, au cours de la premi\u00e8re grande ru\u00e9e vers l\u2019or du crime.",
+    "language":"Anglais",
     "notes":{
-      "total":"1895",
-      "mean":"4.2164",
-      "user":5
+      "total":"388",
+      "mean":"3.768",
+      "user":0
     },
     "followers":0,
-    "comments":"11",
-    "similars":"4",
+    "comments":"1",
+    "similars":"0",
     "characters":"13",
     "user":{
       "in_account":true,
       "status":1,
-      "mail":true,
-      "twitter":true,
+      "mail":false,
+      "twitter":false,
       "profile":true,
-      "favorited":true
+      "favorited":false
     },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/203-into-the-wild"
+    "resource_url":"https:\/\/www.betaseries.com\/film\/291-des-hommes-sans-loi",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
   },
   {
-    "id":3648,
-    "title":"Fen\u00eatre secr\u00e8te",
-    "original_title":"Secret Window",
-    "tmdb_id":1586,
-    "imdb_id":"tt0363988",
-    "url":"fenetre-secrete",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/3648.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/3648.jpg",
-    "production_year":"2004",
-    "release_date":"2004-04-14",
+    "id":3972,
+    "title":"The Place Beyond the Pines",
+    "original_title":"The Place Beyond the Pines",
+    "tmdb_id":97367,
+    "imdb_id":"tt1817273",
+    "url":"the-place-beyond-the-pines",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/3972.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/3972.jpg",
+    "production_year":"2013",
+    "release_date":"2013-03-20",
     "sale_date":"0000-00-00",
-    "director":"David Koepp",
-    "length":"5760",
+    "director":"Derek Cianfrance",
+    "length":"8400",
     "genres":[
-      "Thriller",
-      "Myst\u00e8re"
+      "Drame",
+      "Crime"
     ],
-    "synopsis":"Mort Rainey devrait \u00eatre devant son ordinateur, \u00e0 \u00e9crire un autre de ses romans \u00e0 succ\u00e8s. Mais son divorce le d\u00e9truit et le prive de toute inspiration. Tout ce qui touche \u00e0 la rupture devient un v\u00e9ritable cauchemar et sa page reste blanche.Un jour, un inconnu nomm\u00e9 John Shooter se pr\u00e9sente \u00e0 sa porte et l'accuse d'avoir plagi\u00e9 son histoire. L'homme demande r\u00e9paration. Malgr\u00e9 les efforts de Rainey pour le calmer, l'individu devient de plus en plus vindicatif. Sa notion particuli\u00e8re de la justice pourrait bien le conduire jusqu'au meurtre.Forc\u00e9 de se lancer dans un affrontement qui va le pousser au bout de lui-m\u00eame, Rainey va se d\u00e9couvrir des ressources d'astuce et de d\u00e9termination qu'il n'aurait jamais cru avoir. Il va en avoir besoin, parce que l'\u00e9trange Shooter semble le conna\u00eetre mieux qu'il ne se conna\u00eet lui-m\u00eame...",
+    "synopsis":"Cascadeur \u00e0 moto, Luke est r\u00e9put\u00e9 pour son spectaculaire num\u00e9ro du \u00abglobe de la mort\u00bb. Quand son spectacle itin\u00e9rant revient \u00e0 Schenectady, dans l\u2019\u00c9tat de New York, il d\u00e9couvre que Romina, avec qui il avait eu une aventure, vient de donner naissance \u00e0 son fils\u2026 Pour subvenir aux besoins de ceux qui sont d\u00e9sormais sa famille, Luke quitte le spectacle et commet une s\u00e9rie de braquages. Chaque fois, ses talents de pilote hors pair lui permettent de s\u2019\u00e9chapper. Mais Luke va bient\u00f4t croiser la route d\u2019un policier ambitieux, Avery Cross, d\u00e9cid\u00e9 \u00e0 s\u2019\u00e9lever rapidement dans sa hi\u00e9rarchie gangren\u00e9e par la corruption. Quinze ans plus tard, le fils de Luke et celui d\u2019Avery se retrouvent face \u00e0 face, hant\u00e9s par un pass\u00e9 myst\u00e9rieux dont ils sont loin de tout savoir\u2026",
     "language":"Anglais",
     "notes":{
-      "total":"303",
-      "mean":"3.4752",
-      "user":5
+      "total":"602",
+      "mean":"3.7741",
+      "user":0
     },
     "followers":0,
-    "comments":"0",
-    "similars":"3",
-    "characters":"15",
+    "comments":"6",
+    "similars":"0",
+    "characters":"22",
     "user":{
       "in_account":true,
-      "status":1,
+      "status":0,
       "mail":true,
-      "twitter":true,
+      "twitter":false,
       "profile":true,
-      "favorited":true
+      "favorited":false
     },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/3648-fenetre-secrete"
+    "resource_url":"https:\/\/www.betaseries.com\/film\/3972-the-place-beyond-the-pines",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
   },
   {
-    "id":5980,
-    "title":"Kickboxer",
-    "original_title":"Kickboxer",
-    "tmdb_id":10222,
-    "imdb_id":"tt0097659",
-    "url":"kickboxer",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/5980.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/5980.jpg",
-    "production_year":"1989",
-    "release_date":"1989-09-09",
+    "id":6049,
+    "title":"True Lies",
+    "original_title":"True Lies",
+    "tmdb_id":36955,
+    "imdb_id":"tt0111503",
+    "url":"true-lies",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6049.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6049.jpg",
+    "production_year":"1994",
+    "release_date":"1994-10-12",
     "sale_date":"0000-00-00",
-    "director":"Mark DiSalle",
-    "length":"5760",
+    "director":"James Cameron",
+    "length":"8400",
     "genres":[
       "Action",
       "Thriller"
     ],
-    "synopsis":"Kurt Sloane souhaite venger son fr\u00e8re \u00c9ric, paralys\u00e9 \u00e0 vie par le terrifiant Tong Po lors d'un combat de kickboxing. Le souci, c'est que Kurt ne sait pas se battre. Il lui faudra apprendre les rudiments de ce sport aupr\u00e8s du vieux sage Xian Chow.",
+    "synopsis":"Depuis 15 ans, Harry Tasker m\u00e8ne une double vie. Pour sa femme, Helen, c'est un banal repr\u00e9sentant en informatique. Pour le gouvernement am\u00e9ricain, c'est un espion d'\u00e9lite sp\u00e9cialiste de la lutte anti-terroriste. Et quand ces deux vies finissent par se rencontrer, Helen et Harry se retrouvent plong\u00e9s au coeur d'un gigantesque complot international...",
     "language":"Anglais",
     "notes":{
-      "total":"107",
-      "mean":"3.2150",
-      "user":5
+      "total":"289",
+      "mean":"3.346",
+      "user":0
     },
     "followers":0,
     "comments":"1",
-    "similars":"3",
-    "characters":"15",
+    "similars":"0",
+    "characters":"10",
     "user":{
       "in_account":true,
       "status":1,
-      "mail":true,
-      "twitter":true,
+      "mail":false,
+      "twitter":false,
       "profile":true,
-      "favorited":true
+      "favorited":false
     },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/5980-kickboxer"
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6049-true-lies",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
   },
   {
-    "id":4696,
-    "title":"\u00c7a : Il Est Revenu",
-    "original_title":"Stephen King's It",
-    "tmdb_id":2670,
-    "imdb_id":"tt0099864",
-    "url":"ca-il-est-revenu-tv",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/4696.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/4696.jpg",
-    "production_year":"1990",
-    "release_date":"1990-11-18",
+    "id":6721,
+    "title":"88 Minutes",
+    "original_title":"88 Minutes",
+    "tmdb_id":3489,
+    "imdb_id":"tt0411061",
+    "url":"88-minutes",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6721.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6721.jpg",
+    "production_year":"2007",
+    "release_date":"2007-05-30",
     "sale_date":"0000-00-00",
-    "director":"Tommy Lee Wallace",
-    "length":"11520",
+    "director":"Jon Avnet",
+    "length":"6600",
     "genres":[
-      "Drame",
-      "Horreur",
+      "Crime",
       "Myst\u00e8re",
       "Thriller"
     ],
-    "synopsis":"Une cr\u00e9ature sans nom, \u00c7a, r\u00e9pand la terreur et la mort dans la petite ville de Derry. Jusqu'\u00e0 ce qu'une bande d'enfants mette fin aux agissements du monstre. Trente plus tard, les sept amis se r\u00e9unissent \u00e0 Derry : \u00c7a est revenu...",
+    "synopsis":"Expert universitaire en psychiatrie criminelle, le docteur Jack Gramm est aussi consultant aupr\u00e8s du FBI. Il a construit sa remarquable r\u00e9putation sur ses \"\u00e9valuations\" infaillibles des individus et des facteurs de risque. C'est gr\u00e2ce \u00e0 lui que le tueur en s\u00e9rie Jon Forster a \u00e9t\u00e9 arr\u00eat\u00e9 et va \u00eatre ex\u00e9cut\u00e9. Pourtant, des meurtres identiques sont \u00e0 nouveau commis... Jack est convaincu qu'il a vu juste et que c'est un imitateur qui continue l'oeuvre de Forster.Lorsque Jack se retrouve directement menac\u00e9 de mort, il est lui-m\u00eame condamn\u00e9 \u00e0 prouver que ses th\u00e9ories sont justes parce que sinon, dans 88 minutes, celui qui le traque le tuera...",
     "language":"Anglais",
     "notes":{
-      "total":"266",
-      "mean":"3.4887",
-      "user":4
+      "total":"50",
+      "mean":"3.0400",
+      "user":0
+    },
+    "followers":0,
+    "comments":"0",
+    "similars":"0",
+    "characters":"14",
+    "user":{
+      "in_account":true,
+      "status":1,
+      "mail":false,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6721-88-minutes",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":6801,
+    "title":"Nathalie...",
+    "original_title":"Nathalie...",
+    "tmdb_id":38376,
+    "imdb_id":"tt0348853",
+    "url":"nathalie",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6801.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6801.jpg",
+    "production_year":"2004",
+    "release_date":"2004-01-07",
+    "sale_date":"0000-00-00",
+    "director":"Anne Fontaine",
+    "length":"6300",
+    "genres":[
+      "Drame",
+      "Romance",
+      "\u00c9tranger"
+    ],
+    "synopsis":"Deux femmes. L'une est mari\u00e9e, bourgeoise, active. L'autre est entra\u00eeneuse dans un bar de nuit.Catherine paie Marl\u00e8ne pour coucher avec son mari Bernard qui la trompe. Elle veut qu'elle lui dise tout, tous les d\u00e9tails...Catherine a fait de Marl\u00e8ne Nathalie, celle qui ment. C'est leur secret, leur histoire.",
+    "language":"Fran\u00e7ais",
+    "notes":{
+      "total":"5",
+      "mean":"3",
+      "user":0
     },
     "followers":0,
     "comments":"0",
@@ -714,13 +456,456 @@
     "characters":"16",
     "user":{
       "in_account":true,
-      "status":1,
+      "status":0,
       "mail":true,
-      "twitter":true,
+      "twitter":false,
       "profile":true,
       "favorited":false
     },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/4696-ca-il-est-revenu-tv"
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6801-nathalie",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":6101,
+    "title":"Mon voisin le tueur",
+    "original_title":"The Whole Nine Yards",
+    "tmdb_id":2069,
+    "imdb_id":"tt0190138",
+    "url":"mon-voisin-le-tueur",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6101.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6101.jpg",
+    "production_year":"2000",
+    "release_date":"2000-05-10",
+    "sale_date":"0000-00-00",
+    "director":"Jonathan Lynn",
+    "length":"5940",
+    "genres":[
+      "Com\u00e9die",
+      "Crime"
+    ],
+    "synopsis":"Nicholas \"Oz\" Oseransky est un paisible dentiste de Montr\u00e9al, dont la vie a tourn\u00e9 au cauchemar. Endett\u00e9, coinc\u00e9 entre une \u00e9pouse acari\u00e2tre, Sophie, et une belle-m\u00e8re gu\u00e8re plus avenante, il est pr\u00eat \u00e0 tout pour recouvrer la libert\u00e9. Oz manque de s\u2019\u00e9vanouir en d\u00e9couvrant que son nouveau voisin n'est autre que Jimmy Tudeski, dit Jimmy la Tulipe, l'ancien ex\u00e9cuteur du gang Gogolack, lib\u00e9r\u00e9 pour avoir balanc\u00e9 son chef \u00e0 la police. Sophie oblige son mari \u00e0 aller d\u00e9noncer Tudeski \u00e0 Janni Gogolack. Celui-ci tient en otage la femme du tueur, dont Oz tombe amoureux.",
+    "language":"Anglais",
+    "notes":{
+      "total":"459",
+      "mean":"3.1786",
+      "user":0
+    },
+    "followers":0,
+    "comments":"0",
+    "similars":"1",
+    "characters":"8",
+    "user":{
+      "in_account":true,
+      "status":1,
+      "mail":false,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6101-mon-voisin-le-tueur",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":6083,
+    "title":"Les Rivi\u00e8res pourpres 2 : Les Anges de l'apocalypse",
+    "original_title":"Les Rivi\u00e8res pourpres 2 : Les Anges de l'apocalypse",
+    "tmdb_id":60672,
+    "imdb_id":"tt0337103",
+    "url":"les-rivieres-pourpres-2-les-anges-de-lapocalypse",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6083.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6083.jpg",
+    "production_year":"2004",
+    "release_date":"2004-02-18",
+    "sale_date":"0000-00-00",
+    "director":"Olivier Dahan",
+    "length":"6000",
+    "genres":[
+      "Action",
+      "Thriller",
+      "Crime"
+    ],
+    "synopsis":"Pour le commissaire Pierre Niemans, l'homme retrouv\u00e9 emmur\u00e9 dans un monast\u00e8re de Lorraine n'est pas une victime comme les autres. Les signes \u00e9sot\u00e9riques grav\u00e9s autour de lui et l'\u00e9trange rituel de son sacrifice annoncent bien autre chose... Lorsque Reda, jeune capitaine de la police, d\u00e9couvre l'exact sosie du Christ \u00e0 demi mort au pied d'une \u00e9glise, il croit d'abord avoir sauv\u00e9 un illumin\u00e9. Mais rapidement, il va s'apercevoir que cette affaire est li\u00e9e \u00e0 celle de Niemans, dont il fut l'\u00e9l\u00e8ve \u00e0 l'\u00e9cole de police...",
+    "language":"Allemand",
+    "notes":{
+      "total":"337",
+      "mean":"3.1009",
+      "user":0
+    },
+    "followers":0,
+    "comments":"0",
+    "similars":"1",
+    "characters":"11",
+    "user":{
+      "in_account":true,
+      "status":1,
+      "mail":false,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6083-les-rivieres-pourpres-2-les-anges-de-lapocalypse",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":6636,
+    "title":"Dommage collat\u00e9ral",
+    "original_title":"Collateral Damage",
+    "tmdb_id":9884,
+    "imdb_id":"tt0233469",
+    "url":"dommage-collateral",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6636.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6636.jpg",
+    "production_year":"2002",
+    "release_date":"2002-07-03",
+    "sale_date":"0000-00-00",
+    "director":"Andrew Davis",
+    "length":"6480",
+    "genres":[
+      "Action",
+      "Thriller",
+      "Drame"
+    ],
+    "synopsis":"\u00c0 Los Angeles, Gordy Brewer, v\u00e9t\u00e9ran des sapeurs-pompiers, arrive avec quelques minutes de retard \u00e0 un rendez-vous et assiste, impuissant, \u00e0 un attentat \u00e0 la bombe contre le Consulat de Colombie. Le terroriste visait une poign\u00e9e de hauts dignitaires colombiens \u0153uvrant \u00e0 la signature d'un trait\u00e9 de coop\u00e9ration avec les \u00c9tats-Unis. Parmi les victimes de cet attentat figurent des dizaines de passants innocents dont Anne et Matt Brewer, l'\u00e9pouse et le fils de Gordy. Cet acte terroriste est rapidement imput\u00e9 au dangereux criminel Claudio \"El Lobo\". Alors que l'enqu\u00eate officielle pi\u00e9tine et que les autorit\u00e9s am\u00e9ricaines n'ont pas l'intention de mettre la main sur le principal responsable, Gordy d\u00e9cide de venger la mort de ses proches en partant en Colombie sur les traces de Claudio.",
+    "language":"Anglais",
+    "notes":{
+      "total":"96",
+      "mean":"2.6042",
+      "user":0
+    },
+    "followers":0,
+    "comments":"0",
+    "similars":"0",
+    "characters":"20",
+    "user":{
+      "in_account":true,
+      "status":1,
+      "mail":false,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6636-dommage-collateral",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":6716,
+    "title":"Rush hour 3",
+    "original_title":"Rush Hour 3",
+    "tmdb_id":5174,
+    "imdb_id":"tt0293564",
+    "url":"rush-hour-3",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6716.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6716.jpg",
+    "production_year":"2007",
+    "release_date":"2007-10-17",
+    "sale_date":"0000-00-00",
+    "director":"Brett Ratner",
+    "length":"5460",
+    "genres":[
+      "Action",
+      "Com\u00e9die",
+      "Crime",
+      "Thriller"
+    ],
+    "synopsis":"Dans quelques heures, l'ambassadeur chinois Han compte r\u00e9v\u00e9ler l'identit\u00e9 du ma\u00eetre du plus puissant syndicat criminel du monde, les Triades chinoises. Lee est charg\u00e9 de le prot\u00e9ger. Lorsque Carter, rel\u00e9gu\u00e9 depuis quelque temps \u00e0 la circulation, apprend que l'ambassadeur vient de se faire tirer dessus, il se pr\u00e9cipite sur les lieux pour intervenir, mais il ne parvient qu'\u00e0 g\u00eaner Lee et \u00e0 permettre \u00e0 l'assassin de s'enfuir.",
+    "language":"Latin",
+    "notes":{
+      "total":"385",
+      "mean":"3.0597",
+      "user":0
+    },
+    "followers":0,
+    "comments":"2",
+    "similars":"2",
+    "characters":"17",
+    "user":{
+      "in_account":true,
+      "status":1,
+      "mail":false,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6716-rush-hour-3",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":6624,
+    "title":"Jonah Hex",
+    "original_title":"Jonah Hex",
+    "tmdb_id":20533,
+    "imdb_id":"tt1075747",
+    "url":"jonah-hex",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6624.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6624.jpg",
+    "production_year":"2010",
+    "release_date":"2010-06-18",
+    "sale_date":"0000-00-00",
+    "director":"Jimmy Hayward",
+    "length":"4860",
+    "genres":[
+      "Action",
+      "Drame",
+      "Fantastique",
+      "Thriller",
+      "Western"
+    ],
+    "synopsis":"L'arm\u00e9e am\u00e9ricaine propose au chasseur de primes Jonah Hex de le lib\u00e9rer s'il parvient \u00e0 arr\u00eater un terroriste pr\u00eat \u00e0 d\u00e9cha\u00eener les enfers sur la plan\u00e8te...",
+    "language":"Anglais",
+    "notes":{
+      "total":"105",
+      "mean":"2.4762",
+      "user":0
+    },
+    "followers":0,
+    "comments":"0",
+    "similars":"0",
+    "characters":"18",
+    "user":{
+      "in_account":true,
+      "status":1,
+      "mail":false,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6624-jonah-hex",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":6406,
+    "title":"Chaos",
+    "original_title":"Chaos",
+    "tmdb_id":5289,
+    "imdb_id":"tt0402910",
+    "url":"chaos",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6406.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6406.jpg",
+    "production_year":"2006",
+    "release_date":"2006-01-17",
+    "sale_date":"0000-00-00",
+    "director":"Tony Giglio",
+    "length":"6000",
+    "genres":[
+      "Action",
+      "Crime",
+      "Drame"
+    ],
+    "synopsis":"Un matin \u00e0 Seattle, cinq hommes cagoul\u00e9s font irruption dans une banque et prennent employ\u00e9s et clients en otage. Lorsque la police arrive sur place et boucle le quartier, Lorenz, chef du gang, exige de ne s'entretenir qu'avec une seule personne : l'inspecteur Quentin Conners, suspendu de ses fonctions suite \u00e0 une s\u00e9rieuse bavure... C'est \u00e0 contre-coeur que Conners accepte de reprendre du service, d'autant qu'il doit d\u00e9sormais faire \u00e9quipe avec un tout jeune d\u00e9butant dans la police, l'inspecteur Dekker.",
+    "language":"Tch\u00e8que",
+    "notes":{
+      "total":"89",
+      "mean":"3.5056",
+      "user":0
+    },
+    "followers":0,
+    "comments":"1",
+    "similars":"0",
+    "characters":"21",
+    "user":{
+      "in_account":true,
+      "status":1,
+      "mail":false,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6406-chaos",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":6419,
+    "title":"L'Enqu\u00eate corse",
+    "original_title":"L'enqu\u00eate corse",
+    "tmdb_id":39386,
+    "imdb_id":"tt0380349",
+    "url":"lenquete-corse",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6419.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6419.jpg",
+    "production_year":"2004",
+    "release_date":"2004-10-06",
+    "sale_date":"0000-00-00",
+    "director":"Alain Berb\u00e9rian",
+    "length":"5520",
+    "genres":[
+      "Com\u00e9die"
+    ],
+    "synopsis":"D\u00e9tective parisien branch\u00e9 s'estimant aussi irr\u00e9sistible avec les femmes que dans le business, R\u00e9mi Fran\u00e7ois alias Jack Palmer a finalement accept\u00e9 la mission que vient de lui confier un obscur petit notaire de province : retrouver Ange L\u00e9oni, un citoyen corse introuvable qui a h\u00e9rit\u00e9 d'un confortable pactole. Une v\u00e9ritable promenade de sant\u00e9 pour Jack Palmer rompu aux missions infiniment plus d\u00e9licates. Mais \u00e0 peine arriv\u00e9 sur l'\u00eele de beaut\u00e9, la promenade de sant\u00e9 va tr\u00e8s vite devenir un parcours du combattant. Myst\u00e9rieusement observ\u00e9 aux jumelles pendant son enqu\u00eate, Palmer perd de sa superbe devant le mutisme local, les tourn\u00e9es d'alcool de myrthe, les ind\u00e9pendantistes qui le kidnappent, les gendarmes qui le molestent par erreur, une voiture pulv\u00e9ris\u00e9e et l'\u00e9nigmatique Ange L\u00e9oni qui lui donne de myst\u00e9rieux rendez-vous rat\u00e9s",
+    "language":"Tch\u00e8que",
+    "notes":{
+      "total":"273",
+      "mean":"2.8352",
+      "user":0
+    },
+    "followers":0,
+    "comments":"0",
+    "similars":"0",
+    "characters":"10",
+    "user":{
+      "in_account":true,
+      "status":1,
+      "mail":false,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6419-lenquete-corse",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":6802,
+    "title":"Vidocq",
+    "original_title":"Vidocq",
+    "tmdb_id":9597,
+    "imdb_id":"tt0164961",
+    "url":"vidocq",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6802.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6802.jpg",
+    "production_year":"2001",
+    "release_date":"2001-09-12",
+    "sale_date":"0000-00-00",
+    "director":"Pitof",
+    "length":"5880",
+    "genres":[
+      "Fantastique",
+      "Action",
+      "Thriller",
+      "Crime",
+      "Science-Fiction",
+      "Myst\u00e8re"
+    ],
+    "synopsis":"\u00c0 Paris, \u00e0 l'aube de la R\u00e9volution de juillet 1830, \u00c9tienne Boisset, jeune journaliste et biographe autoproclam\u00e9 d'Eug\u00e8ne-Fran\u00e7ois Vidocq, d\u00e9barque de son village de province pour d\u00e9masquer l'assassin de son ma\u00eetre \u00e0 penser et reprendre sa derni\u00e8re enqu\u00eate laiss\u00e9e inachev\u00e9e. En cours de route, il fait la rencontre de tous ceux qui avaient c\u00f4toy\u00e9 de pr\u00e8s ou de loin Vidocq : Preah, une courtisane manipulatrice ; Nimier, d\u00e9tective et ami du d\u00e9funt ; et Lautrennes, officier de police flanqu\u00e9 de deux gardes du corps jumeaux. De bordel en fumerie d'opium, de sombres ruelles en cabinet secret, \u00c9tienne Boisset va d\u00e9couvrir un monde d'une fantastique d\u00e9cadence.",
+    "language":"Fran\u00e7ais",
+    "notes":{
+      "total":"230",
+      "mean":"2.6391",
+      "user":0
+    },
+    "followers":0,
+    "comments":"0",
+    "similars":"0",
+    "characters":"15",
+    "user":{
+      "in_account":true,
+      "status":1,
+      "mail":false,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6802-vidocq",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
+  },
+  {
+    "id":6437,
+    "title":"4 mariages & 1 enterrement",
+    "original_title":"Four Weddings and a Funeral",
+    "tmdb_id":712,
+    "imdb_id":"tt0109831",
+    "url":"4-mariages-1-enterrement",
+    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6437.jpg",
+    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6437.jpg",
+    "production_year":"1994",
+    "release_date":"1994-04-27",
+    "sale_date":"0000-00-00",
+    "director":"Mike Newell",
+    "length":"7020",
+    "genres":[
+      "Com\u00e9die",
+      "Drame",
+      "Romance"
+    ],
+    "synopsis":"Charles est c\u00e9libataire. Seul compte son petit cercle d'amis, compos\u00e9 de Fiona, Gareth, Tom, Matthew et Scarlett, sa co-locataire. L'amour ne le tente pas et quand il fait la connaissance de Carrie lors d'un mariage o\u00f9 il officie en tant que t\u00e9moin, il n'imagine en rien la passion qui va l'envahir. Car Charles tombe amoureux de Carrie. Et ses retrouvailles quelques mois plus tard avec la demoiselle, sur le point de se marier avec un riche \u00c9cossais, ne vont que confirmer les sentiments qu'il \u00e9prouve pour elle...",
+    "language":"Anglais",
+    "notes":{
+      "total":"571",
+      "mean":"3.6095",
+      "user":0
+    },
+    "followers":0,
+    "comments":"0",
+    "similars":"0",
+    "characters":"18",
+    "user":{
+      "in_account":true,
+      "status":1,
+      "mail":false,
+      "twitter":false,
+      "profile":true,
+      "favorited":false
+    },
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6437-4-mariages-1-enterrement",
+    "auth_user":{
+      "in_account":false,
+      "status":0,
+      "mail":false,
+      "twitter":false,
+      "profile":false,
+      "favorited":false
+    }
   },
   {
     "id":6365,
@@ -745,8 +930,8 @@
     "synopsis":"Il y a dix ans, le docteur Hannibal Lecter s'\u00e9chappait de sa cellule. Clarice Starling, agent du FBI sur la touche, n'a pas oubli\u00e9 sa rencontre avec lui, sa pr\u00e9sence troublante et le son grave de sa voix qui hantent toujours ses nuits.Mason Verger, un ancien patient, se souvient \u00e9galement d'Hannibal, puisqu'il a \u00e9t\u00e9 sa quatri\u00e8me victime. Malgr\u00e9 le fait qu'il ait \u00e9t\u00e9 atrocement d\u00e9figur\u00e9 et mutil\u00e9, il a surv\u00e9cu. Il nourrit sa vengeance depuis dix ans. Devenu extr\u00eamement riche, il promet une r\u00e9compense de trois millions de dollars pour quiconque le rep\u00e9rera.L'inspecteur Rinaldo Pazzi lui t\u00e9l\u00e9phone pour l'informer de sa pr\u00e9sence en Italie. En effet, apr\u00e8s avoir chang\u00e9 d'identit\u00e9, Hannibal est devenu le conservateur d'un mus\u00e9e \u00e0 Florence. Et pour attirer ce dernier dans ses filets, Mason conna\u00eet un app\u00e2t irr\u00e9sistible : Clarice Starling. L'heure de la vengeance va peut-\u00eatre sonner.",
     "language":"Anglais",
     "notes":{
-      "total":"681",
-      "mean":"3.7372",
+      "total":"682",
+      "mean":"3.7361",
       "user":4
     },
     "followers":0,
@@ -756,992 +941,19 @@
     "user":{
       "in_account":true,
       "status":1,
-      "mail":true,
+      "mail":false,
       "twitter":true,
       "profile":true,
       "favorited":false
     },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/6365-hannibal"
-  },
-  {
-    "id":201,
-    "title":"L\u00e9on",
-    "original_title":"L\u00e9on",
-    "tmdb_id":101,
-    "imdb_id":"tt0110413",
-    "url":"leon",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/201.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/201.jpg",
-    "production_year":"1994",
-    "release_date":"1994-09-14",
-    "sale_date":"0000-00-00",
-    "director":"Luc Besson",
-    "length":"6180",
-    "genres":[
-      "Thriller",
-      "Crime",
-      "Drame"
-    ],
-    "synopsis":"Un tueur \u00e0 gages r\u00e9pondant au nom de L\u00e9on prend sous son aile Mathilda, une petite fille de douze ans, seule rescap\u00e9e du massacre de sa famille. Bient\u00f4t, L\u00e9on va faire de Mathilda une \"nettoyeuse\", comme lui. Et Mathilda pourra venger son petit fr\u00e8re...",
-    "language":"Anglais",
-    "notes":{
-      "total":"1961",
-      "mean":"4.3208",
-      "user":4
-    },
-    "followers":0,
-    "comments":"0",
-    "similars":"1",
-    "characters":"13",
-    "user":{
+    "resource_url":"https:\/\/www.betaseries.com\/film\/6365-hannibal",
+    "auth_user":{
       "in_account":true,
       "status":1,
       "mail":true,
-      "twitter":true,
+      "twitter":false,
       "profile":true,
       "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/201-leon"
-  },
-  {
-    "id":1596,
-    "title":"Les Goonies",
-    "original_title":"The Goonies",
-    "tmdb_id":9340,
-    "imdb_id":"tt0089218",
-    "url":"les-goonies",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/1596.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/1596.jpg",
-    "production_year":"1985",
-    "release_date":"1985-12-04",
-    "sale_date":"0000-00-00",
-    "director":"Richard Donner",
-    "length":"6840",
-    "genres":[
-      "Aventure",
-      "Com\u00e9die",
-      "Familial"
-    ],
-    "synopsis":"Lorsqu'un groupe de promoteurs d\u00e9cide de racheter le quartier (les maisons des Goonies) pour le d\u00e9molir et construire un parcours de golf, un groupe d'enfants, se surnommant \u00ab les Goonies \u00bb (les cr\u00e9tins) d\u00e9cident de se faire une derni\u00e8re vir\u00e9e ensemble. Ils suivent une vieille carte au tr\u00e9sor qui les m\u00e8ne dans une s\u00e9rie de cavernes souterraines construites au XVIIe si\u00e8cle par un pirate l\u00e9gendaire nomm\u00e9 Willie Le Borgne. Les Fratelli, famille de criminels recherch\u00e9e par la police, sont aussi \u00e0 la recherche du tr\u00e9sor.",
-    "language":"Anglais",
-    "notes":{
-      "total":"453",
-      "mean":"4.0883",
-      "user":0
-    },
-    "followers":0,
-    "comments":"0",
-    "similars":"7",
-    "characters":"16",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/1596-les-goonies"
-  },
-  {
-    "id":162,
-    "title":"American History X",
-    "original_title":"American History X",
-    "tmdb_id":73,
-    "imdb_id":"tt0120586",
-    "url":"american-history-x",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/162.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/162.jpg",
-    "production_year":"1999",
-    "release_date":"1999-03-03",
-    "sale_date":"0000-00-00",
-    "director":"Tony Kaye",
-    "length":"7080",
-    "genres":[
-      "Drame"
-    ],
-    "synopsis":"A travers l'histoire d'une famille am\u00e9ricaine, ce film tente d'expliquer l'origine du racisme et de l'extr\u00e9misme aux Etats-Unis. Il raconte l'histoire de Derek qui, voulant venger la mort de son p\u00e8re, abattu par un dealer noir, a \u00e9pous\u00e9 les th\u00e8ses racistes d'un groupuscule de militants d'extr\u00eame droite et s'est mis au service de son leader, brutal th\u00e9oricien pr\u00f4nant la supr\u00e9matie de la race blanche. Ces th\u00e9ories le m\u00e8neront \u00e0 commettre un double meurtre entrainant son jeune fr\u00e8re, Danny, dans la spirale de la haine.",
-    "language":"Anglais",
-    "notes":{
-      "total":"1996",
-      "mean":"4.48",
-      "user":5
-    },
-    "followers":0,
-    "comments":"8",
-    "similars":"8",
-    "characters":"24",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/162-american-history-x"
-  },
-  {
-    "id":13242,
-    "title":"Je d\u00e9teste les enfants des autres !",
-    "original_title":"Je d\u00e9teste les enfants des autres !",
-    "tmdb_id":63991,
-    "imdb_id":"tt0852970",
-    "url":"je-deteste-les-enfants-des-autres",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/13242.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/13242.jpg",
-    "production_year":"2007",
-    "release_date":"2007-07-04",
-    "sale_date":"0000-00-00",
-    "director":null,
-    "length":"5400",
-    "genres":[
-      "Com\u00e9die"
-    ],
-    "synopsis":"Un mois de vacances entre amis : difficile de supporter les gosses de ses ami(e)s, surtout quand les m\u00e9thodes d'\u00e9ducation diff\u00e8rent, que les gamins vont cristalliser les diff\u00e9rences de caract\u00e8res et de styles de vie des adultes, et que certains s'av\u00e8rent in-sup-por-tables !",
-    "language":"Fran\u00e7ais",
-    "notes":{
-      "total":"14",
-      "mean":"2.5714",
-      "user":0
-    },
-    "followers":0,
-    "comments":"0",
-    "similars":"0",
-    "characters":"20",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/13242-je-deteste-les-enfants-des-autres"
-  },
-  {
-    "id":7912,
-    "title":"Ninja Kids",
-    "original_title":"3 Ninjas",
-    "tmdb_id":16314,
-    "imdb_id":"tt0103596",
-    "url":"ninja-kids",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/7912.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/7912.jpg",
-    "production_year":"1992",
-    "release_date":"1992-08-07",
-    "sale_date":"0000-00-00",
-    "director":"Jon Turteltaub",
-    "length":"0",
-    "genres":[
-      "Action",
-      "Aventure",
-      "Com\u00e9die",
-      "Familial"
-    ],
-    "synopsis":"Each year, three brothers Samuel, Jeffrey and Michael Douglas visits their Japanese grandfather, Mori Shintaro whom the boys affectionately refer to as Grandpa, for the summer. Mori is a highly skilled in the fields of Martial arts and Ninjutsu, and for years he has trained the boys in his techniques. After an organized crime ring proves to be too much for the FBI, it's time for the 3 brother NINJAS! To use their martial arts skills, they team up to battle the crime ring and outwit some very persistent kidnappers!",
-    "language":"Allemand",
-    "notes":{
-      "total":"46",
-      "mean":"3.5435",
-      "user":5
-    },
-    "followers":0,
-    "comments":"0",
-    "similars":"0",
-    "characters":"19",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/7912-ninja-kids"
-  },
-  {
-    "id":450,
-    "title":"Bienvenue chez les Ch'tis",
-    "original_title":"Bienvenue chez les ch'tis",
-    "tmdb_id":8265,
-    "imdb_id":"tt1064932",
-    "url":"bienvenue-chez-les-chtis",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/450.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/450.jpg",
-    "production_year":"2008",
-    "release_date":"2008-02-20",
-    "sale_date":"0000-00-00",
-    "director":"Dany Boon",
-    "length":"6420",
-    "genres":[
-      "Com\u00e9die"
-    ],
-    "synopsis":"Philippe Abrams est directeur de la poste de Salon-de-Provence. Il est mari\u00e9 \u00e0 Julie, dont le caract\u00e8re d\u00e9pressif lui rend la vie impossible. Pour lui faire plaisir, Philippe fraude afin d'obtenir une mutation sur la C\u00f4te d'Azur. Mais il est d\u00e9masqu\u00e9: il sera mut\u00e9 \u00e0 Bergues, petite ville du Nord. Pour les Abrams, sudistes pleins de pr\u00e9jug\u00e9s, le Nord c'est l'horreur, une r\u00e9gion glac\u00e9e, peupl\u00e9e d'\u00eatres rustres, \u00e9ructant un langage incompr\u00e9hensible, le \"cheutimi\". Philippe ira seul. \u00c0 sa grande surprise, il d\u00e9couvre un endroit charmant, une \u00e9quipe chaleureuse, des gens accueillants, et se fait un ami : Antoine, le facteur et le carillonneur du village, \u00e0 la m\u00e8re possessive et aux amours contrari\u00e9es. Quand Philippe revient \u00e0 Salon, Julie refuse de croire qu'il se plait dans le Nord. Elle pense m\u00eame qu'il lui ment pour la m\u00e9nager. Pour la satisfaire et se simplifier la vie, Philippe lui fait croire qu'en effet, il vit un enfer \u00e0 Bergues.",
-    "language":"Fran\u00e7ais",
-    "notes":{
-      "total":"3660",
-      "mean":"3.0735",
-      "user":0
-    },
-    "followers":0,
-    "comments":"7",
-    "similars":"2",
-    "characters":"14",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/450-bienvenue-chez-les-chtis"
-  },
-  {
-    "id":2464,
-    "title":"I Love You Phillip Morris",
-    "original_title":"I Love You Phillip Morris",
-    "tmdb_id":8952,
-    "imdb_id":"tt1045772",
-    "url":"i-love-you-phillip-morris",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/2464.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/2464.jpg",
-    "production_year":"2010",
-    "release_date":"2010-02-10",
-    "sale_date":"0000-00-00",
-    "director":"Glenn Ficarra",
-    "length":"5580",
-    "genres":[
-      "Com\u00e9die",
-      "Drame",
-      "Romance"
-    ],
-    "synopsis":"L'histoire vraie d'un ex-flic, ex-mari, ex-arnaqueur aux assurances, ex-prisonnier mod\u00e8le et \u00e9ternel amant du cod\u00e9tenu Phillip Morris. Steven Russell est pr\u00eat \u00e0 tout pour ne jamais \u00eatre s\u00e9par\u00e9 de l'homme de sa vie. Ce qui implique notamment de ne pas moisir en prison. Jusqu'o\u00f9 peut-on aller par amour? Tr\u00e8s loin si l'on en croit l'histoire incroyable de Steven Russell, un g\u00e9nie de l'\u00e9vasion rattrap\u00e9 par son romantisme.",
-    "language":"Anglais",
-    "notes":{
-      "total":"435",
-      "mean":"3.5862",
-      "user":0
-    },
-    "followers":0,
-    "comments":"0",
-    "similars":"1",
-    "characters":"11",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/2464-i-love-you-phillip-morris"
-  },
-  {
-    "id":421,
-    "title":"Charlie et la Chocolaterie",
-    "original_title":"Charlie and the Chocolate Factory",
-    "tmdb_id":118,
-    "imdb_id":"tt0367594",
-    "url":"charlie-et-la-chocolaterie",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/421.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/421.jpg",
-    "production_year":"2005",
-    "release_date":"2005-07-12",
-    "sale_date":"0000-00-00",
-    "director":"Tim Burton",
-    "length":"6960",
-    "genres":[
-      "Aventure",
-      "Fantastique",
-      "Com\u00e9die",
-      "Familial"
-    ],
-    "synopsis":"Charlie est un enfant issu d'une famille pauvre. Travaillant pour subvenir aux besoins des siens, il doit \u00e9conomiser chaque penny, et ne peut s'offrir les friandises dont raffolent les enfants de son \u00e2ge. Pour obtenir son comptant de sucreries, il participe \u00e0 un concours organis\u00e9 par l'inqui\u00e9tant Willy Wonka, le propri\u00e9taire de la fabrique de chocolat de la ville. Celui qui d\u00e9couvrira l'un des cinq tickets d'or que Wonka a cach\u00e9 dans les barres de chocolat de sa fabrication gagnera une vie de sucreries.",
-    "language":"Anglais",
-    "notes":{
-      "total":"3477",
-      "mean":"3.7147",
-      "user":0
-    },
-    "followers":0,
-    "comments":"3",
-    "similars":"2",
-    "characters":"16",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/421-charlie-et-la-chocolaterie"
-  },
-  {
-    "id":477,
-    "title":"Arr\u00eate-moi si tu peux",
-    "original_title":"Catch Me If You Can",
-    "tmdb_id":640,
-    "imdb_id":"tt0264464",
-    "url":"arrete-moi-si-tu-peux",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/477.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/477.jpg",
-    "production_year":"2003",
-    "release_date":"2003-01-30",
-    "sale_date":"0000-00-00",
-    "director":"Steven Spielberg",
-    "length":"8460",
-    "genres":[
-      "Drame",
-      "Crime"
-    ],
-    "synopsis":"Dans les ann\u00e9es soixante, le jeune Frank Abagnale Jr. est pass\u00e9 ma\u00eetre dans l'art de l'escroquerie, allant jusqu'\u00e0 d\u00e9tourner 2,5 millions de dollars et \u00e0 figurer sur les listes du FBI comme l'un des dix individus les plus recherch\u00e9s des Etats-Unis. V\u00e9ritable cam\u00e9l\u00e9on, Frank rev\u00eat des identit\u00e9s aussi diverses que celles de pilote de ligne, de m\u00e9decin, de professeur d'universit\u00e9 ou encore d'assistant du procureur. Carl Hanratty, agent du FBI \u00e0 l'apparence stricte, fait de la traque de Frank Abagnale Jr. sa mission prioritaire, mais ce dernier reste pendant longtemps insaisissable...",
-    "language":"Anglais",
-    "notes":{
-      "total":"1817",
-      "mean":"4.1266",
-      "user":5
-    },
-    "followers":0,
-    "comments":"3",
-    "similars":"1",
-    "characters":"21",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/477-arrete-moi-si-tu-peux"
-  },
-  {
-    "id":6267,
-    "title":"La Bande \u00e0 Picsou, le film : Le Tr\u00e9sor de la lampe perdue",
-    "original_title":"DuckTales: The Movie - Treasure of the Lost Lamp",
-    "tmdb_id":10837,
-    "imdb_id":"tt0099472",
-    "url":"la-bande-a-picsou-le-film-le-tresor-de-la-lampe-perdue",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/6267.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/6267.jpg",
-    "production_year":"1991",
-    "release_date":"1991-07-29",
-    "sale_date":"0000-00-00",
-    "director":"Bob Hathcock",
-    "length":"4440",
-    "genres":[
-      "Aventure",
-      "Animation",
-      "Familial",
-      "Com\u00e9die",
-      "Fantastique"
-    ],
-    "synopsis":"Picsou, ses 3 neveux et Zaza s'embarquent dans une nouvelle aventure qui les m\u00e8ne jusqu'en Egypte sur la trace d'un fabuleux tr\u00e9sor. Sur place, la joyeuse bande ne trouve qu'une ancienne carte qui leur permet de trouver une pyramide perdue. Mais le sorcier Merlock, un ennemi redoutable, \u00e9paul\u00e9 par son fid\u00e8le second Dijon, ne tarde pas \u00e0 leur mettre des b\u00e2tons dans les roues, afin de prendre possession d'une lampe magique qui contient un g\u00e9nie...",
-    "language":"Anglais",
-    "notes":{
-      "total":"221",
-      "mean":"3.6109",
-      "user":4
-    },
-    "followers":0,
-    "comments":"0",
-    "similars":"0",
-    "characters":"10",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/6267-la-bande-a-picsou-le-film-le-tresor-de-la-lampe-perdue"
-  },
-  {
-    "id":484,
-    "title":"La Rafle",
-    "original_title":"La Rafle",
-    "tmdb_id":41411,
-    "imdb_id":"tt1382725",
-    "url":"la-rafle",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/484.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/484.jpg",
-    "production_year":"2010",
-    "release_date":"2010-03-10",
-    "sale_date":"0000-00-00",
-    "director":"Roselyne Bosch",
-    "length":"6900",
-    "genres":[
-      "Drame",
-      "Histoire",
-      "Guerre"
-    ],
-    "synopsis":"1942. Joseph a onze ans. Et ce matin de juin, il doit aller \u00e0 l'\u00e9cole, une \u00e9toile jaune cousue sur sa poitrine... Il re\u00e7oit les encouragements d'un voisin brocanteur. Les railleries d'une boulang\u00e8re. Entre bienveillance et m\u00e9pris, Jo, ses copains juifs comme lui, leurs familles, apprennent la vie dans un Paris occup\u00e9, sur la Butte Montmartre, o\u00f9 ils ont trouv\u00e9 refuge. Du moins le croient-ils, jusqu'\u00e0 ce matin du 16 juillet 1942, o\u00f9 leur fragile bonheur bascule... Du V\u00e9lodrome d'Hiver, o\u00f9 13 000 rafl\u00e9s sont entass\u00e9s, au camp de Beaune-La-Rolande, de Vichy \u00e0 la terrasse du Berghof, La Rafle suit les destins r\u00e9els des victimes et des bourreaux. De ceux qui ont orchestr\u00e9. De ceux qui ont eu confiance. De ceux qui ont fui. De ceux qui se sont oppos\u00e9s. Tous les personnages du film ont exist\u00e9. Tous les \u00e9v\u00e8nements, m\u00eame les plus extr\u00eames, ont eu lieu cet \u00e9t\u00e9 1942.",
-    "language":"Allemand",
-    "notes":{
-      "total":"1007",
-      "mean":"3.9911",
-      "user":0
-    },
-    "followers":0,
-    "comments":"3",
-    "similars":"5",
-    "characters":"24",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/484-la-rafle"
-  },
-  {
-    "id":135,
-    "title":"Intouchables",
-    "original_title":"Intouchables",
-    "tmdb_id":77338,
-    "imdb_id":"tt1675434",
-    "url":"intouchables",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/135.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/135.jpg",
-    "production_year":"2011",
-    "release_date":"2011-11-02",
-    "sale_date":"0000-00-00",
-    "director":"Eric Toledano",
-    "length":"6720",
-    "genres":[
-      "Drame",
-      "Com\u00e9die"
-    ],
-    "synopsis":"A la suite d\u2019un accident de parapente, Philippe, riche aristocrate, engage comme aide \u00e0 domicile Driss, un jeune de banlieue tout juste sorti de prison\u2026 Bref la personne la moins adapt\u00e9e pour le job. Ensemble ils vont faire cohabiter Vivaldi et Earth Wind and Fire, le verbe et la vanne, les costumes et les bas de surv\u00eatement\u2026 Deux univers vont se t\u00e9l\u00e9scoper, s\u2019apprivoiser, pour donner naissance \u00e0 une amiti\u00e9 aussi dingue, dr\u00f4le et forte qu\u2019inattendue, une relation unique qui fera des \u00e9tincelles et qui les rendra\u2026 Intouchables.",
-    "language":"Fran\u00e7ais",
-    "notes":{
-      "total":"6980",
-      "mean":"4.2282",
-      "user":0
-    },
-    "followers":0,
-    "comments":"36",
-    "similars":"5",
-    "characters":"24",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":true
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/135-intouchables"
-  },
-  {
-    "id":12780,
-    "title":"Les gar\u00e7ons et Guillaume, \u00e0 table !",
-    "original_title":"Les Gar\u00e7ons et Guillaume, \u00e0 Table !",
-    "tmdb_id":190880,
-    "imdb_id":"tt2315200",
-    "url":"les-garcons-et-guillaume-a-table",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/12780.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/12780.jpg",
-    "production_year":"2013",
-    "release_date":"2013-11-20",
-    "sale_date":"0000-00-00",
-    "director":"Guillaume Gallienne",
-    "length":"5100",
-    "genres":[
-      "Com\u00e9die"
-    ],
-    "synopsis":"Le premier souvenir que j\u2019ai de ma m\u00e8re c\u2019est quand j\u2019avais quatre ou cinq ans. Elle nous appelle, mes deux fr\u00e8res et moi, pour le d\u00eener en disant : \"Les gar\u00e7ons et Guillaume, \u00e0 table !\" et la derni\u00e8re fois que je lui ai parl\u00e9 au t\u00e9l\u00e9phone, elle raccroche en me disant: \"Je t\u2019embrasse ma ch\u00e9rie\"; eh bien disons qu\u2019entre ces deux phrases, il y a quelques malentendus.",
-    "language":"Espagnol",
-    "notes":{
-      "total":"574",
-      "mean":"3.6132",
-      "user":0
-    },
-    "followers":0,
-    "comments":"12",
-    "similars":"0",
-    "characters":"10",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":true
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/12780-les-garcons-et-guillaume-a-table"
-  },
-  {
-    "id":27156,
-    "title":"La Loi du march\u00e9",
-    "original_title":"La Loi du march\u00e9",
-    "tmdb_id":329712,
-    "imdb_id":"tt4428814",
-    "url":"la-loi-du-marche",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/27156.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/27156.jpg",
-    "production_year":"2015",
-    "release_date":"2015-05-19",
-    "sale_date":"0000-00-00",
-    "director":"St\u00e9phane Briz\u00e9",
-    "length":"6780",
-    "genres":[
-      "Drame"
-    ],
-    "synopsis":"L\u2019histoire de Thierry, qui \u00e0 51 ans, apr\u00e8s 18 mois de ch\u00f4mage, commence un nouveau travail d\u2019agent de s\u00e9curit\u00e9 dans un hypermarch\u00e9. Il se retrouve bient\u00f4t face \u00e0 un dilemme moral quand on lui demande d\u2019espionner ses coll\u00e8gues.",
-    "language":"Fran\u00e7ais",
-    "notes":{
-      "total":"106",
-      "mean":"3.2075",
-      "user":4
-    },
-    "followers":0,
-    "comments":"3",
-    "similars":"0",
-    "characters":"7",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/27156-la-loi-du-marche"
-  },
-  {
-    "id":296,
-    "title":"Shrek",
-    "original_title":"Shrek",
-    "tmdb_id":808,
-    "imdb_id":"tt0126029",
-    "url":"shrek",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/296.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/296.jpg",
-    "production_year":"2001",
-    "release_date":"2001-07-04",
-    "sale_date":"0000-00-00",
-    "director":"Andrew Adamson",
-    "length":"5400",
-    "genres":[
-      "Animation"
-    ],
-    "synopsis":"Shrek, un ogre verd\u00e2tre, cynique et malicieux, a \u00e9lu domicile dans un mar\u00e9cage qu'il croit \u00eatre un havre de paix. Un matin, alors qu'il sort faire sa toilette, il d\u00e9couvre de petites cr\u00e9atures aga\u00e7antes qui errent dans son marais.Shrek se rend alors au ch\u00e2teau du seigneur Lord Farquaad, qui aurait soit-disant expuls\u00e9 ces \u00eatres de son royaume. Ce dernier souhaite \u00e9pouser la princesse Fiona, mais celle-ci est retenue prisonni\u00e8re par un abominable dragon.Il lui faut un chevalier assez brave pour secourir la belle. Shrek accepte d'accomplir cette mission. En \u00e9change, le seigneur devra d\u00e9barrasser son mar\u00e9cage de ces cr\u00e9atures envahissantes.Or, la princesse Fiona cache un secret terrifiant qui va entra\u00eener Shrek et son compagnon l'\u00e2ne dans une palpitante et p\u00e9rilleuse aventure.",
-    "language":"Anglais",
-    "notes":{
-      "total":"3423",
-      "mean":"3.9048",
-      "user":0
-    },
-    "followers":0,
-    "comments":"5",
-    "similars":"7",
-    "characters":"13",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/296-shrek"
-  },
-  {
-    "id":183,
-    "title":"Million Dollar Baby",
-    "original_title":"Million Dollar Baby",
-    "tmdb_id":70,
-    "imdb_id":"tt0405159",
-    "url":"million-dollar-baby",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/183.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/183.jpg",
-    "production_year":"2005",
-    "release_date":"2005-03-23",
-    "sale_date":"0000-00-00",
-    "director":"Clint Eastwood",
-    "length":"7920",
-    "genres":[
-      "Drame"
-    ],
-    "synopsis":"Rejet\u00e9 depuis longtemps par sa fille, l'entra\u00eeneur Frankie Dunn s'est repli\u00e9 sur lui-m\u00eame et vit dans un d\u00e9sert affectif, en \u00e9vitant toute relation qui pourrait accro\u00eetre sa douleur et sa culpabilit\u00e9. Le jour o\u00f9 Maggie Fitzgerald, 31 ans, pousse la porte de son gymnase \u00e0 la recherche d'un coach, elle n'am\u00e8ne pas seulement avec elle sa jeunesse et sa force, mais aussi une histoire jalonn\u00e9e d'\u00e9preuves et une exigence, vitale et urgente: monter sur le ring, entra\u00een\u00e9e par Frankie, et enfin concr\u00e9tiser le r\u00eave d'une vie. Apr\u00e8s avoir repouss\u00e9 plusieurs fois sa demande, Frankie se laisse convaincre par l'inflexible d\u00e9termination de la jeune femme. Une relation mouvement\u00e9e, tour \u00e0 tour stimulante et exasp\u00e9rante, se noue entre eux, au fil de laquelle Maggie et l'entra\u00eeneur se d\u00e9couvrent une communaut\u00e9 d'esprit et une complicit\u00e9 inattendues...",
-    "language":"Irlandais",
-    "notes":{
-      "total":"1455",
-      "mean":"4.2584",
-      "user":0
-    },
-    "followers":0,
-    "comments":"3",
-    "similars":"1",
-    "characters":"11",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/183-million-dollar-baby"
-  },
-  {
-    "id":181,
-    "title":"La vie est belle",
-    "original_title":"La vita \u00e8 bella",
-    "tmdb_id":637,
-    "imdb_id":"tt0118799",
-    "url":"la-vie-est-belle",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/181.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/181.jpg",
-    "production_year":"1998",
-    "release_date":"1998-10-21",
-    "sale_date":"0000-00-00",
-    "director":"Roberto Benigni",
-    "length":"7020",
-    "genres":[
-      "Com\u00e9die",
-      "Drame"
-    ],
-    "synopsis":"En 1938, Guido, jeune homme plein de gaiet\u00e9, r\u00eave d'ouvrir une librairie, malgr\u00e9 les tracasseries de l'administration fasciste. Il tombe amoureux de Dora, institutrice \u00e9touff\u00e9e par le conformisme familial et l'enl\u00e8ve le jour de ses fian\u00e7ailles avec un bureaucrate du r\u00e9gime. Cinq ans plus tard, Guido et Dora ont un fils: Giosue. Mais les lois raciales sont entr\u00e9es en vigueur et Guido est juif. Il est alors d\u00e9port\u00e9 avec son fils. Par amour pour eux, Dora monte de son plein gr\u00e9 dans le train qui les emm\u00e8ne aux camps de la mort o\u00f9 Guido va tout faire pour \u00e9viter l'horreur \u00e0 son fils...",
-    "language":"Allemand",
-    "notes":{
-      "total":"1338",
-      "mean":"4.5075",
-      "user":0
-    },
-    "followers":0,
-    "comments":"7",
-    "similars":"8",
-    "characters":"12",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":true
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/181-la-vie-est-belle"
-  },
-  {
-    "id":13142,
-    "title":"Interstellar",
-    "original_title":"Interstellar",
-    "tmdb_id":157336,
-    "imdb_id":"tt0816692",
-    "url":"interstellar",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/13142.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/13142.jpg",
-    "production_year":"2014",
-    "release_date":"2014-11-05",
-    "sale_date":"0000-00-00",
-    "director":"Christopher Nolan",
-    "length":"10140",
-    "genres":[
-      "Drame",
-      "Science-Fiction"
-    ],
-    "synopsis":"Dans un futur proche, face \u00e0 une Terre exsangue, un groupe d'explorateurs utilise un vaisseau interstellaire pour franchir un trou de ver permettant de parcourir des distances jusque-l\u00e0 infranchissables. Leur but :  trouver un nouveau foyer pour l'humanit\u00e9.",
-    "language":"Anglais",
-    "notes":{
-      "total":"2127",
-      "mean":"4.3573",
-      "user":0
-    },
-    "followers":0,
-    "comments":"53",
-    "similars":"4",
-    "characters":"24",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/13142-interstellar"
-  },
-  {
-    "id":20077,
-    "title":"Mommy",
-    "original_title":"Mommy",
-    "tmdb_id":265177,
-    "imdb_id":"tt3612616",
-    "url":"mommy",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/20077.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/20077.jpg",
-    "production_year":"2014",
-    "release_date":"2014-10-08",
-    "sale_date":"0000-00-00",
-    "director":"Xavier Dolan",
-    "length":"8280",
-    "genres":[
-      "Drame"
-    ],
-    "synopsis":"Une veuve mono-parentale h\u00e9rite de la garde de son fils, un adolescent profond\u00e9ment turbulent. Ensemble, ils tentent de joindre les deux bouts, notamment gr\u00e2ce \u00e0 l\u2019aide inattendue de la myst\u00e9rieuse voisine d\u2019en face, Kyla.",
-    "language":"Fran\u00e7ais",
-    "notes":{
-      "total":"563",
-      "mean":"4.5684",
-      "user":0
-    },
-    "followers":0,
-    "comments":"15",
-    "similars":"1",
-    "characters":"8",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/20077-mommy"
-  },
-  {
-    "id":142,
-    "title":"Pulp Fiction",
-    "original_title":"Pulp Fiction",
-    "tmdb_id":680,
-    "imdb_id":"tt0110912",
-    "url":"pulp-fiction",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/142.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/142.jpg",
-    "production_year":"1994",
-    "release_date":"1994-10-25",
-    "sale_date":"0000-00-00",
-    "director":"Quentin Tarantino",
-    "length":"9240",
-    "genres":[
-      "Thriller",
-      "Crime"
-    ],
-    "synopsis":"L'odyss\u00e9e sanglante et burlesque de petits malfrats dans la jungle d'Hollywood : deux petits tueurs, un dangereux gangster mari\u00e9 \u00e0 une cam\u00e9e, un boxeur roublard, des pr\u00eateurs sur gages sadiques, un ca\u00efd \u00e9l\u00e9gant et d\u00e9vou\u00e9, un dealer bon mari et de deux tourtereaux \u00e0 la gachette facile.",
-    "language":"Anglais",
-    "notes":{
-      "total":"2434",
-      "mean":"4.4092",
-      "user":0
-    },
-    "followers":0,
-    "comments":"0",
-    "similars":"0",
-    "characters":"24",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/142-pulp-fiction"
-  },
-  {
-    "id":5,
-    "title":"Retour vers le futur",
-    "original_title":"Back to the Future",
-    "tmdb_id":105,
-    "imdb_id":"tt0088763",
-    "url":"retour-vers-le-futur",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/5.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/5.jpg",
-    "production_year":"1985",
-    "release_date":"1985-12-30",
-    "sale_date":"0000-00-00",
-    "director":"Robert Zemeckis",
-    "length":"6960",
-    "genres":[
-      "Aventure",
-      "Com\u00e9die",
-      "Science-Fiction",
-      "Familial"
-    ],
-    "synopsis":"1985. Le jeune Marty McFly m\u00e8ne une existence anonyme aupr\u00e8s de sa petite amie Jennifer, seulement troubl\u00e9e par sa famille en crise et un proviseur qui serait ravi de l'expulser du lyc\u00e9e. Ami de l'excentrique professeur Emmett Brown, il l'accompagne un soir tester sa nouvelle exp\u00e9rience : le voyage dans le temps via une DeLorean modifi\u00e9e. La d\u00e9monstration tourne mal : des trafiquants d'armes d\u00e9barquent et assassinent le scientifique. Marty se r\u00e9fugie dans la voiture et se retrouve transport\u00e9 en 1955. L\u00e0, il emp\u00eache malgr\u00e9 lui la rencontre de ses parents, et doit tout faire pour les remettre ensemble, sous peine de ne pouvoir exister...",
-    "language":"Anglais",
-    "notes":{
-      "total":"2759",
-      "mean":"4.3788",
-      "user":5
-    },
-    "followers":0,
-    "comments":"2",
-    "similars":"3",
-    "characters":"24",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/5-retour-vers-le-futur"
-  },
-  {
-    "id":138,
-    "title":"La ligne verte",
-    "original_title":"The Green Mile",
-    "tmdb_id":497,
-    "imdb_id":"tt0120689",
-    "url":"la-ligne-verte",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/138.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/138.jpg",
-    "production_year":"2000",
-    "release_date":"2000-03-01",
-    "sale_date":"0000-00-00",
-    "director":"Frank Darabont",
-    "length":"11340",
-    "genres":[
-      "Fantastique",
-      "Drame",
-      "Crime"
-    ],
-    "synopsis":"Paul Edgecomb, pensionnaire centenaire d'une maison de retraite, est hant\u00e9 par ses souvenirs. Gardien-chef du p\u00e9nitencier de Cold Mountain en 1935, il \u00e9tait charg\u00e9 de veiller au bon d\u00e9roulement des ex\u00e9cutions capitales en s'efforcant d'adoucir les derniers moments des condamn\u00e9s. Parmi eux se trouvait un colosse du nom de John Coffey, accus\u00e9 du viol et du meurtre de deux fillettes. Intrigu\u00e9 par cet homme candide et timide aux dons magiques, Edgecomb va tisser avec lui des liens tr\u00e8s forts.",
-    "language":"Fran\u00e7ais",
-    "notes":{
-      "total":"3094",
-      "mean":"4.618",
-      "user":5
-    },
-    "followers":0,
-    "comments":"10",
-    "similars":"0",
-    "characters":"24",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":true
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/138-la-ligne-verte"
-  },
-  {
-    "id":160,
-    "title":"Le Roi lion",
-    "original_title":"The Lion King",
-    "tmdb_id":8587,
-    "imdb_id":"tt0110357",
-    "url":"le-roi-lion",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/160.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/160.jpg",
-    "production_year":"1994",
-    "release_date":"1994-11-03",
-    "sale_date":"0000-00-00",
-    "director":"Roger Allers",
-    "length":"5100",
-    "genres":[
-      "Familial",
-      "Animation",
-      "Drame"
-    ],
-    "synopsis":"Le lion Mufasa, roi des animaux, et son \u00e9pouse Sarabi donnent naissance \u00e0 Simba, un futur h\u00e9ritier. Mais Scar, le fr\u00e8re de Mufasa, voyant diminuer ses chances d'acc\u00e9der au tr\u00f4ne, incite le lionceau \u00e0 s'aventurer dans un cimeti\u00e8re des \u00e9l\u00e9phants situ\u00e9 au-del\u00e0 des fronti\u00e8res du royaume...",
-    "language":"Anglais",
-    "notes":{
-      "total":"3554",
-      "mean":"4.4237",
-      "user":0
-    },
-    "followers":0,
-    "comments":"6",
-    "similars":"4",
-    "characters":"24",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/160-le-roi-lion"
-  },
-  {
-    "id":285,
-    "title":"Le gar\u00e7on au pyjama ray\u00e9",
-    "original_title":"The Boy in the Striped Pyjamas",
-    "tmdb_id":14574,
-    "imdb_id":"tt0914798",
-    "url":"le-garcon-au-pyjama-raye",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/285.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/285.jpg",
-    "production_year":"2008",
-    "release_date":"2008-09-12",
-    "sale_date":"0000-00-00",
-    "director":"Mark Herman",
-    "length":"5400",
-    "genres":[
-      "Drame"
-    ],
-    "synopsis":"Seconde Guerre mondiale. Bruno a tout juste 9 ans lorsque son p\u00e8re, un officier nazi remarqu\u00e9 par le F\u00fchrer, se voit confier le commandement du camp de concentration polonais d'Auschwitz. Le petit gar\u00e7on n'appr\u00e9cie gu\u00e8re de devoir quitter la belle et grande maison de Berlin pour se retrouver dans une demeure isol\u00e9e et triste. De sa chambre, il aper\u00e7oit des hommes, des femmes et des enfants tous v\u00eatus de pyjamas ray\u00e9s. Personne ne lui explique qui ils sont, mais l'innocence aidant, il va se lier d'amiti\u00e9 avec un enfant juif...",
-    "language":"Anglais",
-    "notes":{
-      "total":"155",
-      "mean":"4.2323",
-      "user":4
-    },
-    "followers":0,
-    "comments":"2",
-    "similars":"2",
-    "characters":"17",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":false
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/285-le-garcon-au-pyjama-raye"
-  },
-  {
-    "id":250,
-    "title":"Snatch : Tu braques ou tu raques",
-    "original_title":"Snatch",
-    "tmdb_id":107,
-    "imdb_id":"tt0208092",
-    "url":"snatch",
-    "poster":"https:\/\/www.betaseries.com\/images\/films\/affiches\/250.jpg",
-    "backdrop":"https:\/\/www.betaseries.com\/images\/films\/backdrops\/250.jpg",
-    "production_year":"2000",
-    "release_date":"2000-09-01",
-    "sale_date":"0000-00-00",
-    "director":"Guy Ritchie",
-    "length":"6180",
-    "genres":[
-      "Thriller",
-      "Crime"
-    ],
-    "synopsis":"Franky vient de voler un \u00e9norme diamant qu'il doit livrer \u00e0 Avi, un mafieux new-yorkais. En chemin, il fait escale \u00e0 Londres o\u00f9 il se laisse convaincre par Boris de parier sur un combat de boxe clandestin. Il ignore, bien s\u00fbr, qu'il s'agit d'un coup mont\u00e9 avec Vinny et Sol, afin de le d\u00e9lester de son magnifique caillou. Turkish et Tommy, eux, ont un probl\u00e8me avec leur boxeur, un gitan compl\u00e8tement f\u00eal\u00e9 qui refuse de se coucher au quatri\u00e8me round comme pr\u00e9vu. C'est au tour d'Avi de d\u00e9barquer, bien d\u00e9cid\u00e9 \u00e0 r\u00e9cup\u00e9rer son bien, avec l'aide de Tony, une l\u00e9gende de la g\u00e2chette.",
-    "language":"Anglais",
-    "notes":{
-      "total":"1033",
-      "mean":"4.3601",
-      "user":5
-    },
-    "followers":0,
-    "comments":"4",
-    "similars":"2",
-    "characters":"18",
-    "user":{
-      "in_account":true,
-      "status":1,
-      "mail":true,
-      "twitter":true,
-      "profile":true,
-      "favorited":true
-    },
-    "resource_url":"https:\/\/www.betaseries.com\/film\/250-snatch"
+    }
   }
 ]

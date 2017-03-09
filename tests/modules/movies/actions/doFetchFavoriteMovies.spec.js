@@ -36,12 +36,12 @@ describe('Retrieve favorite movies of the member', () => {
 
     it('validate favorites reducer', () => {
       const stateFavoritesReducer = favoritesReducer(undefined, action);
-      expect(stateFavoritesReducer).to.deep.equal({ 1: [30452, 13494] });
+      expect(stateFavoritesReducer).to.deep.equal({ 1: [7094, 4656] });
     });
 
     it('validate movies reducer', () => {
       const stateMoviesReducer = moviesReducer(undefined, action);
-      expect(Object.keys(stateMoviesReducer)).to.deep.equal(['13494', '30452']);
+      expect(Object.keys(stateMoviesReducer)).to.deep.equal(['4656', '7094']);
     });
   });
 });

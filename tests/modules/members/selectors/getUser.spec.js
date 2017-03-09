@@ -1,6 +1,6 @@
 import selector from '../../../../lib/modules/members/selectors/getUser';
 
-describe('Select member from state ', () => {
+describe('Select user from state ', () => {
   const state = {
     members: { 3: { id: 3 } },
     membersUser: 3,
