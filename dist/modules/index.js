@@ -96,6 +96,18 @@ var _doFetchMovieCharacters = require('./movies/actions/doFetchMovieCharacters')
 
 var _doFetchMovieCharacters2 = _interopRequireDefault(_doFetchMovieCharacters);
 
+var _doRateMovie = require('./movies/actions/doRateMovie');
+
+var _doRateMovie2 = _interopRequireDefault(_doRateMovie);
+
+var _doRemoveMovieMember = require('./movies/actions/doRemoveMovieMember');
+
+var _doRemoveMovieMember2 = _interopRequireDefault(_doRemoveMovieMember);
+
+var _doUpdateMovieState = require('./movies/actions/doUpdateMovieState');
+
+var _doUpdateMovieState2 = _interopRequireDefault(_doUpdateMovieState);
+
 var _characters = require('./movies/reducers/characters');
 
 var _characters2 = _interopRequireDefault(_characters);
@@ -287,7 +299,10 @@ exports.default = {
       doFetchFavoriteMovies: _doFetchFavoriteMovies2.default,
       doFetchMemberMovies: _doFetchMemberMovies2.default,
       doFetchMovie: _doFetchMovie2.default,
-      doFetchMovieCharacters: _doFetchMovieCharacters2.default
+      doFetchMovieCharacters: _doFetchMovieCharacters2.default,
+      doRateMovie: _doRateMovie2.default,
+      doRemoveMovieMember: _doRemoveMovieMember2.default,
+      doUpdateMovieState: _doUpdateMovieState2.default
     },
     reducers: {
       characters: _characters2.default,

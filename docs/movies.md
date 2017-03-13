@@ -8,6 +8,9 @@
         * [.doFetchMemberMovies([obj])](#module_Movies.doFetchMemberMovies) ⇒ {Promise}
         * [.doFetchMovie([obj])](#module_Movies.doFetchMovie) ⇒ {Promise}
         * [.doFetchMovieCharacters([obj])](#module_Movies.doFetchMovieCharacters) ⇒ {Promise}
+        * [.doRateMovie([obj])](#module_Movies.doRateMovie) ⇒ {Promise}
+        * [.doRemoveMovieMember([obj])](#module_Movies.doRemoveMovieMember) ⇒ {Promise}
+        * [.doUpdateMovieState([obj])](#module_Movies.doUpdateMovieState) ⇒ {Promise}
     * _reducers_
         * [.characters(state, action)](#module_Movies.characters) ⇒ {Object}
         * [.favorites(state, action)](#module_Movies.favorites) ⇒ {Object}
@@ -110,6 +113,83 @@ Retrieve characters of the movie
 
 ```js
 BetaSeries.getAction('movies', 'doFetchMovieCharacters')({ movieId: 591 });
+```
+
+<a name="module_Movies.doRateMovie"></a>
+
+### .doRateMovie([obj])
+
+Add note on movie
+
+**Dispatch**: `RATE_MOVIE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.movieId] | {Number} | Movie ID |
+| [obj.note] | {Number} | Note (from `1` to `5`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doRateMovie')({
+  movieId: 438,
+  note: 4,
+});
+```
+
+<a name="module_Movies.doRemoveMovieMember"></a>
+
+### .doRemoveMovieMember([obj])
+
+Retrieve movie
+
+**Dispatch**: `REMOVE_MEMBER_MOVIE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.movieId] | {Number} | Movie ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doRemoveMovieMember')({ movieId: 438 });
+```
+
+<a name="module_Movies.doUpdateMovieState"></a>
+
+### .doUpdateMovieState([obj])
+
+Add note on movie
+
+**Dispatch**: `UPDATE_MOVIE_STATE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.movieId] | {Number} | Movie ID |
+| [obj.state] | {Number} | State of movie   (`0` = to see, `1` = seen, `2` = doesn't want to see |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doUpdateMovieState')({
+  movieId: 438,
+  state: 2,
+});
 ```
 
 <a name="module_Movies.characters"></a>
@@ -228,6 +308,8 @@ List of movies
  * `FETCH_FAVORITE_MOVIES`
  * `FETCH_MEMBER_MOVIES`
  * `FETCH_MOVIE`
+ * `RATE_MOVIE`
+ * `UPDATE_MOVIE_STATE`
 
 **Returns**: {Object}
 

@@ -63,6 +63,19 @@ function movieMembersReducer() {
     case _constants2.default.FETCH_MEMBER_MOVIES:
       return _extends({}, state, _defineProperty({}, action.payload.memberId, [].concat(_toConsumableArray((0, _get3.default)(state, action.payload.memberId, [])), _toConsumableArray((0, _arrayToID2.default)(action.payload.movies)))));
 
+    case _constants2.default.REMOVE_MEMBER_MOVIE:
+      {
+        var moviesMembers = (0, _get3.default)(state, action.payload.memberId, null);
+
+        if (!moviesMembers) {
+          return state;
+        }
+
+        return _extends({}, state, _defineProperty({}, action.payload.memberId, moviesMembers.filter(function (movie) {
+          return movie !== action.payload.movieId;
+        })));
+      }
+
     default:
       return state;
   }
