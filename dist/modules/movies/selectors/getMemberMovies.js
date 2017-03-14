@@ -14,6 +14,10 @@ var _commons = require('./commons');
 
 var commons = _interopRequireWildcard(_commons);
 
+var _betaseries = require('../../../betaseries');
+
+var _betaseries2 = _interopRequireDefault(_betaseries);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -47,11 +51,18 @@ var getMemberMovies = (0, _reselect.createSelector)([commons.getMovies, commons.
     return null;
   }
 
+  /**
+   * Returns great user scope
+   */
+  function getUserScope() {
+    return memberId === _betaseries2.default.user.userId ? 'auth_user' : 'user';
+  }
+
   var filteredMovies = (0, _filter3.default)(movies, function (movie) {
-    return movieIds.indexOf(movie.id) !== -1 && (state === null ? true : state === movie.user.status);
+    return movieIds.indexOf(movie.id) !== -1 && (state === null ? true : state === movie[getUserScope()].status);
   });
 
   return filteredMovies.length === 0 ? null : filteredMovies;
-}); // memberId, state || null
+});
 
 exports.default = getMemberMovies;

@@ -3,13 +3,14 @@ import selector from '../../../../lib/modules/movies/selectors/getMemberMovies';
 describe('Select member movies from state ', () => {
   const state = {
     movies: {
-      4: { id: 4, user: { status: 0 } },
-      3: { id: 3, user: { status: 1 } },
-      2: { id: 2, user: { status: 1 } },
-      1: { id: 1, user: { status: 2 } },
+      4: { id: 4, user: { status: 0 }, auth_user: { status: 0 } },
+      3: { id: 3, user: { status: 1 }, auth_user: { status: 0 } },
+      2: { id: 2, user: { status: 1 }, auth_user: { status: 0 } },
+      1: { id: 1, user: { status: 2 }, auth_user: { status: 2 } },
     },
     moviesMembers: {
       4: [3, 2, 1],
+      1: [3, 2, 1],
     },
   };
 
@@ -26,6 +27,11 @@ describe('Select member movies from state ', () => {
   it('returns null if member does not have movies with state 0', () => {
     const value = selector(state, { memberId: 4, state: 0 });
     expect(value).to.deep.equal(null);
+  });
+
+  it('returns only member movies with state 0 for auth user', () => {
+    const value = selector(state, { memberId: 1, state: 0 });
+    expect(value.map(movie => movie.id)).to.deep.equal([2, 3]);
   });
 
   it('returns null if member does not have movies', () => {

@@ -94,8 +94,9 @@ var setUser = function setUser(_ref2) {
       userId = _ref2.userId;
 
   _ApiFetch2.default.setAuthenticatedHeader(token);
+
   user.token = token;
-  user.userId = userId;
+  user.userId = parseInt(userId, 10);
 };
 
 var BetaSeries = {
