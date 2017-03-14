@@ -25,7 +25,7 @@ var defaultProps = {
 /**
  * Retrieve authenticated user infos
  *
- * **Dispatch**: `FETCH_USER`
+ * **Dispatch**: `FETCH_MEMBER`
  *
  * @alias module:Members.doFetchMember
  * @category actions

@@ -59,13 +59,18 @@ var config = {
   apiKey: null
 };
 
+var user = {
+  token: null,
+  userId: null
+};
+
 /**
  * @alias module:BetaSeries.init
  * @category static
  *
- * @param {Object} obj
- * @param {String} obj.apiHost  URI of BetaSeries API
- * @param {String} obj.apiKey   API Key of BetaSeries API
+ * @param {Object} [obj]          Accept the folling:
+ * @param {String} [obj.apiHost]  URI of BetaSeries API
+ * @param {String} [obj.apiKey]   API Key of BetaSeries API
  */
 var init = function init(_ref) {
   var _ref$apiHost = _ref.apiHost,
@@ -77,19 +82,27 @@ var init = function init(_ref) {
 };
 
 /**
- * @alias module:BetaSeries.setToken
+ * @alias module:BetaSeries.setUser
  * @category static
  *
- * @param {String} token Authenticated token
+ * @param {Object} [obj]          Accept the folling:
+ * @param {String} [obj.token]    Authenticated token
+ * @param {String} [obj.userId]   User ID
  */
-var setToken = function setToken(token) {
+var setUser = function setUser(_ref2) {
+  var token = _ref2.token,
+      userId = _ref2.userId;
+
   _ApiFetch2.default.setAuthenticatedHeader(token);
+  user.token = token;
+  user.userId = userId;
 };
 
 var BetaSeries = {
   init: init,
   config: config,
-  setToken: setToken,
+  user: user,
+  setUser: setUser,
   modules: _modules2.default,
   api: _ApiFetch2.default,
   getAction: (0, _getAction2.default)(_modules2.default),

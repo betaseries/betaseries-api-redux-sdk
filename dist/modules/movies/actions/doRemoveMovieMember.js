@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _betaseries = require('../../../betaseries');
+
+var _betaseries2 = _interopRequireDefault(_betaseries);
+
 var _constants = require('../constants');
 
 var _constants2 = _interopRequireDefault(_constants);
@@ -32,12 +36,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 var doRemoveMovieMember = function doRemoveMovieMember(_ref) {
   var movieId = _ref.movieId;
-  return function (dispatch, getState) {
+  return function (dispatch) {
     return _ApiFetch2.default.remove('movies/movie', { id: movieId }).then(function () {
       return dispatch({
         type: _constants2.default.REMOVE_MEMBER_MOVIE,
         payload: {
-          memberId: getState().membersUser,
+          memberId: _betaseries2.default.user.userId,
           movieId: movieId
         }
       });

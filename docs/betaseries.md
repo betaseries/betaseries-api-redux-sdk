@@ -4,8 +4,8 @@
 
 * [BetaSeries](#module_BetaSeries)
     * [.api](#module_BetaSeries.api)
-    * [.init(obj)](#module_BetaSeries.init)
-    * [.setToken(token)](#module_BetaSeries.setToken)
+    * [.init([obj])](#module_BetaSeries.init)
+    * [.setUser([obj])](#module_BetaSeries.setUser)
     * [.getAction(module, action)](#module_BetaSeries.getAction) ⇒ {Func}
     * [.getConstants(module)](#module_BetaSeries.getConstants) ⇒ {Object}
     * [.getReducer(module, reducer)](#module_BetaSeries.getReducer) ⇒ {Object}
@@ -20,23 +20,25 @@ API provider
 **Category**: static  
 <a name="module_BetaSeries.init"></a>
 
-### .init(obj)
+### .init([obj])
 **Category**: static  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| obj | {Object} |  |
-| obj.apiHost | {String} | URI of BetaSeries API |
-| obj.apiKey | {String} | API Key of BetaSeries API |
+| [obj] | {Object} | Accept the folling: |
+| [obj.apiHost] | {String} | URI of BetaSeries API |
+| [obj.apiKey] | {String} | API Key of BetaSeries API |
 
-<a name="module_BetaSeries.setToken"></a>
+<a name="module_BetaSeries.setUser"></a>
 
-### .setToken(token)
+### .setUser([obj])
 **Category**: static  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| token | {String} | Authenticated token |
+| [obj] | {Object} | Accept the folling: |
+| [obj.token] | {String} | Authenticated token |
+| [obj.userId] | {String} | User ID |
 
 <a name="module_BetaSeries.getAction"></a>
 

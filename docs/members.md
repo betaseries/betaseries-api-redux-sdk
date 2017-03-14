@@ -8,7 +8,6 @@
         * [.doFetchUser([obj])](#module_Members.doFetchUser) ⇒ {Promise}
     * _reducers_
         * [.members(state, action)](#module_Members.members) ⇒ {Object}
-        * [.user(state, action)](#module_Members.user) ⇒ {Object}
     * _selectors_
         * [.getMember](#module_Members.getMember) ⇒ {Object}
         * [.getUser](#module_Members.getUser) ⇒ {Object}
@@ -19,7 +18,7 @@
 
 Retrieve authenticated user infos
 
-**Dispatch**: `FETCH_USER`
+**Dispatch**: `FETCH_MEMBER`
 
 **Returns**: {Promise}
 
@@ -70,7 +69,6 @@ List of members
 
 **Actions listened**:
 
- * `FETCH_USER`
  * `FETCH_MEMBER`
 
 **Returns**: {Object}
@@ -95,37 +93,6 @@ BetaSeries.getReducer('members', 'members').members;
     ...member,
   },
   ...,
-}
-```
-
-<a name="module_Members.user"></a>
-
-### .user(state, action)
-
-Informations of the authenticated user
-
-**Actions listened**:
-
- * `FETCH_USER`
-
-**Returns**: {Object}
-
-**Category**: reducers  
-
-| Param | Type |
-| --- | --- |
-| state | {Object} | 
-| action | {Object} | 
-
-**Example**  
-
-```js
-// get reducer
-BetaSeries.getReducer('members', 'user').membersUser;
-
-// state example
-{
-  ...user         // user informations
 }
 ```
 

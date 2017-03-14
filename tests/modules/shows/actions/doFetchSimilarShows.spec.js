@@ -12,6 +12,13 @@ describe('Retrieve similar shows', () => {
       .noCallThru()
       .load(actionFile, {
         '../../../utils/fetch/ApiFetch': { get: () => promise },
+        './doFetchManyShows': (
+          proxyquire
+            .noCallThru()
+            .load('../lib/modules/shows/actions/doFetchManyShows', {
+              '../../../utils/fetch/ApiFetch': { get: () => promise },
+            }).default
+        ),
       }).default;
   }
 

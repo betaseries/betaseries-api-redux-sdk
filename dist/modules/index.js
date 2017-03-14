@@ -60,10 +60,6 @@ var _members = require('./members/reducers/members');
 
 var _members2 = _interopRequireDefault(_members);
 
-var _user = require('./members/reducers/user');
-
-var _user2 = _interopRequireDefault(_user);
-
 var _commons3 = require('./members/selectors/commons');
 
 var _commons4 = _interopRequireDefault(_commons3);
@@ -284,8 +280,7 @@ exports.default = {
       doFetchUser: _doFetchUser2.default
     },
     reducers: {
-      members: _members2.default,
-      user: _user2.default
+      members: _members2.default
     },
     selectors: {
       commons: _commons4.default,

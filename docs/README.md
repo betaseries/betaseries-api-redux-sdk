@@ -19,7 +19,7 @@ import thunkMiddleware from 'redux-thunk';
 import BetaSeries from 'betaseries-api-redux-sdk';
 
 BetaSeries.init({ apiKey: '*******'});
-BetaSeries.setToken('*******');
+BetaSeries.setUser({ token: '*******' userId: 28113 });
 
 const store = createStore(
   combineReducers({

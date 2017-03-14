@@ -1,13 +1,21 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.getMemberId = exports.getMembers = exports.getUser = undefined;
+
+var _betaseries = require('../../../betaseries');
+
+var _betaseries2 = _interopRequireDefault(_betaseries);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
  * Retrieve user from state
  */
-var getUser = exports.getUser = function getUser(state) {
-  return state.membersUser;
+var getUser = exports.getUser = function getUser() {
+  return _betaseries2.default.user.userId;
 };
 
 /**

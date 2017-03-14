@@ -23,7 +23,6 @@ var initialState = {};
  *
  * **Actions listened**:
  *
- *  * `FETCH_USER`
  *  * `FETCH_MEMBER`
  *
  * @alias module:Members.members
@@ -52,7 +51,6 @@ function moviesReducer() {
   var action = arguments[1];
 
   switch (action.type) {
-    case _constants2.default.FETCH_USER:
     case _constants2.default.FETCH_MEMBER:
       return _extends({}, state, _defineProperty({}, action.payload.member.id, action.payload.member));
 

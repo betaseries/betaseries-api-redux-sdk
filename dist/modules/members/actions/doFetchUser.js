@@ -6,6 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _betaseries = require('../../../betaseries');
+
+var _betaseries2 = _interopRequireDefault(_betaseries);
+
 var _constants = require('../constants');
 
 var _constants2 = _interopRequireDefault(_constants);
@@ -43,10 +47,11 @@ var doFetchUser = function doFetchUser(_ref) {
   var props = _objectWithoutProperties(_ref, []);
 
   return function (dispatch) {
-    return _ApiFetch2.default.get('members/infos', _extends({}, defaultProps, props)).then(function (response) {
+    return _ApiFetch2.default.get('members/infos', _extends({ memberId: _betaseries2.default.user.userId }, defaultProps, props)).then(function (response) {
       return dispatch({
-        type: _constants2.default.FETCH_USER,
+        type: _constants2.default.FETCH_MEMBER,
         payload: _extends({}, props, {
+          memberId: _betaseries2.default.user.userId,
           member: response.member
         })
       });

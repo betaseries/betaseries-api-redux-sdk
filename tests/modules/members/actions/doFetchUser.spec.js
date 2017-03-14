@@ -1,4 +1,3 @@
-import userReducer from '../../../../lib/modules/members/reducers/user';
 import membersReducer from '../../../../lib/modules/members/reducers/members';
 
 const actionFile = '../lib/modules/members/actions/doFetchUser';
@@ -29,13 +28,8 @@ describe('Retrieve user', () => {
     });
 
     it('validate action', () => {
-      expect(action.type).to.equal('FETCH_USER');
+      expect(action.type).to.equal('FETCH_MEMBER');
       expect(action.payload.member).to.be.an('object');
-    });
-
-    it('validate user reducer', () => {
-      const stateUsersReducer = userReducer(undefined, action);
-      expect(stateUsersReducer).to.deep.equal(28113);
     });
 
     it('validate members reducer', () => {

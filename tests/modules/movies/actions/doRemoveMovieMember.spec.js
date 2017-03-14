@@ -23,10 +23,9 @@ describe('Remove movie member', () => {
       movie: moviesFixture[0],
     }));
 
+
     before(async () => {
-      const store = mockStore({
-        membersUser: 1,
-      });
+      const store = mockStore({});
       action = await store.dispatch(actionToDispatch({ movieId: 7094 }));
     });
 
