@@ -16,36 +16,6 @@ describe('Remove movie member', () => {
       }).default;
   }
 
-  describe('call api without movies on reducer state', () => {
-    let action;
-
-    const actionToDispatch = getInstance(Promise.resolve({
-      movie: moviesFixture[0],
-    }));
-
-
-    before(async () => {
-      const store = mockStore({});
-      action = await store.dispatch(actionToDispatch({ movieId: 7094 }));
-    });
-
-    it('validate action', () => {
-      expect(action.type).to.equal('REMOVE_MEMBER_MOVIE');
-      expect(action.payload.movieId).to.equal(7094);
-      expect(action.payload.memberId).to.equal(1);
-    });
-
-    it('validate movies reducer', () => {
-      const stateMoviesReducer = moviesReducer(undefined, action);
-      expect(Object.keys(stateMoviesReducer)).to.have.lengthOf(0);
-    });
-
-    it('validate members reducer', () => {
-      const stateMoviesMembersReducer = membersReducer(undefined, action);
-      expect(Object.keys(stateMoviesMembersReducer)).to.have.lengthOf(0);
-    });
-  });
-
   describe('call api with movie already exist on reducer state', () => {
     let action;
 
@@ -64,7 +34,14 @@ describe('Remove movie member', () => {
     }));
 
     before(async () => {
-      action = await store.dispatch(actionToDispatch({ movieId: 7094 }));
+      await store.dispatch(actionToDispatch({ movieId: 7094 }));
+      action = store.getActions()[0];
+    });
+
+    it('validate action', () => {
+      expect(action.type).to.equal('REMOVE_MEMBER_MOVIE');
+      expect(action.payload.movieId).to.equal(7094);
+      expect(action.payload.memberId).to.equal(1);
     });
 
     it('validate movies reducer', () => {

@@ -37,15 +37,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var doUpdateMovieState = function doUpdateMovieState(_ref) {
   var movieId = _ref.movieId,
       state = _ref.state;
-  return function (dispatch) {
-    return _ApiFetch2.default.post('movies/movie', { id: movieId, state: state }).then(function (response) {
+  return function (dispatch, getState) {
+    var oldState = getState().movies[movieId].auth_user.status;
+
+    dispatch({
+      type: _constants2.default.UPDATE_MOVIE_STATE,
+      payload: { movieId: movieId, state: state }
+    });
+
+    return _ApiFetch2.default.post('movies/movie', { id: movieId, state: state }).catch(function () {
       return dispatch({
         type: _constants2.default.UPDATE_MOVIE_STATE,
-        payload: {
-          movieId: movieId,
-          state: state,
-          movie: response.movie
-        }
+        payload: { movieId: movieId, oldState: oldState }
       });
     });
   };

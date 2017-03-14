@@ -36,13 +36,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 var doRemoveMovieMember = function doRemoveMovieMember(_ref) {
   var movieId = _ref.movieId;
-  return function (dispatch) {
-    return _ApiFetch2.default.remove('movies/movie', { id: movieId }).then(function () {
+  return function (dispatch, getState) {
+    var oldMovie = getState().movies[movieId];
+
+    dispatch({
+      type: _constants2.default.REMOVE_MEMBER_MOVIE,
+      payload: {
+        memberId: _betaseries2.default.user.userId,
+        movieId: movieId
+      }
+    });
+
+    return _ApiFetch2.default.remove('movies/movie', { id: movieId }).catch(function () {
       return dispatch({
-        type: _constants2.default.REMOVE_MEMBER_MOVIE,
+        type: _constants2.default.FETCH_MEMBER_MOVIES,
         payload: {
           memberId: _betaseries2.default.user.userId,
-          movieId: movieId
+          movies: [oldMovie]
         }
       });
     });
