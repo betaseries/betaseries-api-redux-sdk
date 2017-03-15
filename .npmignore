@@ -3,3 +3,7 @@
 ./lib
 ./tests
 ./tmp
+.babelrc
+.editorconfig
+.eslintrc
+.travis.yml
