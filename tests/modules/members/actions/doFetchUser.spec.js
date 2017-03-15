@@ -8,19 +8,19 @@ describe('Retrieve user', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
+    }).default;
   }
 
   describe('call api', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      member: userFixture,
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        member: userFixture
+      })
+    );
 
     before(async () => {
       const store = mockStore({});

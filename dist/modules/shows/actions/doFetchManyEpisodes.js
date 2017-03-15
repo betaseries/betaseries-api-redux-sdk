@@ -48,7 +48,9 @@ var doFetchManyEpisodes = function doFetchManyEpisodes(_ref) {
       return Promise.resolve();
     }
 
-    return _ApiFetch2.default.get('episodes/display', { id: cleanEpisodeIds.join(',') }).then(function (response) {
+    return _ApiFetch2.default.get('episodes/display', {
+      id: cleanEpisodeIds.join(',')
+    }).then(function (response) {
       return dispatch({
         type: _constants2.default.FETCH_MANY_EPISODES,
         payload: {

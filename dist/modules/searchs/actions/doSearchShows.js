@@ -56,7 +56,9 @@ var doSearchShows = function doSearchShows(_ref) {
   return function (dispatch) {
     var titleTrimed = '%' + (0, _trim3.default)(title).toLowerCase() + '%';
 
-    return _ApiFetch2.default.get('shows/search', _extends({ title: titleTrimed }, defaultProps, props)).then(function (response) {
+    return _ApiFetch2.default.get('shows/search', _extends({
+      title: titleTrimed
+    }, defaultProps, props)).then(function (response) {
       return dispatch({
         type: _constants2.default.SEARCH_SHOWS,
         payload: _extends({

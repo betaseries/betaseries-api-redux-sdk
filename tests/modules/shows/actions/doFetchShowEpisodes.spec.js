@@ -8,20 +8,20 @@ describe('Retrieve episodes of the show', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
+    }).default;
   }
 
   describe('call api with show ID', () => {
     let action;
     let store;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      episodes: episodesFixture,
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        episodes: episodesFixture
+      })
+    );
 
     before(async () => {
       store = mockStore({});
@@ -43,13 +43,17 @@ describe('Retrieve episodes of the show', () => {
   describe('call api with show ID and season number', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      episodes: episodesFixture,
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        episodes: episodesFixture
+      })
+    );
 
     before(async () => {
       const store = mockStore({});
-      action = await store.dispatch(actionToDispatch({ showId: 10212, season: 1 }));
+      action = await store.dispatch(
+        actionToDispatch({ showId: 10212, season: 1 })
+      );
     });
 
     it('validate action', () => {

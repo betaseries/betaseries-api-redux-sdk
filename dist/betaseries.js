@@ -35,24 +35,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 
 /**
-* @module Shows
-*/
+ * @module Shows
+ */
 
 /**
-* @module Movies
-*/
+ * @module Movies
+ */
 
 /**
-* @module Comments
-*/
+ * @module Comments
+ */
 
 /**
-* @module Searchs
-*/
+ * @module Searchs
+ */
 
 /**
-* @module Members
-*/
+ * @module Members
+ */
 
 var config = {
   apiHost: null,

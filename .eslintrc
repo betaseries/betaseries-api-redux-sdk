@@ -1,9 +1,16 @@
 {
-    "extends": "airbnb",
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ],
     "parser": "babel-eslint",
     "ecmaFeatures": {
         "classes": true,
     },
+    "plugins": [
+        "prettier"
+    ],
     "rules": {
         "require-jsdoc": ["error", {
             "require": {
@@ -13,7 +20,10 @@
                 "ArrowFunctionExpression": true
             }
         }],
-        "import/prefer-default-export": 0
+        "import/prefer-default-export": 0,
+        "prettier/prettier": ["error", {
+          "singleQuote": true
+        }]
     },
     "globals": {
         # lib globals

@@ -6,12 +6,12 @@ describe('Select member movies from state ', () => {
       4: { id: 4, user: { status: 0 }, auth_user: { status: 0 } },
       3: { id: 3, user: { status: 1 }, auth_user: { status: 0 } },
       2: { id: 2, user: { status: 1 }, auth_user: { status: 0 } },
-      1: { id: 1, user: { status: 2 }, auth_user: { status: 2 } },
+      1: { id: 1, user: { status: 2 }, auth_user: { status: 2 } }
     },
     moviesMembers: {
       4: [3, 2, 1],
-      1: [3, 2, 1],
-    },
+      1: [3, 2, 1]
+    }
   };
 
   it('returns member movies', () => {

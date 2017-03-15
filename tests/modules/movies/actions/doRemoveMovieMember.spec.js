@@ -9,11 +9,9 @@ describe('Remove movie member', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { remove: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { remove: () => promise }
+    }).default;
   }
 
   describe('call api with movie already exist on reducer state', () => {
@@ -22,16 +20,18 @@ describe('Remove movie member', () => {
     const store = mockStore({
       membersUser: 1,
       moviesMembers: {
-        1: [7094],
+        1: [7094]
       },
       movies: {
-        [moviesFixture[0].id]: moviesFixture[0],
-      },
+        [moviesFixture[0].id]: moviesFixture[0]
+      }
     });
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      movie: moviesFixture[0],
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        movie: moviesFixture[0]
+      })
+    );
 
     before(async () => {
       await store.dispatch(actionToDispatch({ movieId: 7094 }));
@@ -47,7 +47,9 @@ describe('Remove movie member', () => {
     it('validate movies reducer', () => {
       const stateMoviesReducer = moviesReducer(store.getState().movies, action);
       expect(Object.keys(stateMoviesReducer)).to.have.lengthOf(1);
-      expect(stateMoviesReducer[7094].auth_user.in_account).to.deep.equal(false);
+      expect(stateMoviesReducer[7094].auth_user.in_account).to.deep.equal(
+        false
+      );
     });
 
     it('validate members reducer', () => {

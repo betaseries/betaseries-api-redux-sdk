@@ -1,4 +1,5 @@
-import charactersReducer from '../../../../lib/modules/movies/reducers/characters';
+import charactersReducer
+  from '../../../../lib/modules/movies/reducers/characters';
 
 const actionFile = '../lib/modules/movies/actions/doFetchMovieCharacters';
 
@@ -7,19 +8,19 @@ describe('Retrieve characters of the movie', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
+    }).default;
   }
 
   describe('call api with movie ID', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      characters: 'characters list',
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        characters: 'characters list'
+      })
+    );
 
     before(async () => {
       const store = mockStore({});

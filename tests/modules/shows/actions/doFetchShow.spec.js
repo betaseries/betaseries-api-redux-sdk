@@ -8,19 +8,19 @@ describe('Retrieve show', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
+    }).default;
   }
 
   describe('call api with show ID', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      show: showsFixture[0],
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        show: showsFixture[0]
+      })
+    );
 
     before(async () => {
       const store = mockStore({});

@@ -6,19 +6,19 @@ describe('Select episode by show from state ', () => {
       3: {
         id: 3,
         code: 'S05E12',
-        show: { id: 2 },
+        show: { id: 2 }
       },
       4: {
         id: 4,
         code: 'S05E11',
-        show: { id: 2 },
+        show: { id: 2 }
       },
       5: {
         id: 5,
         code: 'S05E12',
-        show: { id: 3 },
-      },
-    },
+        show: { id: 3 }
+      }
+    }
   };
 
   it('returns episode if exist', () => {

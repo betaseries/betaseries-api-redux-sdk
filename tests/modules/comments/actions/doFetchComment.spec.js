@@ -1,4 +1,5 @@
-import commentsReducer from '../../../../lib/modules/comments/reducers/comments';
+import commentsReducer
+  from '../../../../lib/modules/comments/reducers/comments';
 
 const actionFile = '../lib/modules/comments/actions/doFetchComment';
 const commentsFixture = require('../../../fixtures/comments.json');
@@ -8,19 +9,19 @@ describe('Retrieve comment', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
+    }).default;
   }
 
   describe('call api with comment ID', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      comment: commentsFixture[0],
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        comment: commentsFixture[0]
+      })
+    );
 
     before(async () => {
       const store = mockStore({});

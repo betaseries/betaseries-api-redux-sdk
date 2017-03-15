@@ -8,19 +8,19 @@ describe('Search shows', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
+    }).default;
   }
 
   describe('call api with show title', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      shows: showsFixture.slice(0, 2),
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        shows: showsFixture.slice(0, 2)
+      })
+    );
 
     before(async () => {
       const store = mockStore({});
@@ -43,13 +43,17 @@ describe('Search shows', () => {
   describe('call api with show ID and season number', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      shows: showsFixture.slice(0, 2),
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        shows: showsFixture.slice(0, 2)
+      })
+    );
 
     before(async () => {
       const store = mockStore({});
-      action = await store.dispatch(actionToDispatch({ title: 'Alking De', summary: true }));
+      action = await store.dispatch(
+        actionToDispatch({ title: 'Alking De', summary: true })
+      );
     });
 
     it('validate action', () => {

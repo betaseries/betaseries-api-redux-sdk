@@ -2,7 +2,7 @@ import selector from '../../../../lib/modules/shows/selectors/getShow';
 
 describe('Select show from state ', () => {
   const state = {
-    shows: { 3: { id: 3 } },
+    shows: { 3: { id: 3 } }
   };
 
   it('returns show if exist', () => {

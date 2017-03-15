@@ -8,11 +8,9 @@ describe('Update movie state', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { post: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { post: () => promise }
+    }).default;
   }
 
   describe('call api with movie already exist on reducer state', () => {
@@ -20,13 +18,15 @@ describe('Update movie state', () => {
 
     const store = mockStore({
       movies: {
-        [moviesFixture[0].id]: moviesFixture[0],
-      },
+        [moviesFixture[0].id]: moviesFixture[0]
+      }
     });
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      movie: moviesFixture[0],
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        movie: moviesFixture[0]
+      })
+    );
 
     before(async () => {
       await store.dispatch(actionToDispatch({ movieId: 7094, state: 2 }));

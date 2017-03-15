@@ -2,7 +2,7 @@ import selector from '../../../../lib/modules/shows/selectors/getEpisode';
 
 describe('Select episode from state ', () => {
   const state = {
-    showsEpisodes: { 3: { id: 3 } },
+    showsEpisodes: { 3: { id: 3 } }
   };
 
   it('returns episode if exist', () => {

@@ -2,7 +2,7 @@ import selector from '../../../../lib/modules/searchs/selectors/getSearchShows';
 
 describe('Select shows from state ', () => {
   const state = {
-    searchsShows: [1, 2, 3, 4, 5],
+    searchsShows: [1, 2, 3, 4, 5]
   };
 
   it('returns shows', () => {

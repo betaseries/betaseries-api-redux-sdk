@@ -47,7 +47,9 @@ var doFetchUser = function doFetchUser(_ref) {
   var props = _objectWithoutProperties(_ref, []);
 
   return function (dispatch) {
-    return _ApiFetch2.default.get('members/infos', _extends({ memberId: _betaseries2.default.user.userId }, defaultProps, props)).then(function (response) {
+    return _ApiFetch2.default.get('members/infos', _extends({
+      memberId: _betaseries2.default.user.userId
+    }, defaultProps, props)).then(function (response) {
       return dispatch({
         type: _constants2.default.FETCH_MEMBER,
         payload: _extends({}, props, {

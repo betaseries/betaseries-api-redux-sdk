@@ -48,7 +48,11 @@ var doFetchEpisodeComments = function doFetchEpisodeComments(_ref) {
       props = _objectWithoutProperties(_ref, ['episodeId']);
 
   return function (dispatch) {
-    return _ApiFetch2.default.get('comments/comments', _extends({ id: episodeId }, defaultProps, props, { type: 'episode' })).then(function (response) {
+    return _ApiFetch2.default.get('comments/comments', _extends({
+      id: episodeId
+    }, defaultProps, props, {
+      type: 'episode'
+    })).then(function (response) {
       return dispatch({
         type: _constants2.default.FETCH_EPISODE_COMMENTS,
         payload: _extends({}, props, {

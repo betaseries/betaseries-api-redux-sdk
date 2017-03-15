@@ -1,19 +1,20 @@
-import selector from '../../../../lib/modules/comments/selectors/getShowComments';
+import selector
+  from '../../../../lib/modules/comments/selectors/getShowComments';
 
 describe('Select latest episode from state ', () => {
   const state = {
     commentsShows: {
       3: [3452345, 13251345, 24532],
-      4: [345345314],
+      4: [345345314]
     },
     comments: {
       3452345: {
-        id: 3452345,
+        id: 3452345
       },
       13251345: {
-        id: 13251345,
-      },
-    },
+        id: 13251345
+      }
+    }
   };
 
   it('returns comments list if exist', () => {

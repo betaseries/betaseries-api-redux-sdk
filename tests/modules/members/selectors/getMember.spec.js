@@ -2,7 +2,7 @@ import selector from '../../../../lib/modules/members/selectors/getMember';
 
 describe('Select member from state ', () => {
   const state = {
-    members: { 3: { id: 3 } },
+    members: { 3: { id: 3 } }
   };
 
   it('returns member if exist', () => {

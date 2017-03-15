@@ -8,25 +8,27 @@ describe('Retrieve many shows', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
+    }).default;
   }
 
   describe('call api with all shows ID list', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      shows: showsFixture.slice(0, 2),
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        shows: showsFixture.slice(0, 2)
+      })
+    );
 
     before(async () => {
       const store = mockStore({
-        shows: {},
+        shows: {}
       });
-      action = await store.dispatch(actionToDispatch({ showIds: [10212, 982] }));
+      action = await store.dispatch(
+        actionToDispatch({ showIds: [10212, 982] })
+      );
     });
 
     it('validate action', () => {
@@ -45,16 +47,20 @@ describe('Retrieve many shows', () => {
     let action;
     let store;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      shows: showsFixture.slice(0, 2),
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        shows: showsFixture.slice(0, 2)
+      })
+    );
 
     before(async () => {
       store = mockStore({
-        shows: { 481: { id: 481 } },
+        shows: { 481: { id: 481 } }
       });
 
-      action = await store.dispatch(actionToDispatch({ showIds: [10212, 982, 481] }));
+      action = await store.dispatch(
+        actionToDispatch({ showIds: [10212, 982, 481] })
+      );
     });
 
     it('validate action', () => {
@@ -65,7 +71,11 @@ describe('Retrieve many shows', () => {
 
     it('validate shows reducer', () => {
       const stateShowsReducer = showsReducer(store.getState().shows, action);
-      expect(Object.keys(stateShowsReducer)).to.deep.equal(['481', '982', '10212']);
+      expect(Object.keys(stateShowsReducer)).to.deep.equal([
+        '481',
+        '982',
+        '10212'
+      ]);
     });
   });
 
@@ -73,16 +83,20 @@ describe('Retrieve many shows', () => {
     let action;
     let store;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      show: showsFixture[0],
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        show: showsFixture[0]
+      })
+    );
 
     before(async () => {
       store = mockStore({
-        shows: { 481: { id: 481 } },
+        shows: { 481: { id: 481 } }
       });
 
-      action = await store.dispatch(actionToDispatch({ showIds: [10212, 481] }));
+      action = await store.dispatch(
+        actionToDispatch({ showIds: [10212, 481] })
+      );
     });
 
     it('validate action', () => {

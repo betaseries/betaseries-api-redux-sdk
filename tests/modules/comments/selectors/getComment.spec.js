@@ -2,7 +2,7 @@ import selector from '../../../../lib/modules/comments/selectors/getComment';
 
 describe('Select episode from state ', () => {
   const state = {
-    comments: { 3: { id: 3 } },
+    comments: { 3: { id: 3 } }
   };
 
   it('returns comment if exist', () => {

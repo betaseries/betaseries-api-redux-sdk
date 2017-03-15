@@ -51,7 +51,9 @@ var doFetchSimilarShows = function doFetchSimilarShows(_ref) {
       }
 
       return dispatch((0, _doFetchManyShows2.default)({ showIds: showIds })).then(function () {
-        return { similars: showIds };
+        return {
+          similars: showIds
+        };
       });
     }).then(function (response) {
       return dispatch({

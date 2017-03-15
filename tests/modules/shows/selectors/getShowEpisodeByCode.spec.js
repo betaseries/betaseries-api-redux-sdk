@@ -1,12 +1,15 @@
-import selector from '../../../../lib/modules/shows/selectors/getShowEpisodeByCode';
+import selector
+  from '../../../../lib/modules/shows/selectors/getShowEpisodeByCode';
 
 describe('Select episode by show and code from state ', () => {
   const state = {
-    showsEpisodes: { 3: {
-      id: 3,
-      code: 'S05E12',
-      show: { id: 2 },
-    } },
+    showsEpisodes: {
+      3: {
+        id: 3,
+        code: 'S05E12',
+        show: { id: 2 }
+      }
+    }
   };
 
   it('returns episode if exist', () => {

@@ -1,4 +1,5 @@
-import latestEpisodesReducer from '../../../../lib/modules/shows/reducers/latestEpisodes';
+import latestEpisodesReducer
+  from '../../../../lib/modules/shows/reducers/latestEpisodes';
 import episodesReducer from '../../../../lib/modules/shows/reducers/episodes';
 
 const actionFile = '../lib/modules/shows/actions/doFetchLatestEpisode';
@@ -9,19 +10,19 @@ describe('Retrieve latest episode of the show', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
+    }).default;
   }
 
   describe('call api with show ID', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      episode: episodesFixture[0],
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        episode: episodesFixture[0]
+      })
+    );
 
     before(async () => {
       const store = mockStore({});
@@ -35,7 +36,10 @@ describe('Retrieve latest episode of the show', () => {
     });
 
     it('validate latestEpisodes reducer', () => {
-      const stateLatestEpisodesReducer = latestEpisodesReducer(undefined, action);
+      const stateLatestEpisodesReducer = latestEpisodesReducer(
+        undefined,
+        action
+      );
       expect(stateLatestEpisodesReducer).to.deep.equal({ 1: 239475 });
     });
 

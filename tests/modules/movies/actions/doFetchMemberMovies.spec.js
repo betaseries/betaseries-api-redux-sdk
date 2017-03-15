@@ -9,19 +9,19 @@ describe('Retrieve movies of the member', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
+    }).default;
   }
 
   describe('call api with member ID', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      movies: moviesFixture.slice(0, 2),
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        movies: moviesFixture.slice(0, 2)
+      })
+    );
 
     before(async () => {
       const store = mockStore({});

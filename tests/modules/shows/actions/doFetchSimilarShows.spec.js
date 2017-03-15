@@ -8,33 +8,31 @@ describe('Retrieve similar shows', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-        './doFetchManyShows': (
-          proxyquire
-            .noCallThru()
-            .load('../lib/modules/shows/actions/doFetchManyShows', {
-              '../../../utils/fetch/ApiFetch': { get: () => promise },
-            }).default
-        ),
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise },
+      './doFetchManyShows': proxyquire
+        .noCallThru()
+        .load('../lib/modules/shows/actions/doFetchManyShows', {
+          '../../../utils/fetch/ApiFetch': { get: () => promise }
+        }).default
+    }).default;
   }
 
   describe('call api with show ID', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      similars: showsFixture.slice(0, 5).map(show => ({
-        ...show,
-        show_id: show.id,
-      })),
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        similars: showsFixture.slice(0, 5).map(show => ({
+          ...show,
+          show_id: show.id
+        }))
+      })
+    );
 
     before(async () => {
       const store = mockStore({
-        shows: {},
+        shows: {}
       });
       action = await store.dispatch(actionToDispatch({ showId: 481 }));
     });
@@ -48,7 +46,13 @@ describe('Retrieve similar shows', () => {
     it('validate similars reducer', () => {
       const stateSimilarsReducer = similarsReducer(undefined, action);
       expect(stateSimilarsReducer).to.have.ownProperty('481');
-      expect(stateSimilarsReducer[481]).to.deep.equal([10212, 982, 481, 716, 8251]);
+      expect(stateSimilarsReducer[481]).to.deep.equal([
+        10212,
+        982,
+        481,
+        716,
+        8251
+      ]);
     });
   });
 });

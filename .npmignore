@@ -1,3 +1,5 @@
-build-tools
-lib
-tests
+./build-tools
+./docs
+./lib
+./tests
+./tmp

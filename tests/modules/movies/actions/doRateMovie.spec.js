@@ -8,19 +8,19 @@ describe('Rate movie', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { post: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { post: () => promise }
+    }).default;
   }
 
   describe('call api without movies on reducer state', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      movie: moviesFixture[0],
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        movie: moviesFixture[0]
+      })
+    );
 
     before(async () => {
       const store = mockStore({});
@@ -44,13 +44,15 @@ describe('Rate movie', () => {
 
     const store = mockStore({
       movies: {
-        [moviesFixture[0].id]: moviesFixture[0],
-      },
+        [moviesFixture[0].id]: moviesFixture[0]
+      }
     });
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      movie: moviesFixture[0],
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        movie: moviesFixture[0]
+      })
+    );
 
     before(async () => {
       action = await store.dispatch(actionToDispatch({ movieId: 7094 }));

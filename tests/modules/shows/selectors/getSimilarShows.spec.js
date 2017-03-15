@@ -6,11 +6,11 @@ describe('Select show from state ', () => {
       4: { id: 4 },
       3: { id: 3 },
       2: { id: 2 },
-      1: { id: 1 },
+      1: { id: 1 }
     },
     showsSimilars: {
-      4: [2, 1],
-    },
+      4: [2, 1]
+    }
   };
 
   it('returns similar shows', () => {

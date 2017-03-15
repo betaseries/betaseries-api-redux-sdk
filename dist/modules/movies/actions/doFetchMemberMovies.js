@@ -51,7 +51,9 @@ var doFetchMemberMovies = function doFetchMemberMovies(_ref) {
       props = _objectWithoutProperties(_ref, ['memberId']);
 
   return function (dispatch) {
-    return _ApiFetch2.default.get('movies/member', _extends({ id: memberId }, defaultProps, props)).then(function (response) {
+    return _ApiFetch2.default.get('movies/member', _extends({
+      id: memberId
+    }, defaultProps, props)).then(function (response) {
       return dispatch({
         type: _constants2.default.FETCH_MEMBER_MOVIES,
         payload: _extends({}, props, {

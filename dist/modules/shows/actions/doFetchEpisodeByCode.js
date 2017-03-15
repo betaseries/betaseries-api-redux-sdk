@@ -35,7 +35,10 @@ var doFetchEpisodeByCode = function doFetchEpisodeByCode(_ref) {
   var showId = _ref.showId,
       code = _ref.code;
   return function (dispatch) {
-    return _ApiFetch2.default.get('episodes/search', { show_id: showId, number: code }).then(function (response) {
+    return _ApiFetch2.default.get('episodes/search', {
+      show_id: showId,
+      number: code
+    }).then(function (response) {
       return dispatch({
         type: _constants2.default.FETCH_EPISODE_BY_CODE,
         payload: {

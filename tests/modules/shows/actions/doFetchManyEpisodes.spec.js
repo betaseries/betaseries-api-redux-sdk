@@ -8,25 +8,27 @@ describe('Retrieve many episodes', () => {
    * getInstance method
    */
   function getInstance(promise) {
-    return proxyquire
-      .noCallThru()
-      .load(actionFile, {
-        '../../../utils/fetch/ApiFetch': { get: () => promise },
-      }).default;
+    return proxyquire.noCallThru().load(actionFile, {
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
+    }).default;
   }
 
   describe('call api with all episodes ID list', () => {
     let action;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      episodes: episodesFixture.slice(0, 2),
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        episodes: episodesFixture.slice(0, 2)
+      })
+    );
 
     before(async () => {
       const store = mockStore({
-        showsEpisodes: {},
+        showsEpisodes: {}
       });
-      action = await store.dispatch(actionToDispatch({ episodeIds: [239475, 239476] }));
+      action = await store.dispatch(
+        actionToDispatch({ episodeIds: [239475, 239476] })
+      );
     });
 
     it('validate action', () => {
@@ -37,7 +39,10 @@ describe('Retrieve many episodes', () => {
 
     it('validate episodes reducer', () => {
       const stateEpisodesReducer = episodesReducer(undefined, action);
-      expect(Object.keys(stateEpisodesReducer)).to.deep.equal(['239475', '239476']);
+      expect(Object.keys(stateEpisodesReducer)).to.deep.equal([
+        '239475',
+        '239476'
+      ]);
     });
   });
 
@@ -45,16 +50,20 @@ describe('Retrieve many episodes', () => {
     let action;
     let store;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      episodes: episodesFixture.slice(0, 2),
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        episodes: episodesFixture.slice(0, 2)
+      })
+    );
 
     before(async () => {
       store = mockStore({
-        showsEpisodes: { 982: { id: 982 } },
+        showsEpisodes: { 982: { id: 982 } }
       });
 
-      action = await store.dispatch(actionToDispatch({ episodeIds: [239475, 982, 239476] }));
+      action = await store.dispatch(
+        actionToDispatch({ episodeIds: [239475, 982, 239476] })
+      );
     });
 
     it('validate action', () => {
@@ -64,8 +73,15 @@ describe('Retrieve many episodes', () => {
     });
 
     it('validate episodes reducer', () => {
-      const stateEpisodesReducer = episodesReducer(store.getState().showsEpisodes, action);
-      expect(Object.keys(stateEpisodesReducer)).to.deep.equal(['982', '239475', '239476']);
+      const stateEpisodesReducer = episodesReducer(
+        store.getState().showsEpisodes,
+        action
+      );
+      expect(Object.keys(stateEpisodesReducer)).to.deep.equal([
+        '982',
+        '239475',
+        '239476'
+      ]);
     });
   });
 
@@ -73,16 +89,20 @@ describe('Retrieve many episodes', () => {
     let action;
     let store;
 
-    const actionToDispatch = getInstance(Promise.resolve({
-      episode: episodesFixture[0],
-    }));
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        episode: episodesFixture[0]
+      })
+    );
 
     before(async () => {
       store = mockStore({
-        showsEpisodes: { 982: { id: 982 } },
+        showsEpisodes: { 982: { id: 982 } }
       });
 
-      action = await store.dispatch(actionToDispatch({ episodeIds: [239475, 982] }));
+      action = await store.dispatch(
+        actionToDispatch({ episodeIds: [239475, 982] })
+      );
     });
 
     it('validate action', () => {
@@ -92,8 +112,14 @@ describe('Retrieve many episodes', () => {
     });
 
     it('validate episodes reducer', () => {
-      const stateEpisodesReducer = episodesReducer(store.getState().showsEpisodes, action);
-      expect(Object.keys(stateEpisodesReducer)).to.deep.equal(['982', '239475']);
+      const stateEpisodesReducer = episodesReducer(
+        store.getState().showsEpisodes,
+        action
+      );
+      expect(Object.keys(stateEpisodesReducer)).to.deep.equal([
+        '982',
+        '239475'
+      ]);
     });
   });
 });

@@ -1,6 +1,6 @@
 # betaseries-api-redux-sdk
 
-BetaSeries API Redux SDK
+The official BetaSeries SDK for JavaScript using [Redux](http://redux.js.org/) (available for browsers and Node.js).
 
 ## API docs
 
@@ -21,3 +21,12 @@ Build source code before commit
 ```sh
 $ npm run build
 ```
+
+## Credits
+
+Developped by the [BetaSeries team](https://www.betaseries.com/).
+
+
+## License
+
+betaseries-api-redux-sdk is licensed under the [MIT license](LICENSE).

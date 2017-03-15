@@ -48,7 +48,9 @@ var doFetchManyShows = function doFetchManyShows(_ref) {
       return Promise.resolve();
     }
 
-    return _ApiFetch2.default.get('shows/display', { id: cleanShowIds.join(',') }).then(function (response) {
+    return _ApiFetch2.default.get('shows/display', {
+      id: cleanShowIds.join(',')
+    }).then(function (response) {
       return dispatch({
         type: _constants2.default.FETCH_MANY_SHOWS,
         payload: {

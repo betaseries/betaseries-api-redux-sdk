@@ -1,16 +1,17 @@
-import selector from '../../../../lib/modules/shows/selectors/getLatestShowEpisode';
+import selector
+  from '../../../../lib/modules/shows/selectors/getLatestShowEpisode';
 
 describe('Select latest episode from state ', () => {
   const state = {
     showsLatestEpisodes: {
       3: 3452345,
-      4: 345345314,
+      4: 345345314
     },
     showsEpisodes: {
       3452345: {
-        id: 3452345,
-      },
-    },
+        id: 3452345
+      }
+    }
   };
 
   it('returns episode element if exist', () => {
