@@ -26,16 +26,16 @@ describe('Select member movies from state ', () => {
 
   it('returns null if member does not have movies with state 0', () => {
     const value = selector(state, { memberId: 4, state: 0 });
-    expect(value).to.deep.equal(null);
+    expect(value).to.deep.equal(undefined);
   });
 
   it('returns only member movies with state 0 for auth user', () => {
     const value = selector(state, { memberId: 1, state: 0 });
-    expect(value.map(movie => movie.id)).to.deep.equal([2, 3]);
+    expect(value.map(movie => movie.id)).to.deep.equal([3, 2]);
   });
 
   it('returns null if member does not have movies', () => {
     const value = selector(state, { memberId: 2 });
-    expect(value).to.deep.equal(null);
+    expect(value).to.deep.equal(undefined);
   });
 });

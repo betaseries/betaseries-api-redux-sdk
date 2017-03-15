@@ -6,9 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reselect = require('reselect');
 
-var _filter2 = require('lodash/filter');
+var _reduce2 = require('lodash/reduce');
 
-var _filter3 = _interopRequireDefault(_filter2);
+var _reduce3 = _interopRequireDefault(_reduce2);
 
 var _commons = require('./commons');
 
@@ -48,7 +48,7 @@ var getMemberMovies = (0, _reselect.createSelector)([commons.getMovies, commons.
   var movieIds = !Object.prototype.hasOwnProperty.call(membersMovies, memberId) ? null : membersMovies[memberId];
 
   if (!movieIds) {
-    return null;
+    return undefined;
   }
 
   /**
@@ -58,11 +58,17 @@ var getMemberMovies = (0, _reselect.createSelector)([commons.getMovies, commons.
     return memberId === _betaseries2.default.user.userId ? 'auth_user' : 'user';
   }
 
-  var filteredMovies = (0, _filter3.default)(movies, function (movie) {
-    return movieIds.indexOf(movie.id) !== -1 && (state === null ? true : state === movie[getUserScope()].status);
-  });
+  var filteredMovies = (0, _reduce3.default)(movieIds, function (sum, movieId) {
+    var movie = movies[movieId];
 
-  return filteredMovies.length === 0 ? null : filteredMovies;
+    if (state === null || state === movie[getUserScope()].status) {
+      sum.push(movie);
+    }
+
+    return sum;
+  }, []);
+
+  return filteredMovies.length === 0 ? undefined : filteredMovies;
 });
 
 exports.default = getMemberMovies;
