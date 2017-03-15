@@ -18,8 +18,8 @@ describe('Select show from state ', () => {
     expect(value).to.deep.equal([{ id: 1 }, { id: 2 }]);
   });
 
-  it('returns empty array if show does not have similar shows', () => {
+  it('returns undefined if show does not have similar shows', () => {
     const value = selector(state, { showId: 2 });
-    expect(value).to.deep.equal(null);
+    expect(value).to.deep.equal(undefined);
   });
 });

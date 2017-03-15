@@ -35,12 +35,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param {Object}  [obj]             Accept the folling:
  * @param {Object}  [obj.showId]      Show ID
  *
- * @returns {Array}                   List of episodes element order by code
+ * @returns {Array}                   List of episodes element order by code or `undefined`
  */
 var getShowEpisodes = (0, _reselect.createSelector)([commons.getEpisodes, commons.getShowId], function (episodes, showId) {
   return (0, _filter3.default)(episodes, function (episode) {
     return episode.show.id === showId;
-  }) || null;
+  }) || undefined;
 });
 
 exports.default = getShowEpisodes;

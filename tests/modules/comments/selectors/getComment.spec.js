@@ -12,6 +12,6 @@ describe('Select episode from state ', () => {
 
   it('returns null if comment does not exist', () => {
     const value = selector(state, { commentId: 5 });
-    expect(value).to.equal(null);
+    expect(value).to.equal(undefined);
   });
 });

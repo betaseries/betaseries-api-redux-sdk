@@ -204,7 +204,7 @@ BetaSeries.getReducer('comments', 'shows').commentsShows;
 
 Select comment from state
 
-**Returns**: {Object} - Comment element or `null`
+**Returns**: {Object} - Comment element or `undefined`
 
 **Category**: selectors  
 
@@ -228,7 +228,7 @@ const mapStateToProps = (state, props) => ({
 
 Select show comments from state
 
-**Returns**: {Array} - List of comments or `null`
+**Returns**: {Array} - List of comments or `undefined`
 
 **Category**: selectors  
 
@@ -254,7 +254,7 @@ const mapStateToProps = (state, props) => ({
 
 Select show comments from state
 
-**Returns**: {Array} - List of comments
+**Returns**: {Array} - List of comments or `undefined`
 
 **Category**: selectors  
 

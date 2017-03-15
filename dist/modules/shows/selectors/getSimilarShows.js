@@ -33,18 +33,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param {Object}  [obj]             Accept the folling:
  * @param {Object}  [obj.showId]      Show ID
  *
- * @returns {Array}                  Shows list or `null`
+ * @returns {Array}                  Shows list or `undefined`
  */
 var getSimilarShows = (0, _reselect.createSelector)([commons.getShows, commons.getSimilarShows, commons.getShowId], function (shows, similarShows, showId) {
   var similarShowIds = !Object.prototype.hasOwnProperty.call(similarShows, showId) ? null : similarShows[showId];
 
   if (!similarShowIds) {
-    return null;
+    return undefined;
   }
 
   return (0, _filter3.default)(shows, function (show) {
     return similarShowIds.indexOf(show.id) !== -1;
-  });
+  }) || undefined;
 });
 
 exports.default = getSimilarShows;

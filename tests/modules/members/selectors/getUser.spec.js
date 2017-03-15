@@ -8,10 +8,10 @@ describe('Select user from state ', () => {
     expect(value).to.deep.equal({ id: 1 });
   });
 
-  it('returns null if user does not exist', () => {
+  it('returns undefined if user does not exist', () => {
     const value = selector({
       members: { 3: { id: 3 } },
     });
-    expect(value).to.deep.equal(null);
+    expect(value).to.deep.equal(undefined);
   });
 });

@@ -42,7 +42,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param {Number}  [obj.state]       State of movie
  *   (`0` = to see, `1` = seen, `2` = doesn't want to see (`null` by default))
  *
- * @returns {Array}                   List of movies element or `null`
+ * @returns {Array}                   List of movies element or `undefined`
  */
 var getMemberMovies = (0, _reselect.createSelector)([commons.getMovies, commons.getMemberMovies, commons.getMemberId, commons.getMovieState], function (movies, membersMovies, memberId, state) {
   var movieIds = !Object.prototype.hasOwnProperty.call(membersMovies, memberId) ? null : membersMovies[memberId];

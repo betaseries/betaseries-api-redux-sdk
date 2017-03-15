@@ -485,7 +485,7 @@ BetaSeries.getReducer('shows', 'similars').showsSimilars;
 
 Select episode from state
 
-**Returns**: {Object} - Episode element or `null`
+**Returns**: {Object} - Episode element or `undefined`
 
 **Category**: selectors  
 
@@ -509,7 +509,7 @@ const mapStateToProps = (state, props) => ({
 
 Select last episode by show from state
 
-**Returns**: {Object} - Episode element or `null`
+**Returns**: {Object} - Episode element or `undefined`
 
 **Category**: selectors  
 
@@ -535,7 +535,7 @@ const mapStateToProps = (state, props) => ({
 
 Select show from state
 
-**Returns**: {Object} - Show element or `null`
+**Returns**: {Object} - Show element or `undefined`
 
 **Category**: selectors  
 
@@ -559,7 +559,7 @@ const mapStateToProps = (state, props) => ({
 
 Select episode by code and show from state
 
-**Returns**: {Object} - Episode element or `null`
+**Returns**: {Object} - Episode element or `undefined`
 
 **Category**: selectors  
 
@@ -587,7 +587,7 @@ const mapStateToProps = (state, props) => ({
 
 Select episode by show from state
 
-**Returns**: {Array} - List of episodes element order by code
+**Returns**: {Array} - List of episodes element order by code or `undefined`
 
 **Category**: selectors  
 
@@ -613,7 +613,7 @@ const mapStateToProps = (state, props) => ({
 
 Select similar shows from state
 
-**Returns**: {Array} - Shows list or `null`
+**Returns**: {Array} - Shows list or `undefined`
 
 **Category**: selectors  
 

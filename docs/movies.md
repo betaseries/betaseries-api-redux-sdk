@@ -342,7 +342,7 @@ BetaSeries.getReducer('movies', 'movies').movies;
 
 Select movies by member from state
 
-**Returns**: {Array} - List of movies element or `null`
+**Returns**: {Array} - List of movies element or `undefined`
 
 **Category**: selectors  
 

@@ -14,13 +14,13 @@ describe('Select episode by show and code from state ', () => {
     expect(value.id).to.deep.equal(3);
   });
 
-  it('returns null if episode code does not exist', () => {
+  it('returns undefined if episode code does not exist', () => {
     const value = selector(state, { showId: 2, code: 'S01E12' });
-    expect(value).to.equal(null);
+    expect(value).to.equal(undefined);
   });
 
-  it('returns null if episode show does not exist', () => {
+  it('returns undefined if episode show does not exist', () => {
     const value = selector(state, { showId: 4, code: 'S05E12' });
-    expect(value).to.equal(null);
+    expect(value).to.equal(undefined);
   });
 });

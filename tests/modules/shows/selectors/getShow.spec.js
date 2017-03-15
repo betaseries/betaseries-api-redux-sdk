@@ -10,8 +10,8 @@ describe('Select show from state ', () => {
     expect(value).to.deep.equal({ id: 3 });
   });
 
-  it('returns null if show does not exist', () => {
+  it('returns undefined if show does not exist', () => {
     const value = selector(state, { showId: 5 });
-    expect(value).to.equal(null);
+    expect(value).to.equal(undefined);
   });
 });

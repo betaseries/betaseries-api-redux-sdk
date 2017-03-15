@@ -12,6 +12,6 @@ describe('Select member from state ', () => {
 
   it('returns null if member does not exist', () => {
     const value = selector(state, { memberId: 5 });
-    expect(value).to.equal(null);
+    expect(value).to.equal(undefined);
   });
 });

@@ -25,10 +25,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  *
  * @param {Object}  [state]           Redux state
  *
- * @returns {Object}                  Member element or `null`
+ * @returns {Object}                  Member element or `undefined`
  */
 var getUser = (0, _reselect.createSelector)([commons.getUser, commons.getMembers], function (user, members) {
-  return !Object.prototype.hasOwnProperty.call(members, user) ? null : members[user];
+  return !Object.prototype.hasOwnProperty.call(members, user) ? undefined : members[user];
 });
 
 exports.default = getUser;

@@ -27,10 +27,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @param {Object}  [obj]             Accept the folling:
  * @param {Object}  [obj.commentId]   Comment ID
  *
- * @returns {Object}                  Comment element or `null`
+ * @returns {Object}                  Comment element or `undefined`
  */
 var getComment = (0, _reselect.createSelector)([commons.getComments, commons.getCommentId], function (comments, commentId) {
-  return !Object.prototype.hasOwnProperty.call(comments, commentId) ? null : comments[commentId];
+  return !Object.prototype.hasOwnProperty.call(comments, commentId) ? undefined : comments[commentId];
 });
 
 exports.default = getComment;

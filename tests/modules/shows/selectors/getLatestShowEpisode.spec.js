@@ -18,13 +18,13 @@ describe('Select latest episode from state ', () => {
     expect(value).to.deep.equal({ id: 3452345 });
   });
 
-  it('returns null if episode does not exist in episodes reducer', () => {
+  it('returns undefined if episode does not exist in episodes reducer', () => {
     const value = selector(state, { showId: 4 });
-    expect(value).to.equal(null);
+    expect(value).to.equal(undefined);
   });
 
-  it('returns null if episode does not exist in latest episodes reducer', () => {
+  it('returns undefined if episode does not exist in latest episodes reducer', () => {
     const value = selector(state, { showId: 5 });
-    expect(value).to.equal(null);
+    expect(value).to.equal(undefined);
   });
 });

@@ -22,13 +22,13 @@ describe('Select latest episode from state ', () => {
     expect(value).to.have.lengthOf(2);
   });
 
-  it('returns null if episode does not exist in comments reducer', () => {
+  it('returns undefined if episode does not exist in comments reducer', () => {
     const value = selector(state, { episodeId: 4 });
-    expect(value).to.deep.equal(null);
+    expect(value).to.deep.equal(undefined);
   });
 
-  it('returns null if episode does not exist in comments shows reducer', () => {
+  it('returns undefined if episode does not exist in comments shows reducer', () => {
     const value = selector(state, { episodeId: 5 });
-    expect(value).to.deep.equal(null);
+    expect(value).to.deep.equal(undefined);
   });
 });

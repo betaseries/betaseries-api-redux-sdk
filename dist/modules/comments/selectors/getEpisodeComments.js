@@ -35,24 +35,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param {Object}  [obj]             Accept the folling:
  * @param {Object}  [obj.episodeId]   Episode ID
  *
- * @returns {Array}                   List of comments or `null`
+ * @returns {Array}                   List of comments or `undefined`
  */
 var getEpisodeComments = (0, _reselect.createSelector)([commons.getComments, commons.getEpisodeComments, commons.getEpisodeId], function (comments, episodeComments, episodeId) {
   var commentIds = !Object.prototype.hasOwnProperty.call(episodeComments, episodeId) ? null : episodeComments[episodeId];
 
   if (!commentIds) {
-    return null;
+    return undefined;
   }
 
   var commentsFiltered = (0, _filter3.default)(comments, function (comment) {
     return commentIds.indexOf(comment.id) !== -1;
   });
 
-  if (commentsFiltered.length === 0) {
-    return null;
-  }
-
-  return commentsFiltered;
+  return commentsFiltered.length === 0 ? undefined : commentsFiltered;
 });
 
 exports.default = getEpisodeComments;

@@ -27,10 +27,10 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
  * @param {Object}  [obj]             Accept the folling:
  * @param {Object}  [obj.episodeId]   Episode ID
  *
- * @returns {Object}                  Episode element or `null`
+ * @returns {Object}                  Episode element or `undefined`
  */
 var getEpisode = (0, _reselect.createSelector)([commons.getEpisodes, commons.getEpisodeId], function (episodes, episodeId) {
-  return !Object.prototype.hasOwnProperty.call(episodes, episodeId) ? null : episodes[episodeId];
+  return !Object.prototype.hasOwnProperty.call(episodes, episodeId) ? undefined : episodes[episodeId];
 });
 
 exports.default = getEpisode;

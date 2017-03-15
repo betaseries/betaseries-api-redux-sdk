@@ -102,7 +102,7 @@ BetaSeries.getReducer('members', 'members').members;
 
 Select member from state
 
-**Returns**: {Object} - Member element or `null`
+**Returns**: {Object} - Member element or `undefined`
 
 **Category**: selectors  
 
@@ -128,7 +128,7 @@ const mapStateToProps = (state, props) => ({
 
 Select authenticated user from state
 
-**Returns**: {Object} - Member element or `null`
+**Returns**: {Object} - Member element or `undefined`
 
 **Category**: selectors  
 
