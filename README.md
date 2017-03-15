@@ -1,4 +1,4 @@
-# betaseries-api-redux-sdk
+# betaseries-api-redux-sdk [![Build Status](https://travis-ci.org/gonetcats/betaseries-api-redux-sdk.svg?branch=master)](https://travis-ci.org/gonetcats/betaseries-api-redux-sdk)
 
 The official BetaSeries SDK for JavaScript using [Redux](http://redux.js.org/) (available for browsers and Node.js).
 
