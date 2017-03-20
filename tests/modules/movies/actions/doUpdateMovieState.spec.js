@@ -43,6 +43,7 @@ describe('Update movie state', () => {
       const stateMoviesReducer = moviesReducer(store.getState().movies, action);
       expect(Object.keys(stateMoviesReducer)).to.have.lengthOf(1);
       expect(stateMoviesReducer[7094].auth_user.status).to.deep.equal(2);
+      expect(stateMoviesReducer[7094].auth_user.in_account).to.deep.equal(true);
     });
   });
 });

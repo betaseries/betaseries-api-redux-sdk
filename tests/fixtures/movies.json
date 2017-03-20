@@ -38,7 +38,7 @@
     },
     "resource_url":"https:\/\/www.betaseries.com\/film\/7094-don-jons-addiction",
     "auth_user":{
-      "in_account":true,
+      "in_account":false,
       "status":2,
       "mail":true,
       "twitter":false,
