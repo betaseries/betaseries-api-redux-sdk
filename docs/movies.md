@@ -61,7 +61,7 @@ Retrieve movies of the member
 | [obj.state] | {Number} | State of movie   (`0` = to see, `1` = seen, `2` = doesn't want to see (`0` by default)) |
 | [obj.start] | {Number} | Used for paginate (`0` by default) |
 | [obj.limit] | {Number} | Used for paginate (optional) |
-| [obj.order] | {String} | Sort order (`alphabetical`, `popularity` (optional)) |
+| [obj.order] | {String} | Sort order (`alphabetical`, `popularity`, `added` (optional)) |
 
 **Example**  
 
