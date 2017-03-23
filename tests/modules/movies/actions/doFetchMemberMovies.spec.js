@@ -39,6 +39,11 @@ describe('Retrieve movies of the member', () => {
       expect(stateMembersReducer).to.deep.equal({ 1: [7094, 4656] });
     });
 
+    it('validate members reducer with existing values', () => {
+      const stateMembersReducer = membersReducer({ 1: [7094, 321] }, action);
+      expect(stateMembersReducer).to.deep.equal({ 1: [7094, 321, 4656] });
+    });
+
     it('validate movies reducer', () => {
       const stateMoviesReducer = moviesReducer(undefined, action);
       expect(Object.keys(stateMoviesReducer)).to.deep.equal(['4656', '7094']);
