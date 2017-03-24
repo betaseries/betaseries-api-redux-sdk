@@ -1,9 +1,10 @@
-./build-tools
-./docs
-./lib
-./tests
-./tmp
 .babelrc
+.npmignore
 .editorconfig
 .eslintrc
 .travis.yml
+build-tools
+docs
+lib
+tests
+tmp
