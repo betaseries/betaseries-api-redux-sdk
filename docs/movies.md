@@ -350,7 +350,7 @@ Select movies by member from state
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
 | [obj] | {Object} | Accept the folling: |
-| [obj.memberId] | {Number} | Show ID |
+| [obj.memberId] | {Number} | Member ID |
 | [obj.state] | {Number} | State of movie   (`0` = to see, `1` = seen, `2` = doesn't want to see (`null` by default)) |
 
 **Example**  

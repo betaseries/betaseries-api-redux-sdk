@@ -6,6 +6,7 @@
     * _actions_
         * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
         * [.doFetchEpisodeByCode([obj])](#module_Shows.doFetchEpisodeByCode) ⇒ {Promise}
+        * [.doFetchEpisodesListsList([obj])](#module_Shows.doFetchEpisodesListsList) ⇒ {Promise}
         * [.doFetchFavoriteShows([obj])](#module_Shows.doFetchFavoriteShows) ⇒ {Promise}
         * [.doFetchLatestEpisode([obj])](#module_Shows.doFetchLatestEpisode) ⇒ {Promise}
         * [.doFetchManyEpisodes([obj])](#module_Shows.doFetchManyEpisodes) ⇒ {Promise}
@@ -19,10 +20,12 @@
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
         * [.favorites(state, action)](#module_Shows.favorites) ⇒ {Object}
         * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
+        * [.membersEpisodesToSee(state, action)](#module_Shows.membersEpisodesToSee) ⇒ {Object}
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
     * _selectors_
         * [.getEpisode](#module_Shows.getEpisode) ⇒ {Object}
+        * [.getEpisodesToSee](#module_Shows.getEpisodesToSee) ⇒ {Array}
         * [.getLatestShowEpisode](#module_Shows.getLatestShowEpisode) ⇒ {Object}
         * [.getShow](#module_Shows.getShow) ⇒ {Object}
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
@@ -74,6 +77,33 @@ Retrieve episode
 
 ```js
 BetaSeries.getAction('shows', 'doFetchEpisodeByCode')({ showId: 123, code: 'SO3E15' });
+```
+
+<a name="module_Shows.doFetchEpisodesListsList"></a>
+
+### .doFetchEpisodesListsList([obj])
+
+Retrieve episodes list
+
+**Dispatch**: `FETCH_EPISODES_LIST`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.subtitles] | {String} | Displays episodes with some subtitles available |
+| [obj.limit] | {Number} | Limit number of episodes per shows (default `1`) |
+| [obj.showId] | {Number} | Show ID (optional) |
+| [obj.userId] | {Number} | User ID (optional) |
+| [obj.specials] | {Bool} | Includes special episodes (default `false`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchEpisodesList')();
 ```
 
 <a name="module_Shows.doFetchFavoriteShows"></a>
@@ -408,6 +438,40 @@ BetaSeries.getReducer('shows', 'latestEpisodes').showsLatestEpisodes;
 }
 ```
 
+<a name="module_Shows.membersEpisodesToSee"></a>
+
+### .membersEpisodesToSee(state, action)
+
+List episodes to see of the member
+
+**Actions listened**:
+
+ * `FETCH_EPISODES_LIST`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'membersEpisodesToSee').showsMembersEpisodesToSee;
+
+// state value example
+{
+  '12': [               // member ID
+    1234, 213, 2343,    // list of episodes ID
+  ],
+  ...,
+}
+```
+
 <a name="module_Shows.shows"></a>
 
 ### .shows(state, action)
@@ -500,6 +564,32 @@ Select episode from state
 ```js
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('shows', 'getEpisode')(state, { episodeId: props.episodeId });
+});
+```
+
+<a name="module_Shows.getEpisodesToSee"></a>
+
+### .getEpisodesToSee
+
+Select episodes to see by member from state
+
+**Returns**: {Array} - List of episodes to see element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.memberId] | {Number} | Member ID (optional) |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  episode: BetaSeries.getSelector('shows', 'getEpisodesToSee')(state, {
+    memberId: props.memberId,
+  });
 });
 ```
 
