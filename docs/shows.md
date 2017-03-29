@@ -98,6 +98,7 @@ Retrieve episodes list
 | [obj.limit] | {Number} | Limit number of episodes per shows (default `1`) |
 | [obj.showId] | {Number} | Show ID (optional) |
 | [obj.userId] | {Number} | User ID (optional) |
+| [obj.released] | {Number} | Returns only released episodes (default `1`)   (`0` = both, `1` = released episodes, `2` = not released episodes |
 | [obj.specials] | {Bool} | Includes special episodes (default `false`) |
 
 **Example**  
