@@ -5,6 +5,7 @@
 * [Movies](#module_Movies)
     * _actions_
         * [.doFetchFavoriteMovies([obj])](#module_Movies.doFetchFavoriteMovies) ⇒ {Promise}
+        * [.doFetchManyMovies([obj])](#module_Movies.doFetchManyMovies) ⇒ {Promise}
         * [.doFetchMemberMovies([obj])](#module_Movies.doFetchMemberMovies) ⇒ {Promise}
         * [.doFetchMovie([obj])](#module_Movies.doFetchMovie) ⇒ {Promise}
         * [.doFetchMovieCharacters([obj])](#module_Movies.doFetchMovieCharacters) ⇒ {Promise}
@@ -41,6 +42,29 @@ Retrieve favorite movies of the member
 
 ```js
 BetaSeries.getAction('movies', 'doFetchFavoriteMovies')({ memberId: 1 });
+```
+
+<a name="module_Movies.doFetchManyMovies"></a>
+
+### .doFetchManyMovies([obj])
+
+Retrieve many movies
+
+**Dispatch**: `FETCH_MANY_MOVIES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.movieIds] | {Array} | List of movies ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doFetchManyMovies')({ movieIds: [1275, 481] });
 ```
 
 <a name="module_Movies.doFetchMemberMovies"></a>
