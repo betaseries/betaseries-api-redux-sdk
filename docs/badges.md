@@ -5,6 +5,7 @@
 * [Badges](#module_Badges)
     * _actions_
         * [.doFetchBadge([obj])](#module_Badges.doFetchBadge) ⇒ {Promise}
+        * [.doFetchManyBadges([obj])](#module_Badges.doFetchManyBadges) ⇒ {Promise}
     * _reducers_
         * [.badges(state, action)](#module_Badges.badges) ⇒ {Object}
     * _selectors_
@@ -31,6 +32,29 @@ Retrieve badge
 
 ```js
 BetaSeries.getAction('shows', 'doFetchBadge')({ badgeId: 123 });
+```
+
+<a name="module_Badges.doFetchManyBadges"></a>
+
+### .doFetchManyBadges([obj])
+
+Retrieve many badges
+
+**Dispatch**: `FETCH_MANY_BADGES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.badgeIds] | {Array} | List of badges ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('badges', 'doFetchManyBadges')({ badgeIds: [1275, 481] });
 ```
 
 <a name="module_Badges.badges"></a>
