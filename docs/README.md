@@ -10,6 +10,8 @@ Here is the guide for using BetaSeries API Redux SDK. Enjoy.
 * [Movies module](movies.md)
 * [Comments module](comments.md)
 * [Searchs module](searchs.md)
+* [Timelines module](timelines.md)
+* [Badges module](badges.md)
 
 ## Usage example
 

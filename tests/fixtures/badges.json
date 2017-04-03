@@ -1,0 +1,23 @@
+[
+    {
+      "id":1,
+      "code":"debutant",
+      "name":"D\u00e9butant",
+      "description":"Vous avez regard\u00e9 votre premier \u00e9pisode. Bienvenue sur BetaSeries !",
+      "date":"2011-03-14 03:37:20"
+    },
+    {
+      "id":64,
+      "code":"serievore",
+      "name":"S\u00e9rievore",
+      "description":"Un mois s'est \u00e9coul\u00e9 et 30 \u00e9pisodes ont \u00e9t\u00e9 regard\u00e9s, vous avez le double-clic facile.",
+      "date":"2011-03-14 03:37:20"
+    },
+    {
+      "id":99,
+      "code":"planque",
+      "name":"Planqu\u00e9",
+      "description":"Ces douze derni\u00e8res heures vous avez regard\u00e9 4 \u00e9pisodes. Faites quelque chose de votre vie.",
+      "date":"2011-03-14 03:37:20"
+    }
+]
