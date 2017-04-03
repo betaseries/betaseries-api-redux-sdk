@@ -26,7 +26,8 @@ Retrieve episode
 | --- | --- | --- |
 | [obj] | {Object} | Accept the folling: |
 | [obj.nbpp] | {Number} | Limit number of events (default `20`) |
-| [obj.since_id] | {Number} | ID of last event received (optional) |
+| [obj.since_id] | {Number} | ID of event. I will received previous events (optional) |
+| [obj.last_id] | {Number} | ID of event. I will received following events  (optional) |
 | [obj.types] | {Array} | Types of events separated by a comma (optional) |
 
 **Example**  
