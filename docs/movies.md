@@ -18,6 +18,7 @@
         * [.movies(state, action)](#module_Movies.movies) ⇒ {Object}
     * _selectors_
         * [.getMemberMovies](#module_Movies.getMemberMovies) ⇒ {Array}
+        * [.getMovie](#module_Movies.getMovie) ⇒ {Array}
 
 <a name="module_Movies.doFetchFavoriteMovies"></a>
 
@@ -357,9 +358,35 @@ Select movies by member from state
 
 ```js
 const mapStateToProps = (state, props) => ({
-  episode: BetaSeries.getSelector('shows', 'getMemberMovies')(state, {
+  episode: BetaSeries.getSelector('movies', 'getMemberMovies')(state, {
     memberId: props.memberId,
     state: 0,
+  });
+});
+```
+
+<a name="module_Movies.getMovie"></a>
+
+### .getMovie
+
+Select movie by ID from state
+
+**Returns**: {Array} - Movie element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.movieId] | {Number} | Movie ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  episode: BetaSeries.getSelector('movies', 'getMovie')(state, {
+    movieId: props.movieId,
   });
 });
 ```
