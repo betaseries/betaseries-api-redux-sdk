@@ -3,10 +3,41 @@
 # Timelines
 
 * [Timelines](#module_Timelines)
+    * _actions_
+        * [.doFetchFriendsTimeline([obj])](#module_Timelines.doFetchFriendsTimeline) ⇒ {Promise}
     * _reducers_
         * [.friends(state, action)](#module_Timelines.friends) ⇒ {Object}
     * _selectors_
         * [.getFriendsTimeline](#module_Timelines.getFriendsTimeline) ⇒ {Object}
+
+<a name="module_Timelines.doFetchFriendsTimeline"></a>
+
+### .doFetchFriendsTimeline([obj])
+
+Retrieve episode
+
+**Dispatch**: `FETCH_FRIENDS_TIMELINE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.nbpp] | {Number} | Limit number of events (default `20`) |
+| [obj.since_id] | {Number} | ID of last event received (optional) |
+| [obj.types] | {Array} | Types of events separated by a comma (optional) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('timelines', 'doFetchFriendsTimeline')({
+  nbpp: 32,
+  since_id: 153465413,
+  types: ['markas'],
+});
+```
 
 <a name="module_Timelines.friends"></a>
 
