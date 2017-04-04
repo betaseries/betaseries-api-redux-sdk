@@ -1,0 +1,32 @@
+[{
+  "id":120,
+  "question":"Pour vous, la fin de la s\u00e9rie c'est synonyme de...",
+  "title":"La fin de The Vampire Diaries",
+  "resource_url":"https:\/\/www.betaseries.com\/sondage\/120-la-fin-de-the-vampire-diaries",
+  "answers":[
+    {
+      "answer":"Torture, ils vont me manquer !",
+      "number":524,
+      "percentage":23.81
+    },
+    {
+      "answer":"Soulagement, il \u00e9tait temps que \u00e7a se termine.",
+      "number":386,
+      "percentage":17.54
+    },
+    {
+      "answer":"Indiff\u00e9rence, j'ai arr\u00eat\u00e9 la s\u00e9rie il y a longtemps.",
+      "number":422,
+      "percentage":19.17
+    },
+    {
+      "answer":"Ah, ce n'\u00e9tait pas encore fini ? Je n'ai jamais regard\u00e9.",
+      "number":869,
+      "percentage":39.48
+    }
+  ],
+  "total_answers":2201,
+  "user_answer":"1",
+  "active":true,
+  "comments":7
+}]

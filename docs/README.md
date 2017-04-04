@@ -12,6 +12,7 @@ Here is the guide for using BetaSeries API Redux SDK. Enjoy.
 * [Searchs module](searchs.md)
 * [Timelines module](timelines.md)
 * [Badges module](badges.md)
+* [Polls module](polls.md)
 
 ## Usage example
 

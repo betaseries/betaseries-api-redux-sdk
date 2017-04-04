@@ -28,6 +28,7 @@ Retrieve episode
 | [obj.nbpp] | {Number} | Limit number of events (default `20`) |
 | [obj.since_id] | {Number} | ID of event. I will received previous events (optional) |
 | [obj.last_id] | {Number} | ID of event. I will received following events  (optional) |
+| [obj.self] | {Bool} | Includes events of the authenticated user (default `false`) |
 | [obj.types] | {Array} | Types of events separated by a comma (optional) |
 
 **Example**  
