@@ -21,7 +21,7 @@ describe('Select member episodes to see from state ', () => {
 
   it('returns undefined if member does not have episodes to see', () => {
     const value = selector(state, { memberId: 2 });
-    expect(value).to.deep.equal(undefined);
+    expect(value).to.deep.equal([]);
   });
 
   it('returns undefined if member does not exists', () => {
