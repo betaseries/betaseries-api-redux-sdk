@@ -126,4 +126,37 @@ describe('Retrieve friends timeline', () => {
       ]);
     });
   });
+
+  describe('call api returns unordered events', () => {
+    let action;
+
+    const store = mockStore();
+
+    const eventsPayload = eventsFixture.slice(2, 5).reverse();
+
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        events: eventsPayload
+      })
+    );
+
+    before(async () => {
+      action = await store.dispatch(actionToDispatch());
+    });
+
+    it('validate friends reducer', () => {
+      const stateFriendsReducer = friendsReducer(undefined, action);
+      expect(eventsPayload.map(event => event.id)).to.deep.equal([
+        1827420637,
+        1827420999,
+        1827421054
+      ]);
+
+      expect(stateFriendsReducer.map(event => event.id)).to.deep.equal([
+        1827421054,
+        1827420999,
+        1827420637
+      ]);
+    });
+  });
 });
