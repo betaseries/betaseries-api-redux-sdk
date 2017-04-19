@@ -163,6 +163,8 @@ List of comments
  * `FETCH_SHOW_COMMENTS`
  * `FETCH_EVENT_COMMENTS`
  * `FETCH_COMMENT`
+ * `FETCH_FRIENDS_TIMELINE`
+ * `FETCH_TIMELINE_EVENT`
 
 **Returns**: {Object}
 
@@ -232,6 +234,9 @@ List the comments of the episode
 **Actions listened**:
 
  * `FETCH_EVENT_COMMENTS`
+ * `COMMENT_EVENT`
+ * `FETCH_FRIENDS_TIMELINE`
+ * `FETCH_TIMELINE_EVENT`
 
 **Returns**: {Object}
 
@@ -246,11 +251,11 @@ List the comments of the episode
 
 ```js
 // get reducer
-BetaSeries.getReducer('comments', 'episodes').commentsEpisodes;
+BetaSeries.getReducer('comments', 'events').commentsEvents;
 
 // state value example
 {
-  '12': [               // episode ID
+  '12': [               // event ID
     1234, 213, 2343,    // list of comments ID
   ],
   ...,

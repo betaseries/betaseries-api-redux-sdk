@@ -4,11 +4,38 @@
 
 * [Timelines](#module_Timelines)
     * _actions_
+        * [.doFetchEvent([obj])](#module_Timelines.doFetchEvent) ⇒ {Promise}
         * [.doFetchFriendsTimeline([obj])](#module_Timelines.doFetchFriendsTimeline) ⇒ {Promise}
     * _reducers_
         * [.friends(state, action)](#module_Timelines.friends) ⇒ {Object}
     * _selectors_
+        * [.getEvent](#module_Timelines.getEvent) ⇒ {Object}
         * [.getFriendsTimeline](#module_Timelines.getFriendsTimeline) ⇒ {Object}
+
+<a name="module_Timelines.doFetchEvent"></a>
+
+### .doFetchEvent([obj])
+
+Retrieve event
+
+**Dispatch**: `FETCH_TIMELINE_EVENT`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.eventId] | {Number} | ID of event |
+
+**Example**  
+
+```js
+BetaSeries.getAction('timelines', 'doFetchEvent')({
+  eventId: 32,
+});
+```
 
 <a name="module_Timelines.doFetchFriendsTimeline"></a>
 
@@ -50,6 +77,7 @@ List of the friends timeline events
 **Actions listened**:
 
  * `FETCH_FRIENDS_TIMELINE`
+ * `FETCH_TIMELINE_EVENT`
 
 **Returns**: {Object}
 
@@ -74,6 +102,30 @@ BetaSeries.getReducer('timelines', 'friends').timelinesFriends;
   },
   ...,
 ]
+```
+
+<a name="module_Timelines.getEvent"></a>
+
+### .getEvent
+
+Select timeline event from state
+
+**Returns**: {Object} - Event element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  event: BetaSeries.getSelector('timelines', 'getEvent')(state, {
+    eventId: 2674,
+  }),
+});
 ```
 
 <a name="module_Timelines.getFriendsTimeline"></a>
