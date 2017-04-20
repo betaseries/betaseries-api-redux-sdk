@@ -14,8 +14,8 @@ describe('Select event from state ', () => {
   it('returns events', () => {
     const value = selector(state);
     expect(value.map(event => event.id)).to.deep.equal([
-      1827423776,
-      1827424327
+      1827424327,
+      1827423776
     ]);
   });
 });
