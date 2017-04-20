@@ -5,11 +5,15 @@
 * [Timelines](#module_Timelines)
     * _actions_
         * [.doFetchEvent([obj])](#module_Timelines.doFetchEvent) ⇒ {Promise}
+        * [.doFetchFeedTimeline([obj])](#module_Timelines.doFetchFeedTimeline) ⇒ {Promise}
         * [.doFetchFriendsTimeline([obj])](#module_Timelines.doFetchFriendsTimeline) ⇒ {Promise}
     * _reducers_
+        * [.events(state, action)](#module_Timelines.events) ⇒ {Object}
+        * [.feed(state, action)](#module_Timelines.feed) ⇒ {Object}
         * [.friends(state, action)](#module_Timelines.friends) ⇒ {Object}
     * _selectors_
         * [.getEvent](#module_Timelines.getEvent) ⇒ {Object}
+        * [.getFeedTimeline](#module_Timelines.getFeedTimeline) ⇒ {Object}
         * [.getFriendsTimeline](#module_Timelines.getFriendsTimeline) ⇒ {Object}
 
 <a name="module_Timelines.doFetchEvent"></a>
@@ -34,6 +38,32 @@ Retrieve event
 ```js
 BetaSeries.getAction('timelines', 'doFetchEvent')({
   eventId: 32,
+});
+```
+
+<a name="module_Timelines.doFetchFeedTimeline"></a>
+
+### .doFetchFeedTimeline([obj])
+
+Retrieve episode
+
+**Dispatch**: `FETCH_FEED_TIMELINE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.nbpp] | {Number} | Limit number of events (default `20`) |
+| [obj.page] | {Number} | Page number (default `1`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('timelines', 'doFetchFeedTimeline')({
+  nbpp: 32,
 });
 ```
 
@@ -68,6 +98,73 @@ BetaSeries.getAction('timelines', 'doFetchFriendsTimeline')({
 });
 ```
 
+<a name="module_Timelines.events"></a>
+
+### .events(state, action)
+
+List of the events
+
+**Actions listened**:
+
+ * `FETCH_FRIENDS_TIMELINE`
+ * `FETCH_TIMELINE_EVENT`
+ * `COMMENT_EVENT`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('timelines', 'events').timelinesEvents;
+
+// state example
+{
+  '3215': {
+    id: 3215,          // event ID
+    ...event,        // event element
+  },
+  ...,
+}
+```
+
+<a name="module_Timelines.feed"></a>
+
+### .feed(state, action)
+
+List of the feed timeline events
+
+**Actions listened**:
+
+ * `FETCH_FEED_TIMELINE`
+ * `FETCH_TIMELINE_EVENT`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('timelines', 'feed').timelinesFeed;
+
+// state example
+[ 3215, 2576, 9234, ...] // Event Ids
+```
+
 <a name="module_Timelines.friends"></a>
 
 ### .friends(state, action)
@@ -78,6 +175,7 @@ List of the friends timeline events
 
  * `FETCH_FRIENDS_TIMELINE`
  * `FETCH_TIMELINE_EVENT`
+ * `COMMENT_EVENT`
 
 **Returns**: {Object}
 
@@ -95,13 +193,7 @@ List of the friends timeline events
 BetaSeries.getReducer('timelines', 'friends').timelinesFriends;
 
 // state example
-[
-  {
-    id: 3215,          // event ID
-    ...event,        // event element
-  },
-  ...,
-]
+[ 3215, 2576, 9234, ...] // Event Ids
 ```
 
 <a name="module_Timelines.getEvent"></a>
@@ -125,6 +217,28 @@ const mapStateToProps = (state, props) => ({
   event: BetaSeries.getSelector('timelines', 'getEvent')(state, {
     eventId: 2674,
   }),
+});
+```
+
+<a name="module_Timelines.getFeedTimeline"></a>
+
+### .getFeedTimeline
+
+Select feed timeline events from state
+
+**Returns**: {Object} - Feed timeline events element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  events: BetaSeries.getSelector('timelines', 'getFeedTimeline')(state),
 });
 ```
 

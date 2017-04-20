@@ -164,6 +164,7 @@ List of comments
  * `FETCH_EVENT_COMMENTS`
  * `FETCH_COMMENT`
  * `FETCH_FRIENDS_TIMELINE`
+ * `FETCH_FEED_TIMELINE`
  * `FETCH_TIMELINE_EVENT`
 
 **Returns**: {Object}
@@ -236,6 +237,7 @@ List the comments of the episode
  * `FETCH_EVENT_COMMENTS`
  * `COMMENT_EVENT`
  * `FETCH_FRIENDS_TIMELINE`
+ * `FETCH_FEED_TIMELINE`
  * `FETCH_TIMELINE_EVENT`
 
 **Returns**: {Object}

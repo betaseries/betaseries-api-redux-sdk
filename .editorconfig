@@ -15,7 +15,7 @@ trim_trailing_whitespace = false
 
 [*.js]
 indent_size = 2
-trim_trailing_whitespace = false
+trim_trailing_whitespace = true
 
 [COMMIT_EDITMSG]
 max_line_length = 0

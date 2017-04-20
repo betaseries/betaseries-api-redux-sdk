@@ -1,6 +1,7 @@
+import arrayToHash from '../../../../lib/utils/func/arrayToHash';
 import commentReducer from '../../../../lib/modules/comments/reducers/comments';
 import eventReducer from '../../../../lib/modules/comments/reducers/events';
-import friendReducer from '../../../../lib/modules/timelines/reducers/friends';
+import eventsReducer from '../../../../lib/modules/timelines/reducers/events';
 
 const actionFile = '../lib/modules/comments/actions/doCommentEvent';
 const commentsFixture = require('../../../fixtures/comments.json');
@@ -21,7 +22,7 @@ describe('Comment event', () => {
 
     const event = eventsFixture[1];
     const store = mockStore({
-      timelinesFriends: [event]
+      timelinesEvents: arrayToHash([event])
     });
 
     const actionToDispatch = getInstance(
@@ -43,12 +44,12 @@ describe('Comment event', () => {
       expect(action.payload.comment).to.be.an('object');
     });
 
-    it('validate friends reducer', () => {
-      const stateFriendsReducer = friendReducer(
-        store.getState().timelinesFriends,
+    it('validate events reducer', () => {
+      const stateEventsReducer = eventsReducer(
+        store.getState().timelinesEvents,
         action
       );
-      expect(stateFriendsReducer[0].comments).to.deep.equal(1);
+      expect(stateEventsReducer[event.id].comments).to.deep.equal(1);
     });
 
     it('validate events reducer', () => {
@@ -67,7 +68,7 @@ describe('Comment event', () => {
 
     const event = eventsFixture[0];
     const store = mockStore({
-      timelinesFriends: [event],
+      timelinesEvents: arrayToHash([event]),
       commentsEvents: {
         [event.id]: event.first_comments.map(comment => comment.id)
       },
@@ -99,12 +100,12 @@ describe('Comment event', () => {
       expect(action.payload.comment).to.be.an('object');
     });
 
-    it('validate friends reducer', () => {
-      const stateFriendsReducer = friendReducer(
-        store.getState().timelinesFriends,
+    it('validate events reducer', () => {
+      const stateEventsReducer = eventsReducer(
+        store.getState().timelinesEvents,
         action
       );
-      expect(stateFriendsReducer[0].comments).to.deep.equal(3);
+      expect(stateEventsReducer[event.id].comments).to.deep.equal(3);
     });
 
     it('validate events reducer', () => {

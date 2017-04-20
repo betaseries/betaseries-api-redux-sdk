@@ -1,14 +1,14 @@
 import arrayToHash from '../../../../lib/utils/func/arrayToHash';
 import arrayToID from '../../../../lib/utils/func/arrayToID';
-import friendsReducer from '../../../../lib/modules/timelines/reducers/friends';
+import feedReducer from '../../../../lib/modules/timelines/reducers/feed';
 import commentsReducer
   from '../../../../lib/modules/comments/reducers/comments';
 import eventsReducer from '../../../../lib/modules/comments/reducers/events';
 
-const actionFile = '../lib/modules/timelines/actions/doFetchFriendsTimeline';
+const actionFile = '../lib/modules/timelines/actions/doFetchFeedTimeline';
 const eventsFixture = require('../../../fixtures/events.json');
 
-describe('Retrieve friends timeline', () => {
+describe('Retrieve feed timeline', () => {
   /**
    * getInstance method
    */
@@ -33,13 +33,13 @@ describe('Retrieve friends timeline', () => {
     });
 
     it('validate action', () => {
-      expect(action.type).to.equal('FETCH_FRIENDS_TIMELINE');
+      expect(action.type).to.equal('FETCH_FEED_TIMELINE');
       expect(action.payload.events).to.be.an('array');
     });
 
-    it('validate friends reducer', () => {
-      const stateFriendsReducer = friendsReducer(undefined, action);
-      expect(stateFriendsReducer).to.deep.equal([1827421054, 1827420999]);
+    it('validate feed reducer', () => {
+      const stateFeedReducer = feedReducer(undefined, action);
+      expect(stateFeedReducer).to.deep.equal([1827421054, 1827420999]);
     });
 
     it('validate comments reducer', () => {
@@ -71,13 +71,13 @@ describe('Retrieve friends timeline', () => {
       action = await store.dispatch(actionToDispatch());
     });
 
-    it('validate friends reducer when I received new events', () => {
-      const stateFriendsReducer = friendsReducer(
+    it('validate feed reducer when I received new events', () => {
+      const stateFeedReducer = feedReducer(
         store.getState().timelinesFriends,
         action
       );
 
-      expect(stateFriendsReducer).to.deep.equal([
+      expect(stateFeedReducer).to.deep.equal([
         1827424327,
         1827423776,
         1827421054,
@@ -101,59 +101,66 @@ describe('Retrieve friends timeline', () => {
 
     const store = mockStore({
       timelineEvents: arrayToHash(eventsFixture.slice(2, 4)),
-      timelinesFriends: arrayToID(eventsFixture.slice(2, 4))
+      timelinesFriends: arrayToID(eventsFixture.slice(0, 5))
     });
 
     const actionToDispatch = getInstance(
       Promise.resolve({
-        events: eventsFixture.slice(3, 5)
+        page: 2,
+        events: eventsFixture.slice(6, 7)
       })
     );
 
     before(async () => {
-      action = await store.dispatch(actionToDispatch());
+      action = await store.dispatch(actionToDispatch({ page: 2 }));
     });
 
-    it('validate friends reducer when I received old events', () => {
-      const stateFriendsReducer = friendsReducer(
+    it('validate feed reducer when I call page 2', () => {
+      const stateFeedReducer = feedReducer(
         store.getState().timelinesFriends,
         action
       );
 
-      expect(stateFriendsReducer).to.deep.equal([
+      expect(stateFeedReducer).to.deep.equal([
+        1827424327,
+        1827423776,
         1827421054,
         1827420999,
-        1827420637
+        1827420637,
+        1827420482
       ]);
     });
   });
 
-  describe('call api returns unordered events', () => {
+  describe('call api with state is already defined', () => {
     let action;
 
-    const store = mockStore();
-
-    const eventsPayload = eventsFixture.slice(2, 5).reverse();
+    const store = mockStore({
+      timelineEvents: arrayToHash(eventsFixture.slice(2, 4)),
+      timelinesFriends: arrayToID(eventsFixture.slice(0, 5))
+    });
 
     const actionToDispatch = getInstance(
       Promise.resolve({
-        events: eventsPayload
+        page: 1,
+        events: eventsFixture.slice(6, 7)
       })
     );
 
     before(async () => {
-      action = await store.dispatch(actionToDispatch());
+      action = await store.dispatch(actionToDispatch({ page: 1 }));
     });
 
-    it('validate friends reducer', () => {
-      const stateFriendsReducer = friendsReducer(undefined, action);
-      expect(eventsPayload.map(event => event.id)).to.deep.equal([
-        1827420637,
-        1827420999,
-        1827421054
-      ]);
+    it('validate feed reducer when I call page 1', () => {
+      const stateFeedReducer = feedReducer(
+        store.getState().timelinesFriends,
+        action
+      );
 
-      expect(stateFriendsReducer).to.deep.equal([
+      expect(stateFeedReducer).to.deep.equal([
+        1827420482,
+        1827424327,
+        1827423776,
         1827421054,
         1827420999,
         1827420637

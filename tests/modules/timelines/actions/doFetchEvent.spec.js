@@ -1,7 +1,10 @@
-import friendsReducer from '../../../../lib/modules/timelines/reducers/friends';
+import _map from 'lodash/map';
+import arrayToHash from '../../../../lib/utils/func/arrayToHash';
+import eventsReducer from '../../../../lib/modules/timelines/reducers/events';
+import eventsCommentReducer
+  from '../../../../lib/modules/comments/reducers/events';
 import commentsReducer
   from '../../../../lib/modules/comments/reducers/comments';
-import eventsReducer from '../../../../lib/modules/comments/reducers/events';
 
 const actionFile = '../lib/modules/timelines/actions/doFetchEvent';
 const eventsFixture = require('../../../fixtures/events.json');
@@ -40,9 +43,9 @@ describe('Retrieve event timeline', () => {
       expect(action.payload.event).to.be.an('object');
     });
 
-    it('validate friends reducer', () => {
-      const stateFriendsReducer = friendsReducer(undefined, action);
-      expect(stateFriendsReducer.map(event => event.id)).to.deep.equal([
+    it('validate events reducer', () => {
+      const stateEventsReducer = eventsReducer(undefined, action);
+      expect(_map(stateEventsReducer, event => event.id)).to.deep.equal([
         1827424327
       ]);
     });
@@ -53,8 +56,8 @@ describe('Retrieve event timeline', () => {
     });
 
     it('validate events reducer', () => {
-      const stateEventsReducer = eventsReducer(undefined, action);
-      expect(Object.keys(stateEventsReducer)).to.have.lengthOf(1);
+      const stateEventsCommentReducer = eventsCommentReducer(undefined, action);
+      expect(Object.keys(stateEventsCommentReducer)).to.have.lengthOf(1);
     });
   });
 
@@ -62,7 +65,7 @@ describe('Retrieve event timeline', () => {
     let action;
 
     const store = mockStore({
-      timelinesFriends: eventsFixture.slice(2, 4)
+      timelinesEvents: arrayToHash(eventsFixture.slice(2, 4))
     });
 
     const actionToDispatch = getInstance(
@@ -80,15 +83,15 @@ describe('Retrieve event timeline', () => {
       );
     });
 
-    it('validate friends reducer when I received new events', () => {
-      const stateFriendsReducer = friendsReducer(
-        store.getState().timelinesFriends,
+    it('validate events reducer when I received new events', () => {
+      const stateEventsReducer = eventsReducer(
+        store.getState().timelinesEvents,
         action
       );
 
-      expect(stateFriendsReducer.map(event => event.id)).to.deep.equal([
-        1827421054,
-        1827420999
+      expect(_map(stateEventsReducer, event => event.id)).to.deep.equal([
+        1827420999,
+        1827421054
       ]);
     });
 
@@ -98,8 +101,8 @@ describe('Retrieve event timeline', () => {
     });
 
     it('validate events reducer', () => {
-      const stateEventsReducer = eventsReducer(undefined, action);
-      expect(Object.keys(stateEventsReducer)).to.have.lengthOf(0);
+      const stateEventsCommentReducer = eventsCommentReducer(undefined, action);
+      expect(Object.keys(stateEventsCommentReducer)).to.have.lengthOf(0);
     });
   });
 
@@ -107,7 +110,7 @@ describe('Retrieve event timeline', () => {
     let action;
 
     const store = mockStore({
-      timelinesFriends: eventsFixture.slice(2, 4)
+      timelinesEvents: arrayToHash(eventsFixture.slice(2, 4))
     });
 
     const actionToDispatch = getInstance(
@@ -125,15 +128,15 @@ describe('Retrieve event timeline', () => {
       );
     });
 
-    it('validate friends reducer when I received old events', () => {
-      const stateFriendsReducer = friendsReducer(
-        store.getState().timelinesFriends,
+    it('validate events reducer when I received old events', () => {
+      const stateEventsReducer = eventsReducer(
+        store.getState().timelinesEvents,
         action
       );
 
-      expect(stateFriendsReducer.map(event => event.id)).to.deep.equal([
-        1827421054,
-        1827420999
+      expect(_map(stateEventsReducer, event => event.id)).to.deep.equal([
+        1827420999,
+        1827421054
       ]);
     });
   });
