@@ -1,12 +1,11 @@
-import episodesReducer
-  from '../../../../lib/modules/comments/reducers/episodes';
+import moviesReducer from '../../../../lib/modules/comments/reducers/movies';
 import commentsReducer
   from '../../../../lib/modules/comments/reducers/comments';
 
-const actionFile = '../lib/modules/comments/actions/doFetchEpisodeComments';
+const actionFile = '../lib/modules/comments/actions/doFetchMovieComments';
 const commentsFixture = require('../../../fixtures/comments.json');
 
-describe('Retrieve episode comments of the member', () => {
+describe('Retrieve movie comments of the movie', () => {
   /**
    * getInstance method
    */
@@ -16,7 +15,7 @@ describe('Retrieve episode comments of the member', () => {
     }).default;
   }
 
-  describe('call api with episode ID', () => {
+  describe('call api with movie ID', () => {
     let action;
 
     const actionToDispatch = getInstance(
@@ -27,17 +26,17 @@ describe('Retrieve episode comments of the member', () => {
 
     before(async () => {
       const store = mockStore({});
-      action = await store.dispatch(actionToDispatch({ episodeId: 1 }));
+      action = await store.dispatch(actionToDispatch({ movieId: 1 }));
     });
 
     it('validate action', () => {
-      expect(action.type).to.equal('FETCH_EPISODE_COMMENTS');
-      expect(action.payload.episodeId).to.equal(1);
+      expect(action.type).to.equal('FETCH_MOVIE_COMMENTS');
+      expect(action.payload.movieId).to.equal(1);
       expect(action.payload.comments).to.have.lengthOf(2);
     });
 
-    it('validate episodes reducer', () => {
-      const stateEpisodesReducer = episodesReducer(undefined, action);
+    it('validate movies reducer', () => {
+      const stateEpisodesReducer = moviesReducer(undefined, action);
       expect(stateEpisodesReducer).to.deep.equal({ 1: [992, 1279] });
     });
 
@@ -58,15 +57,15 @@ describe('Retrieve episode comments of the member', () => {
 
     before(async () => {
       const store = mockStore({});
-      action = await store.dispatch(actionToDispatch({ episodeId: 1 }));
+      action = await store.dispatch(actionToDispatch({ movieId: 1 }));
     });
 
     it('validate action', () => {
       expect(action.payload.comments).to.have.lengthOf(2);
     });
 
-    it('validate episodes reducer', () => {
-      const stateEpisodesReducer = episodesReducer(undefined, action);
+    it('validate movies reducer', () => {
+      const stateEpisodesReducer = moviesReducer(undefined, action);
       expect(stateEpisodesReducer).to.deep.equal({ 1: [5129] });
     });
 

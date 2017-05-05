@@ -45,4 +45,33 @@ describe('Retrieve show comments of the member', () => {
       expect(Object.keys(stateCommentsReducer)).to.deep.equal(['992', '1279']);
     });
   });
+
+  describe('check if reply comments is dispatch on reducer', () => {
+    let action;
+
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        comments: commentsFixture.slice(8, 10)
+      })
+    );
+
+    before(async () => {
+      const store = mockStore({});
+      action = await store.dispatch(actionToDispatch({ showId: 1 }));
+    });
+
+    it('validate action', () => {
+      expect(action.payload.comments).to.have.lengthOf(2);
+    });
+
+    it('validate shows reducer', () => {
+      const stateShowsReducer = showsReducer(undefined, action);
+      expect(stateShowsReducer).to.deep.equal({ 1: [5129] });
+    });
+
+    it('validate comments reducer', () => {
+      const stateCommentsReducer = commentsReducer(undefined, action);
+      expect(Object.keys(stateCommentsReducer)).to.deep.equal(['5129', '5155']);
+    });
+  });
 });
