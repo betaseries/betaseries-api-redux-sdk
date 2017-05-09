@@ -4,7 +4,11 @@
 
 * [Comments](#module_Comments)
     * _actions_
+        * [.doCommentEpisode([obj])](#module_Comments.doCommentEpisode) ⇒ {Promise}
         * [.doCommentEvent([obj])](#module_Comments.doCommentEvent) ⇒ {Promise}
+        * [.doCommentMember([obj])](#module_Comments.doCommentMember) ⇒ {Promise}
+        * [.doCommentMovie([obj])](#module_Comments.doCommentMovie) ⇒ {Promise}
+        * [.doCommentShow([obj])](#module_Comments.doCommentShow) ⇒ {Promise}
         * [.doFetchComment([obj])](#module_Comments.doFetchComment) ⇒ {Promise}
         * [.doFetchEpisodeComments([obj])](#module_Comments.doFetchEpisodeComments) ⇒ {Promise}
         * [.doFetchEventComments([obj])](#module_Comments.doFetchEventComments) ⇒ {Promise}
@@ -27,6 +31,34 @@
         * [.getMovieComments](#module_Comments.getMovieComments) ⇒ {Array}
         * [.getReplies](#module_Comments.getReplies) ⇒ {Array}
         * [.getShowComments](#module_Comments.getShowComments) ⇒ {Array}
+
+<a name="module_Comments.doCommentEpisode"></a>
+
+### .doCommentEpisode([obj])
+
+Add comment on episode
+
+**Dispatch**: `COMMENT_EPISODE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.episodeId] | {Number} | Episode ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentEpisode')({
+  episodeId: 438,
+  text: 'Trop bien cette épisode !',
+});
+```
 
 <a name="module_Comments.doCommentEvent"></a>
 
@@ -52,6 +84,90 @@ Add comment on event
 BetaSeries.getAction('comments', 'doCommentEvent')({
   eventId: 438,
   text: 'Trop bien cette épisode !',
+});
+```
+
+<a name="module_Comments.doCommentMember"></a>
+
+### .doCommentMember([obj])
+
+Add comment on member
+
+**Dispatch**: `COMMENT_MEMBER`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.memberId] | {Number} | Member ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentMember')({
+  memberId: 438,
+  text: 'Trop bien cette série !',
+});
+```
+
+<a name="module_Comments.doCommentMovie"></a>
+
+### .doCommentMovie([obj])
+
+Add comment on movie
+
+**Dispatch**: `COMMENT_MOVIE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.movieId] | {Number} | Movie ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentMovie')({
+  movieId: 438,
+  text: 'Trop bien ce film !',
+});
+```
+
+<a name="module_Comments.doCommentShow"></a>
+
+### .doCommentShow([obj])
+
+Add comment on show
+
+**Dispatch**: `COMMENT_SHOW`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.showId] | {Number} | Show ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentShow')({
+  showId: 438,
+  text: 'Trop bien cette série !',
 });
 ```
 
@@ -254,6 +370,12 @@ List of comments
  * `FETCH_FRIENDS_TIMELINE`
  * `FETCH_FEED_TIMELINE`
  * `FETCH_TIMELINE_EVENT`
+ * `FETCH_REPLIES`
+ * `COMMENT_EVENT`
+ * `COMMENT_EPISODE`
+ * `COMMENT_SHOW`
+ * `COMMENT_MEMBER`
+ * `COMMENT_MOVIE`
 
 **Returns**: {Object}
 
@@ -289,6 +411,7 @@ List the comments of the episode
 **Actions listened**:
 
  * `FETCH_EPISODE_COMMENTS`
+ * `COMMENT_EPISODE`
 
 **Returns**: {Object}
 
