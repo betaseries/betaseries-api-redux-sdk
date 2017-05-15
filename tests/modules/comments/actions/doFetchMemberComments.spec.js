@@ -1,12 +1,11 @@
-import episodesReducer
-  from '../../../../lib/modules/comments/reducers/episodes';
+import membersReducer from '../../../../lib/modules/comments/reducers/members';
 import commentsReducer
   from '../../../../lib/modules/comments/reducers/comments';
 
-const actionFile = '../lib/modules/comments/actions/doFetchEpisodeComments';
+const actionFile = '../lib/modules/comments/actions/doFetchMemberComments';
 const commentsFixture = require('../../../fixtures/comments.json');
 
-describe('Retrieve episode comments of the member', () => {
+describe('Retrieve member comments of the member', () => {
   /**
    * getInstance method
    */
@@ -16,7 +15,7 @@ describe('Retrieve episode comments of the member', () => {
     }).default;
   }
 
-  describe('call api with episode ID', () => {
+  describe('call api with member ID', () => {
     let action;
 
     const actionToDispatch = getInstance(
@@ -27,18 +26,18 @@ describe('Retrieve episode comments of the member', () => {
 
     before(async () => {
       const store = mockStore({});
-      action = await store.dispatch(actionToDispatch({ episodeId: 1 }));
+      action = await store.dispatch(actionToDispatch({ memberId: 1 }));
     });
 
     it('validate action', () => {
-      expect(action.type).to.equal('FETCH_EPISODE_COMMENTS');
-      expect(action.payload.episodeId).to.equal(1);
+      expect(action.type).to.equal('FETCH_MEMBER_COMMENTS');
+      expect(action.payload.memberId).to.equal(1);
       expect(action.payload.comments).to.have.lengthOf(2);
     });
 
-    it('validate episodes reducer', () => {
-      const stateEpisodesReducer = episodesReducer(undefined, action);
-      expect(stateEpisodesReducer).to.deep.equal({ 1: [992, 1279] });
+    it('validate members reducer', () => {
+      const stateMembersReducer = membersReducer(undefined, action);
+      expect(stateMembersReducer).to.deep.equal({ 1: [992, 1279] });
     });
 
     it('validate comments reducer', () => {
@@ -58,16 +57,16 @@ describe('Retrieve episode comments of the member', () => {
 
     before(async () => {
       const store = mockStore({});
-      action = await store.dispatch(actionToDispatch({ episodeId: 1 }));
+      action = await store.dispatch(actionToDispatch({ memberId: 1 }));
     });
 
     it('validate action', () => {
       expect(action.payload.comments).to.have.lengthOf(2);
     });
 
-    it('validate episodes reducer', () => {
-      const stateEpisodesReducer = episodesReducer(undefined, action);
-      expect(stateEpisodesReducer).to.deep.equal({ 1: [5129] });
+    it('validate members reducer', () => {
+      const stateMembersReducer = membersReducer(undefined, action);
+      expect(stateMembersReducer).to.deep.equal({ 1: [5129] });
     });
 
     it('validate comments reducer', () => {

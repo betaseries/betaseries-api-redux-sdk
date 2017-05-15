@@ -21,6 +21,14 @@ describe('Select latest episode from state ', () => {
     const value = selector(state, { episodeId: 3 });
     expect(value).to.be.a('array');
     expect(value).to.have.lengthOf(2);
+    expect(value.map(comment => comment.id)).to.deep.equal([3452345, 13251345]);
+  });
+
+  it('returns comments list order desc', () => {
+    const value = selector(state, { episodeId: 3, order: 'desc' });
+    expect(value).to.be.a('array');
+    expect(value).to.have.lengthOf(2);
+    expect(value.map(comment => comment.id)).to.deep.equal([13251345, 3452345]);
   });
 
   it('returns undefined if episode does not exist in comments reducer', () => {

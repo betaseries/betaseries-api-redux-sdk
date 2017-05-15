@@ -4,21 +4,61 @@
 
 * [Comments](#module_Comments)
     * _actions_
+        * [.doCommentEpisode([obj])](#module_Comments.doCommentEpisode) ⇒ {Promise}
         * [.doCommentEvent([obj])](#module_Comments.doCommentEvent) ⇒ {Promise}
+        * [.doCommentMember([obj])](#module_Comments.doCommentMember) ⇒ {Promise}
+        * [.doCommentMovie([obj])](#module_Comments.doCommentMovie) ⇒ {Promise}
+        * [.doCommentShow([obj])](#module_Comments.doCommentShow) ⇒ {Promise}
         * [.doFetchComment([obj])](#module_Comments.doFetchComment) ⇒ {Promise}
         * [.doFetchEpisodeComments([obj])](#module_Comments.doFetchEpisodeComments) ⇒ {Promise}
         * [.doFetchEventComments([obj])](#module_Comments.doFetchEventComments) ⇒ {Promise}
+        * [.doFetchMemberComments([obj])](#module_Comments.doFetchMemberComments) ⇒ {Promise}
+        * [.doFetchMovieComments([obj])](#module_Comments.doFetchMovieComments) ⇒ {Promise}
+        * [.doFetchReplies([obj])](#module_Comments.doFetchReplies) ⇒ {Promise}
         * [.doFetchShowComments([obj])](#module_Comments.doFetchShowComments) ⇒ {Promise}
     * _reducers_
         * [.comments(state, action)](#module_Comments.comments) ⇒ {Object}
         * [.episodes(state, action)](#module_Comments.episodes) ⇒ {Object}
         * [.events(state, action)](#module_Comments.events) ⇒ {Object}
+        * [.members(state, action)](#module_Comments.members) ⇒ {Object}
+        * [.movies(state, action)](#module_Comments.movies) ⇒ {Object}
         * [.shows(state, action)](#module_Comments.shows) ⇒ {Object}
     * _selectors_
         * [.getComment](#module_Comments.getComment) ⇒ {Object}
         * [.getEpisodeComments](#module_Comments.getEpisodeComments) ⇒ {Array}
         * [.getEventComments](#module_Comments.getEventComments) ⇒ {Array}
+        * [.getMemberComments](#module_Comments.getMemberComments) ⇒ {Array}
+        * [.getMovieComments](#module_Comments.getMovieComments) ⇒ {Array}
+        * [.getReplies](#module_Comments.getReplies) ⇒ {Array}
         * [.getShowComments](#module_Comments.getShowComments) ⇒ {Array}
+
+<a name="module_Comments.doCommentEpisode"></a>
+
+### .doCommentEpisode([obj])
+
+Add comment on episode
+
+**Dispatch**: `COMMENT_EPISODE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.episodeId] | {Number} | Episode ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentEpisode')({
+  episodeId: 438,
+  text: 'Trop bien cette épisode !',
+});
+```
 
 <a name="module_Comments.doCommentEvent"></a>
 
@@ -44,6 +84,90 @@ Add comment on event
 BetaSeries.getAction('comments', 'doCommentEvent')({
   eventId: 438,
   text: 'Trop bien cette épisode !',
+});
+```
+
+<a name="module_Comments.doCommentMember"></a>
+
+### .doCommentMember([obj])
+
+Add comment on member
+
+**Dispatch**: `COMMENT_MEMBER`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.memberId] | {Number} | Member ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentMember')({
+  memberId: 438,
+  text: 'Trop bien cette série !',
+});
+```
+
+<a name="module_Comments.doCommentMovie"></a>
+
+### .doCommentMovie([obj])
+
+Add comment on movie
+
+**Dispatch**: `COMMENT_MOVIE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.movieId] | {Number} | Movie ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentMovie')({
+  movieId: 438,
+  text: 'Trop bien ce film !',
+});
+```
+
+<a name="module_Comments.doCommentShow"></a>
+
+### .doCommentShow([obj])
+
+Add comment on show
+
+**Dispatch**: `COMMENT_SHOW`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.showId] | {Number} | Show ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentShow')({
+  showId: 438,
+  text: 'Trop bien cette série !',
 });
 ```
 
@@ -124,6 +248,84 @@ Retrieve comment of the episode
 BetaSeries.getAction('comments', 'doFetchEventComments')({ eventId: 42315431 });
 ```
 
+<a name="module_Comments.doFetchMemberComments"></a>
+
+### .doFetchMemberComments([obj])
+
+Retrieve comments of the member
+
+**Dispatch**: `FETCH_MEMBER_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.memberId] | {Number} | Member ID |
+| [obj.nbpp] | {Number} | Number of comments per page |
+| [obj.since_id] | {Number} | ID of last comment received (optional) |
+| [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
+| [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doFetchMemberComments')({ memberId: 481 });
+```
+
+<a name="module_Comments.doFetchMovieComments"></a>
+
+### .doFetchMovieComments([obj])
+
+Retrieve comments of the movie
+
+**Dispatch**: `FETCH_MOVIE_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.movieId] | {Number} | Movie ID |
+| [obj.nbpp] | {Number} | Number of comments per page |
+| [obj.since_id] | {Number} | ID of last comment received (optional) |
+| [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
+| [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doFetchMovieComments')({ movieId: 481 });
+```
+
+<a name="module_Comments.doFetchReplies"></a>
+
+### .doFetchReplies([obj])
+
+Retrieve replies from a comment
+
+**Dispatch**: `FETCH_REPLIES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.commentId] | {Number} | Comment ID |
+| [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doFetchReplies')({ commentId: 438 });
+```
+
 <a name="module_Comments.doFetchShowComments"></a>
 
 ### .doFetchShowComments([obj])
@@ -162,10 +364,18 @@ List of comments
  * `FETCH_EPISODE_COMMENTS`
  * `FETCH_SHOW_COMMENTS`
  * `FETCH_EVENT_COMMENTS`
+ * `FETCH_MEMBER_COMMENTS`
+ * `FETCH_MOVIE_COMMENTS`
  * `FETCH_COMMENT`
  * `FETCH_FRIENDS_TIMELINE`
  * `FETCH_FEED_TIMELINE`
  * `FETCH_TIMELINE_EVENT`
+ * `FETCH_REPLIES`
+ * `COMMENT_EVENT`
+ * `COMMENT_EPISODE`
+ * `COMMENT_SHOW`
+ * `COMMENT_MEMBER`
+ * `COMMENT_MOVIE`
 
 **Returns**: {Object}
 
@@ -201,6 +411,7 @@ List the comments of the episode
 **Actions listened**:
 
  * `FETCH_EPISODE_COMMENTS`
+ * `COMMENT_EPISODE`
 
 **Returns**: {Object}
 
@@ -258,6 +469,74 @@ BetaSeries.getReducer('comments', 'events').commentsEvents;
 // state value example
 {
   '12': [               // event ID
+    1234, 213, 2343,    // list of comments ID
+  ],
+  ...,
+}
+```
+
+<a name="module_Comments.members"></a>
+
+### .members(state, action)
+
+List the comments of the member
+
+**Actions listened**:
+
+ * `FETCH_MEMBER_COMMENTS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('comments', 'members').commentsMembers;
+
+// state value example
+{
+  '12': [               // member ID
+    1234, 213, 2343,    // list of comments ID
+  ],
+  ...,
+}
+```
+
+<a name="module_Comments.movies"></a>
+
+### .movies(state, action)
+
+List the comments of the movie
+
+**Actions listened**:
+
+ * `FETCH_MOVIE_COMMENTS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('comments', 'movies').commentsMovies;
+
+// state value example
+{
+  '12': [               // movie ID
     1234, 213, 2343,    // list of comments ID
   ],
   ...,
@@ -337,6 +616,7 @@ Select episode comments from state
 | [state] | {Object} | Redux state |
 | [obj] | {Object} | Accept the folling: |
 | [obj.episodeId] | {Object} | Episode ID |
+| [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
 **Example**  
 
@@ -374,6 +654,87 @@ const mapStateToProps = (state, props) => ({
 });
 ```
 
+<a name="module_Comments.getMemberComments"></a>
+
+### .getMemberComments
+
+Select member comments from state
+
+**Returns**: {Array} - List of comments or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.memberId] | {Object} | Member ID |
+| [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('comments', 'getMemberComments')(state, {
+    memberId: props.memberId
+  });
+});
+```
+
+<a name="module_Comments.getMovieComments"></a>
+
+### .getMovieComments
+
+Select movie comments from state
+
+**Returns**: {Array} - List of comments or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.movieId] | {Object} | Movie ID |
+| [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('comments', 'getMovieComments')(state, {
+    movieId: props.movieId
+  });
+});
+```
+
+<a name="module_Comments.getReplies"></a>
+
+### .getReplies
+
+Select comment replies from state
+
+**Returns**: {Array} - List of comments or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the folling: |
+| [obj.commentId] | {Object} | Comment ID |
+| [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('comments', 'getReplies')(state, {
+    commentId: props.commentId
+  });
+});
+```
+
 <a name="module_Comments.getShowComments"></a>
 
 ### .getShowComments
@@ -389,6 +750,7 @@ Select show comments from state
 | [state] | {Object} | Redux state |
 | [obj] | {Object} | Accept the folling: |
 | [obj.showId] | {Object} | Show ID |
+| [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
 **Example**  
 
