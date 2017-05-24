@@ -16,6 +16,7 @@
         * [.doFetchMovieComments([obj])](#module_Comments.doFetchMovieComments) ⇒ {Promise}
         * [.doFetchReplies([obj])](#module_Comments.doFetchReplies) ⇒ {Promise}
         * [.doFetchShowComments([obj])](#module_Comments.doFetchShowComments) ⇒ {Promise}
+        * [.doRemoveComment([obj])](#module_Comments.doRemoveComment) ⇒ {Promise}
     * _reducers_
         * [.comments(state, action)](#module_Comments.comments) ⇒ {Object}
         * [.episodes(state, action)](#module_Comments.episodes) ⇒ {Object}
@@ -353,6 +354,29 @@ Retrieve comments of the show
 BetaSeries.getAction('comments', 'doFetchShowComments')({ showId: 481 });
 ```
 
+<a name="module_Comments.doRemoveComment"></a>
+
+### .doRemoveComment([obj])
+
+Remove comment
+
+**Dispatch**: `REMOVE_COMMENT`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.commentId] | {Number} | Comment ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doRemoveComment')({ commentId: 438 });
+```
+
 <a name="module_Comments.comments"></a>
 
 ### .comments(state, action)
@@ -367,6 +391,7 @@ List of comments
  * `FETCH_MEMBER_COMMENTS`
  * `FETCH_MOVIE_COMMENTS`
  * `FETCH_COMMENT`
+ * `REMOVE_COMMENT`
  * `FETCH_FRIENDS_TIMELINE`
  * `FETCH_FEED_TIMELINE`
  * `FETCH_TIMELINE_EVENT`
