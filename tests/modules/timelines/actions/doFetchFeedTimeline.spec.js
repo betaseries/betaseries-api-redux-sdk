@@ -167,4 +167,40 @@ describe('Retrieve feed timeline', () => {
       ]);
     });
   });
+
+  describe('call api with comments', () => {
+    let action;
+
+    const store = mockStore({
+      timelineEvents: arrayToHash(eventsFixture.slice(2, 4)),
+      timelinesFriends: arrayToID(eventsFixture.slice(0, 5))
+    });
+
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        page: 1,
+        events: eventsFixture.slice(6, 7)
+      })
+    );
+
+    before(async () => {
+      action = await store.dispatch(actionToDispatch({ page: 1 }));
+    });
+
+    it('validate feed reducer when I call page 1', () => {
+      const stateFeedReducer = feedReducer(
+        store.getState().timelinesFriends,
+        action
+      );
+
+      expect(stateFeedReducer).to.deep.equal([
+        1827420482,
+        1827424327,
+        1827423776,
+        1827421054,
+        1827420999,
+        1827420637
+      ]);
+    });
+  });
 });
