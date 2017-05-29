@@ -1,3 +1,4 @@
+import arrayToHash from '../../../../lib/utils/func/arrayToHash';
 import eventsReducer from '../../../../lib/modules/comments/reducers/events';
 import commentsReducer
   from '../../../../lib/modules/comments/reducers/comments';
@@ -43,6 +44,51 @@ describe('Retrieve event comments of the member', () => {
     it('validate comments reducer', () => {
       const stateCommentsReducer = commentsReducer(undefined, action);
       expect(Object.keys(stateCommentsReducer)).to.deep.equal(['992', '1279']);
+    });
+  });
+
+  describe('call api with comments on reducer', () => {
+    let action;
+    const storeCommentFixture = commentsFixture.slice(0, 5);
+    const store = mockStore({
+      comments: arrayToHash(storeCommentFixture),
+      commentsEvents: { 1: storeCommentFixture.map(comment => comment.id) }
+    });
+
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        comments: commentsFixture.slice(5, 7)
+      })
+    );
+
+    before(async () => {
+      action = await store.dispatch(actionToDispatch({ eventId: 1 }));
+    });
+
+    it('validate event reducer', () => {
+      const stateEventsReducer = eventsReducer(
+        store.getState().commentsEvents,
+        action
+      );
+      expect(stateEventsReducer).to.deep.equal({
+        1: [992, 1279, 2152, 2196, 2417, 2984, 3566]
+      });
+    });
+
+    it('validate comments reducer', () => {
+      const stateCommentsReducer = commentsReducer(
+        store.getState().comments,
+        action
+      );
+      expect(Object.keys(stateCommentsReducer)).to.deep.equal([
+        '992',
+        '1279',
+        '2152',
+        '2196',
+        '2417',
+        '2984',
+        '3566'
+      ]);
     });
   });
 });

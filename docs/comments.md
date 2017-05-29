@@ -466,7 +466,7 @@ BetaSeries.getReducer('comments', 'episodes').commentsEpisodes;
 
 ### .events(state, action)
 
-List the comments of the episode
+List the comments of the event
 
 **Actions listened**:
 
