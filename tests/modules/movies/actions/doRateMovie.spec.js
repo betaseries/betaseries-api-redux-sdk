@@ -24,12 +24,15 @@ describe('Rate movie', () => {
 
     before(async () => {
       const store = mockStore({});
-      action = await store.dispatch(actionToDispatch({ movieId: 7094 }));
+      action = await store.dispatch(
+        actionToDispatch({ movieId: 7094, note: 4 })
+      );
     });
 
     it('validate action', () => {
       expect(action.type).to.equal('RATE_MOVIE');
       expect(action.payload.movieId).to.equal(7094);
+      expect(action.payload.note).to.equal(4);
       expect(action.payload.movie).to.be.an('object');
     });
 
@@ -55,7 +58,9 @@ describe('Rate movie', () => {
     );
 
     before(async () => {
-      action = await store.dispatch(actionToDispatch({ movieId: 7094 }));
+      action = await store.dispatch(
+        actionToDispatch({ movieId: 7094, note: 3 })
+      );
     });
 
     it('validate movies reducer', () => {

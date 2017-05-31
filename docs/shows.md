@@ -17,6 +17,7 @@
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
+        * [.doRateShow([obj])](#module_Shows.doRateShow) ⇒ {Promise}
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
     * _reducers_
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
@@ -353,6 +354,33 @@ Retrieve similar shows
 
 ```js
 BetaSeries.getAction('shows', 'doFetchSimilarShows')({ showId: 1275 });
+```
+
+<a name="module_Shows.doRateShow"></a>
+
+### .doRateShow([obj])
+
+Add note on show
+
+**Dispatch**: `RATE_SHOW`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.movieId] | {Number} | Show ID |
+| [obj.note] | {Number} | Note (from `1` to `5`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doRateShow')({
+  showId: 438,
+  note: 4,
+});
 ```
 
 <a name="module_Shows.doRemoveShow"></a>
