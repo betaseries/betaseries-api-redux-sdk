@@ -32,6 +32,7 @@
         * [.getDiscoverShows](#module_Shows.getDiscoverShows) ⇒ {Array}
         * [.getEpisode](#module_Shows.getEpisode) ⇒ {Object}
         * [.getEpisodesToSee](#module_Shows.getEpisodesToSee) ⇒ {Array}
+        * [.getFavoriteShows](#module_Shows.getFavoriteShows) ⇒ {Array}
         * [.getLatestShowEpisode](#module_Shows.getLatestShowEpisode) ⇒ {Object}
         * [.getShow](#module_Shows.getShow) ⇒ {Object}
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
@@ -759,6 +760,30 @@ const mapStateToProps = (state, props) => ({
   episode: BetaSeries.getSelector('shows', 'getEpisodesToSee')(state, {
     memberId: props.memberId,
   });
+});
+```
+
+<a name="module_Shows.getFavoriteShows"></a>
+
+### .getFavoriteShows
+
+Select favorite shows from state
+
+**Returns**: {Array} - Shows list or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Object} | Member ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getFavoriteShows')(state, { memberId: props.memberId });
 });
 ```
 
