@@ -3,6 +3,7 @@
 # BetaSeries
 
 * [BetaSeries](#module_BetaSeries)
+    * [.logger](#module_BetaSeries.logger)
     * [.api](#module_BetaSeries.api)
     * [.init([obj])](#module_BetaSeries.init)
     * [.setUser([obj])](#module_BetaSeries.setUser)
@@ -10,6 +11,19 @@
     * [.getConstants(module)](#module_BetaSeries.getConstants) ⇒ {Object}
     * [.getReducer(module, reducer)](#module_BetaSeries.getReducer) ⇒ {Object}
     * [.getSelector(module, selector)](#module_BetaSeries.getSelector) ⇒ {Func}
+
+<a name="module_BetaSeries.logger"></a>
+
+### .logger
+**Category**: static  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the folling: |
+| [obj.method] | {String} | Method name |
+| [obj.url] | {String} | Base url |
+| [obj.querystring] | {Object} | QueryString object |
+| [obj.headers] | {Object} | Headers object |
 
 <a name="module_BetaSeries.api"></a>
 
