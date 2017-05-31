@@ -22,7 +22,7 @@
       "user":5
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"35",
@@ -53,7 +53,7 @@
       "user":4
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"22",
@@ -84,7 +84,7 @@
       "user":4
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"8",
@@ -115,7 +115,7 @@
       "user":0
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"12",
@@ -146,7 +146,7 @@
       "user":0
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"17",
@@ -177,7 +177,7 @@
       "user":0
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"20",
@@ -208,7 +208,7 @@
       "user":0
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"14",
@@ -239,7 +239,7 @@
       "user":0
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"1",
@@ -270,7 +270,7 @@
       "user":0
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"1",
@@ -301,7 +301,7 @@
       "user":0
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"1",
@@ -332,7 +332,7 @@
       "user":0
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"1",
@@ -363,7 +363,7 @@
       "user":0
     },
     "user":{
-      "seen":true,
+      "seen":false,
       "downloaded":false
     },
     "comments":"1",
