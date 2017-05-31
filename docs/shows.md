@@ -4,9 +4,10 @@
 
 * [Shows](#module_Shows)
     * _actions_
+        * [.doFetchDiscoverShows([obj])](#module_Shows.doFetchDiscoverShows) ⇒ {Promise}
         * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
         * [.doFetchEpisodeByCode([obj])](#module_Shows.doFetchEpisodeByCode) ⇒ {Promise}
-        * [.doFetchEpisodesListsList([obj])](#module_Shows.doFetchEpisodesListsList) ⇒ {Promise}
+        * [.doFetchEpisodesList([obj])](#module_Shows.doFetchEpisodesList) ⇒ {Promise}
         * [.doFetchFavoriteShows([obj])](#module_Shows.doFetchFavoriteShows) ⇒ {Promise}
         * [.doFetchLatestEpisode([obj])](#module_Shows.doFetchLatestEpisode) ⇒ {Promise}
         * [.doFetchManyEpisodes([obj])](#module_Shows.doFetchManyEpisodes) ⇒ {Promise}
@@ -17,6 +18,7 @@
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
     * _reducers_
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
+        * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
         * [.favorites(state, action)](#module_Shows.favorites) ⇒ {Object}
         * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
@@ -24,6 +26,7 @@
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
     * _selectors_
+        * [.getDiscoverShows](#module_Shows.getDiscoverShows) ⇒ {Array}
         * [.getEpisode](#module_Shows.getEpisode) ⇒ {Object}
         * [.getEpisodesToSee](#module_Shows.getEpisodesToSee) ⇒ {Array}
         * [.getLatestShowEpisode](#module_Shows.getLatestShowEpisode) ⇒ {Object}
@@ -31,6 +34,33 @@
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
         * [.getShowEpisodes](#module_Shows.getShowEpisodes) ⇒ {Array}
         * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Array}
+
+<a name="module_Shows.doFetchDiscoverShows"></a>
+
+### .doFetchDiscoverShows([obj])
+
+Retrieve discover shows
+
+**Dispatch**: `FETCH_DISCOVER_SHOWS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.order] | {String} | Chronological order of return, `alphabetical`, `popularity` or `followers` |
+| [obj.since] | {Number} | Display shows from this date |
+| [obj.starting] | {Number} | Display shows starting with query |
+| [obj.start] | {Number} | Start number of show list (default `0`) |
+| [obj.limit] | {Number} | Limit number of shows |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchDiscoverShows')();
+```
 
 <a name="module_Shows.doFetchEpisode"></a>
 
@@ -79,9 +109,9 @@ Retrieve episode
 BetaSeries.getAction('shows', 'doFetchEpisodeByCode')({ showId: 123, code: 'SO3E15' });
 ```
 
-<a name="module_Shows.doFetchEpisodesListsList"></a>
+<a name="module_Shows.doFetchEpisodesList"></a>
 
-### .doFetchEpisodesListsList([obj])
+### .doFetchEpisodesList([obj])
 
 Retrieve episodes list
 
@@ -93,7 +123,7 @@ Retrieve episodes list
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.subtitles] | {String} | Displays episodes with some subtitles available |
 | [obj.limit] | {Number} | Limit number of episodes per shows (default `1`) |
 | [obj.showId] | {Number} | Show ID (optional) |
@@ -334,6 +364,41 @@ BetaSeries.getReducer('shows', 'characters').showsCharacters;
 }
 ```
 
+<a name="module_Shows.discover"></a>
+
+### .discover(state, action)
+
+List of discover shows
+
+**Actions listened**:
+
+ * `FETCH_DISCOVER_SHOWS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'discover').showsDiscover;
+
+// state example
+{
+  '1275': {      // show ID
+    id: 1275,    // show element
+    ...show,
+  },
+  ...,
+}
+```
+
 <a name="module_Shows.episodes"></a>
 
 ### .episodes(state, action)
@@ -542,6 +607,28 @@ BetaSeries.getReducer('shows', 'similars').showsSimilars;
   ],
   ...,
 }
+```
+
+<a name="module_Shows.getDiscoverShows"></a>
+
+### .getDiscoverShows
+
+Select discovers shows from state
+
+**Returns**: {Array} - Array of shows or `[]`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  discover: BetaSeries.getSelector('shows', 'getDiscoverShows')(state);
+});
 ```
 
 <a name="module_Shows.getEpisode"></a>
