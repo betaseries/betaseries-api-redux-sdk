@@ -4,6 +4,7 @@
 
 * [Shows](#module_Shows)
     * _actions_
+        * [.doAddShow([obj])](#module_Shows.doAddShow) ⇒ {Promise}
         * [.doFetchDiscoverShows([obj])](#module_Shows.doFetchDiscoverShows) ⇒ {Promise}
         * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
         * [.doFetchEpisodeByCode([obj])](#module_Shows.doFetchEpisodeByCode) ⇒ {Promise}
@@ -16,6 +17,7 @@
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
+        * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
     * _reducers_
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
@@ -34,6 +36,32 @@
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
         * [.getShowEpisodes](#module_Shows.getShowEpisodes) ⇒ {Array}
         * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Array}
+
+<a name="module_Shows.doAddShow"></a>
+
+### .doAddShow([obj])
+
+Add show
+
+**Dispatch**: `ADD_SHOW`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+| [obj.episode_id] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doAddShow')({
+  showId: 438
+});
+```
 
 <a name="module_Shows.doFetchDiscoverShows"></a>
 
@@ -325,6 +353,31 @@ Retrieve similar shows
 
 ```js
 BetaSeries.getAction('shows', 'doFetchSimilarShows')({ showId: 1275 });
+```
+
+<a name="module_Shows.doRemoveShow"></a>
+
+### .doRemoveShow([obj])
+
+Remove show
+
+**Dispatch**: `REMOVE_SHOW`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doRemoveShow')({
+  showId: 438
+});
 ```
 
 <a name="module_Shows.characters"></a>
