@@ -1,4 +1,6 @@
 import episodesReducer from '../../../../lib/modules/shows/reducers/episodes';
+import membersEpisodesToSeeReducer
+  from '../../../../lib/modules/shows/reducers/membersEpisodesToSee';
 import arrayToHash from '../../../../lib/utils/func/arrayToHash';
 
 const actionFile = '../lib/modules/shows/actions/doMarkEpisodeAsWatched';
@@ -60,7 +62,8 @@ describe('Mark episode as watched', () => {
     let action;
 
     const store = mockStore({
-      showsEpisodes: arrayToHash(episodesFixture)
+      showsEpisodes: arrayToHash(episodesFixture),
+      showsMembersEpisodesToSee: { 1: [239475, 239476, 239477, 239478] }
     });
 
     const actionToDispatch = getInstance(
@@ -90,6 +93,21 @@ describe('Mark episode as watched', () => {
       expect(
         stateEpisodesReducer[action.payload.episodeIds[0]].user.seen
       ).to.deep.equal(true);
+    });
+
+    it('validate membersEpisodesToSee reducer', () => {
+      const stateMembersEpisodesToSeeReducer = membersEpisodesToSeeReducer(
+        store.getState().showsMembersEpisodesToSee,
+        action
+      );
+
+      console.log(stateMembersEpisodesToSeeReducer);
+
+      expect(stateMembersEpisodesToSeeReducer[1]).to.deep.equal([
+        239476,
+        239477,
+        239478
+      ]);
     });
   });
 });
