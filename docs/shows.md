@@ -18,6 +18,7 @@
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
         * [.doMarkEpisodeAsWatched([obj])](#module_Shows.doMarkEpisodeAsWatched) ⇒ {Promise}
+        * [.doMarkManyEpisodeAsWatched([obj])](#module_Shows.doMarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doRateShow([obj])](#module_Shows.doRateShow) ⇒ {Promise}
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
     * _reducers_
@@ -385,6 +386,34 @@ BetaSeries.getAction('shows', 'doMarkEpisodeAsWatched')({
   episodeId: 438,
   bulk: false,
   note: 4,
+});
+```
+
+<a name="module_Shows.doMarkManyEpisodeAsWatched"></a>
+
+### .doMarkManyEpisodeAsWatched([obj])
+
+Mark many episode as watch
+
+**Dispatch**: `MARK_MANY_EPISODE_AS_WATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeIds] | {Number} | Show IDs |
+| [obj.bulk] | {Boolean} | Mark as watched previous episodes |
+| [obj.delete] | {Boolean} | Unmark as watched next episodes |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doMarkManyEpisodeAsWatched')({
+  episodeIds: 438,
+  bulk: false,
 });
 ```
 
