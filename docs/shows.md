@@ -22,6 +22,7 @@
         * [.doMarkManyEpisodeAsWatched([obj])](#module_Shows.doMarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doRateShow([obj])](#module_Shows.doRateShow) ⇒ {Promise}
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
+        * [.doRemoveShowFavorite([obj])](#module_Shows.doRemoveShowFavorite) ⇒ {Promise}
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
     * _reducers_
@@ -493,6 +494,31 @@ Remove show
 
 ```js
 BetaSeries.getAction('shows', 'doRemoveShow')({
+  showId: 438
+});
+```
+
+<a name="module_Shows.doRemoveShowFavorite"></a>
+
+### .doRemoveShowFavorite([obj])
+
+Remove show from favorite
+
+**Dispatch**: `REMOVE_SHOW_FAVORITE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doRemoveShowFavorite')({
   showId: 438
 });
 ```
