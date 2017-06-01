@@ -22,6 +22,8 @@
         * [.doMarkManyEpisodeAsWatched([obj])](#module_Shows.doMarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doRateShow([obj])](#module_Shows.doRateShow) ⇒ {Promise}
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
+        * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
+        * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
     * _reducers_
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
@@ -400,7 +402,7 @@ Watch episode
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
-| [obj.episodeId] | {Number} | Show ID |
+| [obj.episodeId] | {Number} | Episode ID |
 | [obj.bulk] | {Boolean} | Mark as watched previous episodes |
 | [obj.delete] | {Boolean} | Unmark as watched next episodes |
 | [obj.note] | {Number} | Note (from `1` to `5`) |
@@ -430,7 +432,7 @@ Mark many episode as watch
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
-| [obj.episodeIds] | {Number} | Show IDs |
+| [obj.episodeIds] | {Number} | Episodes ID |
 | [obj.bulk] | {Boolean} | Mark as watched previous episodes |
 | [obj.delete] | {Boolean} | Unmark as watched next episodes |
 
@@ -492,6 +494,56 @@ Remove show
 ```js
 BetaSeries.getAction('shows', 'doRemoveShow')({
   showId: 438
+});
+```
+
+<a name="module_Shows.doUnmarkEpisodeAsWatched"></a>
+
+### .doUnmarkEpisodeAsWatched([obj])
+
+Watch episode
+
+**Dispatch**: `MARK_EPISODE_AS_WATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUnmarkEpisodeAsWatched')({
+  episodeId: 438,
+});
+```
+
+<a name="module_Shows.doUnmarkManyEpisodeAsWatched"></a>
+
+### .doUnmarkManyEpisodeAsWatched([obj])
+
+Watch episode
+
+**Dispatch**: `MARK_MANY_EPISODE_AS_WATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeIds] | {Number} | Episodes ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUnmarkManyEpisodeAsWatched')({
+  episodeIds: 438,
 });
 ```
 
