@@ -5,6 +5,7 @@
 * [Shows](#module_Shows)
     * _actions_
         * [.doAddShow([obj])](#module_Shows.doAddShow) ⇒ {Promise}
+        * [.doAddShowArchive([obj])](#module_Shows.doAddShowArchive) ⇒ {Promise}
         * [.doAddShowFavorite([obj])](#module_Shows.doAddShowFavorite) ⇒ {Promise}
         * [.doFetchDiscoverShows([obj])](#module_Shows.doFetchDiscoverShows) ⇒ {Promise}
         * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
@@ -23,6 +24,7 @@
         * [.doRateEpisode([obj])](#module_Shows.doRateEpisode) ⇒ {Promise}
         * [.doRateShow([obj])](#module_Shows.doRateShow) ⇒ {Promise}
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
+        * [.doRemoveShowArchive([obj])](#module_Shows.doRemoveShowArchive) ⇒ {Promise}
         * [.doRemoveShowFavorite([obj])](#module_Shows.doRemoveShowFavorite) ⇒ {Promise}
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
@@ -68,6 +70,31 @@ Add show
 
 ```js
 BetaSeries.getAction('shows', 'doAddShow')({
+  showId: 438
+});
+```
+
+<a name="module_Shows.doAddShowArchive"></a>
+
+### .doAddShowArchive([obj])
+
+Archive show
+
+**Dispatch**: `ADD_SHOW_ARCHIVE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doAddShowArchive')({
   showId: 438
 });
 ```
@@ -522,6 +549,31 @@ Remove show
 
 ```js
 BetaSeries.getAction('shows', 'doRemoveShow')({
+  showId: 438
+});
+```
+
+<a name="module_Shows.doRemoveShowArchive"></a>
+
+### .doRemoveShowArchive([obj])
+
+Remove show from archives
+
+**Dispatch**: `REMOVE_SHOW_ARCHIVE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doRemoveShowArchive')({
   showId: 438
 });
 ```
