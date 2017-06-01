@@ -20,6 +20,7 @@
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
         * [.doMarkEpisodeAsWatched([obj])](#module_Shows.doMarkEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkManyEpisodeAsWatched([obj])](#module_Shows.doMarkManyEpisodeAsWatched) ⇒ {Promise}
+        * [.doRateEpisode([obj])](#module_Shows.doRateEpisode) ⇒ {Promise}
         * [.doRateShow([obj])](#module_Shows.doRateShow) ⇒ {Promise}
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
         * [.doRemoveShowFavorite([obj])](#module_Shows.doRemoveShowFavorite) ⇒ {Promise}
@@ -446,6 +447,33 @@ BetaSeries.getAction('shows', 'doMarkManyEpisodeAsWatched')({
 });
 ```
 
+<a name="module_Shows.doRateEpisode"></a>
+
+### .doRateEpisode([obj])
+
+Add note on episode
+
+**Dispatch**: `RATE_EPISODE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+| [obj.note] | {Number} | Note (from `1` to `5`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doRateEpisode')({
+  episodeId: 438,
+  note: 4,
+});
+```
+
 <a name="module_Shows.doRateShow"></a>
 
 ### .doRateShow([obj])
@@ -461,7 +489,7 @@ Add note on show
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
-| [obj.movieId] | {Number} | Show ID |
+| [obj.showId] | {Number} | Show ID |
 | [obj.note] | {Number} | Note (from `1` to `5`) |
 
 **Example**  

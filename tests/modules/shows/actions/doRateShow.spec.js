@@ -38,7 +38,7 @@ describe('Rate show', () => {
 
     it('validate shows reducer', () => {
       const stateShowsReducer = showsReducer(undefined, action);
-      expect(Object.keys(stateShowsReducer)).to.have.lengthOf(0);
+      expect(Object.keys(stateShowsReducer)).to.have.lengthOf(1);
     });
   });
 
