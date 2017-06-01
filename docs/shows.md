@@ -5,6 +5,7 @@
 * [Shows](#module_Shows)
     * _actions_
         * [.doAddShow([obj])](#module_Shows.doAddShow) ⇒ {Promise}
+        * [.doAddShowFavorite([obj])](#module_Shows.doAddShowFavorite) ⇒ {Promise}
         * [.doFetchDiscoverShows([obj])](#module_Shows.doFetchDiscoverShows) ⇒ {Promise}
         * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
         * [.doFetchEpisodeByCode([obj])](#module_Shows.doFetchEpisodeByCode) ⇒ {Promise}
@@ -63,6 +64,31 @@ Add show
 
 ```js
 BetaSeries.getAction('shows', 'doAddShow')({
+  showId: 438
+});
+```
+
+<a name="module_Shows.doAddShowFavorite"></a>
+
+### .doAddShowFavorite([obj])
+
+Add show to favorite
+
+**Dispatch**: `ADD_SHOW_FAVORITE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doAddShowFavorite')({
   showId: 438
 });
 ```

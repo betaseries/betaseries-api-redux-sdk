@@ -101,8 +101,6 @@ describe('Mark episode as watched', () => {
         action
       );
 
-      console.log(stateMembersEpisodesToSeeReducer);
-
       expect(stateMembersEpisodesToSeeReducer[1]).to.deep.equal([
         239476,
         239477,
