@@ -34,6 +34,7 @@
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
         * [.favorites(state, action)](#module_Shows.favorites) ⇒ {Object}
         * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
+        * [.members(state, action)](#module_Shows.members) ⇒ {Object}
         * [.membersEpisodesToSee(state, action)](#module_Shows.membersEpisodesToSee) ⇒ {Object}
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
@@ -828,6 +829,40 @@ BetaSeries.getReducer('shows', 'latestEpisodes').showsLatestEpisodes;
 // state example
 {
   '12': 568786372645,  // Show ID : Episode ID
+  ...,
+}
+```
+
+<a name="module_Shows.members"></a>
+
+### .members(state, action)
+
+List shows of the member
+
+**Actions listened**:
+
+ * `FETCH_MEMBER`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'members').showsMembers;
+
+// state value example
+{
+  '12': [               // member ID
+    1234, 213, 2343,    // list of shows ID
+  ],
   ...,
 }
 ```
