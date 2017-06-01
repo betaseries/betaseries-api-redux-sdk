@@ -36,7 +36,7 @@ Retrieve event
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.eventId] | {Number} | ID of event |
 
 **Example**  
@@ -61,7 +61,7 @@ Retrieve episode
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.nbpp] | {Number} | Limit number of events (default `20`) |
 | [obj.page] | {Number} | Page number (default `1`) |
 
@@ -87,7 +87,7 @@ Retrieve episode
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.nbpp] | {Number} | Limit number of events (default `20`) |
 | [obj.since_id] | {Number} | ID of event. I will received previous events (optional) |
 | [obj.last_id] | {Number} | ID of event. I will received following events  (optional) |

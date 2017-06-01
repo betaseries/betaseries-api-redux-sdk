@@ -25,7 +25,7 @@ Retrieve badge
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.badgeId] | {Number} | Badge ID |
 
 **Example**  
@@ -48,7 +48,7 @@ Retrieve many badges
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.badgeIds] | {Array} | List of badges ID |
 
 **Example**  
@@ -105,7 +105,7 @@ Select badge by ID from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.badgeId] | {Number} | Badge ID |
 
 **Example**  

@@ -19,7 +19,7 @@
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.method] | {String} | Method name |
 | [obj.url] | {String} | Base url |
 | [obj.querystring] | {Object} | QueryString object |
@@ -39,7 +39,7 @@ API provider
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.apiHost] | {String} | URI of BetaSeries API |
 | [obj.apiKey] | {String} | API Key of BetaSeries API |
 
@@ -50,7 +50,7 @@ API provider
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.token] | {String} | Authenticated token |
 | [obj.userId] | {String} | User ID |
 

@@ -47,7 +47,7 @@ Add comment on episode
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.episodeId] | {Number} | Episode ID |
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
@@ -75,7 +75,7 @@ Add comment on event
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.eventId] | {Number} | Event ID |
 | [obj.text] | {String} | Text of comment |
 
@@ -102,7 +102,7 @@ Add comment on member
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Number} | Member ID |
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
@@ -130,7 +130,7 @@ Add comment on movie
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.movieId] | {Number} | Movie ID |
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
@@ -158,7 +158,7 @@ Add comment on show
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Show ID |
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
@@ -186,7 +186,7 @@ Retrieve comment
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.commentId] | {Number} | Comment ID |
 
 **Example**  
@@ -209,7 +209,7 @@ Retrieve comment of the episode
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.episodeId] | {Number} | Episode ID |
 | [obj.nbpp] | {Number} | Number of comments per page |
 | [obj.since_id] | {Number} | ID of last comment received (optional) |
@@ -236,7 +236,7 @@ Retrieve comment of the episode
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.eventId] | {Number} | Event ID |
 | [obj.nbpp] | {Number} | Number of comments per page |
 | [obj.since_id] | {Number} | ID of last comment received (optional) |
@@ -263,7 +263,7 @@ Retrieve comments of the member
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Number} | Member ID |
 | [obj.nbpp] | {Number} | Number of comments per page |
 | [obj.since_id] | {Number} | ID of last comment received (optional) |
@@ -290,7 +290,7 @@ Retrieve comments of the movie
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.movieId] | {Number} | Movie ID |
 | [obj.nbpp] | {Number} | Number of comments per page |
 | [obj.since_id] | {Number} | ID of last comment received (optional) |
@@ -317,7 +317,7 @@ Retrieve replies from a comment
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.commentId] | {Number} | Comment ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
@@ -341,7 +341,7 @@ Retrieve comments of the show
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Show ID |
 | [obj.nbpp] | {Number} | Number of comments per page |
 | [obj.since_id] | {Number} | ID of last comment received (optional) |
@@ -368,7 +368,7 @@ Remove comment
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.commentId] | {Number} | Comment ID |
 
 **Example**  
@@ -615,7 +615,7 @@ Select comment from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.commentId] | {Object} | Comment ID |
 
 **Example**  
@@ -639,7 +639,7 @@ Select episode comments from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.episodeId] | {Object} | Episode ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
@@ -666,7 +666,7 @@ Select event comments from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.eventId] | {Object} | Event ID |
 
 **Example**  
@@ -692,7 +692,7 @@ Select member comments from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Object} | Member ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
@@ -719,7 +719,7 @@ Select movie comments from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.movieId] | {Object} | Movie ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
@@ -746,7 +746,7 @@ Select comment replies from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.commentId] | {Object} | Comment ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
@@ -773,7 +773,7 @@ Select show comments from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Object} | Show ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 

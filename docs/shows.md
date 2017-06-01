@@ -138,7 +138,7 @@ Retrieve episode
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.episodeId] | {Number} | Episode ID |
 
 **Example**  
@@ -161,7 +161,7 @@ Retrieve episode
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Episode ID |
 | [obj.code] | {String} | Episode code like `SO3E15` |
 
@@ -213,7 +213,7 @@ Retrieve favorite shows of the member
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Number} | member ID |
 
 **Example**  
@@ -236,7 +236,7 @@ Retrieve episode
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Show ID |
 
 **Example**  
@@ -259,7 +259,7 @@ Retrieve many episodes
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.episodeIds] | {Array} | List of episodes ID |
 
 **Example**  
@@ -282,7 +282,7 @@ Retrieve many shows
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showIds] | {Array} | List of shows ID |
 
 **Example**  
@@ -305,7 +305,7 @@ Retrieve show
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Show ID |
 
 **Example**  
@@ -328,7 +328,7 @@ Retrieve characters of the show
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Show ID |
 
 **Example**  
@@ -351,7 +351,7 @@ Retrieve episodes of the show
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Show ID |
 | [obj.season] | {Number} | Season number (optional) |
 | [obj.episode] | {Number} | Episode Number (optional) |
@@ -380,7 +380,7 @@ Retrieve similar shows
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Show ID |
 
 **Example**  
@@ -920,7 +920,7 @@ Select episode from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.episodeId] | {Object} | Episode ID |
 
 **Example**  
@@ -944,7 +944,7 @@ Select episodes to see by member from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Number} | Member ID (optional) |
 
 **Example**  
@@ -994,7 +994,7 @@ Select last episode by show from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Object} | Show ID |
 
 **Example**  
@@ -1020,7 +1020,7 @@ Select show from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Object} | Show ID |
 
 **Example**  
@@ -1044,7 +1044,7 @@ Select episode by code and show from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Object} | Show ID |
 | [obj.code] | {Object} | Episode code |
 
@@ -1072,7 +1072,7 @@ Select episode by show from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Object} | Show ID |
 
 **Example**  
@@ -1098,7 +1098,7 @@ Select similar shows from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Object} | Show ID |
 
 **Example**  
