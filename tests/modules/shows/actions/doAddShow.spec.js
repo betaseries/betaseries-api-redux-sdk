@@ -1,4 +1,5 @@
 import showsReducer from '../../../../lib/modules/shows/reducers/shows';
+import membersReducer from '../../../../lib/modules/shows/reducers/members';
 
 const actionFile = '../lib/modules/shows/actions/doAddShow';
 const showsFixture = require('../../../fixtures/shows.json');
@@ -43,6 +44,14 @@ describe('Add a new show', () => {
       const stateShowsReducer = showsReducer(store.getState().shows, action);
       expect(Object.keys(stateShowsReducer)).to.have.lengthOf(1);
       expect(stateShowsReducer[10212].in_account).to.deep.equal(true);
+    });
+
+    it('validate members reducer', () => {
+      const stateMembersReducer = membersReducer(
+        store.getState().showsMembers,
+        action
+      );
+      expect(stateMembersReducer[1]).to.deep.equal([10212]);
     });
   });
 });
