@@ -37,7 +37,7 @@ describe('Retrieve user', () => {
     });
 
     it('validate action', () => {
-      expect(action.type).to.equal('FETCH_MEMBER');
+      expect(action.type).to.equal('FETCH_USER');
       expect(action.payload.member).to.be.an('object');
     });
 
