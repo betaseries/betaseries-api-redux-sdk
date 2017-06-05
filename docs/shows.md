@@ -39,6 +39,7 @@
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
     * _selectors_
+        * [.getCharacters](#module_Shows.getCharacters) ⇒ {Array}
         * [.getDiscoverShows](#module_Shows.getDiscoverShows) ⇒ {Array}
         * [.getEpisode](#module_Shows.getEpisode) ⇒ {Object}
         * [.getEpisodesToSee](#module_Shows.getEpisodesToSee) ⇒ {Array}
@@ -970,6 +971,30 @@ BetaSeries.getReducer('shows', 'similars').showsSimilars;
   ],
   ...,
 }
+```
+
+<a name="module_Shows.getCharacters"></a>
+
+### .getCharacters
+
+Select characters from state
+
+**Returns**: {Array} - List of characters element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Object} | Show ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getCharacters')(state, { showId: props.showId });
+});
 ```
 
 <a name="module_Shows.getDiscoverShows"></a>
