@@ -741,7 +741,11 @@ List of the show episodes group by season and episode number
  * `FETCH_EPISODE_BY_CODE`
  * `FETCH_EPISODE`
  * `MARK_MANY_EPISODE_AS_WATCHED`
+ * `UNMARK_MANY_EPISODE_AS_WATCHED`
  * `MARK_EPISODE_AS_WATCHED`
+ * `UNMARK_EPISODE_AS_WATCHED`
+ * `ADD_SHOW`
+ * `REMOVE_SHOW`
 
 **Returns**: {Object}
 

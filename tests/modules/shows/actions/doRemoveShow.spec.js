@@ -1,6 +1,7 @@
 import showsReducer from '../../../../lib/modules/shows/reducers/shows';
 import membersReducer from '../../../../lib/modules/shows/reducers/members';
 import favoritesReducer from '../../../../lib/modules/shows/reducers/favorites';
+import episodesReducer from '../../../../lib/modules/shows/reducers/episodes';
 
 const actionFile = '../lib/modules/shows/actions/doRemoveShow';
 const showsFixture = require('../../../fixtures/shows.json');
@@ -27,6 +28,12 @@ describe('Remove a show', () => {
       },
       showsFavorites: {
         1: [10212, 10270, 10271]
+      },
+      showsEpisodes: {
+        1: { id: 1, show: { id: 10212, in_account: true } },
+        2: { id: 2, show: { id: 10212, in_account: true } },
+        3: { id: 3, show: { id: 10400, in_account: false } },
+        4: { id: 3, show: { id: 10400, in_account: true } }
       }
     });
 
@@ -67,6 +74,18 @@ describe('Remove a show', () => {
         action
       );
       expect(stateFavoritesReducer[1]).to.deep.equal([10270, 10271]);
+    });
+
+    it('validate episodes reducer', () => {
+      const stateEpisodesReducer = episodesReducer(
+        store.getState().showsEpisodes,
+        action
+      );
+
+      expect(stateEpisodesReducer[1].show.in_account).to.deep.equal(false);
+      expect(stateEpisodesReducer[2].show.in_account).to.deep.equal(false);
+      expect(stateEpisodesReducer[3].show.in_account).to.deep.equal(false);
+      expect(stateEpisodesReducer[4].show.in_account).to.deep.equal(true);
     });
   });
 });
