@@ -15,6 +15,7 @@
         * [.doFetchLatestEpisode([obj])](#module_Shows.doFetchLatestEpisode) ⇒ {Promise}
         * [.doFetchManyEpisodes([obj])](#module_Shows.doFetchManyEpisodes) ⇒ {Promise}
         * [.doFetchManyShows([obj])](#module_Shows.doFetchManyShows) ⇒ {Promise}
+        * [.doFetchMemberShows([obj])](#module_Shows.doFetchMemberShows) ⇒ {Promise}
         * [.doFetchShow([obj])](#module_Shows.doFetchShow) ⇒ {Promise}
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
@@ -45,6 +46,7 @@
         * [.getEpisodesToSee](#module_Shows.getEpisodesToSee) ⇒ {Array}
         * [.getFavoriteShows](#module_Shows.getFavoriteShows) ⇒ {Array}
         * [.getLatestShowEpisode](#module_Shows.getLatestShowEpisode) ⇒ {Object}
+        * [.getMemberShows](#module_Shows.getMemberShows) ⇒ {Array}
         * [.getShow](#module_Shows.getShow) ⇒ {Object}
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
         * [.getShowEpisodes](#module_Shows.getShowEpisodes) ⇒ {Array}
@@ -315,6 +317,32 @@ Retrieve many shows
 
 ```js
 BetaSeries.getAction('shows', 'doFetchManyShows')({ showIds: [1275, 481] });
+```
+
+<a name="module_Shows.doFetchMemberShows"></a>
+
+### .doFetchMemberShows([obj])
+
+Retrieve member shows
+
+**Dispatch**: `FETCH_MEMBER_SHOWS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Array} | Member ID (optional: connected user if not added) |
+| [obj.order] | {Number} | Order of sort: alphabetical (default), progression, remaining_time, remaining_episodes |
+| [obj.offset] | {Number} | Start number of show list (default `0`) |
+| [obj.limit] | {Number} | Limit number of shows |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchMemberShows')({ memberId: 1, offset: 0, limit: 100, order: remaining_episodes });
 ```
 
 <a name="module_Shows.doFetchShow"></a>
@@ -1117,6 +1145,30 @@ const mapStateToProps = (state, props) => ({
   episode: BetaSeries.getSelector('shows', 'getLatestShowEpisode')(state, {
     showId: props.showId,
   });
+});
+```
+
+<a name="module_Shows.getMemberShows"></a>
+
+### .getMemberShows
+
+Select member shows from state
+
+**Returns**: {Array} - Shows list or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Object} | Member ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getMemberShows')(state, { memberId: props.memberId });
 });
 ```
 
