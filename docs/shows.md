@@ -141,10 +141,7 @@ Retrieve discover shows
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
-| [obj.order] | {String} | Chronological order of return, `alphabetical`, `popularity` or `followers` |
-| [obj.since] | {Number} | Display shows from this date |
-| [obj.starting] | {Number} | Display shows starting with query |
-| [obj.start] | {Number} | Start number of show list (default `0`) |
+| [obj.offset] | {Number} | Start number of show list (default `0`) |
 | [obj.limit] | {Number} | Limit number of shows |
 
 **Example**  
