@@ -1,6 +1,5 @@
 import showsReducer from '../../../../lib/modules/shows/reducers/shows';
 import membersReducer from '../../../../lib/modules/shows/reducers/members';
-import favoritesReducer from '../../../../lib/modules/shows/reducers/favorites';
 import episodesReducer from '../../../../lib/modules/shows/reducers/episodes';
 
 const actionFile = '../lib/modules/shows/actions/doRemoveShow';
@@ -24,10 +23,7 @@ describe('Remove a show', () => {
         [showsFixture[0].id]: showsFixture[0]
       },
       showsMembers: {
-        1: [10212, 10254, 10255]
-      },
-      showsFavorites: {
-        1: [10212, 10270, 10271]
+        1: [{ id: 10212 }, { id: 10254 }, { id: 10255 }]
       },
       showsEpisodes: {
         1: { id: 1, show: { id: 10212, in_account: true } },
@@ -39,7 +35,10 @@ describe('Remove a show', () => {
 
     const actionToDispatch = getInstance(
       Promise.resolve({
-        show: showsFixture[0]
+        show: {
+          ...showsFixture[0],
+          in_account: false
+        }
       })
     );
 
@@ -51,13 +50,12 @@ describe('Remove a show', () => {
     it('validate action', () => {
       expect(action.type).to.equal('REMOVE_SHOW');
       expect(action.payload.showId).to.equal(10212);
-      expect(action.payload.inAccount).to.equal(false);
+      expect(action.payload.show).to.be.an('object');
     });
 
     it('validate shows reducer', () => {
       const stateShowsReducer = showsReducer(store.getState().shows, action);
       expect(Object.keys(stateShowsReducer)).to.have.lengthOf(1);
-      expect(stateShowsReducer[10212].in_account).to.deep.equal(false);
     });
 
     it('validate members reducer', () => {
@@ -65,15 +63,11 @@ describe('Remove a show', () => {
         store.getState().showsMembers,
         action
       );
-      expect(stateMembersReducer[1]).to.deep.equal([10254, 10255]);
-    });
 
-    it('validate favorites reducer', () => {
-      const stateFavoritesReducer = favoritesReducer(
-        store.getState().showsFavorites,
-        action
-      );
-      expect(stateFavoritesReducer[1]).to.deep.equal([10270, 10271]);
+      expect(stateMembersReducer[1].map(show => show.id)).to.deep.equal([
+        10254,
+        10255
+      ]);
     });
 
     it('validate episodes reducer', () => {

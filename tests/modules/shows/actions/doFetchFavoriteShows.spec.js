@@ -1,4 +1,4 @@
-import favoritesReducer from '../../../../lib/modules/shows/reducers/favorites';
+import membersReducer from '../../../../lib/modules/shows/reducers/members';
 import showsReducer from '../../../../lib/modules/shows/reducers/shows';
 
 const actionFile = '../lib/modules/shows/actions/doFetchFavoriteShows';
@@ -34,9 +34,9 @@ describe('Retrieve favorite shows of the member', () => {
       expect(action.payload.shows).to.have.lengthOf(2);
     });
 
-    it('validate favorites reducer', () => {
-      const stateFavoritesReducer = favoritesReducer(undefined, action);
-      expect(stateFavoritesReducer).to.deep.equal({ 1: [10212, 982] });
+    it('validate members reducer', () => {
+      const stateMembersReducer = membersReducer(undefined, action);
+      expect(stateMembersReducer[1]).to.be.lengthOf(2);
     });
 
     it('validate shows reducer', () => {

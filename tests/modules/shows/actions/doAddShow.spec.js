@@ -44,13 +44,12 @@ describe('Add a new show', () => {
     it('validate action', () => {
       expect(action.type).to.equal('ADD_SHOW');
       expect(action.payload.showId).to.equal(10212);
-      expect(action.payload.inAccount).to.equal(true);
+      expect(action.payload.show).to.be.an('object');
     });
 
     it('validate shows reducer', () => {
       const stateShowsReducer = showsReducer(store.getState().shows, action);
       expect(Object.keys(stateShowsReducer)).to.have.lengthOf(1);
-      expect(stateShowsReducer[10212].in_account).to.deep.equal(true);
     });
 
     it('validate members reducer', () => {
@@ -58,7 +57,8 @@ describe('Add a new show', () => {
         store.getState().showsMembers,
         action
       );
-      expect(stateMembersReducer[1]).to.deep.equal([10212]);
+      expect(stateMembersReducer[1]).to.have.lengthOf(1);
+      expect(stateMembersReducer[1][0]).to.have.all.keys('id', 'infos');
     });
 
     it('validate episodes reducer', () => {

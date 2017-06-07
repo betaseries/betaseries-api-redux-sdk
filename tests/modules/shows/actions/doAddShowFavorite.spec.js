@@ -1,6 +1,5 @@
 import showsReducer from '../../../../lib/modules/shows/reducers/shows';
-import showsFavoriteReducer
-  from '../../../../lib/modules/shows/reducers/favorites';
+import membersReducer from '../../../../lib/modules/shows/reducers/members';
 
 const actionFile = '../lib/modules/shows/actions/doAddShowFavorite';
 const showsFixture = require('../../../fixtures/shows.json');
@@ -21,9 +20,6 @@ describe('Add a show to favorites', () => {
     const store = mockStore({
       shows: {
         [showsFixture[0].id]: showsFixture[0]
-      },
-      showsFavorites: {
-        1: [1]
       }
     });
 
@@ -49,12 +45,13 @@ describe('Add a show to favorites', () => {
       expect(Object.keys(stateShowsReducer)).to.have.lengthOf(1);
     });
 
-    it('validate favorite reducer', () => {
-      const stateShowsFavoriteReducer = showsFavoriteReducer(
-        store.getState().showsFavorites,
+    it('validate members reducer', () => {
+      const stateMembersReducer = membersReducer(
+        store.getState().showsMembers,
         action
       );
-      expect(stateShowsFavoriteReducer[1]).to.deep.equal([1, 10212]);
+      expect(stateMembersReducer[1]).to.have.lengthOf(1);
+      expect(stateMembersReducer[1][0]).to.have.all.keys('id', 'infos');
     });
   });
 
@@ -65,8 +62,12 @@ describe('Add a show to favorites', () => {
       shows: {
         [showsFixture[0].id]: showsFixture[0]
       },
-      showsFavorites: {
-        1: [1]
+      showsMembers: {
+        1: [
+          {
+            id: 10212
+          }
+        ]
       }
     });
 
@@ -77,16 +78,16 @@ describe('Add a show to favorites', () => {
     );
 
     before(async () => {
-      await store.dispatch(actionToDispatch({ showId: 1 }));
+      await store.dispatch(actionToDispatch({ showId: 10212 }));
       action = store.getActions()[0];
     });
 
-    it('validate favorite reducer', () => {
-      const stateShowsFavoriteReducer = showsFavoriteReducer(
-        store.getState().showsFavorites,
+    it('validate members reducer', () => {
+      const stateMembersReducer = membersReducer(
+        store.getState().showsMembers,
         action
       );
-      expect(stateShowsFavoriteReducer[1]).to.deep.equal([1]);
+      expect(stateMembersReducer[1]).to.be.lengthOf(1);
     });
   });
 });

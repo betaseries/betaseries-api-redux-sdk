@@ -6,8 +6,6 @@ import moviesFavoriteReducer
   from '../../../../lib/modules/movies/reducers/favorites';
 import showsReducer from '../../../../lib/modules/shows/reducers/shows';
 import showsMemberReducer from '../../../../lib/modules/shows/reducers/members';
-import showsFavoriteReducer
-  from '../../../../lib/modules/shows/reducers/favorites';
 
 const actionFile = '../lib/modules/members/actions/doFetchMember';
 const userFixture = require('../../../fixtures/user.json');
@@ -104,7 +102,7 @@ describe('Retrieve member', () => {
 
     it('validate shows member reducer', () => {
       const stateShowsMemberReducer = showsMemberReducer(undefined, action);
-      expect(stateShowsMemberReducer[1]).to.deep.equal([
+      expect(stateShowsMemberReducer[1].map(show => show.id)).to.deep.equal([
         2,
         3,
         1,
@@ -115,11 +113,6 @@ describe('Retrieve member', () => {
         10,
         5
       ]);
-    });
-
-    it('validate shows favorites reducer', () => {
-      const stateShowsFavoriteReducer = showsFavoriteReducer(undefined, action);
-      expect(stateShowsFavoriteReducer[1]).to.deep.equal([11]);
     });
   });
 });

@@ -33,7 +33,6 @@
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
-        * [.favorites(state, action)](#module_Shows.favorites) ⇒ {Object}
         * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
         * [.members(state, action)](#module_Shows.members) ⇒ {Object}
         * [.membersEpisodesToSee(state, action)](#module_Shows.membersEpisodesToSee) ⇒ {Object}
@@ -797,40 +796,6 @@ BetaSeries.getReducer('shows', 'episodes').showsEpisodes;
 }
 ```
 
-<a name="module_Shows.favorites"></a>
-
-### .favorites(state, action)
-
-List the favorite shows of the member
-
-**Actions listened**:
-
- * `FETCH_FAVORITE_SHOWS`
-
-**Returns**: {Object}
-
-**Category**: reducers  
-
-| Param | Type |
-| --- | --- |
-| state | {Object} | 
-| action | {Object} | 
-
-**Example**  
-
-```js
-// get reducer
-BetaSeries.getReducer('shows', 'favorites').showsFavorites;
-
-// state example
-{
-  '12': [            // member ID
-    1275, 481, ...   // list of shows ID
-  ],
-  ...,
-}
-```
-
 <a name="module_Shows.latestEpisodes"></a>
 
 ### .latestEpisodes(state, action)
@@ -890,8 +855,12 @@ BetaSeries.getReducer('shows', 'members').showsMembers;
 
 // state value example
 {
-  '12': [               // member ID
-    1234, 213, 2343,    // list of shows ID
+  '12': [                // member ID
+    {                    // show ID
+      'archived': false,
+      ...show.user
+    },
+    ...shows,            // list of shows ID
   ],
   ...,
 }
