@@ -22,6 +22,7 @@
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
         * [.doMarkEpisodeAsWatched([obj])](#module_Shows.doMarkEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkManyEpisodeAsWatched([obj])](#module_Shows.doMarkManyEpisodeAsWatched) ⇒ {Promise}
+        * [.doMarkSeasonAsWatched([obj])](#module_Shows.doMarkSeasonAsWatched) ⇒ {Promise}
         * [.doRateEpisode([obj])](#module_Shows.doRateEpisode) ⇒ {Promise}
         * [.doRateShow([obj])](#module_Shows.doRateShow) ⇒ {Promise}
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
@@ -497,6 +498,33 @@ Mark many episode as watch
 BetaSeries.getAction('shows', 'doMarkManyEpisodeAsWatched')({
   episodeIds: 438,
   bulk: false,
+});
+```
+
+<a name="module_Shows.doMarkSeasonAsWatched"></a>
+
+### .doMarkSeasonAsWatched([obj])
+
+Mark entire season as watched
+
+**Dispatch**: `MARK_SEASON_AS_WATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+| [obj.season] | {Number} | Number of season to mark as watched |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doMarkSeasonAsWatched')({
+  showId: 438,
+  season: 2,
 });
 ```
 
