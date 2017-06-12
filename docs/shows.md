@@ -30,6 +30,7 @@
         * [.doRemoveShowFavorite([obj])](#module_Shows.doRemoveShowFavorite) ⇒ {Promise}
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
+        * [.doUnmarkSeasonAsWatched([obj])](#module_Shows.doUnmarkSeasonAsWatched) ⇒ {Promise}
     * _reducers_
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
@@ -704,6 +705,33 @@ Watch episode
 ```js
 BetaSeries.getAction('shows', 'doUnmarkManyEpisodeAsWatched')({
   episodeIds: 438,
+});
+```
+
+<a name="module_Shows.doUnmarkSeasonAsWatched"></a>
+
+### .doUnmarkSeasonAsWatched([obj])
+
+Unmark entire season as watched
+
+**Dispatch**: `UNMARK_SEASON_AS_WATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+| [obj.season] | {Number} | Number of season to unmark as watched |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUnmarkSeasonAsWatched')({
+  showId: 438,
+  season: 2,
 });
 ```
 
