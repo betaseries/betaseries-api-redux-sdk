@@ -35,8 +35,8 @@ describe('Retrieve favorite shows of the member', () => {
     });
 
     it('validate members reducer', () => {
-      const stateMembersReducer = membersReducer(undefined, action);
-      expect(stateMembersReducer[1]).to.be.lengthOf(2);
+      const stateMembersShowsReducer = membersReducer(undefined, action);
+      expect(stateMembersShowsReducer[1]).to.have.lengthOf(2);
     });
 
     it('validate shows reducer', () => {
