@@ -35,7 +35,7 @@ describe('Retrieve discover shows', () => {
 
     it('validate discover reducer', () => {
       const stateDiscoverReducer = discoverReducer(undefined, action);
-      expect(stateDiscoverReducer).to.have.lengthOf(10);
+      expect(Object.keys(stateDiscoverReducer)).to.have.lengthOf(10);
     });
   });
 });
