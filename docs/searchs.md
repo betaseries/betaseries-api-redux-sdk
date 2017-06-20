@@ -63,7 +63,7 @@ Search all type of element by query
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.query] | {Number} | Query search |
 
 **Example**  
@@ -86,7 +86,7 @@ Search show by title
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.title] | {Number} | Title search |
 | [obj.summary] | {Bool} | Returns only summary infos of the show elements (default `false`) |
 | [obj.order] | {Number} | Return order (`title`|`popularity`|`followers`), (default `title`) |

@@ -28,9 +28,9 @@ describe('Retrieve show', () => {
     });
 
     it('validate action', () => {
-      expect(action.type).to.equal('FETCH_SHOW');
-      expect(action.payload.showId).to.deep.equal(10212);
-      expect(action.payload.show).to.be.an('object');
+      expect(action.type).to.equal('FETCH_MANY_SHOWS');
+      expect(action.payload.showIds[0]).to.deep.equal(10212);
+      expect(action.payload.shows[0]).to.be.an('object');
     });
 
     it('validate shows reducer', () => {

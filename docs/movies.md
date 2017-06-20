@@ -35,7 +35,7 @@ Retrieve favorite movies of the member
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Number} | member ID |
 
 **Example**  
@@ -58,7 +58,7 @@ Retrieve many movies
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.movieIds] | {Array} | List of movies ID |
 
 **Example**  
@@ -81,7 +81,7 @@ Retrieve movies of the member
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Number} | Member ID |
 | [obj.state] | {Number} | State of movie   (`0` = to see, `1` = seen, `2` = doesn't want to see (`0` by default)) |
 | [obj.start] | {Number} | Used for paginate (`0` by default) |
@@ -108,7 +108,7 @@ Retrieve movie
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.movieId] | {Number} | Movie ID |
 
 **Example**  
@@ -131,7 +131,7 @@ Retrieve characters of the movie
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.movieId] | {Number} | Movie ID |
 
 **Example**  
@@ -154,7 +154,7 @@ Add note on movie
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.movieId] | {Number} | Movie ID |
 | [obj.note] | {Number} | Note (from `1` to `5`) |
 
@@ -181,7 +181,7 @@ Retrieve movie
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.movieId] | {Number} | Movie ID |
 
 **Example**  
@@ -204,7 +204,7 @@ Add note on movie
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.movieId] | {Number} | Movie ID |
 | [obj.state] | {Number} | State of movie   (`0` = to see, `1` = seen, `2` = doesn't want to see |
 
@@ -375,7 +375,7 @@ Select movies by member from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Number} | Member ID |
 | [obj.state] | {Number} | State of movie   (`0` = to see, `1` = seen, `2` = doesn't want to see (`null` by default)) |
 
@@ -403,7 +403,7 @@ Select movie by ID from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.movieId] | {Number} | Movie ID |
 
 **Example**  

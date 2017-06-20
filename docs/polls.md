@@ -26,7 +26,7 @@ Add answer on poll
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.pollId] | {Number} | Poll ID |
 | [obj.answer] | {String} | Index of answer |
 
@@ -126,7 +126,7 @@ Select poll by ID from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.pollId] | {Number} | Poll ID |
 
 **Example**  

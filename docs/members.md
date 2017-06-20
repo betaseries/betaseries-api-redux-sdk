@@ -26,7 +26,7 @@ Retrieve authenticated user infos
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Bool} | Member ID |
 | [obj.summary] | {Bool} | Display only the information |
 | [obj.only] | {String} | Display only `movies` or `shows` |
@@ -51,7 +51,7 @@ Retrieve authenticated user infos
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.summary] | {Bool} | Display only the information (default `true`) |
 | [obj.only] | {String} | Display only `movies` or `shows` |
 
@@ -109,7 +109,7 @@ Select member from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the folling: |
+| [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Object} | Member ID |
 
 **Example**  
