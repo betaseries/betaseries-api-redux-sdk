@@ -48,4 +48,38 @@ describe('Unmark season as watched', () => {
       });
     });
   });
+
+  describe('call api with episode not existing on reducer state', () => {
+    let action;
+
+    const store = mockStore({
+      showsEpisodes: []
+    });
+
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        episodes: episodesFixture
+      })
+    );
+
+    before(async () => {
+      await store.dispatch(actionToDispatch({ showId: 481, season: 1 }));
+      action = store.getActions()[0];
+    });
+
+    it('validate many episode as unwatched action', () => {
+      expect(action.type).to.equal('UNMARK_MANY_EPISODE_AS_WATCHED');
+      expect(action.payload.episodeIds).to.have.lengthOf(12);
+      expect(action.payload.seen).to.equal(false);
+    });
+
+    it("validate episodes reducer for season unwatched not changed and don't have episodes", () => {
+      const stateEpisodesReducer = episodesReducer(
+        store.getState().showsEpisodes,
+        action
+      );
+
+      expect(Object.keys(stateEpisodesReducer)).to.have.lengthOf(0);
+    });
+  });
 });

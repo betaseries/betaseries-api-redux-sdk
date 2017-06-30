@@ -59,4 +59,38 @@ describe('Mark many episodes as watched', () => {
       ]);
     });
   });
+
+  describe('call api with episode not existing on reducer state', () => {
+    let action;
+
+    const store = mockStore({
+      showsEpisodes: arrayToHash(episodesFixture.slice(0, 2))
+    });
+
+    const actionToDispatch = getInstance(Promise.resolve({}));
+
+    before(async () => {
+      await store.dispatch(
+        actionToDispatch({ episodeIds: [23947589, 23947690] })
+      );
+      action = store.getActions()[0];
+    });
+
+    it('validate many episode as watched action', () => {
+      expect(action.type).to.equal('MARK_MANY_EPISODE_AS_WATCHED');
+      expect(action.payload.episodeIds).to.have.lengthOf(2);
+      expect(action.payload.seen).to.equal(true);
+    });
+
+    it("validate episodes reducer for many watched not changed and don't have episodes", () => {
+      const stateEpisodesReducer = episodesReducer(
+        store.getState().showsEpisodes,
+        action
+      );
+
+      expect(stateEpisodesReducer[23947589]).to.equal(undefined);
+      expect(stateEpisodesReducer[23947690]).to.equal(undefined);
+      expect(Object.keys(stateEpisodesReducer)).to.have.lengthOf(2);
+    });
+  });
 });

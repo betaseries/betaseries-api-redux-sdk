@@ -46,4 +46,39 @@ describe('Unmark episode as watched', () => {
       expect(stateEpisodesReducer[239480].user.seen).to.deep.equal(false);
     });
   });
+
+  describe('call api with episode not existing on reducer state', () => {
+    let action;
+
+    const store = mockStore({
+      showsEpisodes: arrayToHash(episodesFixture)
+    });
+
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        episode: episodesFixture[5]
+      })
+    );
+
+    before(async () => {
+      await store.dispatch(actionToDispatch({ episodeId: 23948056 }));
+      action = store.getActions()[0];
+    });
+
+    it('validate unmark episode as watched action', () => {
+      expect(action.type).to.equal('UNMARK_EPISODE_AS_WATCHED');
+      expect(action.payload.episodeId).to.deep.equal(23948056);
+      expect(action.payload.seen).to.equal(false);
+    });
+
+    it("validate episodes reducer for unmark watched not changed and don't have episode", () => {
+      const stateEpisodesReducer = episodesReducer(
+        store.getState().showsEpisodes,
+        action
+      );
+
+      expect(stateEpisodesReducer[23948056]).to.equal(undefined);
+      expect(Object.keys(stateEpisodesReducer)).to.have.lengthOf(12);
+    });
+  });
 });
