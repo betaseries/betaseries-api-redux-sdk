@@ -1,4 +1,5 @@
 import episodesReducer from '../../../../lib/modules/shows/reducers/episodes';
+import arrayToHash from '../../../../lib/utils/func/arrayToHash';
 
 const actionFile = '../lib/modules/shows/actions/doFetchShowEpisodes';
 const episodesFixture = require('../../../fixtures/episodes.json');
@@ -36,6 +37,38 @@ describe('Retrieve episodes of the show', () => {
 
     it('validate episodes reducer', () => {
       const stateEpisodesReducer = episodesReducer(undefined, action);
+      expect(Object.keys(stateEpisodesReducer)).to.have.lengthOf(12);
+    });
+  });
+
+  describe('call api with show ID and no episodes in response', () => {
+    let action;
+
+    const store = mockStore({
+      showsEpisodes: arrayToHash(episodesFixture)
+    });
+
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        episodes: undefined
+      })
+    );
+
+    before(async () => {
+      action = await store.dispatch(actionToDispatch({ showId: 10212 }));
+    });
+
+    it("validate action even though there's undefined episodes returned", () => {
+      expect(action.type).to.equal('FETCH_SHOW_EPISODES');
+      expect(action.payload.showId).to.deep.equal(10212);
+      expect(action.payload).to.have.ownProperty('episodes');
+    });
+
+    it('validate episodes reducer', () => {
+      const stateEpisodesReducer = episodesReducer(
+        store.getState().showsEpisodes,
+        action
+      );
       expect(Object.keys(stateEpisodesReducer)).to.have.lengthOf(12);
     });
   });
