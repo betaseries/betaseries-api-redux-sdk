@@ -26,10 +26,26 @@ describe('Remove a show', () => {
         1: [{ id: 10212 }, { id: 10254 }, { id: 10255 }]
       },
       showsEpisodes: {
-        1: { id: 1, show: { id: 10212, in_account: true } },
-        2: { id: 2, show: { id: 10212, in_account: true } },
-        3: { id: 3, show: { id: 10400, in_account: false } },
-        4: { id: 3, show: { id: 10400, in_account: true } }
+        1: {
+          id: 1,
+          show: { id: 10212, in_account: true },
+          user: { seen: true }
+        },
+        2: {
+          id: 2,
+          show: { id: 10212, in_account: true },
+          user: { seen: true }
+        },
+        3: {
+          id: 3,
+          show: { id: 10400, in_account: false },
+          user: { seen: false }
+        },
+        4: {
+          id: 3,
+          show: { id: 10400, in_account: true },
+          user: { seen: true }
+        }
       }
     });
 
@@ -77,9 +93,16 @@ describe('Remove a show', () => {
       );
 
       expect(stateEpisodesReducer[1].show.in_account).to.deep.equal(false);
+      expect(stateEpisodesReducer[1].user.seen).to.deep.equal(false);
+
       expect(stateEpisodesReducer[2].show.in_account).to.deep.equal(false);
+      expect(stateEpisodesReducer[2].user.seen).to.deep.equal(false);
+
       expect(stateEpisodesReducer[3].show.in_account).to.deep.equal(false);
+      expect(stateEpisodesReducer[3].user.seen).to.deep.equal(false);
+
       expect(stateEpisodesReducer[4].show.in_account).to.deep.equal(true);
+      expect(stateEpisodesReducer[4].user.seen).to.deep.equal(true);
     });
   });
 });
