@@ -128,4 +128,43 @@ describe('Comment event', () => {
       ]);
     });
   });
+
+  describe('call api with comment on event reducer state with reply to parent', () => {
+    let action;
+
+    const event = eventsFixture[0];
+    const store = mockStore({
+      timelinesEvents: arrayToHash([event]),
+      commentsEvents: {
+        [event.id]: event.first_comments.map(comment => comment.id)
+      },
+      comments: event.first_comments.reduce(
+        (sum, comment) => ({
+          ...sum,
+          [comment.id]: comment
+        }),
+        {}
+      )
+    });
+
+    const actionToDispatch = getInstance(
+      Promise.resolve({
+        comment: commentsFixture[0]
+      })
+    );
+
+    before(async () => {
+      action = await store.dispatch(
+        actionToDispatch({ eventId: event.id, text: 'TEST', in_reply_to: 1 })
+      );
+    });
+
+    it('validate action', () => {
+      expect(action.type).to.equal('COMMENT_EVENT');
+      expect(action.payload.eventId).to.equal(event.id);
+      expect(action.payload.text).to.equal('TEST');
+      expect(action.payload.in_reply_to).to.equal(1);
+      expect(action.payload.comment).to.be.an('object');
+    });
+  });
 });

@@ -78,6 +78,7 @@ Add comment on event
 | [obj] | {Object} | Accept the following: |
 | [obj.eventId] | {Number} | Event ID |
 | [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
 **Example**  
 
