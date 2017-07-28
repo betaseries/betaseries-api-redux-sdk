@@ -5,7 +5,9 @@
 * [Members](#module_Members)
     * _actions_
         * [.doFetchMember([obj])](#module_Members.doFetchMember) ⇒ {Promise}
+        * [.doFetchMemberEmail()](#module_Members.doFetchMemberEmail) ⇒ {Promise}
         * [.doFetchUser([obj])](#module_Members.doFetchUser) ⇒ {Promise}
+        * [.doUpdateMemberEmail([obj])](#module_Members.doUpdateMemberEmail) ⇒ {Promise}
     * _reducers_
         * [.members(state, action)](#module_Members.members) ⇒ {Object}
     * _selectors_
@@ -37,6 +39,23 @@ Retrieve authenticated user infos
 BetaSeries.getAction('members', 'doFetchMember')();
 ```
 
+<a name="module_Members.doFetchMemberEmail"></a>
+
+### .doFetchMemberEmail()
+
+Retrieve member email
+
+**Dispatch**: `FETCH_MEMBER_EMAIL`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doFetchMemberEmail')();
+```
+
 <a name="module_Members.doFetchUser"></a>
 
 ### .doFetchUser([obj])
@@ -59,6 +78,31 @@ Retrieve authenticated user infos
 
 ```js
 BetaSeries.getAction('members', 'doFetchUser')();
+```
+
+<a name="module_Members.doUpdateMemberEmail"></a>
+
+### .doUpdateMemberEmail([obj])
+
+Update member email
+
+**Dispatch**: `UPDATE_MEMBER_EMAIL`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.email] | {String} | New email |
+
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doUpdateMemberEmail')({
+  email: toto@toto.toto,
+});
 ```
 
 <a name="module_Members.members"></a>
