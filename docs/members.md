@@ -8,6 +8,7 @@
         * [.doFetchMemberEmail()](#module_Members.doFetchMemberEmail) ⇒ {Promise}
         * [.doFetchUser([obj])](#module_Members.doFetchUser) ⇒ {Promise}
         * [.doUpdateMemberEmail([obj])](#module_Members.doUpdateMemberEmail) ⇒ {Promise}
+        * [.doUpdateMemberPassword([obj])](#module_Members.doUpdateMemberPassword) ⇒ {Promise}
     * _reducers_
         * [.members(state, action)](#module_Members.members) ⇒ {Object}
     * _selectors_
@@ -102,6 +103,35 @@ Update member email
 ```js
 BetaSeries.getAction('members', 'doUpdateMemberEmail')({
   email: toto@toto.toto,
+});
+```
+
+<a name="module_Members.doUpdateMemberPassword"></a>
+
+### .doUpdateMemberPassword([obj])
+
+Update member password
+
+**Dispatch**: `UPDATE_MEMBER_PASSWORD`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.current_password] | {String} | Current password |
+| [obj.new_password] | {String} | New password |
+| [obj.confirmed_password] | {String} | Confirmed new password |
+
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doUpdateMemberPassword')({
+  current_password: aaaa,
+  new_password: bbbb,
+  confirmed_password: bbbb,
 });
 ```
 
