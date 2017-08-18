@@ -4,6 +4,7 @@
 
 * [Timelines](#module_Timelines)
     * _actions_
+        * [.doClearFeedTimeline()](#module_Timelines.doClearFeedTimeline) ⇒ {Promise}
         * [.doFetchEvent([obj])](#module_Timelines.doFetchEvent) ⇒ {Promise}
         * [.doFetchFeedTimeline([obj])](#module_Timelines.doFetchFeedTimeline) ⇒ {Promise}
         * [.doFetchFriendsTimeline([obj])](#module_Timelines.doFetchFriendsTimeline) ⇒ {Promise}
@@ -21,6 +22,23 @@
         * [.getFriendsTimeline](#module_Timelines.getFriendsTimeline) ⇒ {Object}
         * [.getMemberTimeline](#module_Timelines.getMemberTimeline) ⇒ {Object}
         * [.getShowTimeline](#module_Timelines.getShowTimeline) ⇒ {Object}
+
+<a name="module_Timelines.doClearFeedTimeline"></a>
+
+### .doClearFeedTimeline()
+
+Clear timeline feed events
+
+**Dispatch**: `CLEAR_TIMELINE_FEED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+**Example**  
+
+```js
+BetaSeries.getAction('timelines', 'doClearFeedTimeline')();
+```
 
 <a name="module_Timelines.doFetchEvent"></a>
 
@@ -211,6 +229,7 @@ List of the feed timeline events
 
  * `FETCH_FEED_TIMELINE`
  * `FETCH_TIMELINE_EVENT`
+ * `CLEAR_TIMELINE_FEED`
 
 **Returns**: {Object}
 
