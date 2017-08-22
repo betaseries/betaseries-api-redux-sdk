@@ -1,0 +1,212 @@
+[
+  {
+    "date":"2017-04-20",
+    "events":[
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":615,
+          "show_title":"HowToBasic",
+          "title":"How To Make a Giant Chocolate Easter Bunny",
+          "code":"S01E460",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/howtobasic\/s01e460"
+        }
+      }
+    ]
+  },
+  {
+    "date":"2017-04-24",
+    "events":[
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":24,
+          "show_title":"Better Call Saul",
+          "title":"Sunk Costs",
+          "code":"S03E03",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/better-call-saul\/s03e03"
+        }
+      }
+    ]
+  },
+  {
+    "date":"2017-05-01",
+    "events":[
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":25,
+          "show_title":"Better Call Saul",
+          "title":"Sabrosito",
+          "code":"S03E04",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/better-call-saul\/s03e04"
+        }
+      }
+    ]
+  },
+  {
+    "date":"2017-05-05",
+    "events":[
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":737,
+          "show_title":"Sense8",
+          "title":"You Want a War?",
+          "code":"S02E11",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/sense8\/s02e11"
+        }
+      },
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":736,
+          "show_title":"Sense8",
+          "title":"If All The World's a Stage, Identity Is Nothing But a Costume",
+          "code":"S02E10",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/sense8\/s02e10"
+        }
+      },
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":735,
+          "show_title":"Sense8",
+          "title":"What Family Actually Means",
+          "code":"S02E09",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/sense8\/s02e09"
+        }
+      },
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":734,
+          "show_title":"Sense8",
+          "title":"All I Want Right Now Is One More Bullet",
+          "code":"S02E08",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/sense8\/s02e08"
+        }
+      },
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":733,
+          "show_title":"Sense8",
+          "title":"I Have No Room In My Heart For Hate",
+          "code":"S02E07",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/sense8\/s02e07"
+        }
+      },
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":732,
+          "show_title":"Sense8",
+          "title":"Isolated Above, Connected Below",
+          "code":"S02E06",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/sense8\/s02e06"
+        }
+      },
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":731,
+          "show_title":"Sense8",
+          "title":"Fear Never Fixed Anything",
+          "code":"S02E05",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/sense8\/s02e05"
+        }
+      },
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":730,
+          "show_title":"Sense8",
+          "title":"Polyphony",
+          "code":"S02E04",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/sense8\/s02e04"
+        }
+      },
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":729,
+          "show_title":"Sense8",
+          "title":"Obligate Mutualisms",
+          "code":"S02E03",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/sense8\/s02e03"
+        }
+      },
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":728,
+          "show_title":"Sense8",
+          "title":"Who Am I?",
+          "code":"S02E02",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/sense8\/s02e02"
+        }
+      }
+    ]
+  },
+  {
+    "date":"2017-05-08",
+    "events":[
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":26,
+          "show_title":"Better Call Saul",
+          "title":"Chicanery",
+          "code":"S03E05",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/better-call-saul\/s03e05"
+        }
+      }
+    ]
+  },
+  {
+    "date":"2017-05-15",
+    "events":[
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":27,
+          "show_title":"Better Call Saul",
+          "title":"Off Brand",
+          "code":"S03E06",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/better-call-saul\/s03e06"
+        }
+      }
+    ]
+  },
+  {
+    "date":"2017-05-21",
+    "events":[
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":616,
+          "show_title":"HowToBasic",
+          "title":"How To Survive a Shark Attack",
+          "code":"S01E461",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/howtobasic\/s01e461"
+        }
+      }
+    ]
+  },
+  {
+    "date":"2017-05-22",
+    "events":[
+      {
+        "type":"episode_release",
+        "payload":{
+          "id":28,
+          "show_title":"Better Call Saul",
+          "title":"Expenses",
+          "code":"S03E07",
+          "resource_url":"http:\/\/dev.betaseries.com\/episode\/better-call-saul\/s03e07"
+        }
+      }
+    ]
+  }
+]

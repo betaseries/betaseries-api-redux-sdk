@@ -2,7 +2,7 @@ import calendarReducer
   from '../../../../lib/modules/planning/reducers/calendar';
 
 const actionFile = '../lib/modules/planning/actions/doFetchCalendar';
-const daysFixtures = require('../../../fixtures/days.json');
+const daysFixtures = require('../../../fixtures/calendarDays.json');
 
 describe('Retrieve calendar event', () => {
   /**

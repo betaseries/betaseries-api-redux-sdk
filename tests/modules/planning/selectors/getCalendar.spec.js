@@ -1,6 +1,6 @@
 import selector from '../../../../lib/modules/planning/selectors/getCalendar';
 
-const days = require('../../../fixtures/days.json');
+const days = require('../../../fixtures/calendarDays.json');
 
 describe('Select calendar event from state ', () => {
   const state = {
