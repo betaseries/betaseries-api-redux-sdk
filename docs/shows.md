@@ -20,6 +20,7 @@
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
+        * [.doMarkEpisodeAsDownloaded([obj])](#module_Shows.doMarkEpisodeAsDownloaded) ⇒ {Promise}
         * [.doMarkEpisodeAsWatched([obj])](#module_Shows.doMarkEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkManyEpisodeAsWatched([obj])](#module_Shows.doMarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkSeasonAsWatched([obj])](#module_Shows.doMarkSeasonAsWatched) ⇒ {Promise}
@@ -28,6 +29,7 @@
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
         * [.doRemoveShowArchive([obj])](#module_Shows.doRemoveShowArchive) ⇒ {Promise}
         * [.doRemoveShowFavorite([obj])](#module_Shows.doRemoveShowFavorite) ⇒ {Promise}
+        * [.doUnmarkEpisodeAsDownloaded([obj])](#module_Shows.doUnmarkEpisodeAsDownloaded) ⇒ {Promise}
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkSeasonAsWatched([obj])](#module_Shows.doUnmarkSeasonAsWatched) ⇒ {Promise}
@@ -444,6 +446,31 @@ Retrieve similar shows
 BetaSeries.getAction('shows', 'doFetchSimilarShows')({ showId: 1275 });
 ```
 
+<a name="module_Shows.doMarkEpisodeAsDownloaded"></a>
+
+### .doMarkEpisodeAsDownloaded([obj])
+
+Watch episode
+
+**Dispatch**: `MARK_EPISODE_AS_DOWNLOADED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doMarkEpisodeAsDownloaded')({
+  episodeId: 438,
+});
+```
+
 <a name="module_Shows.doMarkEpisodeAsWatched"></a>
 
 ### .doMarkEpisodeAsWatched([obj])
@@ -655,6 +682,31 @@ Remove show from favorite
 ```js
 BetaSeries.getAction('shows', 'doRemoveShowFavorite')({
   showId: 438
+});
+```
+
+<a name="module_Shows.doUnmarkEpisodeAsDownloaded"></a>
+
+### .doUnmarkEpisodeAsDownloaded([obj])
+
+Downloaded episode
+
+**Dispatch**: `MARK_EPISODE_AS_DOWNLOADED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUnmarkEpisodeAsDownloaded')({
+  episodeId: 438,
 });
 ```
 
