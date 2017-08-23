@@ -22,6 +22,7 @@
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
         * [.doMarkEpisodeAsDownloaded([obj])](#module_Shows.doMarkEpisodeAsDownloaded) ⇒ {Promise}
+        * [.doMarkEpisodeAsHidden([obj])](#module_Shows.doMarkEpisodeAsHidden) ⇒ {Promise}
         * [.doMarkEpisodeAsWatched([obj])](#module_Shows.doMarkEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkManyEpisodeAsWatched([obj])](#module_Shows.doMarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkSeasonAsWatched([obj])](#module_Shows.doMarkSeasonAsWatched) ⇒ {Promise}
@@ -495,6 +496,29 @@ Watch episode
 BetaSeries.getAction('shows', 'doMarkEpisodeAsDownloaded')({
   episodeId: 438,
 });
+```
+
+<a name="module_Shows.doMarkEpisodeAsHidden"></a>
+
+### .doMarkEpisodeAsHidden([obj])
+
+Mark episode as hidden
+
+**Dispatch**: `MARK_EPISODE_AS_HIDDEN`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doMarkEpisodeAsHidden')({ episodeId: 123 });
 ```
 
 <a name="module_Shows.doMarkEpisodeAsWatched"></a>
@@ -1046,6 +1070,7 @@ List episodes to see of the member
 **Actions listened**:
 
  * `FETCH_EPISODES_LIST`
+ * `MARK_EPISODE_AS_HIDDEN`
 
 **Returns**: {Object}
 
