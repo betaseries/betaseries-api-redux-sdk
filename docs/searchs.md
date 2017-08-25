@@ -64,7 +64,8 @@ Search all type of element by query
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
-| [obj.query] | {Number} | Query search |
+| [obj.query] | {String} | Query search |
+| [obj.limit] | {limit} | Limit of results |
 
 **Example**  
 
