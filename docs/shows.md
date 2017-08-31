@@ -11,6 +11,7 @@
         * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
         * [.doFetchEpisodeByCode([obj])](#module_Shows.doFetchEpisodeByCode) ⇒ {Promise}
         * [.doFetchEpisodesList([obj])](#module_Shows.doFetchEpisodesList) ⇒ {Promise}
+        * [.doFetchEpisodeSubtitles([obj])](#module_Shows.doFetchEpisodeSubtitles) ⇒ {Promise}
         * [.doFetchFavoriteShows([obj])](#module_Shows.doFetchFavoriteShows) ⇒ {Promise}
         * [.doFetchLatestEpisode([obj])](#module_Shows.doFetchLatestEpisode) ⇒ {Promise}
         * [.doFetchManyEpisodes([obj])](#module_Shows.doFetchManyEpisodes) ⇒ {Promise}
@@ -20,6 +21,8 @@
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
+        * [.doMarkEpisodeAsDownloaded([obj])](#module_Shows.doMarkEpisodeAsDownloaded) ⇒ {Promise}
+        * [.doMarkEpisodeAsHidden([obj])](#module_Shows.doMarkEpisodeAsHidden) ⇒ {Promise}
         * [.doMarkEpisodeAsWatched([obj])](#module_Shows.doMarkEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkManyEpisodeAsWatched([obj])](#module_Shows.doMarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkSeasonAsWatched([obj])](#module_Shows.doMarkSeasonAsWatched) ⇒ {Promise}
@@ -28,6 +31,7 @@
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
         * [.doRemoveShowArchive([obj])](#module_Shows.doRemoveShowArchive) ⇒ {Promise}
         * [.doRemoveShowFavorite([obj])](#module_Shows.doRemoveShowFavorite) ⇒ {Promise}
+        * [.doUnmarkEpisodeAsDownloaded([obj])](#module_Shows.doUnmarkEpisodeAsDownloaded) ⇒ {Promise}
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkSeasonAsWatched([obj])](#module_Shows.doUnmarkSeasonAsWatched) ⇒ {Promise}
@@ -35,6 +39,7 @@
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
+        * [.episodesSubtitles(state, action)](#module_Shows.episodesSubtitles) ⇒ {Object}
         * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
         * [.members(state, action)](#module_Shows.members) ⇒ {Object}
         * [.membersEpisodesToSee(state, action)](#module_Shows.membersEpisodesToSee) ⇒ {Object}
@@ -45,6 +50,7 @@
         * [.getDiscoverShows](#module_Shows.getDiscoverShows) ⇒ {Array}
         * [.getEpisode](#module_Shows.getEpisode) ⇒ {Object}
         * [.getEpisodesToSee](#module_Shows.getEpisodesToSee) ⇒ {Array}
+        * [.getEpisodeSubtitles](#module_Shows.getEpisodeSubtitles) ⇒ {Array}
         * [.getFavoriteShows](#module_Shows.getFavoriteShows) ⇒ {Array}
         * [.getLatestShowEpisode](#module_Shows.getLatestShowEpisode) ⇒ {Object}
         * [.getMemberShows](#module_Shows.getMemberShows) ⇒ {Array}
@@ -226,6 +232,29 @@ Retrieve episodes list
 
 ```js
 BetaSeries.getAction('shows', 'doFetchEpisodesList')();
+```
+
+<a name="module_Shows.doFetchEpisodeSubtitles"></a>
+
+### .doFetchEpisodeSubtitles([obj])
+
+Retrieve episode subtitles
+
+**Dispatch**: `FETCH_EPISODE_SUBTITLES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchEpisodeSubtitles')({ episodeId: 123 });
 ```
 
 <a name="module_Shows.doFetchFavoriteShows"></a>
@@ -444,6 +473,54 @@ Retrieve similar shows
 BetaSeries.getAction('shows', 'doFetchSimilarShows')({ showId: 1275 });
 ```
 
+<a name="module_Shows.doMarkEpisodeAsDownloaded"></a>
+
+### .doMarkEpisodeAsDownloaded([obj])
+
+Watch episode
+
+**Dispatch**: `MARK_EPISODE_AS_DOWNLOADED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doMarkEpisodeAsDownloaded')({
+  episodeId: 438,
+});
+```
+
+<a name="module_Shows.doMarkEpisodeAsHidden"></a>
+
+### .doMarkEpisodeAsHidden([obj])
+
+Mark episode as hidden
+
+**Dispatch**: `MARK_EPISODE_AS_HIDDEN`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doMarkEpisodeAsHidden')({ episodeId: 123 });
+```
+
 <a name="module_Shows.doMarkEpisodeAsWatched"></a>
 
 ### .doMarkEpisodeAsWatched([obj])
@@ -658,6 +735,31 @@ BetaSeries.getAction('shows', 'doRemoveShowFavorite')({
 });
 ```
 
+<a name="module_Shows.doUnmarkEpisodeAsDownloaded"></a>
+
+### .doUnmarkEpisodeAsDownloaded([obj])
+
+Downloaded episode
+
+**Dispatch**: `MARK_EPISODE_AS_DOWNLOADED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUnmarkEpisodeAsDownloaded')({
+  episodeId: 438,
+});
+```
+
 <a name="module_Shows.doUnmarkEpisodeAsWatched"></a>
 
 ### .doUnmarkEpisodeAsWatched([obj])
@@ -852,6 +954,43 @@ BetaSeries.getReducer('shows', 'episodes').showsEpisodes;
 }
 ```
 
+<a name="module_Shows.episodesSubtitles"></a>
+
+### .episodesSubtitles(state, action)
+
+List of the episodes subtitles
+
+**Actions listened**:
+
+ * `FETCH_EPISODE_SUBTITLES`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'episodesSubtitles').showsEpisodesSubtitles;
+
+// state example
+{
+  '1275': [              // episode ID
+    {
+      id: 123543,        // subtitle ID
+      ...subtitle        // subtitle element
+    },
+    ...
+  ]
+}
+```
+
 <a name="module_Shows.latestEpisodes"></a>
 
 ### .latestEpisodes(state, action)
@@ -931,6 +1070,7 @@ List episodes to see of the member
 **Actions listened**:
 
  * `FETCH_EPISODES_LIST`
+ * `MARK_EPISODE_AS_HIDDEN`
 
 **Returns**: {Object}
 
@@ -1120,6 +1260,30 @@ const mapStateToProps = (state, props) => ({
   episode: BetaSeries.getSelector('shows', 'getEpisodesToSee')(state, {
     memberId: props.memberId,
   });
+});
+```
+
+<a name="module_Shows.getEpisodeSubtitles"></a>
+
+### .getEpisodeSubtitles
+
+Select episode subtitles from state
+
+**Returns**: {Array} - List of episode subtitles element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Object} | Episode ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getEpisodeSubtitles')(state, { episodeId: props.episodeId });
 });
 ```
 
