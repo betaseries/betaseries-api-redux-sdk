@@ -4,10 +4,13 @@
 
 * [Members](#module_Members)
     * _actions_
+        * [.doDeleteNotification([obj])](#module_Members.doDeleteNotification) ⇒ {Promise}
         * [.doFetchMember([obj])](#module_Members.doFetchMember) ⇒ {Promise}
         * [.doFetchMemberEmail()](#module_Members.doFetchMemberEmail) ⇒ {Promise}
         * [.doFetchMemberNotifications([obj])](#module_Members.doFetchMemberNotifications) ⇒ {Promise}
         * [.doFetchUser([obj])](#module_Members.doFetchUser) ⇒ {Promise}
+        * [.doMarkAllNotificationsAsRead([obj])](#module_Members.doMarkAllNotificationsAsRead) ⇒ {Promise}
+        * [.doMarkNotificationAsRead([obj])](#module_Members.doMarkNotificationAsRead) ⇒ {Promise}
         * [.doUpdateMemberEmail([obj])](#module_Members.doUpdateMemberEmail) ⇒ {Promise}
         * [.doUpdateMemberPassword([obj])](#module_Members.doUpdateMemberPassword) ⇒ {Promise}
     * _reducers_
@@ -15,7 +18,33 @@
         * [.notifications(state, action)](#module_Members.notifications) ⇒ {Object}
     * _selectors_
         * [.getMember](#module_Members.getMember) ⇒ {Object}
+        * [.getNotifications](#module_Members.getNotifications) ⇒ {Array}
         * [.getUser](#module_Members.getUser) ⇒ {Object}
+
+<a name="module_Members.doDeleteNotification"></a>
+
+### .doDeleteNotification([obj])
+
+Delete notification of member
+
+**Dispatch**: `DELETE_NOTIFICATION`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.notificationID] | {Number} | Notification ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doDeleteNotification')({
+  notificationId: 438,
+});
+```
 
 <a name="module_Members.doFetchMember"></a>
 
@@ -82,7 +111,7 @@ Retrieve user notifications
 **Example**  
 
 ```js
-BetaSeries.getAction('members', 'doFetchMemberNotifications')();
+BetaSeries.getAction('members', 'doFetchMemberNotifications')({ number: 50, … });
 ```
 
 <a name="module_Members.doFetchUser"></a>
@@ -107,6 +136,52 @@ Retrieve authenticated user infos
 
 ```js
 BetaSeries.getAction('members', 'doFetchUser')();
+```
+
+<a name="module_Members.doMarkAllNotificationsAsRead"></a>
+
+### .doMarkAllNotificationsAsRead([obj])
+
+Mark all user notifications as read
+
+**Dispatch**: `MARK_ALL_NOTIFICATIONS_AS_READ`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.auto_mark] | {Bool} | Automatically mark notifications as read (default false) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doMarkAllNotificationsAsRead')();
+```
+
+<a name="module_Members.doMarkNotificationAsRead"></a>
+
+### .doMarkNotificationAsRead([obj])
+
+Mark single user notification as read
+
+**Dispatch**: `MARK_NOTIFICATION_AS_READ`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.notificationId] | {Number} | Id of the notification |
+
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doMarkNotificationAsRead')();
 ```
 
 <a name="module_Members.doUpdateMemberEmail"></a>
@@ -259,6 +334,30 @@ const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('members', 'getMember')(state, {
     memberId: props.memberId,
   });
+});
+```
+
+<a name="module_Members.getNotifications"></a>
+
+### .getNotifications
+
+Select notifications for a member from state
+
+**Returns**: {Array} - Notifications array element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Object} | Member ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('members', 'getNotifications')(state, { memberId: props.memberId });
 });
 ```
 
