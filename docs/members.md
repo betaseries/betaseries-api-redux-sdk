@@ -6,11 +6,13 @@
     * _actions_
         * [.doFetchMember([obj])](#module_Members.doFetchMember) ⇒ {Promise}
         * [.doFetchMemberEmail()](#module_Members.doFetchMemberEmail) ⇒ {Promise}
+        * [.doFetchMemberNotifications([obj])](#module_Members.doFetchMemberNotifications) ⇒ {Promise}
         * [.doFetchUser([obj])](#module_Members.doFetchUser) ⇒ {Promise}
         * [.doUpdateMemberEmail([obj])](#module_Members.doUpdateMemberEmail) ⇒ {Promise}
         * [.doUpdateMemberPassword([obj])](#module_Members.doUpdateMemberPassword) ⇒ {Promise}
     * _reducers_
         * [.members(state, action)](#module_Members.members) ⇒ {Object}
+        * [.notifications(state, action)](#module_Members.notifications) ⇒ {Object}
     * _selectors_
         * [.getMember](#module_Members.getMember) ⇒ {Object}
         * [.getUser](#module_Members.getUser) ⇒ {Object}
@@ -55,6 +57,32 @@ Retrieve member email
 
 ```js
 BetaSeries.getAction('members', 'doFetchMemberEmail')();
+```
+
+<a name="module_Members.doFetchMemberNotifications"></a>
+
+### .doFetchMemberNotifications([obj])
+
+Retrieve user notifications
+
+**Dispatch**: `FETCH_NOTIFICATIONS_LIST`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.number] | {Number} | Number of notifications wanted (default to 10) |
+| [obj.sort] | {String} | Sort order (default desc) |
+| [obj.all] | {Bool} | Display all notifications, not only unseen (default false) |
+| [obj.auto_mark] | {Bool} | Automatically mark notifications as read (default false) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doFetchMemberNotifications')();
 ```
 
 <a name="module_Members.doFetchUser"></a>
@@ -166,6 +194,44 @@ BetaSeries.getReducer('members', 'members').members;
     id: 12,    // member element
     ...member,
   },
+  ...,
+}
+```
+
+<a name="module_Members.notifications"></a>
+
+### .notifications(state, action)
+
+List of notifications by memberId
+
+**Actions listened**:
+
+ * `FETCH_NOTIFICATIONS_LIST`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('members', 'notifications').membersNotifications;
+
+// state value example
+{
+  '12': [              // member ID
+    {
+     id: 18965,        // notification element
+     ...notification,
+    },
+    ...,
+  ],
   ...,
 }
 ```
