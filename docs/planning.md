@@ -4,7 +4,7 @@
 
 * [Planning](#module_Planning)
     * _actions_
-        * [.doClearPlanningTimeline()](#module_Planning.doClearPlanningTimeline) ⇒ {Promise}
+        * [.doClearTimeline()](#module_Planning.doClearTimeline) ⇒ {Promise}
         * [.doFetchCalendar([obj])](#module_Planning.doFetchCalendar) ⇒ {Promise}
         * [.doFetchTimeline([obj])](#module_Planning.doFetchTimeline) ⇒ {Promise}
     * _reducers_
@@ -14,9 +14,9 @@
         * [.getCalendar](#module_Planning.getCalendar) ⇒ {Array}
         * [.getTimeline](#module_Planning.getTimeline) ⇒ {Array}
 
-<a name="module_Planning.doClearPlanningTimeline"></a>
+<a name="module_Planning.doClearTimeline"></a>
 
-### .doClearPlanningTimeline()
+### .doClearTimeline()
 
 Clear planning timeline feed
 
@@ -28,7 +28,7 @@ Clear planning timeline feed
 **Example**  
 
 ```js
-BetaSeries.getAction('planning', 'doClearPlanningTimeline')();
+BetaSeries.getAction('planning', 'doClearTimeline')();
 ```
 
 <a name="module_Planning.doFetchCalendar"></a>
