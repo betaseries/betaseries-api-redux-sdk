@@ -900,13 +900,13 @@ List of discover shows
 BetaSeries.getReducer('shows', 'discover').showsDiscover;
 
 // state example
-{
-  '1275': {      // show ID
+  [
+   {
     id: 1275,    // show element
     ...show,
   },
   ...,
-}
+ ]
 ```
 
 <a name="module_Shows.episodes"></a>
