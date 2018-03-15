@@ -6,6 +6,8 @@
     * _actions_
         * [.doAnswerPoll([obj])](#module_Polls.doAnswerPoll) ⇒ {Promise}
         * [.doFetchLastPoll()](#module_Polls.doFetchLastPoll) ⇒ {Promise}
+        * [.doAddReport([obj])](#module_Polls.doAddReport) ⇒ {Promise}
+        * [.doAskUpdate([obj])](#module_Polls.doAskUpdate) ⇒ {Promise}
     * _reducers_
         * [.polls(state, action)](#module_Polls.polls) ⇒ {Object}
     * _selectors_
@@ -54,6 +56,62 @@ Retrieve last poll
 
 ```js
 BetaSeries.getAction('polls', 'doFetchLastPoll')();
+```
+
+<a name="module_Polls.doAddReport"></a>
+
+### .doAddReport([obj])
+
+Add a report for a media
+
+**Dispatch**: ``
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.targetId] | {Number} | Media ID for the report |
+| [obj.type] | {String} | Type of media: show or film |
+| [obj.reason] | {String} | Reason of report |
+
+**Example**  
+
+```js
+BetaSeries.getAction('reports', 'doAddReport')({
+  targetId: 120,
+  type: 'show',
+  reason: 'foo',
+});
+```
+
+<a name="module_Polls.doAskUpdate"></a>
+
+### .doAskUpdate([obj])
+
+Ask for an update for a media
+
+**Dispatch**: ``
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Media ID for the report |
+| [obj.type] | {String} | Type of media: show or film |
+
+**Example**  
+
+```js
+BetaSeries.getAction('reports', 'doAskUpdate')({
+  id: 120,
+  type: 'show'
+});
 ```
 
 <a name="module_Polls.polls"></a>
