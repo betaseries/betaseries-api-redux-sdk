@@ -57,6 +57,7 @@
         * [.getShow](#module_Shows.getShow) ⇒ {Object}
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
         * [.getShowEpisodes](#module_Shows.getShowEpisodes) ⇒ {Array}
+        * [.getShowEpisodesForSeason](#module_Shows.getShowEpisodesForSeason) ⇒ {Array}
         * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Array}
 
 <a name="module_Shows.doAddShow"></a>
@@ -1435,6 +1436,34 @@ Select episode by show from state
 const mapStateToProps = (state, props) => ({
   episode: BetaSeries.getSelector('shows', 'getShowEpisodes')(state, {
     showId: props.showId,
+  });
+});
+```
+
+<a name="module_Shows.getShowEpisodesForSeason"></a>
+
+### .getShowEpisodesForSeason
+
+Select episode by show from state for season
+
+**Returns**: {Array} - List of episodes element order by code or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Object} | Show ID |
+| [obj.season] | {Object} | Season number |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  episode: BetaSeries.getSelector('shows', 'getShowEpisodesForSeason')(state, {
+    showId: props.showId,
+    season: props.season,
   });
 });
 ```
