@@ -20,6 +20,7 @@
         * [.doFetchShow([obj])](#module_Shows.doFetchShow) ⇒ {Promise}
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
+        * [.doFetchShowSeasons([obj])](#module_Shows.doFetchShowSeasons) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
         * [.doMarkEpisodeAsDownloaded([obj])](#module_Shows.doMarkEpisodeAsDownloaded) ⇒ {Promise}
         * [.doMarkEpisodeAsHidden([obj])](#module_Shows.doMarkEpisodeAsHidden) ⇒ {Promise}
@@ -43,6 +44,7 @@
         * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
         * [.members(state, action)](#module_Shows.members) ⇒ {Object}
         * [.membersEpisodesToSee(state, action)](#module_Shows.membersEpisodesToSee) ⇒ {Object}
+        * [.seaons(state, action)](#module_Shows.seaons) ⇒ {Object}
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
     * _selectors_
@@ -58,6 +60,7 @@
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
         * [.getShowEpisodes](#module_Shows.getShowEpisodes) ⇒ {Array}
         * [.getShowEpisodesForSeason](#module_Shows.getShowEpisodesForSeason) ⇒ {Array}
+        * [.getShowSeasons](#module_Shows.getShowSeasons) ⇒ {Array}
         * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Array}
 
 <a name="module_Shows.doAddShow"></a>
@@ -446,6 +449,29 @@ Retrieve episodes of the show
 
 ```js
 BetaSeries.getAction('shows', 'doFetchShowEpisodes')({ showId: 1275, season: 1 });
+```
+
+<a name="module_Shows.doFetchShowSeasons"></a>
+
+### .doFetchShowSeasons([obj])
+
+Retrieve seasons details list
+
+**Dispatch**: `FETCH_SEASONS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchShowSeasons')({ showId: 12 });
 ```
 
 <a name="module_Shows.doFetchSimilarShows"></a>
@@ -1097,6 +1123,41 @@ BetaSeries.getReducer('shows', 'membersEpisodesToSee').showsMembersEpisodesToSee
 }
 ```
 
+<a name="module_Shows.seaons"></a>
+
+### .seaons(state, action)
+
+List of seasons
+
+**Actions listened**:
+
+ * `FETCH_SEASONS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'seasons').showsSeasons;
+
+// state example
+{
+  '1275': {      // show ID
+    id: 1275,    // show element
+    ...show,
+  },
+  ...,
+}
+```
+
 <a name="module_Shows.shows"></a>
 
 ### .shows(state, action)
@@ -1464,6 +1525,32 @@ const mapStateToProps = (state, props) => ({
   episode: BetaSeries.getSelector('shows', 'getShowEpisodesForSeason')(state, {
     showId: props.showId,
     season: props.season,
+  });
+});
+```
+
+<a name="module_Shows.getShowSeasons"></a>
+
+### .getShowSeasons
+
+Select seasons by show from state
+
+**Returns**: {Array} - List of seasons
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Object} | Show ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  episode: BetaSeries.getSelector('shows', 'getShowSeasons')(state, {
+    showId: props.showId,
   });
 });
 ```
