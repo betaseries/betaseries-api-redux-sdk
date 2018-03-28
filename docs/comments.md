@@ -4,6 +4,7 @@
 
 * [Comments](#module_Comments)
     * _actions_
+        * [.doClearShowComments([obj])](#module_Comments.doClearShowComments) ⇒ {Promise}
         * [.doCommentEpisode([obj])](#module_Comments.doCommentEpisode) ⇒ {Promise}
         * [.doCommentEvent([obj])](#module_Comments.doCommentEvent) ⇒ {Promise}
         * [.doCommentMember([obj])](#module_Comments.doCommentMember) ⇒ {Promise}
@@ -32,6 +33,29 @@
         * [.getMovieComments](#module_Comments.getMovieComments) ⇒ {Array}
         * [.getReplies](#module_Comments.getReplies) ⇒ {Array}
         * [.getShowComments](#module_Comments.getShowComments) ⇒ {Array}
+
+<a name="module_Comments.doClearShowComments"></a>
+
+### .doClearShowComments([obj])
+
+Clear comments for a specific show
+
+**Dispatch**: `CLEAR_SHOW_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doClearShowComments')({ showId: 481 });
+```
 
 <a name="module_Comments.doCommentEpisode"></a>
 
