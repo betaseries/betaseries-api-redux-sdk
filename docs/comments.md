@@ -4,6 +4,9 @@
 
 * [Comments](#module_Comments)
     * _actions_
+        * [.doClearEpisodeComments([obj])](#module_Comments.doClearEpisodeComments) ⇒ {Promise}
+        * [.doClearMemberComments([obj])](#module_Comments.doClearMemberComments) ⇒ {Promise}
+        * [.doClearMovieComments([obj])](#module_Comments.doClearMovieComments) ⇒ {Promise}
         * [.doClearShowComments([obj])](#module_Comments.doClearShowComments) ⇒ {Promise}
         * [.doCommentEpisode([obj])](#module_Comments.doCommentEpisode) ⇒ {Promise}
         * [.doCommentEvent([obj])](#module_Comments.doCommentEvent) ⇒ {Promise}
@@ -33,6 +36,75 @@
         * [.getMovieComments](#module_Comments.getMovieComments) ⇒ {Array}
         * [.getReplies](#module_Comments.getReplies) ⇒ {Array}
         * [.getShowComments](#module_Comments.getShowComments) ⇒ {Array}
+
+<a name="module_Comments.doClearEpisodeComments"></a>
+
+### .doClearEpisodeComments([obj])
+
+Clear comments for a specific episode
+
+**Dispatch**: `CLEAR_EPISODE_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doClearEpisodeComments')({ episodeId: 481 });
+```
+
+<a name="module_Comments.doClearMemberComments"></a>
+
+### .doClearMemberComments([obj])
+
+Clear comments for a specific member
+
+**Dispatch**: `CLEAR_MEMBER_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Number} | MemberID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doClearMemberComments')({ memberId: 481 });
+```
+
+<a name="module_Comments.doClearMovieComments"></a>
+
+### .doClearMovieComments([obj])
+
+Clear comments for a specific movie
+
+**Dispatch**: `CLEAR_MOVIE_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.movieId] | {Number} | MovieID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doClearMovieComments')({ movieId: 481 });
+```
 
 <a name="module_Comments.doClearShowComments"></a>
 
