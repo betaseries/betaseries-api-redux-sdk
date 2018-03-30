@@ -20,6 +20,7 @@
         * [.doFetchShow([obj])](#module_Shows.doFetchShow) ⇒ {Promise}
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
+        * [.doFetchShowPhotos([obj])](#module_Shows.doFetchShowPhotos) ⇒ {Promise}
         * [.doFetchShowSeasons([obj])](#module_Shows.doFetchShowSeasons) ⇒ {Promise}
         * [.doFetchShowVideos([obj])](#module_Shows.doFetchShowVideos) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
@@ -45,6 +46,7 @@
         * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
         * [.members(state, action)](#module_Shows.members) ⇒ {Object}
         * [.membersEpisodesToSee(state, action)](#module_Shows.membersEpisodesToSee) ⇒ {Object}
+        * [.photos(state, action)](#module_Shows.photos) ⇒ {Object}
         * [.seaons(state, action)](#module_Shows.seaons) ⇒ {Object}
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
@@ -58,6 +60,7 @@
         * [.getFavoriteShows](#module_Shows.getFavoriteShows) ⇒ {Array}
         * [.getLatestShowEpisode](#module_Shows.getLatestShowEpisode) ⇒ {Object}
         * [.getMemberShows](#module_Shows.getMemberShows) ⇒ {Array}
+        * [.getPhotos](#module_Shows.getPhotos) ⇒ {Array}
         * [.getShow](#module_Shows.getShow) ⇒ {Object}
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
         * [.getShowEpisodes](#module_Shows.getShowEpisodes) ⇒ {Array}
@@ -452,6 +455,29 @@ Retrieve episodes of the show
 
 ```js
 BetaSeries.getAction('shows', 'doFetchShowEpisodes')({ showId: 1275, season: 1 });
+```
+
+<a name="module_Shows.doFetchShowPhotos"></a>
+
+### .doFetchShowPhotos([obj])
+
+Retrieve photos of the show
+
+**Dispatch**: `FETCH_SHOW_PHOTOS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchShowPhotos')({ showId: 1275 });
 ```
 
 <a name="module_Shows.doFetchShowSeasons"></a>
@@ -1149,6 +1175,43 @@ BetaSeries.getReducer('shows', 'membersEpisodesToSee').showsMembersEpisodesToSee
 }
 ```
 
+<a name="module_Shows.photos"></a>
+
+### .photos(state, action)
+
+List of the show photos
+
+**Actions listened**:
+
+ * `FETCH_SHOW_PHOTOS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'photos').showsPhotos;
+
+// state example
+{
+  '1275': [              // show ID
+    {
+      id: 123543,        // photo ID
+      ...photo           // photo element
+    },
+    ...
+  ]
+}
+```
+
 <a name="module_Shows.seaons"></a>
 
 ### .seaons(state, action)
@@ -1483,6 +1546,30 @@ Select member shows from state
 ```js
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('shows', 'getMemberShows')(state, { memberId: props.memberId });
+});
+```
+
+<a name="module_Shows.getPhotos"></a>
+
+### .getPhotos
+
+Select photos from state
+
+**Returns**: {Array} - List of photos element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Object} | Show ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getPhotos')(state, { showId: props.showId });
 });
 ```
 
