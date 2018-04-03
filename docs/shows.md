@@ -47,7 +47,7 @@
         * [.members(state, action)](#module_Shows.members) ⇒ {Object}
         * [.membersEpisodesToSee(state, action)](#module_Shows.membersEpisodesToSee) ⇒ {Object}
         * [.photos(state, action)](#module_Shows.photos) ⇒ {Object}
-        * [.seaons(state, action)](#module_Shows.seaons) ⇒ {Object}
+        * [.seasons(state, action)](#module_Shows.seasons) ⇒ {Object}
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
         * [.videos(state, action)](#module_Shows.videos) ⇒ {Object}
@@ -1212,9 +1212,9 @@ BetaSeries.getReducer('shows', 'photos').showsPhotos;
 }
 ```
 
-<a name="module_Shows.seaons"></a>
+<a name="module_Shows.seasons"></a>
 
-### .seaons(state, action)
+### .seasons(state, action)
 
 List of seasons
 
