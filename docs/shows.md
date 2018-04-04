@@ -535,7 +535,6 @@ Retrieve similar shows
 **Dispatch**:
 
  * `FETCH_SIMILAR_SHOWS`
- * `FETCH_MANY_SHOWS`
 
 **Returns**: {Promise}
 
@@ -1311,10 +1310,13 @@ BetaSeries.getReducer('shows', 'similars').showsSimilars;
 
 // state value example
 {
-  '1275': [           // show ID
-    481, 2135, 23     // list of shows ID
-  ],
-  ...,
+  '1275': [              // show ID
+    {
+      id: 123543,        // similar ID
+      ...similar       // similar element
+    },
+    ...
+  ]
 }
 ```
 
