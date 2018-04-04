@@ -1,7 +1,6 @@
 import similarsReducer from '../../../../lib/modules/shows/reducers/similars';
 
 const actionFile = '../lib/modules/shows/actions/doFetchSimilarShows';
-const showsFixture = require('../../../fixtures/shows.json');
 
 describe('Retrieve similar shows', () => {
   /**
@@ -9,12 +8,7 @@ describe('Retrieve similar shows', () => {
    */
   function getInstance(promise) {
     return proxyquire.noCallThru().load(actionFile, {
-      '../../../utils/fetch/ApiFetch': { get: () => promise },
-      './doFetchManyShows': proxyquire
-        .noCallThru()
-        .load('../lib/modules/shows/actions/doFetchManyShows', {
-          '../../../utils/fetch/ApiFetch': { get: () => promise }
-        }).default
+      '../../../utils/fetch/ApiFetch': { get: () => promise }
     }).default;
   }
 
@@ -23,36 +17,37 @@ describe('Retrieve similar shows', () => {
 
     const actionToDispatch = getInstance(
       Promise.resolve({
-        similars: showsFixture.slice(0, 5).map(show => ({
-          ...show,
-          show_id: show.id
-        }))
+        similars: [
+          {
+            id: 1,
+            show_id: 10
+          },
+          {
+            id: 1,
+            show_id: 20
+          }
+        ]
       })
     );
 
     before(async () => {
       const store = mockStore({
-        shows: {}
+        showsSimilars: {}
       });
-      action = await store.dispatch(actionToDispatch({ showId: 481 }));
+
+      action = await store.dispatch(actionToDispatch({ showId: 1 }));
     });
 
     it('validate action', () => {
       expect(action.type).to.equal('FETCH_SIMILAR_SHOWS');
-      expect(action.payload.showId).to.deep.equal(481);
-      expect(action.payload.similars).to.have.lengthOf(5);
+      expect(action.payload.showId).to.deep.equal(1);
+      expect(action.payload.similars).to.have.lengthOf(2);
     });
 
     it('validate similars reducer', () => {
       const stateSimilarsReducer = similarsReducer(undefined, action);
-      expect(stateSimilarsReducer).to.have.ownProperty('481');
-      expect(stateSimilarsReducer[481]).to.deep.equal([
-        10212,
-        982,
-        481,
-        716,
-        8251
-      ]);
+      expect(stateSimilarsReducer).to.have.ownProperty('1');
+      expect(stateSimilarsReducer[1]).to.have.lengthOf(2);
     });
   });
 });
