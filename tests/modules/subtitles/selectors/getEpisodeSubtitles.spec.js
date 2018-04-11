@@ -3,7 +3,7 @@ import selector
 
 describe('Select episode subtitles from state ', () => {
   const state = {
-    subtitles: { 3: [1, 2, 3] }
+    subtitlesEpisodes: { 3: [1, 2, 3] }
   };
 
   it('returns subtitles if exist', () => {
