@@ -1,7 +1,7 @@
 import episodesSubtitlesReducer
-  from '../../../../lib/modules/shows/reducers/episodesSubtitles';
+  from '../../../../lib/modules/subtitles/reducers/episodes';
 
-const actionFile = '../lib/modules/shows/actions/doFetchEpisodeSubtitles';
+const actionFile = '../lib/modules/subtitles/actions/doFetchEpisodeSubtitles';
 
 describe('Retrieve episode subtitles', () => {
   /**

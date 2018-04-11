@@ -1,9 +1,9 @@
 import selector
-  from '../../../../lib/modules/shows/selectors/getEpisodeSubtitles';
+  from '../../../../lib/modules/subtitles/selectors/getEpisodeSubtitles';
 
 describe('Select episode subtitles from state ', () => {
   const state = {
-    showsEpisodesSubtitles: { 3: [1, 2, 3] }
+    subtitlesEpisodes: { 3: [1, 2, 3] }
   };
 
   it('returns subtitles if exist', () => {

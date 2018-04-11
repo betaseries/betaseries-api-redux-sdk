@@ -11,7 +11,6 @@
         * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
         * [.doFetchEpisodeByCode([obj])](#module_Shows.doFetchEpisodeByCode) ⇒ {Promise}
         * [.doFetchEpisodesList([obj])](#module_Shows.doFetchEpisodesList) ⇒ {Promise}
-        * [.doFetchEpisodeSubtitles([obj])](#module_Shows.doFetchEpisodeSubtitles) ⇒ {Promise}
         * [.doFetchFavoriteShows([obj])](#module_Shows.doFetchFavoriteShows) ⇒ {Promise}
         * [.doFetchLatestEpisode([obj])](#module_Shows.doFetchLatestEpisode) ⇒ {Promise}
         * [.doFetchManyEpisodes([obj])](#module_Shows.doFetchManyEpisodes) ⇒ {Promise}
@@ -42,7 +41,6 @@
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
-        * [.episodesSubtitles(state, action)](#module_Shows.episodesSubtitles) ⇒ {Object}
         * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
         * [.members(state, action)](#module_Shows.members) ⇒ {Object}
         * [.membersEpisodesToSee(state, action)](#module_Shows.membersEpisodesToSee) ⇒ {Object}
@@ -56,7 +54,6 @@
         * [.getDiscoverShows](#module_Shows.getDiscoverShows) ⇒ {Array}
         * [.getEpisode](#module_Shows.getEpisode) ⇒ {Object}
         * [.getEpisodesToSee](#module_Shows.getEpisodesToSee) ⇒ {Array}
-        * [.getEpisodeSubtitles](#module_Shows.getEpisodeSubtitles) ⇒ {Array}
         * [.getFavoriteShows](#module_Shows.getFavoriteShows) ⇒ {Array}
         * [.getLatestShowEpisode](#module_Shows.getLatestShowEpisode) ⇒ {Object}
         * [.getMemberShows](#module_Shows.getMemberShows) ⇒ {Array}
@@ -242,29 +239,6 @@ Retrieve episodes list
 
 ```js
 BetaSeries.getAction('shows', 'doFetchEpisodesList')();
-```
-
-<a name="module_Shows.doFetchEpisodeSubtitles"></a>
-
-### .doFetchEpisodeSubtitles([obj])
-
-Retrieve episode subtitles
-
-**Dispatch**: `FETCH_EPISODE_SUBTITLES`
-
-**Returns**: {Promise}
-
-**Category**: actions  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| [obj] | {Object} | Accept the following: |
-| [obj.episodeId] | {Number} | Episode ID |
-
-**Example**  
-
-```js
-BetaSeries.getAction('shows', 'doFetchEpisodeSubtitles')({ episodeId: 123 });
 ```
 
 <a name="module_Shows.doFetchFavoriteShows"></a>
@@ -1032,43 +1006,6 @@ BetaSeries.getReducer('shows', 'episodes').showsEpisodes;
 }
 ```
 
-<a name="module_Shows.episodesSubtitles"></a>
-
-### .episodesSubtitles(state, action)
-
-List of the episodes subtitles
-
-**Actions listened**:
-
- * `FETCH_EPISODE_SUBTITLES`
-
-**Returns**: {Object}
-
-**Category**: reducers  
-
-| Param | Type |
-| --- | --- |
-| state | {Object} | 
-| action | {Object} | 
-
-**Example**  
-
-```js
-// get reducer
-BetaSeries.getReducer('shows', 'episodesSubtitles').showsEpisodesSubtitles;
-
-// state example
-{
-  '1275': [              // episode ID
-    {
-      id: 123543,        // subtitle ID
-      ...subtitle        // subtitle element
-    },
-    ...
-  ]
-}
-```
-
 <a name="module_Shows.latestEpisodes"></a>
 
 ### .latestEpisodes(state, action)
@@ -1450,30 +1387,6 @@ const mapStateToProps = (state, props) => ({
   episode: BetaSeries.getSelector('shows', 'getEpisodesToSee')(state, {
     memberId: props.memberId,
   });
-});
-```
-
-<a name="module_Shows.getEpisodeSubtitles"></a>
-
-### .getEpisodeSubtitles
-
-Select episode subtitles from state
-
-**Returns**: {Array} - List of episode subtitles element or `undefined`
-
-**Category**: selectors  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the following: |
-| [obj.episodeId] | {Object} | Episode ID |
-
-**Example**  
-
-```js
-const mapStateToProps = (state, props) => ({
-  show: BetaSeries.getSelector('shows', 'getEpisodeSubtitles')(state, { episodeId: props.episodeId });
 });
 ```
 
