@@ -10,6 +10,7 @@
         * [.doFetchMovie([obj])](#module_Movies.doFetchMovie) ⇒ {Promise}
         * [.doFetchMovieCharacters([obj])](#module_Movies.doFetchMovieCharacters) ⇒ {Promise}
         * [.doRateMovie([obj])](#module_Movies.doRateMovie) ⇒ {Promise}
+        * [.doRemoveMovieFavorite([obj])](#module_Movies.doRemoveMovieFavorite) ⇒ {Promise}
         * [.doRemoveMovieMember([obj])](#module_Movies.doRemoveMovieMember) ⇒ {Promise}
         * [.doUpdateMovieState([obj])](#module_Movies.doUpdateMovieState) ⇒ {Promise}
     * _reducers_
@@ -164,6 +165,31 @@ Add note on movie
 BetaSeries.getAction('movies', 'doRateMovie')({
   movieId: 438,
   note: 4,
+});
+```
+
+<a name="module_Movies.doRemoveMovieFavorite"></a>
+
+### .doRemoveMovieFavorite([obj])
+
+Remove movie from favorite
+
+**Dispatch**: `REMOVE_MOVIE_FAVORITE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.movieId] | {Number} | Movie ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doRemoveMovieFavorite')({
+  movieId: 438
 });
 ```
 
