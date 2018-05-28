@@ -4,6 +4,7 @@
 
 * [Members](#module_Members)
     * _actions_
+        * [.doClearMemberNotifications()](#module_Members.doClearMemberNotifications) ⇒ {Promise}
         * [.doDeleteNotification([obj])](#module_Members.doDeleteNotification) ⇒ {Promise}
         * [.doFetchMember([obj])](#module_Members.doFetchMember) ⇒ {Promise}
         * [.doFetchMemberEmail()](#module_Members.doFetchMemberEmail) ⇒ {Promise}
@@ -20,6 +21,23 @@
         * [.getMember](#module_Members.getMember) ⇒ {Object}
         * [.getNotifications](#module_Members.getNotifications) ⇒ {Array}
         * [.getUser](#module_Members.getUser) ⇒ {Object}
+
+<a name="module_Members.doClearMemberNotifications"></a>
+
+### .doClearMemberNotifications()
+
+Clear notifications
+
+**Dispatch**: `CLEAR_NOTIFICATIONS_LIST`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doClearMemberNotifications')();
+```
 
 <a name="module_Members.doDeleteNotification"></a>
 
