@@ -4,6 +4,7 @@
 
 * [Planning](#module_Planning)
     * _actions_
+        * [.doClearCalendar()](#module_Planning.doClearCalendar) ⇒ {Promise}
         * [.doClearTimeline()](#module_Planning.doClearTimeline) ⇒ {Promise}
         * [.doFetchCalendar([obj])](#module_Planning.doFetchCalendar) ⇒ {Promise}
         * [.doFetchTimeline([obj])](#module_Planning.doFetchTimeline) ⇒ {Promise}
@@ -13,6 +14,23 @@
     * _selectors_
         * [.getCalendar](#module_Planning.getCalendar) ⇒ {Array}
         * [.getTimeline](#module_Planning.getTimeline) ⇒ {Array}
+
+<a name="module_Planning.doClearCalendar"></a>
+
+### .doClearCalendar()
+
+Clear planning calendar
+
+**Dispatch**: `CLEAR_PLANNING_CALENDAR`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+**Example**  
+
+```js
+BetaSeries.getAction('planning', 'doClearCalendar')();
+```
 
 <a name="module_Planning.doClearTimeline"></a>
 
@@ -94,6 +112,7 @@ List of the calendar events
 **Actions listened**:
 
  * `FETCH_PLANNING_CALENDAR`
+ * `CLEAR_PLANNING_CALENDAR`
 
 **Returns**: {Object}
 
