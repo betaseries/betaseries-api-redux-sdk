@@ -13,6 +13,7 @@
         * [.doCommentMember([obj])](#module_Comments.doCommentMember) ⇒ {Promise}
         * [.doCommentMovie([obj])](#module_Comments.doCommentMovie) ⇒ {Promise}
         * [.doCommentShow([obj])](#module_Comments.doCommentShow) ⇒ {Promise}
+        * [.doCommentSpecificEvent([obj])](#module_Comments.doCommentSpecificEvent) ⇒ {Promise}
         * [.doFetchComment([obj])](#module_Comments.doFetchComment) ⇒ {Promise}
         * [.doFetchEpisodeComments([obj])](#module_Comments.doFetchEpisodeComments) ⇒ {Promise}
         * [.doFetchEventComments([obj])](#module_Comments.doFetchEventComments) ⇒ {Promise}
@@ -265,6 +266,35 @@ Add comment on show
 BetaSeries.getAction('comments', 'doCommentShow')({
   showId: 438,
   text: 'Trop bien cette série !',
+});
+```
+
+<a name="module_Comments.doCommentSpecificEvent"></a>
+
+### .doCommentSpecificEvent([obj])
+
+Add specific comment on event
+
+**Dispatch**: `COMMENT_EVENT`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Event ID (optional) |
+| [obj.type] | {String} | Element type in the event (optional) |
+| [obj.element_id] | {Number} | Element ID in the event (optional) |
+| [obj.text] | {String} | Text of comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentSpecificEvent')({
+  id: 438,
+  text: 'Trop bien cet épisode !',
 });
 ```
 
