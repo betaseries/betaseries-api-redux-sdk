@@ -7,11 +7,13 @@
         * [.doClearEpisodeComments([obj])](#module_Comments.doClearEpisodeComments) ⇒ {Promise}
         * [.doClearMemberComments([obj])](#module_Comments.doClearMemberComments) ⇒ {Promise}
         * [.doClearMovieComments([obj])](#module_Comments.doClearMovieComments) ⇒ {Promise}
+        * [.doClearPollComments([obj])](#module_Comments.doClearPollComments) ⇒ {Promise}
         * [.doClearShowComments([obj])](#module_Comments.doClearShowComments) ⇒ {Promise}
         * [.doCommentEpisode([obj])](#module_Comments.doCommentEpisode) ⇒ {Promise}
         * [.doCommentEvent([obj])](#module_Comments.doCommentEvent) ⇒ {Promise}
         * [.doCommentMember([obj])](#module_Comments.doCommentMember) ⇒ {Promise}
         * [.doCommentMovie([obj])](#module_Comments.doCommentMovie) ⇒ {Promise}
+        * [.doCommentPoll([obj])](#module_Comments.doCommentPoll) ⇒ {Promise}
         * [.doCommentShow([obj])](#module_Comments.doCommentShow) ⇒ {Promise}
         * [.doCommentSpecificEvent([obj])](#module_Comments.doCommentSpecificEvent) ⇒ {Promise}
         * [.doFetchComment([obj])](#module_Comments.doFetchComment) ⇒ {Promise}
@@ -19,6 +21,7 @@
         * [.doFetchEventComments([obj])](#module_Comments.doFetchEventComments) ⇒ {Promise}
         * [.doFetchMemberComments([obj])](#module_Comments.doFetchMemberComments) ⇒ {Promise}
         * [.doFetchMovieComments([obj])](#module_Comments.doFetchMovieComments) ⇒ {Promise}
+        * [.doFetchPollComments([obj])](#module_Comments.doFetchPollComments) ⇒ {Promise}
         * [.doFetchReplies([obj])](#module_Comments.doFetchReplies) ⇒ {Promise}
         * [.doFetchShowComments([obj])](#module_Comments.doFetchShowComments) ⇒ {Promise}
         * [.doRemoveComment([obj])](#module_Comments.doRemoveComment) ⇒ {Promise}
@@ -28,6 +31,7 @@
         * [.events(state, action)](#module_Comments.events) ⇒ {Object}
         * [.members(state, action)](#module_Comments.members) ⇒ {Object}
         * [.movies(state, action)](#module_Comments.movies) ⇒ {Object}
+        * [.polls(state, action)](#module_Comments.polls) ⇒ {Object}
         * [.shows(state, action)](#module_Comments.shows) ⇒ {Object}
     * _selectors_
         * [.getComment](#module_Comments.getComment) ⇒ {Object}
@@ -35,6 +39,7 @@
         * [.getEventComments](#module_Comments.getEventComments) ⇒ {Array}
         * [.getMemberComments](#module_Comments.getMemberComments) ⇒ {Array}
         * [.getMovieComments](#module_Comments.getMovieComments) ⇒ {Array}
+        * [.getPollComments](#module_Comments.getPollComments) ⇒ {Array}
         * [.getReplies](#module_Comments.getReplies) ⇒ {Array}
         * [.getShowComments](#module_Comments.getShowComments) ⇒ {Array}
 
@@ -105,6 +110,29 @@ Clear comments for a specific movie
 
 ```js
 BetaSeries.getAction('comments', 'doClearMovieComments')({ movieId: 481 });
+```
+
+<a name="module_Comments.doClearPollComments"></a>
+
+### .doClearPollComments([obj])
+
+Clear comments for a specific poll
+
+**Dispatch**: `CLEAR_POLL_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.pollId] | {Number} | PollID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doClearPollComments')({ pollId: 481 });
 ```
 
 <a name="module_Comments.doClearShowComments"></a>
@@ -238,6 +266,33 @@ Add comment on movie
 BetaSeries.getAction('comments', 'doCommentMovie')({
   movieId: 438,
   text: 'Trop bien ce film !',
+});
+```
+
+<a name="module_Comments.doCommentPoll"></a>
+
+### .doCommentPoll([obj])
+
+Add comment on poll
+
+**Dispatch**: `COMMENT_POLL`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.pollId] | {Number} | Poll ID |
+| [obj.text] | {String} | Text of comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentPoll')({
+  pollId: 438,
+  text: 'Trop bien cette épisode !',
 });
 ```
 
@@ -429,6 +484,33 @@ Retrieve comments of the movie
 BetaSeries.getAction('comments', 'doFetchMovieComments')({ movieId: 481 });
 ```
 
+<a name="module_Comments.doFetchPollComments"></a>
+
+### .doFetchPollComments([obj])
+
+Retrieve comment of the poll
+
+**Dispatch**: `FETCH_POLL_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.pollId] | {Number} | Poll ID |
+| [obj.nbpp] | {Number} | Number of comments per page |
+| [obj.since_id] | {Number} | ID of last comment received (optional) |
+| [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
+| [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doFetchPollComments')({ pollId: 42315431 });
+```
+
 <a name="module_Comments.doFetchReplies"></a>
 
 ### .doFetchReplies([obj])
@@ -514,6 +596,7 @@ List of comments
  * `FETCH_EPISODE_COMMENTS`
  * `FETCH_SHOW_COMMENTS`
  * `FETCH_EVENT_COMMENTS`
+ * `FETCH_POLL_COMMENTS`
  * `FETCH_MEMBER_COMMENTS`
  * `FETCH_MOVIE_COMMENTS`
  * `FETCH_COMMENT`
@@ -523,6 +606,7 @@ List of comments
  * `FETCH_TIMELINE_EVENT`
  * `FETCH_REPLIES`
  * `COMMENT_EVENT`
+ * `COMMENT_POLL`
  * `COMMENT_EPISODE`
  * `COMMENT_SHOW`
  * `COMMENT_MEMBER`
@@ -694,6 +778,42 @@ BetaSeries.getReducer('comments', 'movies').commentsMovies;
 }
 ```
 
+<a name="module_Comments.polls"></a>
+
+### .polls(state, action)
+
+List the comments of the poll
+
+**Actions listened**:
+
+ * `FETCH_POLL_COMMENTS`
+ * `CLEAR_POLL_COMMENTS`
+ * `COMMENT_POLL`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('comments', 'polls').commentsPolls;
+
+// state value example
+{
+  '12': [               // poll ID
+    1234, 213, 2343,    // list of comments ID
+  ],
+  ...,
+}
+```
+
 <a name="module_Comments.shows"></a>
 
 ### .shows(state, action)
@@ -855,6 +975,32 @@ Select movie comments from state
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('comments', 'getMovieComments')(state, {
     movieId: props.movieId
+  });
+});
+```
+
+<a name="module_Comments.getPollComments"></a>
+
+### .getPollComments
+
+Select poll comments from state
+
+**Returns**: {Array} - List of comments or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.pollId] | {Object} | Poll ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('comments', 'getPollComments')(state, {
+    pollId: props.pollId
   });
 });
 ```
