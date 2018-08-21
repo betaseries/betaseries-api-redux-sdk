@@ -4,14 +4,14 @@ describe('Select last poll from state ', () => {
   const state = {
     polls: {
       3: { id: 3 },
-      10: { id: 10 },
+      10: { id: 10, last: true },
       2: { id: 2 }
     }
   };
 
   it('returns last poll if reducer is not empty', () => {
     const value = selector(state);
-    expect(value).to.deep.equal({ id: 10 });
+    expect(value).to.deep.equal({ id: 10, last: true });
   });
 
   it('returns undefined if polls reducer is empty', () => {

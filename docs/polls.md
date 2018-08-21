@@ -6,6 +6,8 @@
     * _actions_
         * [.doAnswerPoll([obj])](#module_Polls.doAnswerPoll) ⇒ {Promise}
         * [.doFetchLastPoll()](#module_Polls.doFetchLastPoll) ⇒ {Promise}
+        * [.doFetchPoll([obj])](#module_Polls.doFetchPoll) ⇒ {Promise}
+        * [.doFetchPolls([obj])](#module_Polls.doFetchPolls) ⇒ {Promise}
         * [.doAddReport([obj])](#module_Polls.doAddReport) ⇒ {Promise}
         * [.doAskUpdate([obj])](#module_Polls.doAskUpdate) ⇒ {Promise}
     * _reducers_
@@ -56,6 +58,57 @@ Retrieve last poll
 
 ```js
 BetaSeries.getAction('polls', 'doFetchLastPoll')();
+```
+
+<a name="module_Polls.doFetchPoll"></a>
+
+### .doFetchPoll([obj])
+
+Retrieve specific poll
+
+**Dispatch**: `FETCH_POLL`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.pollId] | {Number} | Poll ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('polls', 'doFetchPoll')({
+  pollId: 120,
+});
+```
+
+<a name="module_Polls.doFetchPolls"></a>
+
+### .doFetchPolls([obj])
+
+Retrieve all polls
+
+**Dispatch**: `FETCH_POLLS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.nbpp] | {Number} | Limit number of polls (default `10`) |
+| [obj.page] | {Number} | Page number (default `1`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('polls', 'doFetchPolls')({
+  nbpp: 32,
+});
 ```
 
 <a name="module_Polls.doAddReport"></a>
@@ -123,6 +176,9 @@ List of polls
 **Actions listened**:
 
  * `FETCH_LAST_POLL`
+ * `FETCH_POLL`
+ * `FETCH_POLLS`
+ * `ANSWER_POLL`
 
 **Returns**: {Object}
 
