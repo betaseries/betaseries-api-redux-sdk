@@ -2,7 +2,7 @@ import commentsReducer
   from '../../../../lib/modules/conversations/reducers/detail';
 
 const actionFile = '../lib/modules/conversations/actions/doFetchConversationDetail';
-const commentsFixture = require('../../../fixtures/conversations.json');
+const fixture = require('../../../fixtures/conversationDetail.json');
 
 describe('Retrieve conversation', () => {
   /**
@@ -19,7 +19,9 @@ describe('Retrieve conversation', () => {
 
     const actionToDispatch = getInstance(
       Promise.resolve({
-        detail: commentsFixture[0]
+        conversation: {
+          '1': fixture
+        }
       })
     );
 

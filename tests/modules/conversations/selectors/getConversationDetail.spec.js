@@ -3,7 +3,7 @@ import selector
 
 describe('Select conversation detail from state ', () => {
   const state = {
-    detail: { 3: { id: 3 } }
+    conversationsDetail: { 3: { id: 3 } }
   };
 
   it('returns conversation if exist', () => {
@@ -11,7 +11,7 @@ describe('Select conversation detail from state ', () => {
     expect(value).to.deep.equal({ id: 3 });
   });
 
-  it('returns null if comment does not exist', () => {
+  it('returns null if conversation does not exist', () => {
     const value = selector(state, { conversationId: 5 });
     expect(value).to.equal(undefined);
   });
