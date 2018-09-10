@@ -4,6 +4,7 @@
 
 * [Comments](#module_Comments)
     * _actions_
+        * [.doAddVote([obj])](#module_Comments.doAddVote) ⇒ {Promise}
         * [.doClearEpisodeComments([obj])](#module_Comments.doClearEpisodeComments) ⇒ {Promise}
         * [.doClearMemberComments([obj])](#module_Comments.doClearMemberComments) ⇒ {Promise}
         * [.doClearMovieComments([obj])](#module_Comments.doClearMovieComments) ⇒ {Promise}
@@ -25,6 +26,7 @@
         * [.doFetchReplies([obj])](#module_Comments.doFetchReplies) ⇒ {Promise}
         * [.doFetchShowComments([obj])](#module_Comments.doFetchShowComments) ⇒ {Promise}
         * [.doRemoveComment([obj])](#module_Comments.doRemoveComment) ⇒ {Promise}
+        * [.doRemoveVote([obj])](#module_Comments.doRemoveVote) ⇒ {Promise}
     * _reducers_
         * [.comments(state, action)](#module_Comments.comments) ⇒ {Object}
         * [.episodes(state, action)](#module_Comments.episodes) ⇒ {Object}
@@ -42,6 +44,33 @@
         * [.getPollComments](#module_Comments.getPollComments) ⇒ {Array}
         * [.getReplies](#module_Comments.getReplies) ⇒ {Array}
         * [.getShowComments](#module_Comments.getShowComments) ⇒ {Array}
+
+<a name="module_Comments.doAddVote"></a>
+
+### .doAddVote([obj])
+
+Add vote on a comment
+
+**Dispatch**: `ADD_COMMENT_VOTE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.commentId] | {Number} | Comment ID |
+| [obj.type] | {Number} | 1 for a thumbs_up, -1 for a thumbs_down |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doAddVote')({
+  commentId: 438,
+  type: 1,
+});
+```
 
 <a name="module_Comments.doClearEpisodeComments"></a>
 
@@ -583,6 +612,29 @@ Remove comment
 
 ```js
 BetaSeries.getAction('comments', 'doRemoveComment')({ commentId: 438 });
+```
+
+<a name="module_Comments.doRemoveVote"></a>
+
+### .doRemoveVote([obj])
+
+Remove vote on a comment
+
+**Dispatch**: `REMOVE_COMMENT_VOTE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.commentId] | {Number} | Comment ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doRemoveVote')({ commentId: 438 });
 ```
 
 <a name="module_Comments.comments"></a>

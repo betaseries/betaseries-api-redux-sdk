@@ -84,10 +84,10 @@ describe('Retrieve members timeline', () => {
       );
 
       expect(stateMembersReducer[28113]).to.deep.equal([
-        1827424327,
-        1827423776,
         1827421054,
-        1827420999
+        1827420999,
+        1827424327,
+        1827423776
       ]);
     });
 
@@ -162,9 +162,9 @@ describe('Retrieve members timeline', () => {
       ]);
 
       expect(stateMembersReducer[28113]).to.deep.equal([
-        1827421054,
+        1827420637,
         1827420999,
-        1827420637
+        1827421054
       ]);
     });
   });
