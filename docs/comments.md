@@ -315,6 +315,7 @@ Add comment on poll
 | [obj] | {Object} | Accept the following: |
 | [obj.pollId] | {Number} | Poll ID |
 | [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
 **Example**  
 
