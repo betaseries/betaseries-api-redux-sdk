@@ -62,6 +62,7 @@ Add vote on a comment
 | [obj] | {Object} | Accept the following: |
 | [obj.commentId] | {Number} | Comment ID |
 | [obj.type] | {Number} | 1 for a thumbs_up, -1 for a thumbs_down |
+| [obj.switch] | {Boolean} | true to update vote, default to false (optional) |
 
 **Example**  
 
