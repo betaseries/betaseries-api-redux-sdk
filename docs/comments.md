@@ -4,6 +4,7 @@
 
 * [Comments](#module_Comments)
     * _actions_
+        * [.doAddCommentSubscription([obj])](#module_Comments.doAddCommentSubscription) ⇒ {Promise}
         * [.doAddVote([obj])](#module_Comments.doAddVote) ⇒ {Promise}
         * [.doClearEpisodeComments([obj])](#module_Comments.doClearEpisodeComments) ⇒ {Promise}
         * [.doClearMemberComments([obj])](#module_Comments.doClearMemberComments) ⇒ {Promise}
@@ -26,6 +27,7 @@
         * [.doFetchReplies([obj])](#module_Comments.doFetchReplies) ⇒ {Promise}
         * [.doFetchShowComments([obj])](#module_Comments.doFetchShowComments) ⇒ {Promise}
         * [.doRemoveComment([obj])](#module_Comments.doRemoveComment) ⇒ {Promise}
+        * [.doRemoveCommentSubscription([obj])](#module_Comments.doRemoveCommentSubscription) ⇒ {Promise}
         * [.doRemoveVote([obj])](#module_Comments.doRemoveVote) ⇒ {Promise}
     * _reducers_
         * [.comments(state, action)](#module_Comments.comments) ⇒ {Object}
@@ -44,6 +46,33 @@
         * [.getPollComments](#module_Comments.getPollComments) ⇒ {Array}
         * [.getReplies](#module_Comments.getReplies) ⇒ {Array}
         * [.getShowComments](#module_Comments.getShowComments) ⇒ {Array}
+
+<a name="module_Comments.doAddCommentSubscription"></a>
+
+### .doAddCommentSubscription([obj])
+
+Add subscription to comments on a media
+
+**Dispatch**: `ADD_COMMENT_SUBSCRIPTION`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Media ID |
+| [obj.type] | {String} | Media type => episode|show|member|movie |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doAddCommentSubscription')({
+  id: 438,
+  type: 'show',
+});
+```
 
 <a name="module_Comments.doAddVote"></a>
 
@@ -614,6 +643,33 @@ Remove comment
 
 ```js
 BetaSeries.getAction('comments', 'doRemoveComment')({ commentId: 438 });
+```
+
+<a name="module_Comments.doRemoveCommentSubscription"></a>
+
+### .doRemoveCommentSubscription([obj])
+
+Remove subscription to comments on a media
+
+**Dispatch**: `REMOVE_COMMENT_SUBSCRIPTION`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Media ID |
+| [obj.type] | {String} | Media type => episode|show|member|movie |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doRemoveCommentSubscription')({
+  id: 438,
+  type: 'show',
+});
 ```
 
 <a name="module_Comments.doRemoveVote"></a>
