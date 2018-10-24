@@ -11,6 +11,7 @@
         * [.doClearMovieComments([obj])](#module_Comments.doClearMovieComments) ⇒ {Promise}
         * [.doClearPollComments([obj])](#module_Comments.doClearPollComments) ⇒ {Promise}
         * [.doClearShowComments([obj])](#module_Comments.doClearShowComments) ⇒ {Promise}
+        * [.doCloseComments([obj])](#module_Comments.doCloseComments) ⇒ {Promise}
         * [.doCommentEpisode([obj])](#module_Comments.doCommentEpisode) ⇒ {Promise}
         * [.doCommentEvent([obj])](#module_Comments.doCommentEvent) ⇒ {Promise}
         * [.doCommentMember([obj])](#module_Comments.doCommentMember) ⇒ {Promise}
@@ -26,6 +27,7 @@
         * [.doFetchPollComments([obj])](#module_Comments.doFetchPollComments) ⇒ {Promise}
         * [.doFetchReplies([obj])](#module_Comments.doFetchReplies) ⇒ {Promise}
         * [.doFetchShowComments([obj])](#module_Comments.doFetchShowComments) ⇒ {Promise}
+        * [.doOpenComments([obj])](#module_Comments.doOpenComments) ⇒ {Promise}
         * [.doRemoveComment([obj])](#module_Comments.doRemoveComment) ⇒ {Promise}
         * [.doRemoveCommentSubscription([obj])](#module_Comments.doRemoveCommentSubscription) ⇒ {Promise}
         * [.doRemoveVote([obj])](#module_Comments.doRemoveVote) ⇒ {Promise}
@@ -215,6 +217,33 @@ Clear comments for a specific show
 
 ```js
 BetaSeries.getAction('comments', 'doClearShowComments')({ showId: 481 });
+```
+
+<a name="module_Comments.doCloseComments"></a>
+
+### .doCloseComments([obj])
+
+Close comments for a media
+
+**Dispatch**: `CLOSE_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Media ID |
+| [obj.type] | {String} | Media type => episode|show|member|movie |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCloseComments')({
+  id: 438,
+  type: 'show',
+});
 ```
 
 <a name="module_Comments.doCommentEpisode"></a>
@@ -620,6 +649,33 @@ Retrieve comments of the show
 
 ```js
 BetaSeries.getAction('comments', 'doFetchShowComments')({ showId: 481 });
+```
+
+<a name="module_Comments.doOpenComments"></a>
+
+### .doOpenComments([obj])
+
+Open comments for a media
+
+**Dispatch**: `OPEN_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Media ID |
+| [obj.type] | {String} | Media type => episode|show|member|movie |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doOpenComments')({
+  id: 438,
+  type: 'show',
+});
 ```
 
 <a name="module_Comments.doRemoveComment"></a>
