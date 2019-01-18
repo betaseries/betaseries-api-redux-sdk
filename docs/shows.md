@@ -7,6 +7,7 @@
         * [.doAddShow([obj])](#module_Shows.doAddShow) ⇒ {Promise}
         * [.doAddShowArchive([obj])](#module_Shows.doAddShowArchive) ⇒ {Promise}
         * [.doAddShowFavorite([obj])](#module_Shows.doAddShowFavorite) ⇒ {Promise}
+        * [.doClearDiscoverShows()](#module_Shows.doClearDiscoverShows) ⇒ {Promise}
         * [.doFetchDiscoverShows([obj])](#module_Shows.doFetchDiscoverShows) ⇒ {Promise}
         * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
         * [.doFetchEpisodeByCode([obj])](#module_Shows.doFetchEpisodeByCode) ⇒ {Promise}
@@ -140,6 +141,23 @@ Add show to favorite
 BetaSeries.getAction('shows', 'doAddShowFavorite')({
   showId: 438
 });
+```
+
+<a name="module_Shows.doClearDiscoverShows"></a>
+
+### .doClearDiscoverShows()
+
+Clear discover shows
+
+**Dispatch**: `CLEAR_DISCOVER_SHOWS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doClearDiscoverShows')();
 ```
 
 <a name="module_Shows.doFetchDiscoverShows"></a>
