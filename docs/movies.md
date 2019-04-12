@@ -7,6 +7,7 @@
         * [.doFetchFavoriteMovies([obj])](#module_Movies.doFetchFavoriteMovies) ⇒ {Promise}
         * [.doFetchManyMovies([obj])](#module_Movies.doFetchManyMovies) ⇒ {Promise}
         * [.doFetchMemberMovies([obj])](#module_Movies.doFetchMemberMovies) ⇒ {Promise}
+        * [.doFetchMemberMoviesList([obj])](#module_Movies.doFetchMemberMoviesList) ⇒ {Promise}
         * [.doFetchMovie([obj])](#module_Movies.doFetchMovie) ⇒ {Promise}
         * [.doFetchMovieCharacters([obj])](#module_Movies.doFetchMovieCharacters) ⇒ {Promise}
         * [.doRateMovie([obj])](#module_Movies.doRateMovie) ⇒ {Promise}
@@ -93,6 +94,33 @@ Retrieve movies of the member
 
 ```js
 BetaSeries.getAction('movies', 'doFetchMemberMovies')({ memberId: 1 });
+```
+
+<a name="module_Movies.doFetchMemberMoviesList"></a>
+
+### .doFetchMemberMoviesList([obj])
+
+Retrieve movies list of the member
+
+**Dispatch**: `FETCH_MEMBER_MOVIES_LIST`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Number} | Member ID |
+| [obj.state] | {Number} | State of movie   (`0` = to see, `1` = seen, `2` = doesn't want to see (`0` by default)) |
+| [obj.start] | {Number} | Used for paginate (`0` by default) |
+| [obj.limit] | {Number} | Used for paginate (optional) |
+| [obj.order] | {String} | Sort order (`alphabetical`, `popularity`, `added` (optional)) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doFetchMemberMoviesList')({ memberId: 1 });
 ```
 
 <a name="module_Movies.doFetchMovie"></a>
