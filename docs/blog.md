@@ -7,6 +7,7 @@
         * [.doFetchBlogPosts([obj])](#module_Blog.doFetchBlogPosts) ⇒ {Promise}
         * [.doFetchBlogAuthors([obj])](#module_Blog.doFetchBlogAuthors) ⇒ {Promise}
         * [.doFetchBlogRelatedPosts([obj])](#module_Blog.doFetchBlogRelatedPosts) ⇒ {Promise}
+        * [.doFetchBlogPost([obj])](#module_Blog.doFetchBlogPost) ⇒ {Promise}
     * _reducers_
         * [.posts(state, action)](#module_Blog.posts) ⇒ {Object}
         * [.authors(state, action)](#module_Blog.authors) ⇒ {Object}
@@ -15,6 +16,7 @@
         * [.getBlogPosts](#module_Blog.getBlogPosts) ⇒ {Array}
         * [.getBlogAuthors](#module_Blog.getBlogAuthors) ⇒ {Array}
         * [.getBlogRelatedPosts](#module_Blog.getBlogRelatedPosts) ⇒ {Array}
+        * [.getBlogPost](#module_Blog.getBlogPost) ⇒ {Array}
 
 <a name="module_Blog.doFetchBlogPosts"></a>
 
@@ -83,6 +85,31 @@ Retrieve related posts for specific post
 BetaSeries.getAction('blog', 'doFetchBlogRelatedPosts')({
   parentId: 120,
   relatedPosts: [{ id: 1, ...}, { ... }],
+});
+```
+
+<a name="module_Blog.doFetchBlogPost"></a>
+
+### .doFetchBlogPost([obj])
+
+Retrieve specific post
+
+**Dispatch**: `FETCH_WP_POST`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.post] | {Number} | Post ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doFetchBlogPost')({
+  postId: 120,
 });
 ```
 
@@ -256,6 +283,32 @@ Select related posts by parent post ID from state
 const mapStateToProps = (state, props) => ({
   blog: BetaSeries.getSelector('blog', 'getBlogRelatedPosts')(state, {
     parentId: props.parentId,
+  });
+});
+```
+
+<a name="module_Blog.getBlogPost"></a>
+
+### .getBlogPost
+
+Select specific post with postId from state
+
+**Returns**: {Object} - Specific post element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.postId] | {Number} | Post ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  blog: BetaSeries.getSelector('blog', 'getBlogPost')(state, {
+    postId: props.postId,
   });
 });
 ```
