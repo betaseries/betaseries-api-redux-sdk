@@ -8,15 +8,18 @@
         * [.doFetchBlogAuthors([obj])](#module_Blog.doFetchBlogAuthors) ⇒ {Promise}
         * [.doFetchBlogRelatedPosts([obj])](#module_Blog.doFetchBlogRelatedPosts) ⇒ {Promise}
         * [.doFetchBlogPost([obj])](#module_Blog.doFetchBlogPost) ⇒ {Promise}
+        * [.doFetchBlogFeaturedPosts([obj])](#module_Blog.doFetchBlogFeaturedPosts) ⇒ {Promise}
     * _reducers_
         * [.posts(state, action)](#module_Blog.posts) ⇒ {Object}
         * [.authors(state, action)](#module_Blog.authors) ⇒ {Object}
         * [.relatedPosts(state, action)](#module_Blog.relatedPosts) ⇒ {Object}
+        * [.featuredPosts(state, action)](#module_Blog.featuredPosts) ⇒ {Object}
     * _selectors_
         * [.getBlogPosts](#module_Blog.getBlogPosts) ⇒ {Array}
         * [.getBlogAuthors](#module_Blog.getBlogAuthors) ⇒ {Array}
         * [.getBlogRelatedPosts](#module_Blog.getBlogRelatedPosts) ⇒ {Array}
         * [.getBlogPost](#module_Blog.getBlogPost) ⇒ {Array}
+        * [.getBlogFeaturedPosts](#module_Blog.getBlogFeaturedPosts) ⇒ {Array}
 
 <a name="module_Blog.doFetchBlogPosts"></a>
 
@@ -111,6 +114,24 @@ Retrieve specific post
 BetaSeries.getAction('blog', 'doFetchBlogPost')({
   postId: 120,
 });
+```
+
+<a name="module_Blog.doFetchBlogFeaturedPosts"></a>
+
+### .doFetchBlogFeaturedPosts([obj])
+
+Retrieve featured wordpress posts
+
+**Dispatch**: `FETCH_WP_FEATURED_POSTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doFetchBlogFeaturedPosts')();
 ```
 
 <a name="module_Blog.posts"></a>
@@ -217,6 +238,41 @@ BetaSeries.getReducer('blog', 'relatedPosts').blogRelatedPosts;
 ]
 ```
 
+<a name="module_Blog.featuredPosts"></a>
+
+### .posts(state, action)
+
+List of blog featured posts
+
+**Actions listened**:
+
+ * `FETCH_WP_FEATURED_POSTS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} |
+| action | {Object} |
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('blog', 'featuredPosts').blogFeaturedPosts;
+
+// state value example
+[
+ {
+   id: 384144,    // wordpress featured post
+   ...post,
+ },
+ ...,
+]
+```
+
 <a name="module_Blog.getBlogPosts"></a>
 
 ### .getBlogPosts
@@ -310,5 +366,27 @@ const mapStateToProps = (state, props) => ({
   blog: BetaSeries.getSelector('blog', 'getBlogPost')(state, {
     postId: props.postId,
   });
+});
+```
+
+<a name="module_Blog.getBlogFeaturedPosts"></a>
+
+### .getBlogFeaturedPosts
+
+Select wordpress featured posts from state
+
+**Returns**: {Array} - Posts elements or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  blog: BetaSeries.getSelector('blog', 'getBlogFeaturedPosts')(state);
 });
 ```
