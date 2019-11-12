@@ -9,6 +9,7 @@
         * [.doFetchBlogRelatedPosts([obj])](#module_Blog.doFetchBlogRelatedPosts) ⇒ {Promise}
         * [.doFetchBlogPost([obj])](#module_Blog.doFetchBlogPost) ⇒ {Promise}
         * [.doFetchBlogFeaturedPosts([obj])](#module_Blog.doFetchBlogFeaturedPosts) ⇒ {Promise}
+        * [.doClearBlogPosts()](#module_Blog.doClearBlogPosts) ⇒ {Promise}
     * _reducers_
         * [.posts(state, action)](#module_Blog.posts) ⇒ {Object}
         * [.authors(state, action)](#module_Blog.authors) ⇒ {Object}
@@ -132,6 +133,22 @@ Retrieve featured wordpress posts
 
 ```js
 BetaSeries.getAction('blog', 'doFetchBlogFeaturedPosts')();
+```
+
+### .doClearBlogPosts()
+
+Clear all blog posts
+
+**Dispatch**: `CLEAR_BLOG_POSTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doClearBlogPosts')();
 ```
 
 <a name="module_Blog.posts"></a>
