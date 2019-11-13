@@ -24,6 +24,7 @@
         * [.doFetchShowSeasons([obj])](#module_Shows.doFetchShowSeasons) ⇒ {Promise}
         * [.doFetchShowVideos([obj])](#module_Shows.doFetchShowVideos) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
+        * [.doFetchUnratedEpisodes([obj])](#module_Shows.doFetchUnratedEpisodes) ⇒ {Promise}
         * [.doMarkEpisodeAsDownloaded([obj])](#module_Shows.doMarkEpisodeAsDownloaded) ⇒ {Promise}
         * [.doMarkEpisodeAsHidden([obj])](#module_Shows.doMarkEpisodeAsHidden) ⇒ {Promise}
         * [.doMarkEpisodeAsWatched([obj])](#module_Shows.doMarkEpisodeAsWatched) ⇒ {Promise}
@@ -49,6 +50,7 @@
         * [.seasons(state, action)](#module_Shows.seasons) ⇒ {Object}
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
+        * [.unratedEpisodes(state, action)](#module_Shows.unratedEpisodes) ⇒ {Object}
         * [.videos(state, action)](#module_Shows.videos) ⇒ {Object}
     * _selectors_
         * [.getCharacters](#module_Shows.getCharacters) ⇒ {Array}
@@ -65,6 +67,7 @@
         * [.getShowEpisodesForSeason](#module_Shows.getShowEpisodesForSeason) ⇒ {Array}
         * [.getShowSeasons](#module_Shows.getShowSeasons) ⇒ {Array}
         * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Array}
+        * [.getUnratedEpisodes](#module_Shows.getUnratedEpisodes) ⇒ {Object}
         * [.getVideos](#module_Shows.getVideos) ⇒ {Array}
 
 <a name="module_Shows.doAddShow"></a>
@@ -275,6 +278,9 @@ Retrieve favorite shows of the member
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Number} | member ID |
+| [obj.offset] | {Number} | Start number of show list (default `0`) |
+| [obj.limit] | {Number} | Limit number of shows |
+| [obj.summary] | {String} | Only importanzt info (optional) |
 
 **Example**  
 
@@ -541,6 +547,31 @@ Retrieve similar shows
 
 ```js
 BetaSeries.getAction('shows', 'doFetchSimilarShows')({ showId: 1275 });
+```
+
+<a name="module_Shows.doFetchUnratedEpisodes"></a>
+
+### .doFetchUnratedEpisodes([obj])
+
+Retrieve unrated episodes
+
+**Dispatch**: `FETCH_UNRATED_EPISODES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.date] | {String} | Date to retrieve unrated episodes (default: yesterday, all) |
+| [obj.limit] | {Number} | Limit number of episodes |
+| [obj.page] | {Number} | Pagination |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchUnratedEpisodes')();
 ```
 
 <a name="module_Shows.doMarkEpisodeAsDownloaded"></a>
@@ -1275,6 +1306,42 @@ BetaSeries.getReducer('shows', 'similars').showsSimilars;
 }
 ```
 
+<a name="module_Shows.unratedEpisodes"></a>
+
+### .unratedEpisodes(state, action)
+
+List of unrated episodes of the connected member
+
+**Actions listened**:
+
+ * `FETCH_UNRATED_EPISODES`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'unratedEpisodes').showsUnratedEpisodes;
+
+// state value example
+{
+  '12': [{
+    'id': 1323421,
+    'title': 'xxx',
+    ...
+   }, // list of episodes
+  ]
+}
+```
+
 <a name="module_Shows.videos"></a>
 
 ### .videos(state, action)
@@ -1659,6 +1726,31 @@ Select similar shows from state
 ```js
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('shows', 'getSimilarShows')(state, { showId: props.showId });
+});
+```
+
+<a name="module_Shows.getUnratedEpisodes"></a>
+
+### .getUnratedEpisodes
+
+Select unrated episodes from state
+
+**Returns**: {Object} - Unrated Episodes list or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Number} | Member ID (optional) |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  episode: BetaSeries.getSelector('shows', 'getUnratedEpisodes')(state, {
+    memberId: props.memberId,
 });
 ```
 

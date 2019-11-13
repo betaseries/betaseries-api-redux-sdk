@@ -4,6 +4,7 @@
 
 * [Comments](#module_Comments)
     * _actions_
+        * [.doClearBlogPosts()](#module_Comments.doClearBlogPosts) ⇒ {Promise}
         * [.doAddCommentSubscription([obj])](#module_Comments.doAddCommentSubscription) ⇒ {Promise}
         * [.doAddVote([obj])](#module_Comments.doAddVote) ⇒ {Promise}
         * [.doClearEpisodeComments([obj])](#module_Comments.doClearEpisodeComments) ⇒ {Promise}
@@ -48,6 +49,23 @@
         * [.getPollComments](#module_Comments.getPollComments) ⇒ {Array}
         * [.getReplies](#module_Comments.getReplies) ⇒ {Array}
         * [.getShowComments](#module_Comments.getShowComments) ⇒ {Array}
+
+<a name="module_Comments.doClearBlogPosts"></a>
+
+### .doClearBlogPosts()
+
+Clear all blog posts
+
+**Dispatch**: `CLEAR_BLOG_POSTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doClearBlogPosts')();
+```
 
 <a name="module_Comments.doAddCommentSubscription"></a>
 

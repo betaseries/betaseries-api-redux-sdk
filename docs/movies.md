@@ -39,6 +39,9 @@ Retrieve favorite movies of the member
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Number} | member ID |
+| [obj.start] | {Number} | Used for paginate (`0` by default) |
+| [obj.limit] | {Number} | Used for paginate (optional) |
+| [obj.summary] | {String} | Only importanzt info (optional) |
 
 **Example**  
 
