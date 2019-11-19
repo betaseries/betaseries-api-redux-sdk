@@ -38,12 +38,14 @@ Retrieve wordpress posts
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.page] | {Number} | Page number |
+| [obj.lang] | {String} | Language info |
 
 **Example**  
 
 ```js
 BetaSeries.getAction('blog', 'doFetchBlogPosts')({
   page: 1,
+  lang: 'fr',
 });
 ```
 
@@ -129,10 +131,17 @@ Retrieve featured wordpress posts
 
 **Category**: actions  
 
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.lang] | {String} | Language info |
+
 **Example**  
 
 ```js
-BetaSeries.getAction('blog', 'doFetchBlogFeaturedPosts')();
+BetaSeries.getAction('blog', 'doFetchBlogFeaturedPosts')({
+  lang: 'fr',
+});
 ```
 
 ### .doClearBlogPosts()
