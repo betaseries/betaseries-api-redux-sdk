@@ -63,6 +63,7 @@
         * [.getMemberShows](#module_Shows.getMemberShows) ⇒ {Array}
         * [.getPhotos](#module_Shows.getPhotos) ⇒ {Array}
         * [.getShow](#module_Shows.getShow) ⇒ {Object}
+        * [.getShowByUrl](#module_Shows.getShowByUrl) ⇒ {Object}
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
         * [.getShowEpisodes](#module_Shows.getShowEpisodes) ⇒ {Array}
         * [.getShowEpisodesForSeason](#module_Shows.getShowEpisodesForSeason) ⇒ {Array}
@@ -422,7 +423,7 @@ Retrieve show with slug url
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
-| [obj.showId] | {String} | Show slug url |
+| [obj.url] | {String} | Show slug url |
 
 **Example**  
 
@@ -1618,6 +1619,30 @@ Select show from state
 ```js
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('shows', 'getShow')(state, { showId: props.showId });
+});
+```
+
+<a name="module_Shows.getShowByUrl"></a>
+
+### .getShowByUrl
+
+Select show from state by slug url
+
+**Returns**: {Object} - Show element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.showUrl] | {String} | Show slug url |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getShowByUrl')(state, { showUrl: props.showUrl });
 });
 ```
 
