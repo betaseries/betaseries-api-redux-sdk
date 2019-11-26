@@ -10,17 +10,23 @@
         * [.doFetchBlogPost([obj])](#module_Blog.doFetchBlogPost) ⇒ {Promise}
         * [.doFetchBlogFeaturedPosts([obj])](#module_Blog.doFetchBlogFeaturedPosts) ⇒ {Promise}
         * [.doClearBlogPosts()](#module_Blog.doClearBlogPosts) ⇒ {Promise}
+        * [.doFetchBlogCategoryPosts([obj])](#module_Blog.doFetchBlogCategoryPosts) ⇒ {Promise}
+        * [.doFetchBlogCategories([obj])](#module_Blog.doFetchBlogCategories) ⇒ {Promise}
     * _reducers_
         * [.posts(state, action)](#module_Blog.posts) ⇒ {Object}
         * [.authors(state, action)](#module_Blog.authors) ⇒ {Object}
         * [.relatedPosts(state, action)](#module_Blog.relatedPosts) ⇒ {Object}
         * [.featuredPosts(state, action)](#module_Blog.featuredPosts) ⇒ {Object}
+        * [.categoryPosts(state, action)](#module_Blog.categoryPosts) ⇒ {Object}
+        * [.categories(state, action)](#module_Blog.categories) ⇒ {Object}
     * _selectors_
         * [.getBlogPosts](#module_Blog.getBlogPosts) ⇒ {Array}
         * [.getBlogAuthors](#module_Blog.getBlogAuthors) ⇒ {Array}
         * [.getBlogRelatedPosts](#module_Blog.getBlogRelatedPosts) ⇒ {Array}
         * [.getBlogPost](#module_Blog.getBlogPost) ⇒ {Array}
         * [.getBlogFeaturedPosts](#module_Blog.getBlogFeaturedPosts) ⇒ {Array}
+        * [.getBlogCategoryPosts](#module_Blog.getBlogCategoryPosts) ⇒ {Array}
+        * [.getBlogCategories](#module_Blog.getBlogCategories) ⇒ {Array}
 
 <a name="module_Blog.doFetchBlogPosts"></a>
 
@@ -160,6 +166,53 @@ Clear all blog posts
 BetaSeries.getAction('blog', 'doClearBlogPosts')();
 ```
 
+<a name="module_Blog.doFetchBlogCategoryPosts"></a>
+
+### .doFetchBlogCategoryPosts([obj])
+
+Retrieve category posts
+
+**Dispatch**: `FETCH_WP_POSTS_WITH_CATEGORY`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.page] | {Number} | Page number |
+| [obj.lang] | {String} | Language info |
+| [obj.categoryId] | {Number} | Category ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doFetchBlogCategoryPosts')({
+  page: 1,
+  lang: 'fr',
+  categoryId: 53,
+});
+```
+
+<a name="module_Blog.doFetchBlogCategories"></a>
+
+### .doFetchBlogCategories([obj])
+
+Retrieve wordpress categories
+
+**Dispatch**: `FETCH_WP_CATEGORIES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doFetchBlogCategories')();
+```
+
 <a name="module_Blog.posts"></a>
 
 ### .posts(state, action)
@@ -259,6 +312,75 @@ BetaSeries.getReducer('blog', 'relatedPosts').blogRelatedPosts;
  {
    '384144': [{ id: 1, ... }, { ... }],    // wordpress related posts of parent post 384144
    ...
+ },
+ ...,
+]
+```
+
+<a name="module_Blog.categoryPosts"></a>
+
+### .categoryPosts(state, action)
+
+List of blog category posts
+
+**Actions listened**:
+
+ * `FETCH_WP_POSTS_WITH_CATEGORY`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} |
+| action | {Object} |
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('blog', 'categoryPosts').blogCategoryPosts;
+
+// state value example
+ {
+   '53': [{ id: 1, ... }, { ... }],    // wordpress posts for category 53
+   ...
+ },
+ ...,
+]
+```
+
+<a name="module_Blog.categories"></a>
+
+### .categories(state, action)
+
+List of blog categories
+
+**Actions listened**:
+
+ * `FETCH_WP_CATEGORIES`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} |
+| action | {Object} |
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('blog', 'categories').blogCategories;
+
+// state value example
+[
+ {
+   id: 53,    // wordpress category
+   ...category,
  },
  ...,
 ]
@@ -416,3 +538,50 @@ const mapStateToProps = (state, props) => ({
   blog: BetaSeries.getSelector('blog', 'getBlogFeaturedPosts')(state);
 });
 ```
+
+<a name="module_Blog.getBlogCategoryPosts"></a>
+
+### .getBlogCategoryPosts
+
+Select category posts with category ID from state
+
+**Returns**: {Array} - Category posts elements or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.categoryId] | {Number} | Category ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  blog: BetaSeries.getSelector('blog', 'getBlogCategoryPosts')(state, {
+    categoryId: props.categoryId,
+  });
+});
+```
+
+<a name="module_Blog.getBlogCategories"></a>
+
+### .getBlogCategories
+
+Select wordpress categories from state
+
+**Returns**: {Array} - Categories elements or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  blog: BetaSeries.getSelector('blog', 'getBlogCategories')(state);
+});
