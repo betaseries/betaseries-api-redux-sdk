@@ -7,6 +7,7 @@
     * [.api](#module_BetaSeries.api)
     * [.init([obj])](#module_BetaSeries.init)
     * [.setUser([obj])](#module_BetaSeries.setUser)
+    * [.setUserConnection([obj])](#module_BetaSeries.setUserConnection)
     * [.getAction(module, action)](#module_BetaSeries.getAction) ⇒ {Func}
     * [.getConstants(module)](#module_BetaSeries.getConstants) ⇒ {Object}
     * [.getReducer(module, reducer)](#module_BetaSeries.getReducer) ⇒ {Object}
@@ -55,6 +56,16 @@ API provider
 | [obj.token] | {String} | Authenticated token |
 | [obj.userId] | {String} | User ID |
 
+<a name="module_BetaSeries.setUserConnection"></a>
+
+### .setUserConnection([obj])
+**Category**: static  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.netinfo] | {String} | NetInfo type |
+
 <a name="module_BetaSeries.getAction"></a>
 
 ### .getAction(module, action)
@@ -101,4 +112,3 @@ API provider
 | --- | --- | --- |
 | module | {String} | Module name |
 | selector | {String} | Selector name |
-
