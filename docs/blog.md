@@ -12,6 +12,7 @@
         * [.doClearBlogPosts()](#module_Blog.doClearBlogPosts) ⇒ {Promise}
         * [.doFetchBlogCategoryPosts([obj])](#module_Blog.doFetchBlogCategoryPosts) ⇒ {Promise}
         * [.doFetchBlogCategories([obj])](#module_Blog.doFetchBlogCategories) ⇒ {Promise}
+        * [.doSendBlogAnalytics([obj])](#module_Blog.doSendBlogAnalytics) ⇒ {Promise}
     * _reducers_
         * [.posts(state, action)](#module_Blog.posts) ⇒ {Object}
         * [.authors(state, action)](#module_Blog.authors) ⇒ {Object}
@@ -211,6 +212,32 @@ Retrieve wordpress categories
 
 ```js
 BetaSeries.getAction('blog', 'doFetchBlogCategories')();
+```
+
+<a name="module_Blog.doSendBlogAnalytics"></a>
+
+### .doSendBlogAnalytics([obj])
+
+Send blog analytics
+
+**Dispatch**: `SEND_WP_ANALYTICS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.timestamp] | {String} | Unix timestamp |
+| [obj.ua] | {String} | User agent |
+| [obj.url] | {String} | Url of article |
+| [obj.referred] | {String} | (Optional) url source from which we come |
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doSendBlogAnalytics')({ timestamp: 1575645320, ua: 'Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_1)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/78.0.3904.108%20Safari/537.36', url: 'https://www.betaseries.com/blog/2019/12/attention-greve-des-series/', referred: 'https://www.betaseries.com/blog/' });
 ```
 
 <a name="module_Blog.posts"></a>
