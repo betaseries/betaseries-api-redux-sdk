@@ -40,6 +40,7 @@
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkSeasonAsWatched([obj])](#module_Shows.doUnmarkSeasonAsWatched) ⇒ {Promise}
+        * [.doAddShowReach([obj])](#module_Shows.doAddShowReach) ⇒ {Promise}
     * _reducers_
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
@@ -960,6 +961,33 @@ Unmark entire season as watched
 BetaSeries.getAction('shows', 'doUnmarkSeasonAsWatched')({
   showId: 438,
   season: 2,
+});
+```
+
+<a name="module_Shows.doAddShowReach"></a>
+
+### .doAddShowReach([obj])
+
+Add reach analytic for a show
+
+**Dispatch**: `ADD_SHOW_REACH`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Show ID |
+| [obj.url] | {String} | Show Slug url |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doAddShowReach')({
+  id: 438,
+  url: 'slug-url'
 });
 ```
 
