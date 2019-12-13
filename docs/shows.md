@@ -7,6 +7,7 @@
         * [.doAddShow([obj])](#module_Shows.doAddShow) ⇒ {Promise}
         * [.doAddShowArchive([obj])](#module_Shows.doAddShowArchive) ⇒ {Promise}
         * [.doAddShowFavorite([obj])](#module_Shows.doAddShowFavorite) ⇒ {Promise}
+        * [.doAddShowReach([obj])](#module_Shows.doAddShowReach) ⇒ {Promise}
         * [.doClearDiscoverShows()](#module_Shows.doClearDiscoverShows) ⇒ {Promise}
         * [.doFetchDiscoverShows([obj])](#module_Shows.doFetchDiscoverShows) ⇒ {Promise}
         * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
@@ -18,12 +19,12 @@
         * [.doFetchManyShows([obj])](#module_Shows.doFetchManyShows) ⇒ {Promise}
         * [.doFetchMemberShows([obj])](#module_Shows.doFetchMemberShows) ⇒ {Promise}
         * [.doFetchShow([obj])](#module_Shows.doFetchShow) ⇒ {Promise}
-        * [.doFetchShowWithUrl([obj])](#module_Shows.doFetchShowWithUrl) ⇒ {Promise}
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
         * [.doFetchShowPhotos([obj])](#module_Shows.doFetchShowPhotos) ⇒ {Promise}
         * [.doFetchShowSeasons([obj])](#module_Shows.doFetchShowSeasons) ⇒ {Promise}
         * [.doFetchShowVideos([obj])](#module_Shows.doFetchShowVideos) ⇒ {Promise}
+        * [.doFetchShowWithUrl([obj])](#module_Shows.doFetchShowWithUrl) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
         * [.doFetchUnratedEpisodes([obj])](#module_Shows.doFetchUnratedEpisodes) ⇒ {Promise}
         * [.doMarkEpisodeAsDownloaded([obj])](#module_Shows.doMarkEpisodeAsDownloaded) ⇒ {Promise}
@@ -40,7 +41,6 @@
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkSeasonAsWatched([obj])](#module_Shows.doUnmarkSeasonAsWatched) ⇒ {Promise}
-        * [.doAddShowReach([obj])](#module_Shows.doAddShowReach) ⇒ {Promise}
     * _reducers_
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
@@ -146,6 +146,33 @@ Add show to favorite
 ```js
 BetaSeries.getAction('shows', 'doAddShowFavorite')({
   showId: 438
+});
+```
+
+<a name="module_Shows.doAddShowReach"></a>
+
+### .doAddShowReach([obj])
+
+Add reach analytic for a show
+
+**Dispatch**: `ADD_SHOW_REACH`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Show ID |
+| [obj.url] | {String} | Show slug |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doAddShowReach')({
+  id: 438,
+  url: 'slug-url',
 });
 ```
 
@@ -409,29 +436,6 @@ Retrieve show
 BetaSeries.getAction('shows', 'doFetchShow')({ showId: 1275 });
 ```
 
-<a name="module_Shows.doFetchShowWithUrl"></a>
-
-### .doFetchShowWithUrl([obj])
-
-Retrieve show with slug url
-
-**Dispatch**: `FETCH_SHOW`
-
-**Returns**: {Promise}
-
-**Category**: actions  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| [obj] | {Object} | Accept the following: |
-| [obj.url] | {String} | Show slug url |
-
-**Example**  
-
-```js
-BetaSeries.getAction('shows', 'doFetchShowWithUrl')({ url: 'slug' });
-```
-
 <a name="module_Shows.doFetchShowCharacters"></a>
 
 ### .doFetchShowCharacters([obj])
@@ -548,6 +552,29 @@ Retrieve videos of the show
 
 ```js
 BetaSeries.getAction('shows', 'doFetchShowVideos')({ showId: 1275 });
+```
+
+<a name="module_Shows.doFetchShowWithUrl"></a>
+
+### .doFetchShowWithUrl([obj])
+
+Retrieve show with slug
+
+**Dispatch**: `FETCH_SHOW`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.url] | {String} | Show Slug |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchShowWithUrl')({ url: 'slug' });
 ```
 
 <a name="module_Shows.doFetchSimilarShows"></a>
@@ -964,33 +991,6 @@ BetaSeries.getAction('shows', 'doUnmarkSeasonAsWatched')({
 });
 ```
 
-<a name="module_Shows.doAddShowReach"></a>
-
-### .doAddShowReach([obj])
-
-Add reach analytic for a show
-
-**Dispatch**: `ADD_SHOW_REACH`
-
-**Returns**: {Promise}
-
-**Category**: actions  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| [obj] | {Object} | Accept the following: |
-| [obj.id] | {Number} | Show ID |
-| [obj.url] | {String} | Show Slug url |
-
-**Example**  
-
-```js
-BetaSeries.getAction('shows', 'doAddShowReach')({
-  id: 438,
-  url: 'slug-url'
-});
-```
-
 <a name="module_Shows.characters"></a>
 
 ### .characters(state, action)
@@ -1007,8 +1007,8 @@ List of the show characters
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1044,8 +1044,8 @@ List of discover shows
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1089,8 +1089,8 @@ List of the show episodes group by season and episode number
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1124,8 +1124,8 @@ List the latest episode of show
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1156,8 +1156,8 @@ List shows of the member
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1195,8 +1195,8 @@ List episodes to see of the member
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1229,8 +1229,8 @@ List of the show photos
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1266,8 +1266,8 @@ List of seasons
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1303,8 +1303,8 @@ List of shows
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1338,8 +1338,8 @@ List of similar shows
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1375,8 +1375,8 @@ List of unrated episodes of the connected member
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1411,8 +1411,8 @@ List of the show videos
 
 | Param | Type |
 | --- | --- |
-| state | {Object} |
-| action | {Object} |
+| state | {Object} | 
+| action | {Object} | 
 
 **Example**  
 
@@ -1654,7 +1654,7 @@ const mapStateToProps = (state, props) => ({
 
 ### .getShowByUrl
 
-Select show from state by slug url
+Select show from state by url
 
 **Returns**: {Object} - Show element or `undefined`
 
@@ -1854,3 +1854,4 @@ const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('shows', 'getVideos')(state, { showId: props.showId });
 });
 ```
+

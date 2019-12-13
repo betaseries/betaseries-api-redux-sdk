@@ -7,12 +7,14 @@
         * [.doClearBlogPosts()](#module_Comments.doClearBlogPosts) ⇒ {Promise}
         * [.doAddCommentSubscription([obj])](#module_Comments.doAddCommentSubscription) ⇒ {Promise}
         * [.doAddVote([obj])](#module_Comments.doAddVote) ⇒ {Promise}
+        * [.doClearArticleComments([obj])](#module_Comments.doClearArticleComments) ⇒ {Promise}
         * [.doClearEpisodeComments([obj])](#module_Comments.doClearEpisodeComments) ⇒ {Promise}
         * [.doClearMemberComments([obj])](#module_Comments.doClearMemberComments) ⇒ {Promise}
         * [.doClearMovieComments([obj])](#module_Comments.doClearMovieComments) ⇒ {Promise}
         * [.doClearPollComments([obj])](#module_Comments.doClearPollComments) ⇒ {Promise}
         * [.doClearShowComments([obj])](#module_Comments.doClearShowComments) ⇒ {Promise}
         * [.doCloseComments([obj])](#module_Comments.doCloseComments) ⇒ {Promise}
+        * [.doCommentArticle([obj])](#module_Comments.doCommentArticle) ⇒ {Promise}
         * [.doCommentEpisode([obj])](#module_Comments.doCommentEpisode) ⇒ {Promise}
         * [.doCommentEvent([obj])](#module_Comments.doCommentEvent) ⇒ {Promise}
         * [.doCommentMember([obj])](#module_Comments.doCommentMember) ⇒ {Promise}
@@ -20,6 +22,7 @@
         * [.doCommentPoll([obj])](#module_Comments.doCommentPoll) ⇒ {Promise}
         * [.doCommentShow([obj])](#module_Comments.doCommentShow) ⇒ {Promise}
         * [.doCommentSpecificEvent([obj])](#module_Comments.doCommentSpecificEvent) ⇒ {Promise}
+        * [.doFetchArticleComments([obj])](#module_Comments.doFetchArticleComments) ⇒ {Promise}
         * [.doFetchComment([obj])](#module_Comments.doFetchComment) ⇒ {Promise}
         * [.doFetchEpisodeComments([obj])](#module_Comments.doFetchEpisodeComments) ⇒ {Promise}
         * [.doFetchEventComments([obj])](#module_Comments.doFetchEventComments) ⇒ {Promise}
@@ -33,6 +36,7 @@
         * [.doRemoveCommentSubscription([obj])](#module_Comments.doRemoveCommentSubscription) ⇒ {Promise}
         * [.doRemoveVote([obj])](#module_Comments.doRemoveVote) ⇒ {Promise}
     * _reducers_
+        * [.articles(state, action)](#module_Comments.articles) ⇒ {Object}
         * [.comments(state, action)](#module_Comments.comments) ⇒ {Object}
         * [.episodes(state, action)](#module_Comments.episodes) ⇒ {Object}
         * [.events(state, action)](#module_Comments.events) ⇒ {Object}
@@ -41,6 +45,7 @@
         * [.polls(state, action)](#module_Comments.polls) ⇒ {Object}
         * [.shows(state, action)](#module_Comments.shows) ⇒ {Object}
     * _selectors_
+        * [.getArticleComments](#module_Comments.getArticleComments) ⇒ {Array}
         * [.getComment](#module_Comments.getComment) ⇒ {Object}
         * [.getEpisodeComments](#module_Comments.getEpisodeComments) ⇒ {Array}
         * [.getEventComments](#module_Comments.getEventComments) ⇒ {Array}
@@ -120,6 +125,29 @@ BetaSeries.getAction('comments', 'doAddVote')({
   commentId: 438,
   type: 1,
 });
+```
+
+<a name="module_Comments.doClearArticleComments"></a>
+
+### .doClearArticleComments([obj])
+
+Clear comments for a specific article
+
+**Dispatch**: `CLEAR_ARTICLE_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.articleId] | {Number} | Article ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doClearArticleComments')({ articleId: 481 });
 ```
 
 <a name="module_Comments.doClearEpisodeComments"></a>
@@ -261,6 +289,34 @@ Close comments for a media
 BetaSeries.getAction('comments', 'doCloseComments')({
   id: 438,
   type: 'show',
+});
+```
+
+<a name="module_Comments.doCommentArticle"></a>
+
+### .doCommentArticle([obj])
+
+Add comment on article
+
+**Dispatch**: `COMMENT_ARTICLE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.articleId] | {Number} | Article ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentArticle')({
+  articleId: 438,
+  text: 'Trop bien cet article !',
 });
 ```
 
@@ -458,6 +514,33 @@ BetaSeries.getAction('comments', 'doCommentSpecificEvent')({
   id: 438,
   text: 'Trop bien cet épisode !',
 });
+```
+
+<a name="module_Comments.doFetchArticleComments"></a>
+
+### .doFetchArticleComments([obj])
+
+Retrieve comment of the article
+
+**Dispatch**: `FETCH_ARTICLE_COMMENTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.articleId] | {Number} | Article ID |
+| [obj.nbpp] | {Number} | Number of comments per page |
+| [obj.since_id] | {Number} | ID of last comment received (optional) |
+| [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
+| [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doFetchArticleComments')({ articleId: 42315431 });
 ```
 
 <a name="module_Comments.doFetchComment"></a>
@@ -769,6 +852,42 @@ Remove vote on a comment
 BetaSeries.getAction('comments', 'doRemoveVote')({ commentId: 438 });
 ```
 
+<a name="module_Comments.articles"></a>
+
+### .articles(state, action)
+
+List the comments of the article
+
+**Actions listened**:
+
+ * `FETCH_ARTICLE_COMMENTS`
+ * `CLEAR_ARTICLE_COMMENTS`
+ * `COMMENT_ARTICLE`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('comments', 'articles').commentsArticles;
+
+// state value example
+{
+  '12': [               // article ID
+    1234, 213, 2343,    // list of comments ID
+  ],
+  ...,
+}
+```
+
 <a name="module_Comments.comments"></a>
 
 ### .comments(state, action)
@@ -781,6 +900,7 @@ List of comments
  * `FETCH_SHOW_COMMENTS`
  * `FETCH_EVENT_COMMENTS`
  * `FETCH_POLL_COMMENTS`
+ * `FETCH_ARTICLE_COMMENTS`
  * `FETCH_MEMBER_COMMENTS`
  * `FETCH_MOVIE_COMMENTS`
  * `FETCH_COMMENT`
@@ -791,6 +911,7 @@ List of comments
  * `FETCH_REPLIES`
  * `COMMENT_EVENT`
  * `COMMENT_POLL`
+ * `COMMENT_ARTICLE`
  * `COMMENT_EPISODE`
  * `COMMENT_SHOW`
  * `COMMENT_MEMBER`
@@ -1030,6 +1151,32 @@ BetaSeries.getReducer('comments', 'shows').commentsShows;
   ],
   ...,
 }
+```
+
+<a name="module_Comments.getArticleComments"></a>
+
+### .getArticleComments
+
+Select article comments from state
+
+**Returns**: {Array} - List of comments or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.articleId] | {Object} | Article ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('comments', 'getArticleComments')(state, {
+    articleId: props.articleId
+  });
+});
 ```
 
 <a name="module_Comments.getComment"></a>
