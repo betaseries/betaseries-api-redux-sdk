@@ -13,6 +13,8 @@
         * [.doFetchBlogCategoryPosts([obj])](#module_Blog.doFetchBlogCategoryPosts) ⇒ {Promise}
         * [.doFetchBlogCategories([obj])](#module_Blog.doFetchBlogCategories) ⇒ {Promise}
         * [.doSendBlogAnalytics([obj])](#module_Blog.doSendBlogAnalytics) ⇒ {Promise}
+        * [.doFetchBlogTagPosts([obj])](#module_Blog.doFetchBlogTagPosts) ⇒ {Promise}
+        * [.doFetchBlogTags([obj])](#module_Blog.doFetchBlogTags) ⇒ {Promise}
     * _reducers_
         * [.posts(state, action)](#module_Blog.posts) ⇒ {Object}
         * [.authors(state, action)](#module_Blog.authors) ⇒ {Object}
@@ -20,6 +22,8 @@
         * [.featuredPosts(state, action)](#module_Blog.featuredPosts) ⇒ {Object}
         * [.categoryPosts(state, action)](#module_Blog.categoryPosts) ⇒ {Object}
         * [.categories(state, action)](#module_Blog.categories) ⇒ {Object}
+        * [.tagPosts(state, action)](#module_Blog.tagPosts) ⇒ {Object}
+        * [.tags(state, action)](#module_Blog.tags) ⇒ {Object}
     * _selectors_
         * [.getBlogPosts](#module_Blog.getBlogPosts) ⇒ {Array}
         * [.getBlogAuthors](#module_Blog.getBlogAuthors) ⇒ {Array}
@@ -28,6 +32,8 @@
         * [.getBlogFeaturedPosts](#module_Blog.getBlogFeaturedPosts) ⇒ {Array}
         * [.getBlogCategoryPosts](#module_Blog.getBlogCategoryPosts) ⇒ {Array}
         * [.getBlogCategories](#module_Blog.getBlogCategories) ⇒ {Array}
+        * [.getBlogTagPosts](#module_Blog.getBlogTagPosts) ⇒ {Array}
+        * [.getBlogTags](#module_Blog.getBlogTags) ⇒ {Array}
 
 <a name="module_Blog.doFetchBlogPosts"></a>
 
@@ -240,6 +246,56 @@ Send blog analytics
 BetaSeries.getAction('blog', 'doSendBlogAnalytics')({ timestamp: 1575645320, ua: 'Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2010_15_1)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/78.0.3904.108%20Safari/537.36', url: 'https://www.betaseries.com/blog/2019/12/attention-greve-des-series/', referred: 'https://www.betaseries.com/blog/' });
 ```
 
+### .doFetchBlogTagPosts([obj])
+
+Retrieve tag posts
+
+**Dispatch**: `FETCH_WP_POSTS_WITH_TAG`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.page] | {Number} | Page number |
+| [obj.lang] | {String} | Language info |
+| [obj.tagId] | {Number} | Tag ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doFetchBlogTagPosts')({
+  page: 1,
+  lang: 'fr',
+  tagId: 53,
+});
+```
+
+<a name="module_Blog.doFetchBlogTags"></a>
+
+### .doFetchBlogTags([obj])
+
+Retrieve wordpress tags
+
+**Dispatch**: `FETCH_WP_TAGS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.tagIds] | {Array} | Tag ids to fetch |
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doFetchBlogTags')({ tagIds: ['18', '19', '20'] });
+```
+
 <a name="module_Blog.posts"></a>
 
 ### .posts(state, action)
@@ -408,6 +464,75 @@ BetaSeries.getReducer('blog', 'categories').blogCategories;
  {
    id: 53,    // wordpress category
    ...category,
+ },
+ ...,
+]
+```
+
+<a name="module_Blog.tagPosts"></a>
+
+### .tagPosts(state, action)
+
+List of blog tag posts
+
+**Actions listened**:
+
+ * `FETCH_WP_POSTS_WITH_TAG`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} |
+| action | {Object} |
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('blog', 'tagPosts').blogTagPosts;
+
+// state value example
+ {
+   '53': [{ id: 1, ... }, { ... }],    // wordpress posts for tag 53
+   ...
+ },
+ ...,
+]
+```
+
+<a name="module_Blog.tags"></a>
+
+### .tags(state, action)
+
+List of blog tags
+
+**Actions listened**:
+
+ * `FETCH_WP_TAGS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} |
+| action | {Object} |
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('blog', 'tags').blogTags;
+
+// state value example
+[
+ {
+   id: 53,    // wordpress tag
+   ...tag,
  },
  ...,
 ]
@@ -612,3 +737,52 @@ Select wordpress categories from state
 const mapStateToProps = (state, props) => ({
   blog: BetaSeries.getSelector('blog', 'getBlogCategories')(state);
 });
+```
+
+<a name="module_Blog.getBlogTagPosts"></a>
+
+### .getBlogTagPosts
+
+Select tag posts with tag ID from state
+
+**Returns**: {Array} - Tag posts elements or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.tagId] | {Number} | Tag ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  blog: BetaSeries.getSelector('blog', 'getBlogTagPosts')(state, {
+    tagId: props.tagId,
+  });
+});
+```
+
+<a name="module_Blog.getBlogTags"></a>
+
+### .getBlogTags
+
+Select wordpress tags from state
+
+**Returns**: {Array} - Tags elements or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  blog: BetaSeries.getSelector('blog', 'getBlogTags')(state);
+});
+```
