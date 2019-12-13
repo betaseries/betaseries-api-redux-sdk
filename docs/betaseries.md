@@ -8,6 +8,7 @@
     * [.init([obj])](#module_BetaSeries.init)
     * [.setUser([obj])](#module_BetaSeries.setUser)
     * [.setUserConnection([obj])](#module_BetaSeries.setUserConnection)
+    * [.getUserConnection()](#module_BetaSeries.getUserConnection) ⇒ {String}
     * [.getAction(module, action)](#module_BetaSeries.getAction) ⇒ {Func}
     * [.getConstants(module)](#module_BetaSeries.getConstants) ⇒ {Object}
     * [.getReducer(module, reducer)](#module_BetaSeries.getReducer) ⇒ {Object}
@@ -66,6 +67,12 @@ API provider
 | [obj] | {Object} | Accept the following: |
 | [obj.netinfo] | {String} | NetInfo type |
 
+<a name="module_BetaSeries.getUserConnection"></a>
+
+### .getUserConnection()
+**Returns**: {String}
+
+**Category**: static  
 <a name="module_BetaSeries.getAction"></a>
 
 ### .getAction(module, action)
@@ -112,3 +119,4 @@ API provider
 | --- | --- | --- |
 | module | {String} | Module name |
 | selector | {String} | Selector name |
+
