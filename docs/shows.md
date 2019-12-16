@@ -750,6 +750,7 @@ Mark entire season as watched
 | [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Show ID |
 | [obj.season] | {Number} | Number of season to mark as watched |
+| [obj.note] | {Number} | (optional) Note for the season |
 
 **Example**  
 
