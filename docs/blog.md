@@ -261,7 +261,7 @@ Retrieve tag posts
 | [obj] | {Object} | Accept the following: |
 | [obj.page] | {Number} | Page number |
 | [obj.lang] | {String} | Language info |
-| [obj.tagId] | {Number} | Tag ID |
+| [obj.tagSlug] | {String} | Tag Slug |
 
 **Example**  
 
@@ -269,7 +269,7 @@ Retrieve tag posts
 BetaSeries.getAction('blog', 'doFetchBlogTagPosts')({
   page: 1,
   lang: 'fr',
-  tagId: 53,
+  tagSlug: 'philarmonie-paris',
 });
 ```
 
@@ -496,7 +496,7 @@ BetaSeries.getReducer('blog', 'tagPosts').blogTagPosts;
 
 // state value example
  {
-   '53': [{ id: 1, ... }, { ... }],    // wordpress posts for tag 53
+   'philarmonie-paris': [{ id: 1, ... }, { ... }],    // wordpress posts for tag slug 'philarmonie-paris'
    ...
  },
  ...,
@@ -743,7 +743,7 @@ const mapStateToProps = (state, props) => ({
 
 ### .getBlogTagPosts
 
-Select tag posts with tag ID from state
+Select tag posts with tag slug from state
 
 **Returns**: {Array} - Tag posts elements or `undefined`
 
@@ -753,14 +753,14 @@ Select tag posts with tag ID from state
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
 | [obj] | {Object} | Accept the following: |
-| [obj.tagId] | {Number} | Tag ID |
+| [obj.tagSlug] | {String} | Tag Slug |
 
 **Example**  
 
 ```js
 const mapStateToProps = (state, props) => ({
   blog: BetaSeries.getSelector('blog', 'getBlogTagPosts')(state, {
-    tagId: props.tagId,
+    tagSlug: props.tagSlug,
   });
 });
 ```
