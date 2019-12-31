@@ -9,6 +9,7 @@
         * [.doFetchMember([obj])](#module_Members.doFetchMember) ⇒ {Promise}
         * [.doFetchMemberEmail()](#module_Members.doFetchMemberEmail) ⇒ {Promise}
         * [.doFetchMemberNotifications([obj])](#module_Members.doFetchMemberNotifications) ⇒ {Promise}
+        * [.doFetchMemberYearStats([obj])](#module_Members.doFetchMemberYearStats) ⇒ {Promise}
         * [.doFetchUser([obj])](#module_Members.doFetchUser) ⇒ {Promise}
         * [.doMarkAllNotificationsAsRead([obj])](#module_Members.doMarkAllNotificationsAsRead) ⇒ {Promise}
         * [.doMarkNotificationAsRead([obj])](#module_Members.doMarkNotificationAsRead) ⇒ {Promise}
@@ -19,6 +20,7 @@
         * [.notifications(state, action)](#module_Members.notifications) ⇒ {Object}
     * _selectors_
         * [.getMember](#module_Members.getMember) ⇒ {Object}
+        * [.getMemberYearStats](#module_Members.getMemberYearStats) ⇒ {Object}
         * [.getNotifications](#module_Members.getNotifications) ⇒ {Array}
         * [.getUser](#module_Members.getUser) ⇒ {Object}
 
@@ -130,6 +132,30 @@ Retrieve user notifications
 
 ```js
 BetaSeries.getAction('members', 'doFetchMemberNotifications')({ number: 50, … });
+```
+
+<a name="module_Members.doFetchMemberYearStats"></a>
+
+### .doFetchMemberYearStats([obj])
+
+Retrieve authenticated user year infos
+
+**Dispatch**: `FETCH_MEMBER_YEAR_STATS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Bool} | Member ID |
+| [obj.year] | {Number} | Year |
+
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doFetchMemberYearStats')();
 ```
 
 <a name="module_Members.doFetchUser"></a>
@@ -350,6 +376,32 @@ Select member from state
 ```js
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('members', 'getMember')(state, {
+    memberId: props.memberId,
+  });
+});
+```
+
+<a name="module_Members.getMemberYearStats"></a>
+
+### .getMemberYearStats
+
+Select member from state
+
+**Returns**: {Object} - Member element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Object} | Member ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('members', 'getMemberYearStats')(state, {
     memberId: props.memberId,
   });
 });
