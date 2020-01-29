@@ -19,6 +19,7 @@
         * [.doFetchManyShows([obj])](#module_Shows.doFetchManyShows) ⇒ {Promise}
         * [.doFetchMemberShows([obj])](#module_Shows.doFetchMemberShows) ⇒ {Promise}
         * [.doFetchShow([obj])](#module_Shows.doFetchShow) ⇒ {Promise}
+        * [.doFetchShowArticles([obj])](#module_Shows.doFetchShowArticles) ⇒ {Promise}
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
         * [.doFetchShowPhotos([obj])](#module_Shows.doFetchShowPhotos) ⇒ {Promise}
@@ -42,6 +43,7 @@
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkSeasonAsWatched([obj])](#module_Shows.doUnmarkSeasonAsWatched) ⇒ {Promise}
     * _reducers_
+        * [.articles(state, action)](#module_Shows.articles) ⇒ {Object}
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
@@ -64,6 +66,7 @@
         * [.getMemberShows](#module_Shows.getMemberShows) ⇒ {Array}
         * [.getPhotos](#module_Shows.getPhotos) ⇒ {Array}
         * [.getShow](#module_Shows.getShow) ⇒ {Object}
+        * [.getShowArticles](#module_Shows.getShowArticles) ⇒ {Array}
         * [.getShowByUrl](#module_Shows.getShowByUrl) ⇒ {Object}
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
         * [.getShowEpisodes](#module_Shows.getShowEpisodes) ⇒ {Array}
@@ -434,6 +437,29 @@ Retrieve show
 
 ```js
 BetaSeries.getAction('shows', 'doFetchShow')({ showId: 1275 });
+```
+
+<a name="module_Shows.doFetchShowArticles"></a>
+
+### .doFetchShowArticles([obj])
+
+Retrieve articles of the show
+
+**Dispatch**: `FETCH_SHOW_ARTICLES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchShowArticles')({ showId: 1275 });
 ```
 
 <a name="module_Shows.doFetchShowCharacters"></a>
@@ -990,6 +1016,43 @@ BetaSeries.getAction('shows', 'doUnmarkSeasonAsWatched')({
   showId: 438,
   season: 2,
 });
+```
+
+<a name="module_Shows.articles"></a>
+
+### .articles(state, action)
+
+List of the show articles
+
+**Actions listened**:
+
+ * `FETCH_SHOW_ARTICLES`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'articles').showsArticles;
+
+// state example
+{
+  '1275': [              // show ID
+    {
+      id: 123543,        // article ID
+      ...article           // article element
+    },
+    ...
+  ]
+}
 ```
 
 <a name="module_Shows.characters"></a>
@@ -1648,6 +1711,30 @@ Select show from state
 ```js
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('shows', 'getShow')(state, { showId: props.showId });
+});
+```
+
+<a name="module_Shows.getShowArticles"></a>
+
+### .getShowArticles
+
+Select articles from state
+
+**Returns**: {Array} - List of articles element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Object} | Show ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getShowArticles')(state, { showId: props.showId });
 });
 ```
 
