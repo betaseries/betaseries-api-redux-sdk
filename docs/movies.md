@@ -9,12 +9,14 @@
         * [.doFetchMemberMovies([obj])](#module_Movies.doFetchMemberMovies) ⇒ {Promise}
         * [.doFetchMemberMoviesList([obj])](#module_Movies.doFetchMemberMoviesList) ⇒ {Promise}
         * [.doFetchMovie([obj])](#module_Movies.doFetchMovie) ⇒ {Promise}
+        * [.doFetchMovieArticles([obj])](#module_Movies.doFetchMovieArticles) ⇒ {Promise}
         * [.doFetchMovieCharacters([obj])](#module_Movies.doFetchMovieCharacters) ⇒ {Promise}
         * [.doRateMovie([obj])](#module_Movies.doRateMovie) ⇒ {Promise}
         * [.doRemoveMovieFavorite([obj])](#module_Movies.doRemoveMovieFavorite) ⇒ {Promise}
         * [.doRemoveMovieMember([obj])](#module_Movies.doRemoveMovieMember) ⇒ {Promise}
         * [.doUpdateMovieState([obj])](#module_Movies.doUpdateMovieState) ⇒ {Promise}
     * _reducers_
+        * [.articles(state, action)](#module_Movies.articles) ⇒ {Object}
         * [.characters(state, action)](#module_Movies.characters) ⇒ {Object}
         * [.favorites(state, action)](#module_Movies.favorites) ⇒ {Object}
         * [.members(state, action)](#module_Movies.members) ⇒ {Object}
@@ -22,6 +24,7 @@
     * _selectors_
         * [.getMemberMovies](#module_Movies.getMemberMovies) ⇒ {Array}
         * [.getMovie](#module_Movies.getMovie) ⇒ {Array}
+        * [.getMovieArticles](#module_Movies.getMovieArticles) ⇒ {Array}
 
 <a name="module_Movies.doFetchFavoriteMovies"></a>
 
@@ -149,6 +152,29 @@ Retrieve movie
 BetaSeries.getAction('movies', 'doFetchMovie')({ movieId: 438 });
 ```
 
+<a name="module_Movies.doFetchMovieArticles"></a>
+
+### .doFetchMovieArticles([obj])
+
+Retrieve articles of the movie
+
+**Dispatch**: `FETCH_MOVIE_ARTICLES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.movieId] | {Number} | Movie ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doFetchMovieArticles')({ movieId: 591 });
+```
+
 <a name="module_Movies.doFetchMovieCharacters"></a>
 
 ### .doFetchMovieCharacters([obj])
@@ -272,6 +298,43 @@ BetaSeries.getAction('movies', 'doUpdateMovieState')({
   movieId: 438,
   state: 2,
 });
+```
+
+<a name="module_Movies.articles"></a>
+
+### .articles(state, action)
+
+List of the movie articles
+
+**Actions listened**:
+
+ * `FETCH_MOVIE_ARTICLES`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('movies', 'articles').moviesArticles;
+
+// state value example
+{
+  '1243': [              // movie ID
+    {
+      id: 123543,        // article ID
+      ...article       // article element
+    },
+    ...
+  ]
+}
 ```
 
 <a name="module_Movies.characters"></a>
@@ -468,6 +531,32 @@ Select movie by ID from state
 ```js
 const mapStateToProps = (state, props) => ({
   episode: BetaSeries.getSelector('movies', 'getMovie')(state, {
+    movieId: props.movieId,
+  });
+});
+```
+
+<a name="module_Movies.getMovieArticles"></a>
+
+### .getMovieArticles
+
+Select movie articles by ID from state
+
+**Returns**: {Array} - Movie articles or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.movieId] | {Number} | Movie ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  episode: BetaSeries.getSelector('movies', 'getMovieArticles')(state, {
     movieId: props.movieId,
   });
 });
