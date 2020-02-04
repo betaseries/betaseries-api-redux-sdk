@@ -28,6 +28,7 @@
         * [.doFetchShowWithUrl([obj])](#module_Shows.doFetchShowWithUrl) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
         * [.doFetchUnratedEpisodes([obj])](#module_Shows.doFetchUnratedEpisodes) ⇒ {Promise}
+        * [.doFetchUnratedShows([obj])](#module_Shows.doFetchUnratedShows) ⇒ {Promise}
         * [.doMarkEpisodeAsDownloaded([obj])](#module_Shows.doMarkEpisodeAsDownloaded) ⇒ {Promise}
         * [.doMarkEpisodeAsHidden([obj])](#module_Shows.doMarkEpisodeAsHidden) ⇒ {Promise}
         * [.doMarkEpisodeAsWatched([obj])](#module_Shows.doMarkEpisodeAsWatched) ⇒ {Promise}
@@ -55,6 +56,7 @@
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
         * [.unratedEpisodes(state, action)](#module_Shows.unratedEpisodes) ⇒ {Object}
+        * [.unratedShows(state, action)](#module_Shows.unratedShows) ⇒ {Object}
         * [.videos(state, action)](#module_Shows.videos) ⇒ {Object}
     * _selectors_
         * [.getCharacters](#module_Shows.getCharacters) ⇒ {Array}
@@ -74,6 +76,7 @@
         * [.getShowSeasons](#module_Shows.getShowSeasons) ⇒ {Array}
         * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Array}
         * [.getUnratedEpisodes](#module_Shows.getUnratedEpisodes) ⇒ {Object}
+        * [.getUnratedShows](#module_Shows.getUnratedShows) ⇒ {Object}
         * [.getVideos](#module_Shows.getVideos) ⇒ {Array}
 
 <a name="module_Shows.doAddShow"></a>
@@ -644,13 +647,36 @@ Retrieve unrated episodes
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.date] | {String} | Date to retrieve unrated episodes (default: yesterday, all) |
-| [obj.limit] | {Number} | Limit number of episodes |
 | [obj.page] | {Number} | Pagination |
 
 **Example**  
 
 ```js
 BetaSeries.getAction('shows', 'doFetchUnratedEpisodes')();
+```
+
+<a name="module_Shows.doFetchUnratedShows"></a>
+
+### .doFetchUnratedShows([obj])
+
+Retrieve unrated shows
+
+**Dispatch**: `FETCH_UNRATED_SHOWS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.date] | {String} | Date to retrieve unrated shows (default: month, all) |
+| [obj.page] | {Number} | Pagination |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchUnratedShows')();
 ```
 
 <a name="module_Shows.doMarkEpisodeAsDownloaded"></a>
@@ -1459,6 +1485,42 @@ BetaSeries.getReducer('shows', 'unratedEpisodes').showsUnratedEpisodes;
 }
 ```
 
+<a name="module_Shows.unratedShows"></a>
+
+### .unratedShows(state, action)
+
+List of unrated shows of the connected member
+
+**Actions listened**:
+
+ * `FETCH_UNRATED_SHOWS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'unratedShows').showsUnratedShows;
+
+// state value example
+{
+  '12': [{
+    'id': 1323421,
+    'title': 'xxx',
+    ...
+   }, // list of shows
+  ]
+}
+```
+
 <a name="module_Shows.videos"></a>
 
 ### .videos(state, action)
@@ -1915,6 +1977,31 @@ Select unrated episodes from state
 ```js
 const mapStateToProps = (state, props) => ({
   episode: BetaSeries.getSelector('shows', 'getUnratedEpisodes')(state, {
+    memberId: props.memberId,
+});
+```
+
+<a name="module_Shows.getUnratedShows"></a>
+
+### .getUnratedShows
+
+Select unrated shows from state
+
+**Returns**: {Object} - Unrated shows list or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Number} | Member ID (optional) |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  episode: BetaSeries.getSelector('shows', 'getUnratedShows')(state, {
     memberId: props.memberId,
 });
 ```
