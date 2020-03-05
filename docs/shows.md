@@ -22,6 +22,7 @@
         * [.doFetchShowArticles([obj])](#module_Shows.doFetchShowArticles) ⇒ {Promise}
         * [.doFetchShowCharacters([obj])](#module_Shows.doFetchShowCharacters) ⇒ {Promise}
         * [.doFetchShowEpisodes([obj])](#module_Shows.doFetchShowEpisodes) ⇒ {Promise}
+        * [.doFetchShowGenres([obj])](#module_Shows.doFetchShowGenres) ⇒ {Promise}
         * [.doFetchShowPhotos([obj])](#module_Shows.doFetchShowPhotos) ⇒ {Promise}
         * [.doFetchShowSeasons([obj])](#module_Shows.doFetchShowSeasons) ⇒ {Promise}
         * [.doFetchShowVideos([obj])](#module_Shows.doFetchShowVideos) ⇒ {Promise}
@@ -48,6 +49,7 @@
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
+        * [.genres(state, action)](#module_Shows.genres) ⇒ {Object}
         * [.latestEpisodes(state, action)](#module_Shows.latestEpisodes) ⇒ {Object}
         * [.members(state, action)](#module_Shows.members) ⇒ {Object}
         * [.membersEpisodesToSee(state, action)](#module_Shows.membersEpisodesToSee) ⇒ {Object}
@@ -73,6 +75,7 @@
         * [.getShowEpisodeByCode](#module_Shows.getShowEpisodeByCode) ⇒ {Object}
         * [.getShowEpisodes](#module_Shows.getShowEpisodes) ⇒ {Array}
         * [.getShowEpisodesForSeason](#module_Shows.getShowEpisodesForSeason) ⇒ {Array}
+        * [.getShowGenres](#module_Shows.getShowGenres) ⇒ {Array}
         * [.getShowSeasons](#module_Shows.getShowSeasons) ⇒ {Array}
         * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Array}
         * [.getUnratedEpisodes](#module_Shows.getUnratedEpisodes) ⇒ {Object}
@@ -512,6 +515,28 @@ Retrieve episodes of the show
 
 ```js
 BetaSeries.getAction('shows', 'doFetchShowEpisodes')({ showId: 1275, season: 1 });
+```
+
+<a name="module_Shows.doFetchShowGenres"></a>
+
+### .doFetchShowGenres([obj])
+
+Retrieve genres of shows
+
+**Dispatch**: `FETCH_SHOW_GENRES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchShowGenres')();
 ```
 
 <a name="module_Shows.doFetchShowPhotos"></a>
@@ -1196,6 +1221,41 @@ BetaSeries.getReducer('shows', 'episodes').showsEpisodes;
   },
   ...,
 }
+```
+
+<a name="module_Shows.genres"></a>
+
+### .genres(state, action)
+
+List of the show genres
+
+**Actions listened**:
+
+ * `FETCH_SHOW_GENRES`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'genres').showsGenres;
+
+// state example
+[
+    {
+      id: 123543,        // genre ID
+      ...genre       // genre element
+    },
+    ...
+]
 ```
 
 <a name="module_Shows.latestEpisodes"></a>
@@ -1903,6 +1963,29 @@ const mapStateToProps = (state, props) => ({
     showId: props.showId,
     season: props.season,
   });
+});
+```
+
+<a name="module_Shows.getShowGenres"></a>
+
+### .getShowGenres
+
+Select genres from state
+
+**Returns**: {Array} - List of genres or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getShowGenres')(state);
 });
 ```
 
