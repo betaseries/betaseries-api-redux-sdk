@@ -12,6 +12,7 @@
         * [.doClearBlogPosts()](#module_Blog.doClearBlogPosts) ⇒ {Promise}
         * [.doFetchBlogCategoryPosts([obj])](#module_Blog.doFetchBlogCategoryPosts) ⇒ {Promise}
         * [.doFetchBlogCategories([obj])](#module_Blog.doFetchBlogCategories) ⇒ {Promise}
+        * [.doFetchBlogHotTopics([obj])](#module_Blog.doFetchBlogHotTopics) ⇒ {Promise}
         * [.doSendBlogAnalytics([obj])](#module_Blog.doSendBlogAnalytics) ⇒ {Promise}
         * [.doFetchBlogTagPosts([obj])](#module_Blog.doFetchBlogTagPosts) ⇒ {Promise}
         * [.doFetchBlogTags([obj])](#module_Blog.doFetchBlogTags) ⇒ {Promise}
@@ -22,6 +23,7 @@
         * [.featuredPosts(state, action)](#module_Blog.featuredPosts) ⇒ {Object}
         * [.categoryPosts(state, action)](#module_Blog.categoryPosts) ⇒ {Object}
         * [.categories(state, action)](#module_Blog.categories) ⇒ {Object}
+        * [.hotTopics(state, action)](#module_Blog.hotTopics) ⇒ {Object}
         * [.tagPosts(state, action)](#module_Blog.tagPosts) ⇒ {Object}
         * [.tags(state, action)](#module_Blog.tags) ⇒ {Object}
     * _selectors_
@@ -32,6 +34,7 @@
         * [.getBlogFeaturedPosts](#module_Blog.getBlogFeaturedPosts) ⇒ {Array}
         * [.getBlogCategoryPosts](#module_Blog.getBlogCategoryPosts) ⇒ {Array}
         * [.getBlogCategories](#module_Blog.getBlogCategories) ⇒ {Array}
+        * [.getBlogHotTopics](#module_Blog.getBlogHotTopics) ⇒ {Array}
         * [.getBlogTagPosts](#module_Blog.getBlogTagPosts) ⇒ {Array}
         * [.getBlogTags](#module_Blog.getBlogTags) ⇒ {Array}
 
@@ -218,6 +221,24 @@ Retrieve wordpress categories
 
 ```js
 BetaSeries.getAction('blog', 'doFetchBlogCategories')();
+```
+
+<a name="module_Blog.doFetchBlogHotTopics"></a>
+
+### .doFetchBlogHotTopics([obj])
+
+Retrieve wordpress hot topics
+
+**Dispatch**: `FETCH_WP_HOT_TOPICS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doFetchBlogHotTopics')();
 ```
 
 <a name="module_Blog.doSendBlogAnalytics"></a>
@@ -464,6 +485,41 @@ BetaSeries.getReducer('blog', 'categories').blogCategories;
  {
    id: 53,    // wordpress category
    ...category,
+ },
+ ...,
+]
+```
+
+<a name="module_Blog.hotTopics"></a>
+
+### .hotTopics(state, action)
+
+List of blog hot topics
+
+**Actions listened**:
+
+ * `FETCH_WP_HOT_TOPICS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} |
+| action | {Object} |
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('blog', 'hotTopics').blogHotTopics;
+
+// state value example
+[
+ {
+   ID: 53,    // wordpress hot topic
+   ...hot topic,
  },
  ...,
 ]
@@ -736,6 +792,28 @@ Select wordpress categories from state
 ```js
 const mapStateToProps = (state, props) => ({
   blog: BetaSeries.getSelector('blog', 'getBlogCategories')(state);
+});
+```
+
+<a name="module_Blog.getBlogHotTopics"></a>
+
+### .getBlogHotTopics
+
+Select wordpress hot topics from state
+
+**Returns**: {Array} - HotTopics elements or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  blog: BetaSeries.getSelector('blog', 'getBlogHotTopics')(state);
 });
 ```
 
