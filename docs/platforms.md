@@ -5,13 +5,16 @@
 * [Platforms](#module_Platforms)
     * _actions_
         * [.doFetchPlatformsList()](#module_Platforms.doFetchPlatformsList) ⇒ {Promise}
+        * [.doFetchPlatformsServices()](#module_Platforms.doFetchPlatformsServices) ⇒ {Promise}
     * _reducers_
         * [.platforms(state, action)](#module_Platforms.platforms) ⇒ {Object}
+        * [.services(state, action)](#module_Platforms.services) ⇒ {Object}
     * _selectors_
         * [.getPlatformsSVOD](#module_Platforms.getPlatformsSVOD) ⇒ {Array}
         * [.getPlatformsVOD](#module_Platforms.getPlatformsVOD) ⇒ {Array}
         * [.getSVODPlatform](#module_Platforms.getSVODPlatform) ⇒ {Object}
         * [.getVODPlatform](#module_Platforms.getVODPlatform) ⇒ {Object}
+        * [.getPlatformsServices](#module_Platforms.getPlatformsServices) ⇒ {Array}
 
 <a name="module_Platforms.doFetchPlatformsList"></a>
 
@@ -36,6 +39,28 @@ Retrieve all platforms
 BetaSeries.getAction('platforms', 'doFetchPlatformsList')({
   country: 'fr',
 });
+```
+
+<a name="module_Platforms.doFetchPlatformsServices"></a>
+
+### .doFetchPlatformsServices([obj])
+
+Retrieve all user platforms services
+
+**Dispatch**: `FETCH_PLATFORMS_SERVICES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+
+**Example**  
+
+```js
+BetaSeries.getAction('platforms', 'doFetchPlatformsServices')();
 ```
 
 <a name="module_Platforms.platforms"></a>
@@ -71,6 +96,41 @@ BetaSeries.getReducer('platforms', 'platforms').platformsPlatforms;
   }, ...],
   ...,
 }
+```
+
+<a name="module_Platforms.services"></a>
+
+### .services(state, action)
+
+List of user services
+
+**Actions listened**:
+
+ * `FETCH_PLATFORMS_SERVICES`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} |
+| action | {Object} |
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('platforms', 'services').platformsServices;
+
+// state value example
+[
+  {
+    id: 12,    // service element
+    ...service,
+  },
+  ...,
+]
 ```
 
 <a name="module_Platforms.getPlatformsSVOD"></a>
@@ -170,5 +230,27 @@ const mapStateToProps = (state, props) => ({
   platform: BetaSeries.getSelector('platforms', 'getVODPlatform')(state, {
     platformId: props.platformId,
   });
+});
+```
+
+<a name="module_Platforms.getPlatformsServices"></a>
+
+### .getPlatformsServices
+
+Select user services from state
+
+**Returns**: {Array} - elements or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state) => ({
+  services: BetaSeries.getSelector('platforms', 'getPlatformsServices')(state);
 });
 ```
