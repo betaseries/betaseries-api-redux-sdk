@@ -6,6 +6,8 @@
     * _actions_
         * [.doFetchPlatformsList()](#module_Platforms.doFetchPlatformsList) ⇒ {Promise}
         * [.doFetchPlatformsServices()](#module_Platforms.doFetchPlatformsServices) ⇒ {Promise}
+        * [.doAddPlatformsService()](#module_Platforms.doAddPlatformsService) ⇒ {Promise}
+        * [.doRemovePlatformsService()](#module_Platforms.doRemovePlatformsService) ⇒ {Promise}
     * _reducers_
         * [.platforms(state, action)](#module_Platforms.platforms) ⇒ {Object}
         * [.services(state, action)](#module_Platforms.services) ⇒ {Object}
@@ -61,6 +63,56 @@ Retrieve all user platforms services
 
 ```js
 BetaSeries.getAction('platforms', 'doFetchPlatformsServices')();
+```
+
+<a name="module_Platforms.doAddPlatformsService"></a>
+
+### .doAddPlatformsService([obj])
+
+Subscribe to a service
+
+**Dispatch**: `SUBSCRIBE_PLATFORMS_SERVICE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Service ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('platforms', 'doAddPlatformsService')({
+  id: 438
+});
+```
+
+<a name="module_Platforms.doRemovePlatformsService"></a>
+
+### .doRemovePlatformsService([obj])
+
+Unsubscribe from a service
+
+**Dispatch**: `UNSUBSCRIBE_PLATFORMS_SERVICE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Service ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('platforms', 'doRemovePlatformsService')({
+  id: 438
+});
 ```
 
 <a name="module_Platforms.platforms"></a>
