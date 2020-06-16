@@ -1,6 +1,6 @@
 {
   "name": "betaseries-api-redux-sdk",
-  "version": "1.11.30",
+  "version": "1.11.31",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
