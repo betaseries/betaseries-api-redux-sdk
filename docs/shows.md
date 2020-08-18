@@ -36,6 +36,7 @@
         * [.doMarkEpisodeAsHidden([obj])](#module_Shows.doMarkEpisodeAsHidden) ⇒ {Promise}
         * [.doMarkEpisodeAsWatched([obj])](#module_Shows.doMarkEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkManyEpisodeAsWatched([obj])](#module_Shows.doMarkManyEpisodeAsWatched) ⇒ {Promise}
+        * [.doMarkSeasonAsHidden([obj])](#module_Shows.doMarkSeasonAsHidden) ⇒ {Promise}
         * [.doMarkSeasonAsWatched([obj])](#module_Shows.doMarkSeasonAsWatched) ⇒ {Promise}
         * [.doRateEpisode([obj])](#module_Shows.doRateEpisode) ⇒ {Promise}
         * [.doRateShow([obj])](#module_Shows.doRateShow) ⇒ {Promise}
@@ -45,6 +46,7 @@
         * [.doUnmarkEpisodeAsDownloaded([obj])](#module_Shows.doUnmarkEpisodeAsDownloaded) ⇒ {Promise}
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
+        * [.doUnmarkSeasonAsHidden([obj])](#module_Shows.doUnmarkSeasonAsHidden) ⇒ {Promise}
         * [.doUnmarkSeasonAsWatched([obj])](#module_Shows.doUnmarkSeasonAsWatched) ⇒ {Promise}
     * _reducers_
         * [.articles(state, action)](#module_Shows.articles) ⇒ {Object}
@@ -876,6 +878,30 @@ BetaSeries.getAction('shows', 'doMarkManyEpisodeAsWatched')({
 });
 ```
 
+<a name="module_Shows.doMarkSeasonAsHidden"></a>
+
+### .doMarkSeasonAsHidden([obj])
+
+Mark season as hidden
+
+**Dispatch**: `MARK_SEASON_AS_HIDDEN`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+| [obj.season] | {Number} | Season number to hide |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doMarkSeasonAsHidden')({ showId: 123, season: 3 });
+```
+
 <a name="module_Shows.doMarkSeasonAsWatched"></a>
 
 ### .doMarkSeasonAsWatched([obj])
@@ -1106,6 +1132,30 @@ Watch episode
 BetaSeries.getAction('shows', 'doUnmarkManyEpisodeAsWatched')({
   episodeIds: 438,
 });
+```
+
+<a name="module_Shows.doUnmarkSeasonAsHidden"></a>
+
+### .doUnmarkSeasonAsHidden([obj])
+
+Unmark season as hidden
+
+**Dispatch**: `UNMARK_SEASON_AS_HIDDEN`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Season ID |
+| [obj.season] | {Number} | Season number to hide |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUnmarkSeasonAsHidden')({ showId: 123, season: 3 });
 ```
 
 <a name="module_Shows.doUnmarkSeasonAsWatched"></a>
@@ -1546,6 +1596,8 @@ List of seasons
 **Actions listened**:
 
  * `FETCH_SEASONS`
+ * `MARK_SEASON_AS_HIDDEN`
+ * `UNMARK_SEASON_AS_HIDDEN`
 
 **Returns**: {Object}
 
