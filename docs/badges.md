@@ -6,6 +6,7 @@
     * _actions_
         * [.doFetchBadge([obj])](#module_Badges.doFetchBadge) ⇒ {Promise}
         * [.doFetchManyBadges([obj])](#module_Badges.doFetchManyBadges) ⇒ {Promise}
+        * [.doPostElevatorBadge([obj])](#module_Badges.doPostElevatorBadge) ⇒ {Promise}
     * _reducers_
         * [.badges(state, action)](#module_Badges.badges) ⇒ {Object}
     * _selectors_
@@ -55,6 +56,31 @@ Retrieve many badges
 
 ```js
 BetaSeries.getAction('badges', 'doFetchManyBadges')({ badgeIds: [1275, 481] });
+```
+
+<a name="module_Badges.doPostElevatorBadge"></a>
+
+### .doPostElevatorBadge([obj])
+
+Add count for elevator badge
+
+**Dispatch**: `POST_ELEVATOR_BADGE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.value] | {Number} | Count for elevator music played |
+
+**Example**  
+
+```js
+BetaSeries.getAction('badges', 'doPostElevatorBadge')({
+  value: 10,
+});
 ```
 
 <a name="module_Badges.badges"></a>
