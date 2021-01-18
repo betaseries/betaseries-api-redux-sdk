@@ -11,6 +11,7 @@
         * [.doFetchMovie([obj])](#module_Movies.doFetchMovie) ⇒ {Promise}
         * [.doFetchMovieArticles([obj])](#module_Movies.doFetchMovieArticles) ⇒ {Promise}
         * [.doFetchMovieCharacters([obj])](#module_Movies.doFetchMovieCharacters) ⇒ {Promise}
+        * [.doFetchMovieGenres([obj])](#module_Movies.doFetchMovieGenres) ⇒ {Promise}
         * [.doRateMovie([obj])](#module_Movies.doRateMovie) ⇒ {Promise}
         * [.doRemoveMovieFavorite([obj])](#module_Movies.doRemoveMovieFavorite) ⇒ {Promise}
         * [.doRemoveMovieMember([obj])](#module_Movies.doRemoveMovieMember) ⇒ {Promise}
@@ -19,12 +20,14 @@
         * [.articles(state, action)](#module_Movies.articles) ⇒ {Object}
         * [.characters(state, action)](#module_Movies.characters) ⇒ {Object}
         * [.favorites(state, action)](#module_Movies.favorites) ⇒ {Object}
+        * [.genres(state, action)](#module_Movies.genres) ⇒ {Object}
         * [.members(state, action)](#module_Movies.members) ⇒ {Object}
         * [.movies(state, action)](#module_Movies.movies) ⇒ {Object}
     * _selectors_
         * [.getMemberMovies](#module_Movies.getMemberMovies) ⇒ {Array}
         * [.getMovie](#module_Movies.getMovie) ⇒ {Array}
         * [.getMovieArticles](#module_Movies.getMovieArticles) ⇒ {Array}
+        * [.getMovieGenres](#module_Movies.getMovieGenres) ⇒ {Array}
 
 <a name="module_Movies.doFetchFavoriteMovies"></a>
 
@@ -196,6 +199,28 @@ Retrieve characters of the movie
 
 ```js
 BetaSeries.getAction('movies', 'doFetchMovieCharacters')({ movieId: 591 });
+```
+
+<a name="module_Movies.doFetchMovieGenres"></a>
+
+### .doFetchMovieGenres([obj])
+
+Retrieve genres of movies
+
+**Dispatch**: `FETCH_MOVIE_GENRES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doFetchMovieGenres')();
 ```
 
 <a name="module_Movies.doRateMovie"></a>
@@ -408,6 +433,41 @@ BetaSeries.getReducer('movies', 'favorites').moviesFavorites;
 }
 ```
 
+<a name="module_Movies.genres"></a>
+
+### .genres(state, action)
+
+List of the movie genres
+
+**Actions listened**:
+
+ * `FETCH_MOVIE_GENRES`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('movies', 'genres').moviesGenres;
+
+// state example
+[
+    {
+      id: 123543,    // genre ID
+      ...genre       // genre element
+    },
+    ...
+]
+```
+
 <a name="module_Movies.members"></a>
 
 ### .members(state, action)
@@ -559,6 +619,29 @@ const mapStateToProps = (state, props) => ({
   episode: BetaSeries.getSelector('movies', 'getMovieArticles')(state, {
     movieId: props.movieId,
   });
+});
+```
+
+<a name="module_Movies.getMovieGenres"></a>
+
+### .getMovieGenres
+
+Select genres from state
+
+**Returns**: {Array} - List of genres or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  movie: BetaSeries.getSelector('movies', 'getMovieGenres')(state);
 });
 ```
 

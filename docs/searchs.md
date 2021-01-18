@@ -5,14 +5,18 @@
 * [Searchs](#module_Searchs)
     * _actions_
         * [.doClearSearchAll()](#module_Searchs.doClearSearchAll) ⇒ {Promise}
+        * [.doClearSearchMovies()](#module_Searchs.doClearSearchMovies) ⇒ {Promise}
         * [.doClearSearchShows()](#module_Searchs.doClearSearchShows) ⇒ {Promise}
         * [.doSearchAll([obj])](#module_Searchs.doSearchAll) ⇒ {Promise}
+        * [.doSearchMovies([obj])](#module_Searchs.doSearchMovies) ⇒ {Promise}
         * [.doSearchShows([obj])](#module_Searchs.doSearchShows) ⇒ {Promise}
     * _reducers_
         * [.all(state, action)](#module_Searchs.all) ⇒ {Object}
+        * [.movies(state, action)](#module_Searchs.movies) ⇒ {Object}
         * [.shows(state, action)](#module_Searchs.shows) ⇒ {Object}
     * _selectors_
         * [.getSearchAll](#module_Searchs.getSearchAll) ⇒ {Object}
+        * [.getSearchMovies](#module_Searchs.getSearchMovies) ⇒ {Object}
         * [.getSearchShows](#module_Searchs.getSearchShows) ⇒ {Object}
 
 <a name="module_Searchs.doClearSearchAll"></a>
@@ -30,6 +34,23 @@ Clear search show
 
 ```js
 BetaSeries.getAction('searchs', 'doClearSearchAll')();
+```
+
+<a name="module_Searchs.doClearSearchMovies"></a>
+
+### .doClearSearchMovies()
+
+Clear search movie
+
+**Dispatch**: `CLEAR_SEARCH_MOVIES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+**Example**  
+
+```js
+BetaSeries.getAction('searchs', 'doClearSearchMovies')();
 ```
 
 <a name="module_Searchs.doClearSearchShows"></a>
@@ -71,6 +92,33 @@ Search all type of element by query
 
 ```js
 BetaSeries.getAction('searchs', 'doSearchAll')({ query: 'alk' });
+```
+
+<a name="module_Searchs.doSearchMovies"></a>
+
+### .doSearchMovies([obj])
+
+Search movie by title
+
+**Dispatch**: `SEARCH_MOVIES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.title] | {Number} | Title search |
+| [obj.summary] | {Bool} | Returns only summary infos of the movie elements (default `false`) |
+| [obj.order] | {Number} | Return order (`title`|`popularity`|`followers`), (default `title`) |
+| [obj.nbpp] | {Number} | Number of results per page (default `5`, maximum `100`) |
+| [obj.page] | {Number} | Page number (default `1`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('searchs', 'doSearchMovies')({ title: 'alking DEA' });
 ```
 
 <a name="module_Searchs.doSearchShows"></a>
@@ -134,6 +182,37 @@ BetaSeries.getReducer('searchs', 'all').searchAll;
 }
 ```
 
+<a name="module_Searchs.movies"></a>
+
+### .movies(state, action)
+
+List of the search movies
+
+**Actions listened**:
+
+ * `SEARCH_MOVIES`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('searchs', 'movies').searchMovies;
+
+// state example
+[
+  ...movies               // list of search movies
+]
+```
+
 <a name="module_Searchs.shows"></a>
 
 ### .shows(state, action)
@@ -184,6 +263,28 @@ Select episode from state
 ```js
 const mapStateToProps = (state, props) => ({
   searchs: BetaSeries.getSelector('searchs', 'getSearchAll')(state);
+});
+```
+
+<a name="module_Searchs.getSearchMovies"></a>
+
+### .getSearchMovies
+
+Select movies from state
+
+**Returns**: {Object} - List of movies or empty array
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  movies: BetaSeries.getSelector('searchs', 'getSearchMovies')(state);
 });
 ```
 
