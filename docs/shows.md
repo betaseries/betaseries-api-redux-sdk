@@ -9,7 +9,9 @@
         * [.doAddShowFavorite([obj])](#module_Shows.doAddShowFavorite) ⇒ {Promise}
         * [.doAddShowReach([obj])](#module_Shows.doAddShowReach) ⇒ {Promise}
         * [.doClearDiscoverShows()](#module_Shows.doClearDiscoverShows) ⇒ {Promise}
+        * [.doClearDiscoverShowsPlatforms()](#module_Shows.doClearDiscoverShowsPlatforms) ⇒ {Promise}
         * [.doFetchDiscoverShows([obj])](#module_Shows.doFetchDiscoverShows) ⇒ {Promise}
+        * [.doFetchDiscoverShowsPlatforms([obj])](#module_Shows.doFetchDiscoverShowsPlatforms) ⇒ {Promise}
         * [.doFetchEpisode([obj])](#module_Shows.doFetchEpisode) ⇒ {Promise}
         * [.doFetchEpisodeByCode([obj])](#module_Shows.doFetchEpisodeByCode) ⇒ {Promise}
         * [.doFetchEpisodesList([obj])](#module_Shows.doFetchEpisodesList) ⇒ {Promise}
@@ -52,6 +54,7 @@
         * [.articles(state, action)](#module_Shows.articles) ⇒ {Object}
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
+        * [.discoverPlatforms(state, action)](#module_Shows.discoverPlatforms) ⇒ {Object}
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
         * [.genres(state, action)](#module_Shows.genres) ⇒ {Object}
         * [.interestGenres(state, action)](#module_Shows.interestGenres) ⇒ {Object}
@@ -68,6 +71,7 @@
         * [.videos(state, action)](#module_Shows.videos) ⇒ {Object}
     * _selectors_
         * [.getCharacters](#module_Shows.getCharacters) ⇒ {Array}
+        * [.getDiscoverPlatformsShows](#module_Shows.getDiscoverPlatformsShows) ⇒ {Array}
         * [.getDiscoverShows](#module_Shows.getDiscoverShows) ⇒ {Array}
         * [.getEpisode](#module_Shows.getEpisode) ⇒ {Object}
         * [.getEpisodesToSee](#module_Shows.getEpisodesToSee) ⇒ {Array}
@@ -210,6 +214,23 @@ Clear discover shows
 BetaSeries.getAction('shows', 'doClearDiscoverShows')();
 ```
 
+<a name="module_Shows.doClearDiscoverShowsPlatforms"></a>
+
+### .doClearDiscoverShowsPlatforms()
+
+Clear discover shows platforms
+
+**Dispatch**: `CLEAR_DISCOVER_SHOWS_PLATFORMS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doClearDiscoverShowsPlatforms')();
+```
+
 <a name="module_Shows.doFetchDiscoverShows"></a>
 
 ### .doFetchDiscoverShows([obj])
@@ -232,6 +253,30 @@ Retrieve discover shows
 
 ```js
 BetaSeries.getAction('shows', 'doFetchDiscoverShows')();
+```
+
+<a name="module_Shows.doFetchDiscoverShowsPlatforms"></a>
+
+### .doFetchDiscoverShowsPlatforms([obj])
+
+Retrieve discover shows platforms
+
+**Dispatch**: `FETCH_DISCOVER_SHOWS_PLATFORMS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.offset] | {Number} | Start number of show list (default `0`) |
+| [obj.limit] | {Number} | Limit number of shows |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchDiscoverShowsPlatforms')();
 ```
 
 <a name="module_Shows.doFetchEpisode"></a>
@@ -1294,6 +1339,41 @@ BetaSeries.getReducer('shows', 'discover').showsDiscover;
  ]
 ```
 
+<a name="module_Shows.discoverPlatforms"></a>
+
+### .discoverPlatforms(state, action)
+
+List of discover platforms shows
+
+**Actions listened**:
+
+ * `FETCH_DISCOVER_SHOWS_PLATFORMS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'discoverPlatforms').showsDiscoverPlatforms;
+
+// state example
+  [
+   {
+    id: 1275,    // show element
+    ...show,
+  },
+  ...,
+ ]
+```
+
 <a name="module_Shows.episodes"></a>
 
 ### .episodes(state, action)
@@ -1828,6 +1908,28 @@ Select characters from state
 ```js
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('shows', 'getCharacters')(state, { showId: props.showId });
+});
+```
+
+<a name="module_Shows.getDiscoverPlatformsShows"></a>
+
+### .getDiscoverPlatformsShows
+
+Select discovers platforms shows from state
+
+**Returns**: {Array} - Array of shows or `[]`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  discover: BetaSeries.getSelector('shows', 'getDiscoverPlatformsShows')(state);
 });
 ```
 
