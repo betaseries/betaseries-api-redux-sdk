@@ -1,6 +1,6 @@
 import showsReducer from '../../../../lib/modules/searchs/reducers/shows';
 
-const actionFile = '../lib/modules/searchs/actions/doSearchShows';
+const actionFile = '../lib/modules/searchs/actions/doShowsSearch';
 const showsFixture = require('../../../fixtures/shows.json');
 
 describe('Search shows', () => {

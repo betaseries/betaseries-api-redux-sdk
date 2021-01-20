@@ -10,6 +10,7 @@
         * [.doSearchAll([obj])](#module_Searchs.doSearchAll) ⇒ {Promise}
         * [.doSearchMovies([obj])](#module_Searchs.doSearchMovies) ⇒ {Promise}
         * [.doSearchShows([obj])](#module_Searchs.doSearchShows) ⇒ {Promise}
+        * [.doShowsSearch([obj])](#module_Searchs.doShowsSearch) ⇒ {Promise}
     * _reducers_
         * [.all(state, action)](#module_Searchs.all) ⇒ {Object}
         * [.movies(state, action)](#module_Searchs.movies) ⇒ {Object}
@@ -98,7 +99,7 @@ BetaSeries.getAction('searchs', 'doSearchAll')({ query: 'alk' });
 
 ### .doSearchMovies([obj])
 
-Search movie by title
+Search movie by text
 
 **Dispatch**: `SEARCH_MOVIES`
 
@@ -108,22 +109,39 @@ Search movie by title
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [obj] | {Object} | Accept the following: |
-| [obj.title] | {Number} | Title search |
-| [obj.summary] | {Bool} | Returns only summary infos of the movie elements (default `false`) |
-| [obj.order] | {Number} | Return order (`title`|`popularity`|`followers`), (default `title`) |
-| [obj.nbpp] | {Number} | Number of results per page (default `5`, maximum `100`) |
-| [obj.page] | {Number} | Page number (default `1`) |
+| [obj] | {Object} | Accept the following: see https://www.betaseries.com/api/methodes/search |
 
 **Example**  
 
 ```js
-BetaSeries.getAction('searchs', 'doSearchMovies')({ title: 'alking DEA' });
+BetaSeries.getAction('searchs', 'doSearchMovies')({ text: 'alking DEA' });
 ```
 
 <a name="module_Searchs.doSearchShows"></a>
 
 ### .doSearchShows([obj])
+
+Search show by text
+
+**Dispatch**: `SEARCH_SHOWS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: see https://www.betaseries.com/api/methodes/search |
+
+**Example**  
+
+```js
+BetaSeries.getAction('searchs', 'doSearchShows')({ text: 'alking DEA' });
+```
+
+<a name="module_Searchs.doShowsSearch"></a>
+
+### .doShowsSearch([obj])
 
 Search show by title
 
@@ -145,7 +163,7 @@ Search show by title
 **Example**  
 
 ```js
-BetaSeries.getAction('searchs', 'doSearchShows')({ title: 'alking DEA' });
+BetaSeries.getAction('searchs', 'doShowsSearch')({ title: 'alking DEA' });
 ```
 
 <a name="module_Searchs.all"></a>
