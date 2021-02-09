@@ -4,6 +4,7 @@
 
 * [Blog](#module_Blog)
     * _actions_
+        * [.doSendBlogAnalytics([obj])](#module_Blog.doSendBlogAnalytics) ⇒ {Promise}
         * [.doFetchBlogPosts([obj])](#module_Blog.doFetchBlogPosts) ⇒ {Promise}
         * [.doFetchBlogAuthors([obj])](#module_Blog.doFetchBlogAuthors) ⇒ {Promise}
         * [.doFetchBlogRelatedPosts([obj])](#module_Blog.doFetchBlogRelatedPosts) ⇒ {Promise}
@@ -37,6 +38,43 @@
         * [.getBlogHotTopics](#module_Blog.getBlogHotTopics) ⇒ {Array}
         * [.getBlogTagPosts](#module_Blog.getBlogTagPosts) ⇒ {Array}
         * [.getBlogTags](#module_Blog.getBlogTags) ⇒ {Array}
+
+<a name="module_Blog.doSendBlogAnalytics"></a>
+
+### .doSendBlogAnalytics([obj])
+
+Send blog analytics
+
+**Dispatch**: `SEND_WP_ANALYTICS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.browser] | {String} | Browser (Chrome, Safari, App…) |
+| [obj.platform] | {String} | Platform (OS X, iPhone 8, Android X…) |
+| [obj.version] | {String} | App or web version |
+| [obj.referred] | {String} | Url source from which we come |
+| [obj.ip] | {String} | Client IP |
+| [obj.current_page_type] | {String} | Page type: post_tag, home, or post |
+| [obj.current_page_id] | {String} | Page Id |
+| [obj.ua] | {String} | User Agent |
+| [obj.timestamp] | {String} | timestamp |
+| [obj.page_uri] | {String} | Page Uri (/10216-autopsie-des-series-la-casa-de-papel) |
+| [obj.base] | {String} | Url of article |
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doSendBlogAnalytics')({
+  timestamp: 0,
+  ua: 'mozilla/…',
+  base: 'https://www.betaseries.com/blog/2019/12/attention-greve-des-series/'
+});
+```
 
 <a name="module_Blog.doFetchBlogPosts"></a>
 
