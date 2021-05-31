@@ -273,10 +273,15 @@ Retrieve wordpress hot topics
 
 **Category**: actions  
 
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.lang] | {String} | Language info |
+
 **Example**  
 
 ```js
-BetaSeries.getAction('blog', 'doFetchBlogHotTopics')();
+BetaSeries.getAction('blog', 'doFetchBlogHotTopics')({ lang: 'fr' });
 ```
 
 <a name="module_Blog.doSendBlogAnalytics"></a>
