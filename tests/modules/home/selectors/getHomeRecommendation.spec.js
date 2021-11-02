@@ -3,7 +3,7 @@ import selector
 
 describe('Select recommendation shows from state ', () => {
   const state = {
-    reco: [{ id: 3 }]
+    homeReco: [{ id: 3 }]
   };
 
   it('returns recommendation shows if exist', () => {

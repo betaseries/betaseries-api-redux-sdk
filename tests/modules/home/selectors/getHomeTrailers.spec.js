@@ -2,7 +2,7 @@ import selector from '../../../../lib/modules/home/selectors/getHomeTrailers';
 
 describe('Select trailers from state ', () => {
   const state = {
-    trailers: [{ id: 3 }]
+    homeTrailers: [{ id: 3 }]
   };
 
   it('returns trailers if exist', () => {
