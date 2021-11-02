@@ -15,6 +15,7 @@ Here is the guide for using BetaSeries API Redux SDK. Enjoy.
 * [Polls module](polls.md)
 * [Blog module](blog.md)
 * [Platforms module](platforms.md)
+* [Home module](home.md)
 
 ## Usage example
 
