@@ -1,6 +1,6 @@
 {
   "name": "betaseries-api-redux-sdk",
-  "version": "1.12.11",
+  "version": "1.12.12",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
@@ -44,9 +44,9 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "glob": "^7.1.1",
+    "glob": "^7.2.0",
     "he": "^1.1.1",
-    "jsdoc-to-markdown": "^3.0.0",
+    "jsdoc-to-markdown": "^7.1.0",
     "keymirror": "^0.1.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",

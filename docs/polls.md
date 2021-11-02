@@ -14,6 +14,7 @@
         * [.polls(state, action)](#module_Polls.polls) ⇒ {Object}
     * _selectors_
         * [.getLastPoll](#module_Polls.getLastPoll) ⇒ {Array}
+        * [.getLastPollUnAnswer](#module_Polls.getLastPollUnAnswer) ⇒ {Array}
         * [.getPoll](#module_Polls.getPoll) ⇒ {Array}
 
 <a name="module_Polls.doAnswerPoll"></a>
@@ -224,6 +225,28 @@ Select last poll from state
 ```js
 const mapStateToProps = (state, props) => ({
   poll: BetaSeries.getSelector('polls', 'getLastPoll')(state);
+});
+```
+
+<a name="module_Polls.getLastPollUnAnswer"></a>
+
+### .getLastPollUnAnswer
+
+Select last poll from state
+
+**Returns**: {Array} - Poll element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  poll: BetaSeries.getSelector('polls', 'getLastPollUnAnswer')(state);
 });
 ```
 
