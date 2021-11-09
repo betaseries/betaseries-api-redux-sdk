@@ -4,17 +4,44 @@
 
 * [Home](#module_Home)
     * _actions_
+        * [.doFetchHomePopular([obj])](#module_Home.doFetchHomePopular) ⇒ {Promise}
         * [.doFetchHomeRecommendation([obj])](#module_Home.doFetchHomeRecommendation) ⇒ {Promise}
         * [.doFetchHomeTop([obj])](#module_Home.doFetchHomeTop) ⇒ {Promise}
         * [.doFetchHomeTrailers([obj])](#module_Home.doFetchHomeTrailers) ⇒ {Promise}
     * _reducers_
+        * [.popular(state, action)](#module_Home.popular) ⇒ {Object}
         * [.reco(state, action)](#module_Home.reco) ⇒ {Object}
         * [.top(state, action)](#module_Home.top) ⇒ {Object}
         * [.trailers(state, action)](#module_Home.trailers) ⇒ {Object}
     * _selectors_
         * [.getHomeLastTop](#module_Home.getHomeLastTop) ⇒ {Array}
+        * [.getHomePopular](#module_Home.getHomePopular) ⇒ {Array}
         * [.getHomeRecommendation](#module_Home.getHomeRecommendation) ⇒ {Array}
         * [.getHomeTrailers](#module_Home.getHomeTrailers) ⇒ {Array}
+
+<a name="module_Home.doFetchHomePopular"></a>
+
+### .doFetchHomePopular([obj])
+
+Retrieve Home popular shows for the last 30 days
+
+**Dispatch**: `FETCH_HOME_POPULAR`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.day] | {Number} | Day format 'Y-m-d', past day by default (optional) |
+| [obj.summary] | {Boolean} | Summary info, false by default (optional) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('home', 'doFetchHomePopular')({ day: '2021-10-01', summary: true });
+```
 
 <a name="module_Home.doFetchHomeRecommendation"></a>
 
@@ -83,6 +110,41 @@ Retrieve trailers list for home page
 
 ```js
 BetaSeries.getAction('home', 'doFetchHomeTrailers')({ start: 0, limit: 10 });
+```
+
+<a name="module_Home.popular"></a>
+
+### .popular(state, action)
+
+List of the popular shows from the last 30 days
+
+**Actions listened**:
+
+ * `FETCH_HOME_POPULAR`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('home', 'popular').homePopular;
+
+// state example
+[
+    {
+      id: 123543,     // show ID
+      ...show       // show element
+    },
+    ...
+]
 ```
 
 <a name="module_Home.reco"></a>
@@ -209,6 +271,28 @@ Select Top 10 shows from state
 ```js
 const mapStateToProps = (state, props) => ({
   home: BetaSeries.getSelector('home', 'getHomeLastTop')(state);
+});
+```
+
+<a name="module_Home.getHomePopular"></a>
+
+### .getHomePopular
+
+Select Home popular shows for the last 30 days
+
+**Returns**: {Array} - Popular shows or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  home: BetaSeries.getSelector('home', 'getHomePopular')(state);
 });
 ```
 
