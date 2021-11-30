@@ -44,6 +44,7 @@ API provider
 | [obj] | {Object} | Accept the following: |
 | [obj.apiHost] | {String} | URI of BetaSeries API |
 | [obj.apiKey] | {String} | API Key of BetaSeries API |
+| [obj.apiVersion] | {String} | API Version of BetaSeries API |
 | [obj.apiExtraHeaders] | {String} | API Extra Headers |
 
 <a name="module_BetaSeries.setUser"></a>
