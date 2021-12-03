@@ -20,6 +20,7 @@
         * [.getHomeLastTop](#module_Home.getHomeLastTop) ⇒ {Array}
         * [.getHomePopular](#module_Home.getHomePopular) ⇒ {Array}
         * [.getHomeRecommendation](#module_Home.getHomeRecommendation) ⇒ {Array}
+        * [.getHomeRecoReferenceShow](#module_Home.getHomeRecoReferenceShow) ⇒ {Object}
         * [.getHomeTrailers](#module_Home.getHomeTrailers) ⇒ {Array}
 
 <a name="module_Home.doFetchHomeBlocks"></a>
@@ -72,7 +73,7 @@ BetaSeries.getAction('home', 'doFetchHomePopular')({ day: '2021-10-01', summary:
 
 ### .doFetchHomeRecommendation([obj])
 
-Retrieve Home recommendation shows
+Retrieve Home recommendation shows and reference show
 
 **Dispatch**: `FETCH_HOME_RECO`
 
@@ -233,13 +234,16 @@ List of the recommendation shows
 BetaSeries.getReducer('home', 'reco').homeReco;
 
 // state example
-[
+{
+ shows: [
     {
       id: 123543,     // show ID
-      ...show       // show element
+      ...show         // show element
     },
     ...
-]
+ ],
+ show: {}             // ref show or forced show (can be null)
+} 
 ```
 
 <a name="module_Home.top"></a>
@@ -397,6 +401,28 @@ Select recommendation shows from state
 ```js
 const mapStateToProps = (state, props) => ({
   home: BetaSeries.getSelector('home', 'getHomeRecommendation')(state);
+});
+```
+
+<a name="module_Home.getHomeRecoReferenceShow"></a>
+
+### .getHomeRecoReferenceShow
+
+Select reco reference show from state
+
+**Returns**: {Object} - Recommendation reference show or `null`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  home: BetaSeries.getSelector('home', 'getHomeRecoReferenceShow')(state);
 });
 ```
 

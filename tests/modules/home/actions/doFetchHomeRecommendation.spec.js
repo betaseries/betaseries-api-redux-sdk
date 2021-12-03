@@ -36,7 +36,7 @@ describe('Retrieve Home recommendation shows', () => {
 
     it('validate homeReco reducer', () => {
       const stateHomeReducer = homeRecoReducer(undefined, action);
-      expect(Object.values(stateHomeReducer)).to.deep.equal([
+      expect(Object.values(stateHomeReducer.shows)).to.deep.equal([
         { id: 1 },
         { id: 64 }
       ]);

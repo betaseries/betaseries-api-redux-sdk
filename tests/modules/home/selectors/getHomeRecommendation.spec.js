@@ -1,9 +1,11 @@
 import selector
   from '../../../../lib/modules/home/selectors/getHomeRecommendation';
 
-describe('Select recommendation shows from state ', () => {
+describe('Select recommendation shows from state', () => {
   const state = {
-    homeReco: [{ id: 3 }]
+    homeReco: {
+      shows: [{ id: 3 }]
+    }
   };
 
   it('returns recommendation shows if exist', () => {
@@ -12,7 +14,7 @@ describe('Select recommendation shows from state ', () => {
   });
 
   it('returns [] if recommendation shows does not exist', () => {
-    const value = selector([]);
+    const value = selector({ homeReco: { shows: [] } });
     expect(value).to.deep.equal([]);
   });
 });
