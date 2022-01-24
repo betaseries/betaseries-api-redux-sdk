@@ -232,6 +232,7 @@ Retrieve category posts
 | [obj.page] | {Number} | Page number |
 | [obj.lang] | {String} | Language info |
 | [obj.categoryId] | {Number} | Category ID |
+| [obj.excludedIds] | {Array} | Array of excluded posts ids |
 
 **Example**  
 
@@ -326,6 +327,7 @@ Retrieve tag posts
 | [obj.page] | {Number} | Page number |
 | [obj.lang] | {String} | Language info |
 | [obj.tagSlug] | {String} | Tag Slug |
+| [obj.excludedIds] | {Array} | Array of excluded posts ids |
 
 **Example**  
 
