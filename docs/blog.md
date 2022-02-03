@@ -11,6 +11,8 @@
         * [.doFetchBlogPost([obj])](#module_Blog.doFetchBlogPost) ⇒ {Promise}
         * [.doFetchBlogFeaturedPosts([obj])](#module_Blog.doFetchBlogFeaturedPosts) ⇒ {Promise}
         * [.doClearBlogPosts()](#module_Blog.doClearBlogPosts) ⇒ {Promise}
+        * [.doClearCategoryPosts()](#module_Blog.doClearCategoryPosts) ⇒ {Promise}
+        * [.doClearTagPosts()](#module_Blog.doClearTagPosts) ⇒ {Promise}
         * [.doFetchBlogCategoryPosts([obj])](#module_Blog.doFetchBlogCategoryPosts) ⇒ {Promise}
         * [.doFetchBlogCategories([obj])](#module_Blog.doFetchBlogCategories) ⇒ {Promise}
         * [.doFetchBlogHotTopics([obj])](#module_Blog.doFetchBlogHotTopics) ⇒ {Promise}
@@ -198,6 +200,8 @@ BetaSeries.getAction('blog', 'doFetchBlogFeaturedPosts')({
 });
 ```
 
+<a name="module_Blog.doClearBlogPosts"></a>
+
 ### .doClearBlogPosts()
 
 Clear all blog posts
@@ -212,6 +216,42 @@ Clear all blog posts
 
 ```js
 BetaSeries.getAction('blog', 'doClearBlogPosts')();
+```
+
+<a name="module_Blog.doClearCategoryPosts"></a>
+
+### .doClearCategoryPosts()
+
+Clear category blog posts
+
+**Dispatch**: `CLEAR_BLOG_CATEGORY_POSTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doClearCategoryPosts')({ categoryId: 53 });
+```
+
+<a name="module_Blog.doClearTagPosts"></a>
+
+### .doClearTagPosts()
+
+Clear tag blog posts
+
+**Dispatch**: `CLEAR_BLOG_TAG_POSTS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+**Example**  
+
+```js
+BetaSeries.getAction('blog', 'doClearTagPosts')({ tagSlug: 'on-recommande' });
 ```
 
 <a name="module_Blog.doFetchBlogCategoryPosts"></a>
