@@ -15,12 +15,19 @@
         * [.doClearShowComments([obj])](#module_Comments.doClearShowComments) ⇒ {Promise}
         * [.doCloseComments([obj])](#module_Comments.doCloseComments) ⇒ {Promise}
         * [.doCommentArticle([obj])](#module_Comments.doCommentArticle) ⇒ {Promise}
+        * [.doCommentArticlePost([obj])](#module_Comments.doCommentArticlePost) ⇒ {Promise}
         * [.doCommentEpisode([obj])](#module_Comments.doCommentEpisode) ⇒ {Promise}
+        * [.doCommentEpisodePost([obj])](#module_Comments.doCommentEpisodePost) ⇒ {Promise}
         * [.doCommentEvent([obj])](#module_Comments.doCommentEvent) ⇒ {Promise}
+        * [.doCommentEventPost([obj])](#module_Comments.doCommentEventPost) ⇒ {Promise}
         * [.doCommentMember([obj])](#module_Comments.doCommentMember) ⇒ {Promise}
+        * [.doCommentMemberPost([obj])](#module_Comments.doCommentMemberPost) ⇒ {Promise}
         * [.doCommentMovie([obj])](#module_Comments.doCommentMovie) ⇒ {Promise}
+        * [.doCommentMoviePost([obj])](#module_Comments.doCommentMoviePost) ⇒ {Promise}
         * [.doCommentPoll([obj])](#module_Comments.doCommentPoll) ⇒ {Promise}
+        * [.doCommentPollPost([obj])](#module_Comments.doCommentPollPost) ⇒ {Promise}
         * [.doCommentShow([obj])](#module_Comments.doCommentShow) ⇒ {Promise}
+        * [.doCommentShowPost([obj])](#module_Comments.doCommentShowPost) ⇒ {Promise}
         * [.doCommentSpecificEvent([obj])](#module_Comments.doCommentSpecificEvent) ⇒ {Promise}
         * [.doFetchArticleComments([obj])](#module_Comments.doFetchArticleComments) ⇒ {Promise}
         * [.doFetchComment([obj])](#module_Comments.doFetchComment) ⇒ {Promise}
@@ -320,6 +327,34 @@ BetaSeries.getAction('comments', 'doCommentArticle')({
 });
 ```
 
+<a name="module_Comments.doCommentArticlePost"></a>
+
+### .doCommentArticlePost([obj])
+
+Add comment on article
+
+**Dispatch**: `COMMENT_ARTICLE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.articleId] | {Number} | Article ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentArticlePost')({
+  articleId: 438,
+  text: 'Trop bien cet article !',
+});
+```
+
 <a name="module_Comments.doCommentEpisode"></a>
 
 ### .doCommentEpisode([obj])
@@ -348,6 +383,34 @@ BetaSeries.getAction('comments', 'doCommentEpisode')({
 });
 ```
 
+<a name="module_Comments.doCommentEpisodePost"></a>
+
+### .doCommentEpisodePost([obj])
+
+Add comment on episode
+
+**Dispatch**: `COMMENT_EPISODE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentEpisodePost')({
+  episodeId: 438,
+  text: 'Trop bien cette épisode !',
+});
+```
+
 <a name="module_Comments.doCommentEvent"></a>
 
 ### .doCommentEvent([obj])
@@ -370,6 +433,34 @@ Add comment on event
 
 ```js
 BetaSeries.getAction('comments', 'doCommentEvent')({
+  eventId: 438,
+  text: 'Trop bien cette épisode !',
+});
+```
+
+<a name="module_Comments.doCommentEventPost"></a>
+
+### .doCommentEventPost([obj])
+
+Add comment on event
+
+**Dispatch**: `COMMENT_EVENT`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.eventId] | {Number} | Event ID |
+| [obj.text] | {String} | Text of comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentEventPost
+')({
   eventId: 438,
   text: 'Trop bien cette épisode !',
 });
@@ -403,6 +494,34 @@ BetaSeries.getAction('comments', 'doCommentMember')({
 });
 ```
 
+<a name="module_Comments.doCommentMemberPost"></a>
+
+### .doCommentMemberPost([obj])
+
+Add comment on member
+
+**Dispatch**: `COMMENT_MEMBER`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Number} | Member ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentMemberPost')({
+  memberId: 438,
+  text: 'Trop bien cette série !',
+});
+```
+
 <a name="module_Comments.doCommentMovie"></a>
 
 ### .doCommentMovie([obj])
@@ -426,6 +545,34 @@ Add comment on movie
 
 ```js
 BetaSeries.getAction('comments', 'doCommentMovie')({
+  movieId: 438,
+  text: 'Trop bien ce film !',
+});
+```
+
+<a name="module_Comments.doCommentMoviePost"></a>
+
+### .doCommentMoviePost([obj])
+
+Add comment on movie
+
+**Dispatch**: `COMMENT_MOVIE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.movieId] | {Number} | Movie ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentMoviePost')({
   movieId: 438,
   text: 'Trop bien ce film !',
 });
@@ -459,6 +606,34 @@ BetaSeries.getAction('comments', 'doCommentPoll')({
 });
 ```
 
+<a name="module_Comments.doCommentPollPost"></a>
+
+### .doCommentPollPost([obj])
+
+Add comment on poll
+
+**Dispatch**: `COMMENT_POLL`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.pollId] | {Number} | Poll ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentPollPost')({
+  pollId: 438,
+  text: 'Trop bien cette épisode !',
+});
+```
+
 <a name="module_Comments.doCommentShow"></a>
 
 ### .doCommentShow([obj])
@@ -482,6 +657,34 @@ Add comment on show
 
 ```js
 BetaSeries.getAction('comments', 'doCommentShow')({
+  showId: 438,
+  text: 'Trop bien cette série !',
+});
+```
+
+<a name="module_Comments.doCommentShowPost"></a>
+
+### .doCommentShowPost([obj])
+
+Add comment on show
+
+**Dispatch**: `COMMENT_SHOW`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+| [obj.text] | {String} | Text of comment |
+| [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
+
+**Example**  
+
+```js
+BetaSeries.getAction('comments', 'doCommentShowPost')({
   showId: 438,
   text: 'Trop bien cette série !',
 });
