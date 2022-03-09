@@ -322,13 +322,16 @@ List of the shows on popular platform
 BetaSeries.getReducer('home', 'popularPlatform').homePopularPlatform;
 
 // state example
-[
-    {
-      id: 123543,     // show ID
-      ...show       // show element
-    },
-    ...
-]
+{
+ 119: 
+   [
+      {
+        id: 123543,     // show ID
+        ...show       // show element
+       },
+       ...
+   ]
+}
 ```
 
 <a name="module_Home.reco"></a>
