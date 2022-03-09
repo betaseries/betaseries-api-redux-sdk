@@ -7,6 +7,7 @@
         * [.doFetchHomeBlocks([obj])](#module_Home.doFetchHomeBlocks) ⇒ {Promise}
         * [.doFetchHomePopular([obj])](#module_Home.doFetchHomePopular) ⇒ {Promise}
         * [.doFetchHomePopularArticles([obj])](#module_Home.doFetchHomePopularArticles) ⇒ {Promise}
+        * [.doFetchHomePopularPlatform([obj])](#module_Home.doFetchHomePopularPlatform) ⇒ {Promise}
         * [.doFetchHomeRecommendation([obj])](#module_Home.doFetchHomeRecommendation) ⇒ {Promise}
         * [.doFetchHomeTop([obj])](#module_Home.doFetchHomeTop) ⇒ {Promise}
         * [.doFetchHomeTrailers([obj])](#module_Home.doFetchHomeTrailers) ⇒ {Promise}
@@ -14,6 +15,7 @@
         * [.articles(state, action)](#module_Home.articles) ⇒ {Object}
         * [.blocks(state, action)](#module_Home.blocks) ⇒ {Object}
         * [.popular(state, action)](#module_Home.popular) ⇒ {Object}
+        * [.popularPlatform(state, action)](#module_Home.popularPlatform) ⇒ {Object}
         * [.reco(state, action)](#module_Home.reco) ⇒ {Object}
         * [.top(state, action)](#module_Home.top) ⇒ {Object}
         * [.trailers(state, action)](#module_Home.trailers) ⇒ {Object}
@@ -22,6 +24,7 @@
         * [.getHomeLastTop](#module_Home.getHomeLastTop) ⇒ {Array}
         * [.getHomePopular](#module_Home.getHomePopular) ⇒ {Array}
         * [.getHomePopularArticles](#module_Home.getHomePopularArticles) ⇒ {Array}
+        * [.getHomePopularPlatform](#module_Home.getHomePopularPlatform) ⇒ {Array}
         * [.getHomeRecommendation](#module_Home.getHomeRecommendation) ⇒ {Array}
         * [.getHomeRecoReferenceShow](#module_Home.getHomeRecoReferenceShow) ⇒ {Object}
         * [.getHomeTrailers](#module_Home.getHomeTrailers) ⇒ {Array}
@@ -94,6 +97,29 @@ Retrieve popular articles for the last 30 days
 
 ```js
 BetaSeries.getAction('home', 'doFetchHomePopularArticles')({ limit: 10 });
+```
+
+<a name="module_Home.doFetchHomePopularPlatform"></a>
+
+### .doFetchHomePopularPlatform([obj])
+
+Retrieve Home popular platform shows
+
+**Dispatch**: `FETCH_HOME_POPULAR_PLATFORM`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.platformId] | {String} | platformId return in config home/blocks |
+
+**Example**  
+
+```js
+BetaSeries.getAction('home', 'doFetchHomePopularPlatform')({ platformId: '1'});
 ```
 
 <a name="module_Home.doFetchHomeRecommendation"></a>
@@ -268,6 +294,44 @@ BetaSeries.getReducer('home', 'popular').homePopular;
     },
     ...
 ]
+```
+
+<a name="module_Home.popularPlatform"></a>
+
+### .popularPlatform(state, action)
+
+List of the shows on popular platform
+
+**Actions listened**:
+
+ * `FETCH_HOME_POPULAR_PLATFORM`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('home', 'popularPlatform').homePopularPlatform;
+
+// state example
+{
+ 119: 
+   [
+      {
+        id: 123543,     // show ID
+        ...show       // show element
+       },
+       ...
+   ]
+}
 ```
 
 <a name="module_Home.reco"></a>
@@ -463,6 +527,32 @@ Select popular articles from state
 ```js
 const mapStateToProps = (state, props) => ({
   blog: BetaSeries.getSelector('home', 'getHomePopularArticles')(state);
+});
+```
+
+<a name="module_Home.getHomePopularPlatform"></a>
+
+### .getHomePopularPlatform
+
+Select Home popular platform shows
+
+**Returns**: {Array} - Popular platform shows or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.platformId] | {String} | Platform ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  home: BetaSeries.getSelector('home', 'getHomePopularPlatform')(state, {
+    platformId: '1',
+  });
 });
 ```
 
