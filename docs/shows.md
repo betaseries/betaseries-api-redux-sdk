@@ -8,6 +8,7 @@
         * [.doAddShowArchive([obj])](#module_Shows.doAddShowArchive) ⇒ {Promise}
         * [.doAddShowFavorite([obj])](#module_Shows.doAddShowFavorite) ⇒ {Promise}
         * [.doAddShowReach([obj])](#module_Shows.doAddShowReach) ⇒ {Promise}
+        * [.doAddShowTag([obj])](#module_Shows.doAddShowTag) ⇒ {Promise}
         * [.doClearDiscoverShows()](#module_Shows.doClearDiscoverShows) ⇒ {Promise}
         * [.doClearDiscoverShowsPlatforms()](#module_Shows.doClearDiscoverShowsPlatforms) ⇒ {Promise}
         * [.doFetchDiscoverShows([obj])](#module_Shows.doFetchDiscoverShows) ⇒ {Promise}
@@ -32,6 +33,7 @@
         * [.doFetchShowVideos([obj])](#module_Shows.doFetchShowVideos) ⇒ {Promise}
         * [.doFetchShowWithUrl([obj])](#module_Shows.doFetchShowWithUrl) ⇒ {Promise}
         * [.doFetchSimilarShows([obj])](#module_Shows.doFetchSimilarShows) ⇒ {Promise}
+        * [.doFetchTagsList([obj])](#module_Shows.doFetchTagsList) ⇒ {Promise}
         * [.doFetchUnratedEpisodes([obj])](#module_Shows.doFetchUnratedEpisodes) ⇒ {Promise}
         * [.doFetchUnratedShows([obj])](#module_Shows.doFetchUnratedShows) ⇒ {Promise}
         * [.doMarkEpisodeAsDownloaded([obj])](#module_Shows.doMarkEpisodeAsDownloaded) ⇒ {Promise}
@@ -45,6 +47,7 @@
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
         * [.doRemoveShowArchive([obj])](#module_Shows.doRemoveShowArchive) ⇒ {Promise}
         * [.doRemoveShowFavorite([obj])](#module_Shows.doRemoveShowFavorite) ⇒ {Promise}
+        * [.doRemoveShowTag([obj])](#module_Shows.doRemoveShowTag) ⇒ {Promise}
         * [.doUnmarkEpisodeAsDownloaded([obj])](#module_Shows.doUnmarkEpisodeAsDownloaded) ⇒ {Promise}
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
@@ -66,6 +69,7 @@
         * [.seasons(state, action)](#module_Shows.seasons) ⇒ {Object}
         * [.shows(state, action)](#module_Shows.shows) ⇒ {Object}
         * [.similars(state, action)](#module_Shows.similars) ⇒ {Object}
+        * [.tags(state, action)](#module_Shows.tags) ⇒ {Object}
         * [.unratedEpisodes(state, action)](#module_Shows.unratedEpisodes) ⇒ {Object}
         * [.unratedShows(state, action)](#module_Shows.unratedShows) ⇒ {Object}
         * [.videos(state, action)](#module_Shows.videos) ⇒ {Object}
@@ -89,7 +93,9 @@
         * [.getShowInterestGenres](#module_Shows.getShowInterestGenres) ⇒ {Object}
         * [.getShowInterests](#module_Shows.getShowInterests) ⇒ {Object}
         * [.getShowSeasons](#module_Shows.getShowSeasons) ⇒ {Array}
+        * [.getShowTags](#module_Shows.getShowTags) ⇒ {Array}
         * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Array}
+        * [.getTagsList](#module_Shows.getTagsList) ⇒ {Array}
         * [.getUnratedEpisodes](#module_Shows.getUnratedEpisodes) ⇒ {Object}
         * [.getUnratedShows](#module_Shows.getUnratedShows) ⇒ {Object}
         * [.getVideos](#module_Shows.getVideos) ⇒ {Array}
@@ -194,6 +200,33 @@ Add reach analytic for a show
 BetaSeries.getAction('shows', 'doAddShowReach')({
   id: 438,
   url: 'slug-url',
+});
+```
+
+<a name="module_Shows.doAddShowTag"></a>
+
+### .doAddShowTag([obj])
+
+Add tag to a show
+
+**Dispatch**: `POST_SHOW_TAG`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+| [obj.tag] | {String} | Tag ou tags à ajouter séparés par une virgule |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doAddShowTag')({
+  showId: 438,
+  tag: 'animation',
 });
 ```
 
@@ -465,9 +498,13 @@ Retrieve member shows
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Array} | Member ID (optional: connected user if not added) |
-| [obj.order] | {Number} | Order of sort: alphabetical (default), progression, remaining_time, remaining_episodes |
+| [obj.order] | {String} | Order of sort: last_seen (default), last_added, alphabetical, progression, remaining_time, remaining_episodes |
+| [obj.status] | {String} | Status: current, active, not_started, completed, stopped, archived |
+| [obj.tags] | {String} | 1 ou plusieurs tags séparés par une virgule |
+| [obj.excluded_tags] | {String} | 1 ou plusieurs tags exclus, séparés par une virgule |
 | [obj.offset] | {Number} | Start number of show list (default `0`) |
 | [obj.limit] | {Number} | Limit number of shows |
+| [obj.summary] | {Number} | Summary: 1 or 0 |
 
 **Example**  
 
@@ -767,6 +804,28 @@ Retrieve similar shows
 
 ```js
 BetaSeries.getAction('shows', 'doFetchSimilarShows')({ showId: 1275 });
+```
+
+<a name="module_Shows.doFetchTagsList"></a>
+
+### .doFetchTagsList([obj])
+
+Retrieve tags for the shows
+
+**Dispatch**: `FETCH_TAGS_LIST`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doFetchTagsList')();
 ```
 
 <a name="module_Shows.doFetchUnratedEpisodes"></a>
@@ -1101,6 +1160,33 @@ Remove show from favorite
 ```js
 BetaSeries.getAction('shows', 'doRemoveShowFavorite')({
   showId: 438
+});
+```
+
+<a name="module_Shows.doRemoveShowTag"></a>
+
+### .doRemoveShowTag([obj])
+
+Remove tag for a show
+
+**Dispatch**: `DELETE_SHOW_TAG`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+| [obj.tag] | {String} | Tag ou tags à supprimer séparés par une virgule |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doRemoveShowTag')({
+  showId: 438,
+  tag: 'animation'
 });
 ```
 
@@ -1778,6 +1864,44 @@ BetaSeries.getReducer('shows', 'similars').showsSimilars;
 }
 ```
 
+<a name="module_Shows.tags"></a>
+
+### .tags(state, action)
+
+List of the show tags
+
+**Actions listened**:
+
+ * `FETCH_TAGS_LIST`
+ * `POST_SHOW_TAG`
+ * `DELETE_SHOW_TAG`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'tags').showsTags;
+
+// state example
+{
+  '1275': [              // show ID
+    {
+      ...tag           // tag element
+    },
+    ...
+  ]
+}
+```
+
 <a name="module_Shows.unratedEpisodes"></a>
 
 ### .unratedEpisodes(state, action)
@@ -2354,6 +2478,30 @@ const mapStateToProps = (state, props) => ({
 });
 ```
 
+<a name="module_Shows.getShowTags"></a>
+
+### .getShowTags
+
+Select tags from state
+
+**Returns**: {Array} - List of tags element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Object} | Show ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('shows', 'getShowTags')(state, { showId: props.showId });
+});
+```
+
 <a name="module_Shows.getSimilarShows"></a>
 
 ### .getSimilarShows
@@ -2375,6 +2523,28 @@ Select similar shows from state
 ```js
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('shows', 'getSimilarShows')(state, { showId: props.showId });
+});
+```
+
+<a name="module_Shows.getTagsList"></a>
+
+### .getTagsList
+
+Select tags list from state
+
+**Returns**: {Array} - Array of tags or `[]`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  discover: BetaSeries.getSelector('shows', 'getTagsList')(state);
 });
 ```
 
