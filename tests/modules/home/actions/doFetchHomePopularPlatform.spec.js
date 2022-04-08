@@ -1,4 +1,5 @@
-import homePopularReducer from '../../../../lib/modules/home/reducers/popularPlatform';
+import homePopularReducer
+  from '../../../../lib/modules/home/reducers/popularPlatform';
 
 const actionFile = '../lib/modules/home/actions/doFetchHomePopularPlatform';
 const homeFixture = require('../../../fixtures/home.json');
@@ -30,10 +31,7 @@ describe('Retrieve Home popular platform shows', () => {
     it('validate action', () => {
       expect(action.type).to.equal('FETCH_HOME_POPULAR_PLATFORM');
       expect(action.payload.platformId).to.deep.equal(119);
-      expect(action.payload.shows).to.deep.equal([
-        { id: 1 },
-        { id: 64 }
-      ]);
+      expect(action.payload.shows).to.deep.equal([{ id: 1 }, { id: 64 }]);
     });
 
     it('validate popular platform reducer', () => {
