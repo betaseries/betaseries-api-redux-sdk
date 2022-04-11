@@ -17,16 +17,10 @@ describe('Remove a tag', () => {
     let action;
 
     const store = mockStore({
-      tags: {
-        '123': tagsFixture
-      }
+      showsTags: tagsFixture
     });
 
-    const actionToDispatch = getInstance(
-      Promise.resolve({
-        show: tagsFixture[0]
-      })
-    );
+    const actionToDispatch = getInstance(Promise.resolve(tagsFixture));
 
     before(async () => {
       await store.dispatch(actionToDispatch({ showId: 123, tag: 'animation' }));
@@ -42,7 +36,7 @@ describe('Remove a tag', () => {
 
     it('validate tags reducer', () => {
       const stateTagsReducer = tagsReducer(store.getState().tags, action);
-      expect(Object.keys(stateTagsReducer)).to.have.lengthOf(1);
+      expect(Object.keys(stateTagsReducer)).to.have.lengthOf(0);
     });
   });
 });

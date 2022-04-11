@@ -93,7 +93,6 @@
         * [.getShowInterestGenres](#module_Shows.getShowInterestGenres) ⇒ {Object}
         * [.getShowInterests](#module_Shows.getShowInterests) ⇒ {Object}
         * [.getShowSeasons](#module_Shows.getShowSeasons) ⇒ {Array}
-        * [.getShowTags](#module_Shows.getShowTags) ⇒ {Array}
         * [.getSimilarShows](#module_Shows.getSimilarShows) ⇒ {Array}
         * [.getTagsList](#module_Shows.getTagsList) ⇒ {Array}
         * [.getUnratedEpisodes](#module_Shows.getUnratedEpisodes) ⇒ {Object}
@@ -1892,14 +1891,12 @@ List of the show tags
 BetaSeries.getReducer('shows', 'tags').showsTags;
 
 // state example
-{
-  '1275': [              // show ID
-    {
-      ...tag           // tag element
-    },
-    ...
-  ]
-}
+[              // list of tags
+  {
+    ...tag           // tag element
+  },
+  ...
+]
 ```
 
 <a name="module_Shows.unratedEpisodes"></a>
@@ -2475,30 +2472,6 @@ const mapStateToProps = (state, props) => ({
   episode: BetaSeries.getSelector('shows', 'getShowSeasons')(state, {
     showId: props.showId,
   });
-});
-```
-
-<a name="module_Shows.getShowTags"></a>
-
-### .getShowTags
-
-Select tags from state
-
-**Returns**: {Array} - List of tags element or `undefined`
-
-**Category**: selectors  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| [state] | {Object} | Redux state |
-| [obj] | {Object} | Accept the following: |
-| [obj.showId] | {Object} | Show ID |
-
-**Example**  
-
-```js
-const mapStateToProps = (state, props) => ({
-  show: BetaSeries.getSelector('shows', 'getShowTags')(state, { showId: props.showId });
 });
 ```
 
