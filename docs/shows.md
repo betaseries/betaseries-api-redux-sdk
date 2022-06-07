@@ -1219,7 +1219,7 @@ BetaSeries.getAction('shows', 'doUnmarkEpisodeAsDownloaded')({
 
 ### .doUnmarkEpisodeAsHidden([obj])
 
-Mark episode as hidden
+Unmark episode as hidden
 
 **Dispatch**: `UNMARK_EPISODE_AS_HIDDEN`
 
