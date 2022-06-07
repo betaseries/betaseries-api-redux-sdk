@@ -49,6 +49,7 @@
         * [.doRemoveShowFavorite([obj])](#module_Shows.doRemoveShowFavorite) ⇒ {Promise}
         * [.doRemoveShowTag([obj])](#module_Shows.doRemoveShowTag) ⇒ {Promise}
         * [.doUnmarkEpisodeAsDownloaded([obj])](#module_Shows.doUnmarkEpisodeAsDownloaded) ⇒ {Promise}
+        * [.doUnmarkEpisodeAsHidden([obj])](#module_Shows.doUnmarkEpisodeAsHidden) ⇒ {Promise}
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkSeasonAsHidden([obj])](#module_Shows.doUnmarkSeasonAsHidden) ⇒ {Promise}
@@ -1212,6 +1213,29 @@ Downloaded episode
 BetaSeries.getAction('shows', 'doUnmarkEpisodeAsDownloaded')({
   episodeId: 438,
 });
+```
+
+<a name="module_Shows.doUnmarkEpisodeAsHidden"></a>
+
+### .doUnmarkEpisodeAsHidden([obj])
+
+Mark episode as hidden
+
+**Dispatch**: `UNMARK_EPISODE_AS_HIDDEN`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.episodeId] | {Number} | Episode ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUnmarkEpisodeAsHidden')({ episodeId: 123 });
 ```
 
 <a name="module_Shows.doUnmarkEpisodeAsWatched"></a>
