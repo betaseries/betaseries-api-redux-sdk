@@ -4,6 +4,7 @@
 
 * [Shows](#module_Shows)
     * _actions_
+        * [.doAddMovieTag([obj])](#module_Shows.doAddMovieTag) ⇒ {Promise}
         * [.doAddShow([obj])](#module_Shows.doAddShow) ⇒ {Promise}
         * [.doAddShowArchive([obj])](#module_Shows.doAddShowArchive) ⇒ {Promise}
         * [.doAddShowFavorite([obj])](#module_Shows.doAddShowFavorite) ⇒ {Promise}
@@ -99,6 +100,33 @@
         * [.getUnratedEpisodes](#module_Shows.getUnratedEpisodes) ⇒ {Object}
         * [.getUnratedShows](#module_Shows.getUnratedShows) ⇒ {Object}
         * [.getVideos](#module_Shows.getVideos) ⇒ {Array}
+
+<a name="module_Shows.doAddMovieTag"></a>
+
+### .doAddMovieTag([obj])
+
+Add tag to a movie
+
+**Dispatch**: `POST_MOVIE_TAG`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.movieId] | {Number} | Movie ID |
+| [obj.tag] | {String} | Tag ou tags à ajouter séparés par une virgule |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doAddMovieTag')({
+  movieId: 438,
+  tag: 'animation',
+});
+```
 
 <a name="module_Shows.doAddShow"></a>
 

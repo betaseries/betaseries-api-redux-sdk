@@ -12,9 +12,11 @@
         * [.doFetchMovieArticles([obj])](#module_Movies.doFetchMovieArticles) ⇒ {Promise}
         * [.doFetchMovieCharacters([obj])](#module_Movies.doFetchMovieCharacters) ⇒ {Promise}
         * [.doFetchMovieGenres([obj])](#module_Movies.doFetchMovieGenres) ⇒ {Promise}
+        * [.doFetchTagsList([obj])](#module_Movies.doFetchTagsList) ⇒ {Promise}
         * [.doRateMovie([obj])](#module_Movies.doRateMovie) ⇒ {Promise}
         * [.doRemoveMovieFavorite([obj])](#module_Movies.doRemoveMovieFavorite) ⇒ {Promise}
         * [.doRemoveMovieMember([obj])](#module_Movies.doRemoveMovieMember) ⇒ {Promise}
+        * [.doRemoveMovieTag([obj])](#module_Movies.doRemoveMovieTag) ⇒ {Promise}
         * [.doUpdateMovieState([obj])](#module_Movies.doUpdateMovieState) ⇒ {Promise}
     * _reducers_
         * [.articles(state, action)](#module_Movies.articles) ⇒ {Object}
@@ -29,6 +31,7 @@
         * [.getMovie](#module_Movies.getMovie) ⇒ {Array}
         * [.getMovieArticles](#module_Movies.getMovieArticles) ⇒ {Array}
         * [.getMovieGenres](#module_Movies.getMovieGenres) ⇒ {Array}
+        * [.getTagsList](#module_Movies.getTagsList) ⇒ {Array}
 
 <a name="module_Movies.doFetchFavoriteMovies"></a>
 
@@ -224,6 +227,28 @@ Retrieve genres of movies
 BetaSeries.getAction('movies', 'doFetchMovieGenres')();
 ```
 
+<a name="module_Movies.doFetchTagsList"></a>
+
+### .doFetchTagsList([obj])
+
+Retrieve tags for the movies
+
+**Dispatch**: `FETCH_MOVIE_TAGS_LIST`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doFetchTagsList')();
+```
+
 <a name="module_Movies.doRateMovie"></a>
 
 ### .doRateMovie([obj])
@@ -297,6 +322,33 @@ Retrieve movie
 
 ```js
 BetaSeries.getAction('movies', 'doRemoveMovieMember')({ movieId: 438 });
+```
+
+<a name="module_Movies.doRemoveMovieTag"></a>
+
+### .doRemoveMovieTag([obj])
+
+Remove tag for a movie
+
+**Dispatch**: `DELETE_MOVIE_TAG`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.movieId] | {Number} | Movie ID |
+| [obj.tag] | {String} | Tag ou tags à supprimer séparés par une virgule |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doRemoveMovieTag')({
+  movieId: 438,
+  tag: 'animation'
+});
 ```
 
 <a name="module_Movies.doUpdateMovieState"></a>
@@ -669,6 +721,28 @@ Select genres from state
 ```js
 const mapStateToProps = (state, props) => ({
   movie: BetaSeries.getSelector('movies', 'getMovieGenres')(state);
+});
+```
+
+<a name="module_Movies.getTagsList"></a>
+
+### .getTagsList
+
+Select tags list from state
+
+**Returns**: {Array} - Array of tags or `[]`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  discover: BetaSeries.getSelector('movies', 'getTagsList')(state);
 });
 ```
 
