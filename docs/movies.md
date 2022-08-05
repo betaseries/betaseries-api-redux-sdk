@@ -4,6 +4,7 @@
 
 * [Movies](#module_Movies)
     * _actions_
+        * [.doAddMovieTag([obj])](#module_Movies.doAddMovieTag) ⇒ {Promise}
         * [.doFetchFavoriteMovies([obj])](#module_Movies.doFetchFavoriteMovies) ⇒ {Promise}
         * [.doFetchManyMovies([obj])](#module_Movies.doFetchManyMovies) ⇒ {Promise}
         * [.doFetchMemberMovies([obj])](#module_Movies.doFetchMemberMovies) ⇒ {Promise}
@@ -25,6 +26,7 @@
         * [.genres(state, action)](#module_Movies.genres) ⇒ {Object}
         * [.members(state, action)](#module_Movies.members) ⇒ {Object}
         * [.movies(state, action)](#module_Movies.movies) ⇒ {Object}
+        * [.tags(state, action)](#module_Movies.tags) ⇒ {Object}
     * _selectors_
         * [.getMemberMovies](#module_Movies.getMemberMovies) ⇒ {Array}
         * [.getMemberMoviesFavorite](#module_Movies.getMemberMoviesFavorite) ⇒ {Array}
@@ -32,6 +34,33 @@
         * [.getMovieArticles](#module_Movies.getMovieArticles) ⇒ {Array}
         * [.getMovieGenres](#module_Movies.getMovieGenres) ⇒ {Array}
         * [.getTagsList](#module_Movies.getTagsList) ⇒ {Array}
+
+<a name="module_Movies.doAddMovieTag"></a>
+
+### .doAddMovieTag([obj])
+
+Add tag to a movie
+
+**Dispatch**: `POST_MOVIE_TAG`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.movieId] | {Number} | Movie ID |
+| [obj.tag] | {String} | Tag ou tags à ajouter séparés par une virgule |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doAddMovieTag')({
+  movieId: 438,
+  tag: 'animation',
+});
+```
 
 <a name="module_Movies.doFetchFavoriteMovies"></a>
 
@@ -593,6 +622,42 @@ BetaSeries.getReducer('movies', 'movies').movies;
   },
   ...,
 }
+```
+
+<a name="module_Movies.tags"></a>
+
+### .tags(state, action)
+
+List of the movie tags
+
+**Actions listened**:
+
+ * `FETCH_MOVIE_TAGS_LIST`
+ * `POST_MOVIE_TAG`
+ * `DELETE_MOVIE_TAG`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('movies', 'tags').moviesTags;
+
+// state example
+[              // list of tags
+  {
+    ...tag           // tag element
+  },
+  ...
+]
 ```
 
 <a name="module_Movies.getMemberMovies"></a>
