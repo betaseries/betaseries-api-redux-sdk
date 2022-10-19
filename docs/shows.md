@@ -376,6 +376,8 @@ Retrieve episodes list
 | [obj] | {Object} | Accept the following: |
 | [obj.subtitles] | {String} | Displays episodes with some subtitles available |
 | [obj.limit] | {Number} | Limit number of episodes per shows (default `1`) |
+| [obj.showsLimit] | {Number} | Limit number of shows (default `50`) |
+| [obj.page] | {Number} | Pagination per show (default `1`) |
 | [obj.showId] | {Number} | Show ID (optional) |
 | [obj.userId] | {Number} | User ID (optional) |
 | [obj.released] | {Number} | Returns only released episodes (default `1`)   (`0` = both, `1` = released episodes, `2` = not released episodes |
