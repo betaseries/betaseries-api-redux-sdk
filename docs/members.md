@@ -9,11 +9,13 @@
         * [.doFetchMember([obj])](#module_Members.doFetchMember) ⇒ {Promise}
         * [.doFetchMemberEmail()](#module_Members.doFetchMemberEmail) ⇒ {Promise}
         * [.doFetchMemberNotifications([obj])](#module_Members.doFetchMemberNotifications) ⇒ {Promise}
+        * [.doFetchMemberSocioDemo([obj])](#module_Members.doFetchMemberSocioDemo) ⇒ {Promise}
         * [.doFetchMemberStats([obj])](#module_Members.doFetchMemberStats) ⇒ {Promise}
         * [.doFetchMemberYearStats([obj])](#module_Members.doFetchMemberYearStats) ⇒ {Promise}
         * [.doFetchUser([obj])](#module_Members.doFetchUser) ⇒ {Promise}
         * [.doMarkAllNotificationsAsRead([obj])](#module_Members.doMarkAllNotificationsAsRead) ⇒ {Promise}
         * [.doMarkNotificationAsRead([obj])](#module_Members.doMarkNotificationAsRead) ⇒ {Promise}
+        * [.doPostMemberSocioDemo([obj])](#module_Members.doPostMemberSocioDemo) ⇒ {Promise}
         * [.doUpdateMemberEmail([obj])](#module_Members.doUpdateMemberEmail) ⇒ {Promise}
         * [.doUpdateMemberPassword([obj])](#module_Members.doUpdateMemberPassword) ⇒ {Promise}
     * _reducers_
@@ -21,6 +23,7 @@
         * [.notifications(state, action)](#module_Members.notifications) ⇒ {Object}
     * _selectors_
         * [.getMember](#module_Members.getMember) ⇒ {Object}
+        * [.getMemberSocioDemo](#module_Members.getMemberSocioDemo) ⇒ {Object}
         * [.getMemberStats](#module_Members.getMemberStats) ⇒ {Object}
         * [.getMemberYearStats](#module_Members.getMemberYearStats) ⇒ {Object}
         * [.getNotifications](#module_Members.getNotifications) ⇒ {Array}
@@ -134,6 +137,28 @@ Retrieve user notifications
 
 ```js
 BetaSeries.getAction('members', 'doFetchMemberNotifications')({ number: 50, … });
+```
+
+<a name="module_Members.doFetchMemberSocioDemo"></a>
+
+### .doFetchMemberSocioDemo([obj])
+
+Retrieve authenticated user socio demo infos
+
+**Dispatch**: `FETCH_MEMBER_SOCIO_DEMO`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doFetchMemberSocioDemo')();
 ```
 
 <a name="module_Members.doFetchMemberStats"></a>
@@ -251,6 +276,45 @@ Mark single user notification as read
 
 ```js
 BetaSeries.getAction('members', 'doMarkNotificationAsRead')();
+```
+
+<a name="module_Members.doPostMemberSocioDemo"></a>
+
+### .doPostMemberSocioDemo([obj])
+
+Post member socio demo info
+
+*Dispatch**: `POST_MEMBER_SOCIO_DEMO`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.genre] | {Number} | Genre (1 : homme, 2 : femme, 3 : non-binaire, 4 : transgenre, 5 : intersexe, 0 : confidentiel) |
+| [obj.csp] | {Number} | CSP (7 : étudiant, 5 : employé, 3 : cadre, 4 : profession intermédiaire, 9 : inactif, 2 : artisan commerçant, 10 : retraité, 6 : ouvrier, 1 : agriculteur) |
+| [obj.birthday] | {String} | Date de naissance (format Y-m-d) |
+| [obj.firstname] | {String} | Prénom |
+| [obj.lastname] | {String} | Nom de famille |
+| [obj.address1] | {String} | Adresse ligne 1 |
+| [obj.address2] | {String} | Adresse ligne 2 |
+| [obj.zipcode] | {String} | Code postal |
+| [obj.city] | {String} | Ville |
+| [obj.country] | {String} | Pays |
+| [obj.hh_size] | {Number} | Nombre de personnes dans le foyer |
+| [obj.hh_children] | {Number} | Nombre d’enfants personnes dans le foyer |
+| [obj.hh_ages] | {String} | Age des enfants dans le foyer (peut être 0-5, 6-12, 13-15, 16-18 et si plusieurs alors séparés par une virgule) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('members', 'doPostMemberSocioDemo')({
+  genre: 2,
+  csp: 3,
+  birthday: 2000-01-01,
+});
 ```
 
 <a name="module_Members.doUpdateMemberEmail"></a>
@@ -401,6 +465,32 @@ Select member from state
 ```js
 const mapStateToProps = (state, props) => ({
   show: BetaSeries.getSelector('members', 'getMember')(state, {
+    memberId: props.memberId,
+  });
+});
+```
+
+<a name="module_Members.getMemberSocioDemo"></a>
+
+### .getMemberSocioDemo
+
+Select member from state
+
+**Returns**: {Object} - Member element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Object} | Member ID |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  show: BetaSeries.getSelector('members', 'getMemberSocioDemo')(state, {
     memberId: props.memberId,
   });
 });
