@@ -43,6 +43,7 @@
         * [.doMarkSeasonAsHidden([obj])](#module_Shows.doMarkSeasonAsHidden) ⇒ {Promise}
         * [.doMarkSeasonAsWatched([obj])](#module_Shows.doMarkSeasonAsWatched) ⇒ {Promise}
         * [.doRateEpisode([obj])](#module_Shows.doRateEpisode) ⇒ {Promise}
+        * [.doRateSeason([obj])](#module_Shows.doRateSeason) ⇒ {Promise}
         * [.doRateShow([obj])](#module_Shows.doRateShow) ⇒ {Promise}
         * [.doRemoveShow([obj])](#module_Shows.doRemoveShow) ⇒ {Promise}
         * [.doRemoveShowArchive([obj])](#module_Shows.doRemoveShowArchive) ⇒ {Promise}
@@ -1059,6 +1060,35 @@ Add note on episode
 ```js
 BetaSeries.getAction('shows', 'doRateEpisode')({
   episodeId: 438,
+  note: 4,
+});
+```
+
+<a name="module_Shows.doRateSeason"></a>
+
+### .doRateSeason([obj])
+
+Add note on a season show
+
+**Dispatch**: `RATE_SEASON`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.showId] | {Number} | Show ID |
+| [obj.season] | {Number} | Season number |
+| [obj.note] | {Number} | Note (from `1` to `5`) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doRateSeason')({
+  showId: 438,
+  season: 3,
   note: 4,
 });
 ```
