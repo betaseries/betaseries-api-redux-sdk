@@ -4,6 +4,7 @@
 
 * [Home](#module_Home)
     * _actions_
+        * [.doFetchHomeBanner([obj])](#module_Home.doFetchHomeBanner) ⇒ {Promise}
         * [.doFetchHomeBlocks([obj])](#module_Home.doFetchHomeBlocks) ⇒ {Promise}
         * [.doFetchHomePopular([obj])](#module_Home.doFetchHomePopular) ⇒ {Promise}
         * [.doFetchHomePopularArticles([obj])](#module_Home.doFetchHomePopularArticles) ⇒ {Promise}
@@ -28,6 +29,29 @@
         * [.getHomeRecommendation](#module_Home.getHomeRecommendation) ⇒ {Array}
         * [.getHomeRecoReferenceShow](#module_Home.getHomeRecoReferenceShow) ⇒ {Object}
         * [.getHomeTrailers](#module_Home.getHomeTrailers) ⇒ {Array}
+
+<a name="module_Home.doFetchHomeBanner"></a>
+
+### .doFetchHomeBanner([obj])
+
+Retrieve Home banner info
+
+**Dispatch**: `FETCH_HOME_BANNER`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.bannerId] | {String} | Id of the banner to retrieve the info from |
+
+**Example**  
+
+```js
+BetaSeries.getAction('home', 'doFetchHomeBanner')({ bannerId: '1' });
+```
 
 <a name="module_Home.doFetchHomeBlocks"></a>
 
