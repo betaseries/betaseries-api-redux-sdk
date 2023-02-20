@@ -29,6 +29,7 @@
         * [.doCommentShow([obj])](#module_Comments.doCommentShow) ⇒ {Promise}
         * [.doCommentShowPost([obj])](#module_Comments.doCommentShowPost) ⇒ {Promise}
         * [.doCommentSpecificEvent([obj])](#module_Comments.doCommentSpecificEvent) ⇒ {Promise}
+        * [.doEditCommentLocale([obj])](#module_Comments.doEditCommentLocale) ⇒ {Promise}
         * [.doFetchArticleComments([obj])](#module_Comments.doFetchArticleComments) ⇒ {Promise}
         * [.doFetchComment([obj])](#module_Comments.doFetchComment) ⇒ {Promise}
         * [.doFetchEpisodeComments([obj])](#module_Comments.doFetchEpisodeComments) ⇒ {Promise}
@@ -73,7 +74,7 @@ Clear all blog posts
 **Returns**: {Promise}
 
 **Category**: actions  
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('blog', 'doClearBlogPosts')();
@@ -89,7 +90,7 @@ Add subscription to comments on a media
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -97,7 +98,7 @@ Add subscription to comments on a media
 | [obj.id] | {Number} | Media ID |
 | [obj.type] | {String} | Media type => episode|show|member|movie |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doAddCommentSubscription')({
@@ -116,7 +117,7 @@ Add vote on a comment
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -125,7 +126,7 @@ Add vote on a comment
 | [obj.type] | {Number} | 1 for a thumbs_up, -1 for a thumbs_down |
 | [obj.switch] | {Boolean} | true to update vote, default to false (optional) |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doAddVote')({
@@ -144,14 +145,14 @@ Clear comments for a specific article
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.articleId] | {Number} | Article ID |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doClearArticleComments')({ articleId: 481 });
@@ -167,14 +168,14 @@ Clear comments for a specific episode
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.episodeId] | {Number} | Episode ID |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doClearEpisodeComments')({ episodeId: 481 });
@@ -190,14 +191,14 @@ Clear comments for a specific member
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.memberId] | {Number} | MemberID |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doClearMemberComments')({ memberId: 481 });
@@ -213,14 +214,14 @@ Clear comments for a specific movie
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.movieId] | {Number} | MovieID |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doClearMovieComments')({ movieId: 481 });
@@ -236,14 +237,14 @@ Clear comments for a specific poll
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.pollId] | {Number} | PollID |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doClearPollComments')({ pollId: 481 });
@@ -259,14 +260,14 @@ Clear comments for a specific show
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Show ID |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doClearShowComments')({ showId: 481 });
@@ -282,7 +283,7 @@ Close comments for a media
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -290,7 +291,7 @@ Close comments for a media
 | [obj.id] | {Number} | Media ID |
 | [obj.type] | {String} | Media type => episode|show|member|movie |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCloseComments')({
@@ -309,7 +310,7 @@ Add comment on article
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -318,7 +319,7 @@ Add comment on article
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentArticle')({
@@ -337,7 +338,7 @@ Add comment on article
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -346,7 +347,7 @@ Add comment on article
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentArticlePost')({
@@ -365,7 +366,7 @@ Add comment on episode
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -374,7 +375,7 @@ Add comment on episode
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentEpisode')({
@@ -393,7 +394,7 @@ Add comment on episode
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -402,7 +403,7 @@ Add comment on episode
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentEpisodePost')({
@@ -421,7 +422,7 @@ Add comment on event
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -429,7 +430,7 @@ Add comment on event
 | [obj.eventId] | {Number} | Event ID |
 | [obj.text] | {String} | Text of comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentEvent')({
@@ -448,7 +449,7 @@ Add comment on event
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -456,7 +457,7 @@ Add comment on event
 | [obj.eventId] | {Number} | Event ID |
 | [obj.text] | {String} | Text of comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentEventPost
@@ -476,7 +477,7 @@ Add comment on member
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -485,7 +486,7 @@ Add comment on member
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentMember')({
@@ -504,7 +505,7 @@ Add comment on member
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -513,7 +514,7 @@ Add comment on member
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentMemberPost')({
@@ -532,7 +533,7 @@ Add comment on movie
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -541,7 +542,7 @@ Add comment on movie
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentMovie')({
@@ -560,7 +561,7 @@ Add comment on movie
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -569,7 +570,7 @@ Add comment on movie
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentMoviePost')({
@@ -588,7 +589,7 @@ Add comment on poll
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -597,7 +598,7 @@ Add comment on poll
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentPoll')({
@@ -616,7 +617,7 @@ Add comment on poll
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -625,7 +626,7 @@ Add comment on poll
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentPollPost')({
@@ -644,7 +645,7 @@ Add comment on show
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -653,7 +654,7 @@ Add comment on show
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentShow')({
@@ -672,7 +673,7 @@ Add comment on show
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -681,12 +682,39 @@ Add comment on show
 | [obj.text] | {String} | Text of comment |
 | [obj.in_reply_to] | {String} | If this is a response, `inner_id` of the corresponding comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentShowPost')({
   showId: 438,
   text: 'Trop bien cette série !',
+});
+```
+
+<a name="module_Comments.doEditCommentLocale"></a>
+
+### .doEditCommentLocale([obj])
+
+Change the locale of a comment
+
+**Dispatch**: `EDIT_COMMENT_LOCALE`
+
+**Returns**: {Promise}
+
+**Category**: actions
+
+| Param            | Type | Description                        |
+|------------------| --- |------------------------------------|
+| [obj]            | {Object} | Accept the following:              |
+| [obj.id]         | {Number} | Comment ID                         |
+| [obj.locale]     | {String} | Locale                             |
+
+**Example**
+
+```js
+BetaSeries.getAction('comments', 'doEditCommentLocale')({
+  id: 438,
+  locale: 'fr',
 });
 ```
 
@@ -700,7 +728,7 @@ Add specific comment on event
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -710,7 +738,7 @@ Add specific comment on event
 | [obj.element_id] | {Number} | Element ID in the event (optional) |
 | [obj.text] | {String} | Text of comment |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doCommentSpecificEvent')({
@@ -729,7 +757,7 @@ Retrieve comment of the article
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -740,7 +768,7 @@ Retrieve comment of the article
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 | [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doFetchArticleComments')({ articleId: 42315431 });
@@ -756,14 +784,14 @@ Retrieve comment
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.commentId] | {Number} | Comment ID |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doFetchComment')({ commentId: 438 });
@@ -779,7 +807,7 @@ Retrieve comment of the episode
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -790,7 +818,7 @@ Retrieve comment of the episode
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 | [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doFetchEpisodeComments')({ episodeId: 438 });
@@ -806,7 +834,7 @@ Retrieve comment of the episode
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -817,7 +845,7 @@ Retrieve comment of the episode
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 | [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doFetchEventComments')({ eventId: 42315431 });
@@ -833,7 +861,7 @@ Retrieve comments of the member
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -844,7 +872,7 @@ Retrieve comments of the member
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 | [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doFetchMemberComments')({ memberId: 481 });
@@ -860,7 +888,7 @@ Retrieve comments of the movie
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -871,7 +899,7 @@ Retrieve comments of the movie
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 | [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doFetchMovieComments')({ movieId: 481 });
@@ -887,7 +915,7 @@ Retrieve comment of the poll
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -898,7 +926,7 @@ Retrieve comment of the poll
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 | [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doFetchPollComments')({ pollId: 42315431 });
@@ -914,7 +942,7 @@ Retrieve replies from a comment
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -922,7 +950,7 @@ Retrieve replies from a comment
 | [obj.commentId] | {Number} | Comment ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doFetchReplies')({ commentId: 438 });
@@ -938,7 +966,7 @@ Retrieve comments of the show
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -949,7 +977,7 @@ Retrieve comments of the show
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 | [obj.replies] | {Number} | Include comments reply (`1` or `0`, default `1`) |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doFetchShowComments')({ showId: 481 });
@@ -965,7 +993,7 @@ Open comments for a media
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -973,7 +1001,7 @@ Open comments for a media
 | [obj.id] | {Number} | Media ID |
 | [obj.type] | {String} | Media type => episode|show|member|movie |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doOpenComments')({
@@ -992,14 +1020,14 @@ Remove comment
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.commentId] | {Number} | Comment ID |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doRemoveComment')({ commentId: 438 });
@@ -1015,7 +1043,7 @@ Remove subscription to comments on a media
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1023,7 +1051,7 @@ Remove subscription to comments on a media
 | [obj.id] | {Number} | Media ID |
 | [obj.type] | {String} | Media type => episode|show|member|movie |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doRemoveCommentSubscription')({
@@ -1042,14 +1070,14 @@ Remove vote on a comment
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.commentId] | {Number} | Comment ID |
 
-**Example**  
+**Example**
 
 ```js
 BetaSeries.getAction('comments', 'doRemoveVote')({ commentId: 438 });
@@ -1063,20 +1091,20 @@ List the comments of the article
 
 **Actions listened**:
 
- * `FETCH_ARTICLE_COMMENTS`
- * `CLEAR_ARTICLE_COMMENTS`
- * `COMMENT_ARTICLE`
+* `FETCH_ARTICLE_COMMENTS`
+* `CLEAR_ARTICLE_COMMENTS`
+* `COMMENT_ARTICLE`
 
 **Returns**: {Object}
 
-**Category**: reducers  
+**Category**: reducers
 
 | Param | Type |
 | --- | --- |
 | state | {Object} | 
 | action | {Object} | 
 
-**Example**  
+**Example**
 
 ```js
 // get reducer
@@ -1099,37 +1127,37 @@ List of comments
 
 **Actions listened**:
 
- * `FETCH_EPISODE_COMMENTS`
- * `FETCH_SHOW_COMMENTS`
- * `FETCH_EVENT_COMMENTS`
- * `FETCH_POLL_COMMENTS`
- * `FETCH_ARTICLE_COMMENTS`
- * `FETCH_MEMBER_COMMENTS`
- * `FETCH_MOVIE_COMMENTS`
- * `FETCH_COMMENT`
- * `REMOVE_COMMENT`
- * `FETCH_FRIENDS_TIMELINE`
- * `FETCH_FEED_TIMELINE`
- * `FETCH_TIMELINE_EVENT`
- * `FETCH_REPLIES`
- * `COMMENT_EVENT`
- * `COMMENT_POLL`
- * `COMMENT_ARTICLE`
- * `COMMENT_EPISODE`
- * `COMMENT_SHOW`
- * `COMMENT_MEMBER`
- * `COMMENT_MOVIE`
+* `FETCH_EPISODE_COMMENTS`
+* `FETCH_SHOW_COMMENTS`
+* `FETCH_EVENT_COMMENTS`
+* `FETCH_POLL_COMMENTS`
+* `FETCH_ARTICLE_COMMENTS`
+* `FETCH_MEMBER_COMMENTS`
+* `FETCH_MOVIE_COMMENTS`
+* `FETCH_COMMENT`
+* `REMOVE_COMMENT`
+* `FETCH_FRIENDS_TIMELINE`
+* `FETCH_FEED_TIMELINE`
+* `FETCH_TIMELINE_EVENT`
+* `FETCH_REPLIES`
+* `COMMENT_EVENT`
+* `COMMENT_POLL`
+* `COMMENT_ARTICLE`
+* `COMMENT_EPISODE`
+* `COMMENT_SHOW`
+* `COMMENT_MEMBER`
+* `COMMENT_MOVIE`
 
 **Returns**: {Object}
 
-**Category**: reducers  
+**Category**: reducers
 
 | Param | Type |
 | --- | --- |
 | state | {Object} | 
 | action | {Object} | 
 
-**Example**  
+**Example**
 
 ```js
 // get reducer
@@ -1153,19 +1181,19 @@ List the comments of the episode
 
 **Actions listened**:
 
- * `FETCH_EPISODE_COMMENTS`
- * `COMMENT_EPISODE`
+* `FETCH_EPISODE_COMMENTS`
+* `COMMENT_EPISODE`
 
 **Returns**: {Object}
 
-**Category**: reducers  
+**Category**: reducers
 
 | Param | Type |
 | --- | --- |
 | state | {Object} | 
 | action | {Object} | 
 
-**Example**  
+**Example**
 
 ```js
 // get reducer
@@ -1188,22 +1216,22 @@ List the comments of the event
 
 **Actions listened**:
 
- * `FETCH_EVENT_COMMENTS`
- * `COMMENT_EVENT`
- * `FETCH_FRIENDS_TIMELINE`
- * `FETCH_FEED_TIMELINE`
- * `FETCH_TIMELINE_EVENT`
+* `FETCH_EVENT_COMMENTS`
+* `COMMENT_EVENT`
+* `FETCH_FRIENDS_TIMELINE`
+* `FETCH_FEED_TIMELINE`
+* `FETCH_TIMELINE_EVENT`
 
 **Returns**: {Object}
 
-**Category**: reducers  
+**Category**: reducers
 
 | Param | Type |
 | --- | --- |
 | state | {Object} | 
 | action | {Object} | 
 
-**Example**  
+**Example**
 
 ```js
 // get reducer
@@ -1226,18 +1254,18 @@ List the comments of the member
 
 **Actions listened**:
 
- * `FETCH_MEMBER_COMMENTS`
+* `FETCH_MEMBER_COMMENTS`
 
 **Returns**: {Object}
 
-**Category**: reducers  
+**Category**: reducers
 
 | Param | Type |
 | --- | --- |
 | state | {Object} | 
 | action | {Object} | 
 
-**Example**  
+**Example**
 
 ```js
 // get reducer
@@ -1260,18 +1288,18 @@ List the comments of the movie
 
 **Actions listened**:
 
- * `FETCH_MOVIE_COMMENTS`
+* `FETCH_MOVIE_COMMENTS`
 
 **Returns**: {Object}
 
-**Category**: reducers  
+**Category**: reducers
 
 | Param | Type |
 | --- | --- |
 | state | {Object} | 
 | action | {Object} | 
 
-**Example**  
+**Example**
 
 ```js
 // get reducer
@@ -1294,20 +1322,20 @@ List the comments of the poll
 
 **Actions listened**:
 
- * `FETCH_POLL_COMMENTS`
- * `CLEAR_POLL_COMMENTS`
- * `COMMENT_POLL`
+* `FETCH_POLL_COMMENTS`
+* `CLEAR_POLL_COMMENTS`
+* `COMMENT_POLL`
 
 **Returns**: {Object}
 
-**Category**: reducers  
+**Category**: reducers
 
 | Param | Type |
 | --- | --- |
 | state | {Object} | 
 | action | {Object} | 
 
-**Example**  
+**Example**
 
 ```js
 // get reducer
@@ -1330,18 +1358,18 @@ List the comments of the show
 
 **Actions listened**:
 
- * `FETCH_SHOW_COMMENTS`
+* `FETCH_SHOW_COMMENTS`
 
 **Returns**: {Object}
 
-**Category**: reducers  
+**Category**: reducers
 
 | Param | Type |
 | --- | --- |
 | state | {Object} | 
 | action | {Object} | 
 
-**Example**  
+**Example**
 
 ```js
 // get reducer
@@ -1364,7 +1392,7 @@ Select article comments from state
 
 **Returns**: {Array} - List of comments or `undefined`
 
-**Category**: selectors  
+**Category**: selectors
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1372,7 +1400,7 @@ Select article comments from state
 | [obj] | {Object} | Accept the following: |
 | [obj.articleId] | {Object} | Article ID |
 
-**Example**  
+**Example**
 
 ```js
 const mapStateToProps = (state, props) => ({
@@ -1390,7 +1418,7 @@ Select comment from state
 
 **Returns**: {Object} - Comment element or `undefined`
 
-**Category**: selectors  
+**Category**: selectors
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1398,7 +1426,7 @@ Select comment from state
 | [obj] | {Object} | Accept the following: |
 | [obj.commentId] | {Object} | Comment ID |
 
-**Example**  
+**Example**
 
 ```js
 const mapStateToProps = (state, props) => ({
@@ -1414,7 +1442,7 @@ Select episode comments from state
 
 **Returns**: {Array} - List of comments or `undefined`
 
-**Category**: selectors  
+**Category**: selectors
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1423,7 +1451,7 @@ Select episode comments from state
 | [obj.episodeId] | {Object} | Episode ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
-**Example**  
+**Example**
 
 ```js
 const mapStateToProps = (state, props) => ({
@@ -1441,7 +1469,7 @@ Select event comments from state
 
 **Returns**: {Array} - List of comments or `undefined`
 
-**Category**: selectors  
+**Category**: selectors
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1449,7 +1477,7 @@ Select event comments from state
 | [obj] | {Object} | Accept the following: |
 | [obj.eventId] | {Object} | Event ID |
 
-**Example**  
+**Example**
 
 ```js
 const mapStateToProps = (state, props) => ({
@@ -1467,7 +1495,7 @@ Select member comments from state
 
 **Returns**: {Array} - List of comments or `undefined`
 
-**Category**: selectors  
+**Category**: selectors
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1476,7 +1504,7 @@ Select member comments from state
 | [obj.memberId] | {Object} | Member ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
-**Example**  
+**Example**
 
 ```js
 const mapStateToProps = (state, props) => ({
@@ -1494,7 +1522,7 @@ Select movie comments from state
 
 **Returns**: {Array} - List of comments or `undefined`
 
-**Category**: selectors  
+**Category**: selectors
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1503,7 +1531,7 @@ Select movie comments from state
 | [obj.movieId] | {Object} | Movie ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
-**Example**  
+**Example**
 
 ```js
 const mapStateToProps = (state, props) => ({
@@ -1521,7 +1549,7 @@ Select poll comments from state
 
 **Returns**: {Array} - List of comments or `undefined`
 
-**Category**: selectors  
+**Category**: selectors
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1529,7 +1557,7 @@ Select poll comments from state
 | [obj] | {Object} | Accept the following: |
 | [obj.pollId] | {Object} | Poll ID |
 
-**Example**  
+**Example**
 
 ```js
 const mapStateToProps = (state, props) => ({
@@ -1547,7 +1575,7 @@ Select comment replies from state
 
 **Returns**: {Array} - List of comments or `undefined`
 
-**Category**: selectors  
+**Category**: selectors
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1556,7 +1584,7 @@ Select comment replies from state
 | [obj.commentId] | {Object} | Comment ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
-**Example**  
+**Example**
 
 ```js
 const mapStateToProps = (state, props) => ({
@@ -1574,7 +1602,7 @@ Select show comments from state
 
 **Returns**: {Array} - List of comments or `undefined`
 
-**Category**: selectors  
+**Category**: selectors
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1583,7 +1611,7 @@ Select show comments from state
 | [obj.showId] | {Object} | Show ID |
 | [obj.order] | {String} | Chronological order of return, `desc` or `asc` (default `asc`) |
 
-**Example**  
+**Example**
 
 ```js
 const mapStateToProps = (state, props) => ({
