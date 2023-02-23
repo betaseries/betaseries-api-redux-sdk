@@ -73,7 +73,7 @@ Clear all blog posts
 
 **Returns**: {Promise}
 
-**Category**: actions  
+**Category**: actions
 **Example**
 
 ```js
@@ -691,33 +691,6 @@ BetaSeries.getAction('comments', 'doCommentShowPost')({
 });
 ```
 
-<a name="module_Comments.doEditCommentLocale"></a>
-
-### .doEditCommentLocale([obj])
-
-Change the locale of a comment
-
-**Dispatch**: `EDIT_COMMENT_LOCALE`
-
-**Returns**: {Promise}
-
-**Category**: actions
-
-| Param            | Type | Description                        |
-|------------------| --- |------------------------------------|
-| [obj]            | {Object} | Accept the following:              |
-| [obj.id]         | {Number} | Comment ID                         |
-| [obj.locale]     | {String} | Locale                             |
-
-**Example**
-
-```js
-BetaSeries.getAction('comments', 'doEditCommentLocale')({
-  id: 438,
-  locale: 'fr',
-});
-```
-
 <a name="module_Comments.doCommentSpecificEvent"></a>
 
 ### .doCommentSpecificEvent([obj])
@@ -744,6 +717,33 @@ Add specific comment on event
 BetaSeries.getAction('comments', 'doCommentSpecificEvent')({
   id: 438,
   text: 'Trop bien cet épisode !',
+});
+```
+
+<a name="module_Comments.doEditCommentLocale"></a>
+
+### .doEditCommentLocale([obj])
+
+Edit the locale of a comment
+
+**Dispatch**: `EDIT_COMMENT_LOCALE`
+
+**Returns**: {Promise}
+
+**Category**: actions
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.commentId] | {Number} | Comment ID |
+| [obj.locale] | {String} | Locale ['fr', 'en', 'de', 'es', 'it', 'nl', 'pl', 'se', 'pt'] |
+
+**Example**
+
+```js
+BetaSeries.getAction('comments', 'doEditCommentLocale')({
+  commentId: 438,
+  locale: 'en',
 });
 ```
 
@@ -1091,9 +1091,9 @@ List the comments of the article
 
 **Actions listened**:
 
-* `FETCH_ARTICLE_COMMENTS`
-* `CLEAR_ARTICLE_COMMENTS`
-* `COMMENT_ARTICLE`
+ * `FETCH_ARTICLE_COMMENTS`
+ * `CLEAR_ARTICLE_COMMENTS`
+ * `COMMENT_ARTICLE`
 
 **Returns**: {Object}
 
@@ -1101,8 +1101,8 @@ List the comments of the article
 
 | Param | Type |
 | --- | --- |
-| state | {Object} | 
-| action | {Object} | 
+| state | {Object} |
+| action | {Object} |
 
 **Example**
 
@@ -1127,26 +1127,27 @@ List of comments
 
 **Actions listened**:
 
-* `FETCH_EPISODE_COMMENTS`
-* `FETCH_SHOW_COMMENTS`
-* `FETCH_EVENT_COMMENTS`
-* `FETCH_POLL_COMMENTS`
-* `FETCH_ARTICLE_COMMENTS`
-* `FETCH_MEMBER_COMMENTS`
-* `FETCH_MOVIE_COMMENTS`
-* `FETCH_COMMENT`
-* `REMOVE_COMMENT`
-* `FETCH_FRIENDS_TIMELINE`
-* `FETCH_FEED_TIMELINE`
-* `FETCH_TIMELINE_EVENT`
-* `FETCH_REPLIES`
-* `COMMENT_EVENT`
-* `COMMENT_POLL`
-* `COMMENT_ARTICLE`
-* `COMMENT_EPISODE`
-* `COMMENT_SHOW`
-* `COMMENT_MEMBER`
-* `COMMENT_MOVIE`
+ * `FETCH_EPISODE_COMMENTS`
+ * `FETCH_SHOW_COMMENTS`
+ * `FETCH_EVENT_COMMENTS`
+ * `FETCH_POLL_COMMENTS`
+ * `FETCH_ARTICLE_COMMENTS`
+ * `FETCH_MEMBER_COMMENTS`
+ * `FETCH_MOVIE_COMMENTS`
+ * `FETCH_COMMENT`
+ * `REMOVE_COMMENT`
+ * `FETCH_FRIENDS_TIMELINE`
+ * `FETCH_FEED_TIMELINE`
+ * `FETCH_TIMELINE_EVENT`
+ * `FETCH_REPLIES`
+ * `COMMENT_EVENT`
+ * `COMMENT_POLL`
+ * `COMMENT_ARTICLE`
+ * `COMMENT_EPISODE`
+ * `COMMENT_SHOW`
+ * `COMMENT_MEMBER`
+ * `COMMENT_MOVIE`
+ * `EDIT_COMMENT_LOCALE`
 
 **Returns**: {Object}
 
@@ -1154,8 +1155,8 @@ List of comments
 
 | Param | Type |
 | --- | --- |
-| state | {Object} | 
-| action | {Object} | 
+| state | {Object} |
+| action | {Object} |
 
 **Example**
 
@@ -1181,8 +1182,8 @@ List the comments of the episode
 
 **Actions listened**:
 
-* `FETCH_EPISODE_COMMENTS`
-* `COMMENT_EPISODE`
+ * `FETCH_EPISODE_COMMENTS`
+ * `COMMENT_EPISODE`
 
 **Returns**: {Object}
 
@@ -1190,8 +1191,8 @@ List the comments of the episode
 
 | Param | Type |
 | --- | --- |
-| state | {Object} | 
-| action | {Object} | 
+| state | {Object} |
+| action | {Object} |
 
 **Example**
 
@@ -1216,11 +1217,11 @@ List the comments of the event
 
 **Actions listened**:
 
-* `FETCH_EVENT_COMMENTS`
-* `COMMENT_EVENT`
-* `FETCH_FRIENDS_TIMELINE`
-* `FETCH_FEED_TIMELINE`
-* `FETCH_TIMELINE_EVENT`
+ * `FETCH_EVENT_COMMENTS`
+ * `COMMENT_EVENT`
+ * `FETCH_FRIENDS_TIMELINE`
+ * `FETCH_FEED_TIMELINE`
+ * `FETCH_TIMELINE_EVENT`
 
 **Returns**: {Object}
 
@@ -1228,8 +1229,8 @@ List the comments of the event
 
 | Param | Type |
 | --- | --- |
-| state | {Object} | 
-| action | {Object} | 
+| state | {Object} |
+| action | {Object} |
 
 **Example**
 
@@ -1254,7 +1255,7 @@ List the comments of the member
 
 **Actions listened**:
 
-* `FETCH_MEMBER_COMMENTS`
+ * `FETCH_MEMBER_COMMENTS`
 
 **Returns**: {Object}
 
@@ -1262,8 +1263,8 @@ List the comments of the member
 
 | Param | Type |
 | --- | --- |
-| state | {Object} | 
-| action | {Object} | 
+| state | {Object} |
+| action | {Object} |
 
 **Example**
 
@@ -1288,7 +1289,7 @@ List the comments of the movie
 
 **Actions listened**:
 
-* `FETCH_MOVIE_COMMENTS`
+ * `FETCH_MOVIE_COMMENTS`
 
 **Returns**: {Object}
 
@@ -1296,8 +1297,8 @@ List the comments of the movie
 
 | Param | Type |
 | --- | --- |
-| state | {Object} | 
-| action | {Object} | 
+| state | {Object} |
+| action | {Object} |
 
 **Example**
 
@@ -1322,9 +1323,9 @@ List the comments of the poll
 
 **Actions listened**:
 
-* `FETCH_POLL_COMMENTS`
-* `CLEAR_POLL_COMMENTS`
-* `COMMENT_POLL`
+ * `FETCH_POLL_COMMENTS`
+ * `CLEAR_POLL_COMMENTS`
+ * `COMMENT_POLL`
 
 **Returns**: {Object}
 
@@ -1332,8 +1333,8 @@ List the comments of the poll
 
 | Param | Type |
 | --- | --- |
-| state | {Object} | 
-| action | {Object} | 
+| state | {Object} |
+| action | {Object} |
 
 **Example**
 
@@ -1358,7 +1359,7 @@ List the comments of the show
 
 **Actions listened**:
 
-* `FETCH_SHOW_COMMENTS`
+ * `FETCH_SHOW_COMMENTS`
 
 **Returns**: {Object}
 
@@ -1366,8 +1367,8 @@ List the comments of the show
 
 | Param | Type |
 | --- | --- |
-| state | {Object} | 
-| action | {Object} | 
+| state | {Object} |
+| action | {Object} |
 
 **Example**
 
