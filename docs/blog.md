@@ -902,6 +902,7 @@ Select platforms services from state
 | Param | Type | Description |
 | --- | --- | --- |
 | [state] | {Object} | Redux state |
+| [obj.userId] | {Object} | User ID |
 
 **Example**  
 
