@@ -11,6 +11,7 @@
         * [.doRemoveCollection([obj])](#module_Collections.doRemoveCollection) ⇒ {Promise}
     * _reducers_
         * [.collections(state, action)](#module_Collections.collections) ⇒ {Object}
+        * [.members(state, action)](#module_Collections.members) ⇒ {Object}
     * _selectors_
         * [.getCollection](#module_Collections.getCollection) ⇒ {Object}
         * [.getCollectionList](#module_Collections.getCollectionList) ⇒ {Array}
@@ -158,7 +159,7 @@ List of collections
 
 **Actions listened**:
 
- * `FETCH_COLLECTIONS_LIST`
+ * `FETCH_COLLECTION`
 
 **Returns**: {Object}
 
@@ -176,13 +177,48 @@ List of collections
 BetaSeries.getReducer('collections', 'collections').collectionsCollections;
 
 // state example
-[
-  {
-    id: 384144,    // collection
+{
+  '12': {           // collection ID
+    id: 12,    // collection
     ...collection,
   },
-  ...,
-]
+ ...,
+}
+```
+
+<a name="module_Collections.members"></a>
+
+### .members(state, action)
+
+List of collections of members
+
+**Actions listened**:
+
+ * `FETCH_COLLECTIONS_LIST`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('collections', 'members').collectionsMembers;
+
+// state example
+{
+  '12': [{           // member ID
+    id: 384144,    // collection
+    ...collection,
+  }, ...,
+ ],
+}
 ```
 
 <a name="module_Collections.getCollection"></a>
@@ -205,7 +241,7 @@ Select collection from state
 
 ```js
 const mapStateToProps = (state, props) => ({
-  show: BetaSeries.getSelector('collections', 'getCollection')(state, { id: props.collectionId });
+  collection: BetaSeries.getSelector('collections', 'getCollection')(state, { id: props.id });
 });
 ```
 
@@ -227,7 +263,8 @@ Select collection list from state
 
 ```js
 const mapStateToProps = (state, props) => ({
-  discover: BetaSeries.getSelector('collections', 'getCollectionList')(state);
+  collections:
+ BetaSeries.getSelector('collections', 'getCollectionList')(state, { memberId: 1 });
 });
 ```
 

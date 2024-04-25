@@ -18,15 +18,17 @@ describe('delete collection', () => {
 
     const actionToDispatch = getInstance(
       Promise.resolve({
-        collections: [
-          {
-            id: 189
-          }
-        ]
+        collectionsMembers: {
+          1: [
+            {
+              id: 189
+            }
+          ]
+        }
       })
     );
 
-    const store = mockStore({ collections: [] });
+    const store = mockStore({ collectionsMembers: { 1: [] } });
 
     before(async () => {
       action = await store.dispatch(actionToDispatch({ id: 189 }));
@@ -39,10 +41,10 @@ describe('delete collection', () => {
 
     it('validate collections reducer', () => {
       const stateCollectionsReducer = collectionsReducer(
-        store.getState().collections,
+        store.getState().collectionsMembers,
         action
       );
-      expect(stateCollectionsReducer).to.deep.equal([]);
+      expect(stateCollectionsReducer[1]).to.deep.equal([]);
     });
   });
 });
