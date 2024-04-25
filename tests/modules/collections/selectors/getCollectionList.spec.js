@@ -1,4 +1,5 @@
-import selector from '../../../../lib/modules/collections/selectors/getCollectionList';
+import selector
+  from '../../../../lib/modules/collections/selectors/getCollectionList';
 
 describe('Select collections from state ', () => {
   const state = {
