@@ -87,7 +87,7 @@ Retrieve collection list
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
-| [obj.memberId] | {Number} | Member ID (optional: connected user if not added) |
+| [obj.user_id] | {Number} | Member ID (optional: connected user if not added) |
 
 **Example**  
 
