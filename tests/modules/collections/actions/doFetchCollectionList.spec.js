@@ -39,7 +39,7 @@ describe('Retrieve collection list', () => {
     });
 
     before(async () => {
-      action = await store.dispatch(actionToDispatch({ memberId: 1 }));
+      action = await store.dispatch(actionToDispatch({ user_id: 1 }));
     });
 
     it('validate action', () => {
