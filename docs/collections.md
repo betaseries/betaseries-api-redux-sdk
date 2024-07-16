@@ -87,12 +87,12 @@ Retrieve collection list
 | Param | Type | Description |
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
-| [obj.user_id] | {Number} | Member ID (optional: connected user if not added) |
+| [obj.user_id] | {Number} | User ID (optional: connected user if not added) |
 
 **Example**  
 
 ```js
-BetaSeries.getAction('collections', 'doFetchCollectionList')({ memberId: 45 });
+BetaSeries.getAction('collections', 'doFetchCollectionList')({ user_id: 45 });
 ```
 
 <a name="module_Collections.doPostCollection"></a>
