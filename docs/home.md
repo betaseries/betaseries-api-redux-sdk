@@ -6,6 +6,7 @@
     * _actions_
         * [.doFetchHomeBanner([obj])](#module_Home.doFetchHomeBanner) ⇒ {Promise}
         * [.doFetchHomeBlocks([obj])](#module_Home.doFetchHomeBlocks) ⇒ {Promise}
+        * [.doFetchHomeCollections([obj])](#module_Home.doFetchHomeCollections) ⇒ {Promise}
         * [.doFetchHomePopular([obj])](#module_Home.doFetchHomePopular) ⇒ {Promise}
         * [.doFetchHomePopularArticles([obj])](#module_Home.doFetchHomePopularArticles) ⇒ {Promise}
         * [.doFetchHomePopularPlatform([obj])](#module_Home.doFetchHomePopularPlatform) ⇒ {Promise}
@@ -15,6 +16,7 @@
     * _reducers_
         * [.articles(state, action)](#module_Home.articles) ⇒ {Object}
         * [.blocks(state, action)](#module_Home.blocks) ⇒ {Object}
+        * [.collections(state, action)](#module_Home.collections) ⇒ {Object}
         * [.popular(state, action)](#module_Home.popular) ⇒ {Object}
         * [.popularPlatform(state, action)](#module_Home.popularPlatform) ⇒ {Object}
         * [.reco(state, action)](#module_Home.reco) ⇒ {Object}
@@ -22,6 +24,7 @@
         * [.trailers(state, action)](#module_Home.trailers) ⇒ {Object}
     * _selectors_
         * [.getHomeBlocks](#module_Home.getHomeBlocks) ⇒ {Array}
+        * [.getHomeCollections](#module_Home.getHomeCollections) ⇒ {Array}
         * [.getHomeLastTop](#module_Home.getHomeLastTop) ⇒ {Array}
         * [.getHomePopular](#module_Home.getHomePopular) ⇒ {Array}
         * [.getHomePopularArticles](#module_Home.getHomePopularArticles) ⇒ {Array}
@@ -74,6 +77,29 @@ Retrieve Home blocks
 
 ```js
 BetaSeries.getAction('home', 'doFetchHomeBlocks')({ app: 1 });
+```
+
+<a name="module_Home.doFetchHomeCollections"></a>
+
+### .doFetchHomeCollections([obj])
+
+Retrieve collections list for home page
+
+**Dispatch**: `FETCH_HOME_COLLECTIONS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.ids] | {String} | List of collection IDs, separated with commas |
+
+**Example**  
+
+```js
+BetaSeries.getAction('home', 'doFetchHomeCollections')({ ids: 1,2,3 });
 ```
 
 <a name="module_Home.doFetchHomePopular"></a>
@@ -285,6 +311,41 @@ BetaSeries.getReducer('home', 'blocks').homeBlocks;
 ]
 ```
 
+<a name="module_Home.collections"></a>
+
+### .collections(state, action)
+
+List of collections for home page
+
+**Actions listened**:
+
+ * `FETCH_HOME_COLLECTIONS`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('home', 'collections').homeCollections;
+
+// state example
+[
+  {
+    id: 384144,    // collection id
+    ...collection,
+  },
+  ...,
+]
+```
+
 <a name="module_Home.popular"></a>
 
 ### .popular(state, action)
@@ -485,6 +546,28 @@ Select home blocks from state
 ```js
 const mapStateToProps = (state, props) => ({
   home: BetaSeries.getSelector('home', 'getHomeBlocks')(state);
+});
+```
+
+<a name="module_Home.getHomeCollections"></a>
+
+### .getHomeCollections
+
+Select home collections from state
+
+**Returns**: {Array} - Collections elements or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  home: BetaSeries.getSelector('home', 'getHomeCollections')(state);
 });
 ```
 
