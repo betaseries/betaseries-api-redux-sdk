@@ -38,6 +38,7 @@
         * [.doFetchUnratedShows([obj])](#module_Shows.doFetchUnratedShows) ⇒ {Promise}
         * [.doMarkEpisodeAsDownloaded([obj])](#module_Shows.doMarkEpisodeAsDownloaded) ⇒ {Promise}
         * [.doMarkEpisodeAsHidden([obj])](#module_Shows.doMarkEpisodeAsHidden) ⇒ {Promise}
+        * [.doMarkEpisodeAsRewatched([obj])](#module_Shows.doMarkEpisodeAsRewatched) ⇒ {Promise}
         * [.doMarkEpisodeAsWatched([obj])](#module_Shows.doMarkEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkManyEpisodeAsWatched([obj])](#module_Shows.doMarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doMarkSeasonAsHidden([obj])](#module_Shows.doMarkSeasonAsHidden) ⇒ {Promise}
@@ -51,6 +52,7 @@
         * [.doRemoveShowTag([obj])](#module_Shows.doRemoveShowTag) ⇒ {Promise}
         * [.doUnmarkEpisodeAsDownloaded([obj])](#module_Shows.doUnmarkEpisodeAsDownloaded) ⇒ {Promise}
         * [.doUnmarkEpisodeAsHidden([obj])](#module_Shows.doUnmarkEpisodeAsHidden) ⇒ {Promise}
+        * [.doUnmarkEpisodeAsRewatched([obj])](#module_Shows.doUnmarkEpisodeAsRewatched) ⇒ {Promise}
         * [.doUnmarkEpisodeAsWatched([obj])](#module_Shows.doUnmarkEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkManyEpisodeAsWatched([obj])](#module_Shows.doUnmarkManyEpisodeAsWatched) ⇒ {Promise}
         * [.doUnmarkSeasonAsHidden([obj])](#module_Shows.doUnmarkSeasonAsHidden) ⇒ {Promise}
@@ -61,6 +63,7 @@
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
         * [.discoverPlatforms(state, action)](#module_Shows.discoverPlatforms) ⇒ {Object}
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
+        * [.episodesRewatched(state, action)](#module_Shows.episodesRewatched) ⇒ {Object}
         * [.genres(state, action)](#module_Shows.genres) ⇒ {Object}
         * [.interestGenres(state, action)](#module_Shows.interestGenres) ⇒ {Object}
         * [.interests(state, action)](#module_Shows.interests) ⇒ {Object}
@@ -927,6 +930,34 @@ Mark episode as hidden
 BetaSeries.getAction('shows', 'doMarkEpisodeAsHidden')({ episodeId: 123 });
 ```
 
+<a name="module_Shows.doMarkEpisodeAsRewatched"></a>
+
+### .doMarkEpisodeAsRewatched([obj])
+
+Rewatch episode
+
+**Dispatch**: `MARK_EPISODE_AS_REWATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Episode ID, multiple episodes ids separated by commas |
+| [obj.bulk] | {Boolean} | Mark as watched previous episodes |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doMarkEpisodeAsRewatched')({
+  id: 438,
+  bulk: false,
+  note: 4,
+});
+```
+
 <a name="module_Shows.doMarkEpisodeAsWatched"></a>
 
 ### .doMarkEpisodeAsWatched([obj])
@@ -1270,6 +1301,31 @@ Unmark episode as hidden
 BetaSeries.getAction('shows', 'doUnmarkEpisodeAsHidden')({ episodeId: 123 });
 ```
 
+<a name="module_Shows.doUnmarkEpisodeAsRewatched"></a>
+
+### .doUnmarkEpisodeAsRewatched([obj])
+
+Unmark episode as rewatched
+
+**Dispatch**: `UNMARK_EPISODE_AS_REWATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Episode ids, separated by commas |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUnmarkEpisodeAsRewatched')({
+  id: 438,
+});
+```
+
 <a name="module_Shows.doUnmarkEpisodeAsWatched"></a>
 
 ### .doUnmarkEpisodeAsWatched([obj])
@@ -1530,6 +1586,10 @@ List of the show episodes group by season and episode number
  * `FETCH_EPISODE`
  * `MARK_MANY_EPISODE_AS_WATCHED`
  * `UNMARK_MANY_EPISODE_AS_WATCHED`
+ * `MARK_MANY_EPISODE_AS_REWATCHED`
+ * `UNMARK_MANY_EPISODE_AS_REWATCHED`
+ * `MARK_EPISODE_AS_REWATCHED`
+ * `UNMARK_EPISODE_AS_REWATCHED`
  * `MARK_EPISODE_AS_WATCHED`
  * `UNMARK_EPISODE_AS_WATCHED`
  * `ADD_SHOW`
@@ -1549,6 +1609,51 @@ List of the show episodes group by season and episode number
 ```js
 // get reducer
 BetaSeries.getReducer('shows', 'episodes').showsEpisodes;
+
+// state example
+{
+  '3215': {            // episode ID
+    id: 3215,          // episode ID
+    ...episode,        // episode element
+  },
+  ...,
+}
+```
+
+<a name="module_Shows.episodesRewatched"></a>
+
+### .episodesRewatched(state, action)
+
+List of the show episodes group by season and episode number
+
+**Actions listened**:
+
+ * `FETCH_SHOW_EPISODES`
+ * `FETCH_MANY_EPISODES`
+ * `FETCH_LATEST_EPISODE`
+ * `FETCH_EPISODE_BY_CODE`
+ * `FETCH_EPISODE`
+ * `MARK_MANY_EPISODE_AS_REWATCHED`
+ * `UNMARK_MANY_EPISODE_AS_REWATCHED`
+ * `MARK_EPISODE_AS_REWATCHED`
+ * `UNMARK_EPISODE_AS_REWATCHED`
+ * `ADD_SHOW`
+ * `REMOVE_SHOW`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('shows', 'episodesRewatched').showsEpisodesRewatched;
 
 // state example
 {
