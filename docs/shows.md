@@ -44,6 +44,7 @@
         * [.doMarkSeasonAsHidden([obj])](#module_Shows.doMarkSeasonAsHidden) ⇒ {Promise}
         * [.doMarkSeasonAsRewatched([obj])](#module_Shows.doMarkSeasonAsRewatched) ⇒ {Promise}
         * [.doMarkSeasonAsWatched([obj])](#module_Shows.doMarkSeasonAsWatched) ⇒ {Promise}
+        * [.doMarkShowAsWatched([obj])](#module_Shows.doMarkShowAsWatched) ⇒ {Promise}
         * [.doRateEpisode([obj])](#module_Shows.doRateEpisode) ⇒ {Promise}
         * [.doRateSeason([obj])](#module_Shows.doRateSeason) ⇒ {Promise}
         * [.doRateShow([obj])](#module_Shows.doRateShow) ⇒ {Promise}
@@ -59,6 +60,7 @@
         * [.doUnmarkSeasonAsHidden([obj])](#module_Shows.doUnmarkSeasonAsHidden) ⇒ {Promise}
         * [.doUnmarkSeasonAsRewatched([obj])](#module_Shows.doUnmarkSeasonAsRewatched) ⇒ {Promise}
         * [.doUnmarkSeasonAsWatched([obj])](#module_Shows.doUnmarkSeasonAsWatched) ⇒ {Promise}
+        * [.doUnmarkShowAsWatched([obj])](#module_Shows.doUnmarkShowAsWatched) ⇒ {Promise}
     * _reducers_
         * [.articles(state, action)](#module_Shows.articles) ⇒ {Object}
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
@@ -1097,6 +1099,29 @@ BetaSeries.getAction('shows', 'doMarkSeasonAsWatched')({
 });
 ```
 
+<a name="module_Shows.doMarkShowAsWatched"></a>
+
+### .doMarkShowAsWatched([obj])
+
+Mark show as watched
+
+**Dispatch**: `MARK_SHOW_AS_WATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {String} | List of shows IDs, separated by commas |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doMarkShowAsWatched')({ id: '1275' });
+```
+
 <a name="module_Shows.doRateEpisode"></a>
 
 ### .doRateEpisode([obj])
@@ -1481,6 +1506,29 @@ BetaSeries.getAction('shows', 'doUnmarkSeasonAsWatched')({
   showId: 438,
   season: 2,
 });
+```
+
+<a name="module_Shows.doUnmarkShowAsWatched"></a>
+
+### .doUnmarkShowAsWatched([obj])
+
+Unmark show as watched
+
+**Dispatch**: `UNMARK_SHOW_AS_WATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {String} | List of shows IDs, separated by commas |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUnmarkShowAsWatched')({ id: '1275' });
 ```
 
 <a name="module_Shows.articles"></a>
