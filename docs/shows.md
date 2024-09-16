@@ -1396,6 +1396,8 @@ Unmark episode as rewatched
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.id] | {Number} | Episode ids, separated by commas |
+| [obj.all] | {Number} | All=1 means unmark all rewatched for that episode |
+| [obj.date] | {String} | Unmark episode for specific date of rewatch |
 
 **Example**  
 
@@ -1496,6 +1498,7 @@ Unmark entire season as rewatched
 | [obj] | {Object} | Accept the following: |
 | [obj.showId] | {Number} | Show ID |
 | [obj.season] | {Number} | Number of season to unmark as rewatched |
+| [obj.all] | {Number} | All=1 means unmark all rewatched for that season |
 
 **Example**  
 
@@ -1549,6 +1552,7 @@ Unmark show as rewatched
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.id] | {String} | List of shows IDs, separated by commas |
+| [obj.all] | {Number} | All=1 means unmark all rewatched for that serie |
 
 **Example**  
 
