@@ -1396,6 +1396,8 @@ Unmark episode as rewatched
 | --- | --- | --- |
 | [obj] | {Object} | Accept the following: |
 | [obj.id] | {Number} | Episode ids, separated by commas |
+| [obj.all] | {Number} | All=1 means unmark all rewatched for that episode |
+| [obj.date] | {String} | Unmark episode for specific date of rewatch |
 
 **Example**  
 
