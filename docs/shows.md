@@ -69,7 +69,6 @@
         * [.discover(state, action)](#module_Shows.discover) ⇒ {Object}
         * [.discoverPlatforms(state, action)](#module_Shows.discoverPlatforms) ⇒ {Object}
         * [.episodes(state, action)](#module_Shows.episodes) ⇒ {Object}
-        * [.episodesRewatched(state, action)](#module_Shows.episodesRewatched) ⇒ {Object}
         * [.genres(state, action)](#module_Shows.genres) ⇒ {Object}
         * [.interestGenres(state, action)](#module_Shows.interestGenres) ⇒ {Object}
         * [.interests(state, action)](#module_Shows.interests) ⇒ {Object}
@@ -1765,51 +1764,6 @@ List of the show episodes group by season and episode number
 ```js
 // get reducer
 BetaSeries.getReducer('shows', 'episodes').showsEpisodes;
-
-// state example
-{
-  '3215': {            // episode ID
-    id: 3215,          // episode ID
-    ...episode,        // episode element
-  },
-  ...,
-}
-```
-
-<a name="module_Shows.episodesRewatched"></a>
-
-### .episodesRewatched(state, action)
-
-List of the show episodes group by season and episode number
-
-**Actions listened**:
-
- * `FETCH_SHOW_EPISODES`
- * `FETCH_MANY_EPISODES`
- * `FETCH_LATEST_EPISODE`
- * `FETCH_EPISODE_BY_CODE`
- * `FETCH_EPISODE`
- * `MARK_MANY_EPISODE_AS_REWATCHED`
- * `UNMARK_MANY_EPISODE_AS_REWATCHED`
- * `MARK_EPISODE_AS_REWATCHED`
- * `UNMARK_EPISODE_AS_REWATCHED`
- * `ADD_SHOW`
- * `REMOVE_SHOW`
-
-**Returns**: {Object}
-
-**Category**: reducers  
-
-| Param | Type |
-| --- | --- |
-| state | {Object} | 
-| action | {Object} | 
-
-**Example**  
-
-```js
-// get reducer
-BetaSeries.getReducer('shows', 'episodesRewatched').showsEpisodesRewatched;
 
 // state example
 {
