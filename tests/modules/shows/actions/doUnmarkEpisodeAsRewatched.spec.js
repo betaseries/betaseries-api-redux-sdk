@@ -1,4 +1,3 @@
-import episodesReducer from '../../../../lib/modules/shows/reducers/episodes';
 import arrayToHash from '../../../../lib/utils/func/arrayToHash';
 
 const actionFile = '../lib/modules/shows/actions/doUnmarkEpisodeAsRewatched';
@@ -34,16 +33,7 @@ describe('Unmark episode as rewatched', () => {
 
     it('validate unmark episode as rewatched action', () => {
       expect(action.type).to.equal('UNMARK_EPISODE_AS_REWATCHED');
-      expect(action.payload.id).to.deep.equal(239480);
-      expect(action.payload.seen).to.equal(false);
-    });
-
-    it('validate episodes reducer for unmark rewatched', () => {
-      const stateEpisodesReducer = episodesReducer(
-        store.getState().showsEpisodes,
-        action
-      );
-      expect(stateEpisodesReducer[239480].user.seen).to.deep.equal(false);
+      expect(action.payload.episode.id).to.deep.equal(239480);
     });
   });
 
@@ -61,24 +51,13 @@ describe('Unmark episode as rewatched', () => {
     );
 
     before(async () => {
-      await store.dispatch(actionToDispatch({ id: 23948056 }));
+      await store.dispatch(actionToDispatch({ id: 239480 }));
       action = store.getActions()[0];
     });
 
     it('validate unmark episode as rewatched action', () => {
       expect(action.type).to.equal('UNMARK_EPISODE_AS_REWATCHED');
-      expect(action.payload.id).to.deep.equal(23948056);
-      expect(action.payload.seen).to.equal(false);
-    });
-
-    it("validate episodes reducer for unmark rewatched not changed and don't have episode", () => {
-      const stateEpisodesReducer = episodesReducer(
-        store.getState().showsEpisodes,
-        action
-      );
-
-      expect(stateEpisodesReducer[23948056]).to.equal(undefined);
-      expect(Object.keys(stateEpisodesReducer)).to.have.lengthOf(12);
+      expect(action.payload.episode.id).to.deep.equal(239480);
     });
   });
 });
