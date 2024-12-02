@@ -5,6 +5,7 @@
 * [Shows](#module_Shows)
     * _actions_
         * [.doAddShow([obj])](#module_Shows.doAddShow) ⇒ {Promise}
+        * [.doAddShowAgendaRewatch([obj])](#module_Shows.doAddShowAgendaRewatch) ⇒ {Promise}
         * [.doAddShowArchive([obj])](#module_Shows.doAddShowArchive) ⇒ {Promise}
         * [.doAddShowFavorite([obj])](#module_Shows.doAddShowFavorite) ⇒ {Promise}
         * [.doAddShowReach([obj])](#module_Shows.doAddShowReach) ⇒ {Promise}
@@ -132,6 +133,33 @@ Add show
 ```js
 BetaSeries.getAction('shows', 'doAddShow')({
   showId: 438
+});
+```
+
+<a name="module_Shows.doAddShowAgendaRewatch"></a>
+
+### .doAddShowAgendaRewatch([obj])
+
+Manage agenda_rewatch option for a show
+
+**Dispatch**: `ADD_SHOW_AGENDA_REWATCH`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Show ID |
+| [obj.value] | {Number} | Either 1 to activate agenda rewatch for the show or 0 to deactivate |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doAddShowAgendaRewatch')({
+  id: 438,
+  value: 1
 });
 ```
 
