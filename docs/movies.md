@@ -4,6 +4,7 @@
 
 * [Movies](#module_Movies)
     * _actions_
+        * [.doAddMovieAgendaRewatch([obj])](#module_Movies.doAddMovieAgendaRewatch) ⇒ {Promise}
         * [.doAddMovieTag([obj])](#module_Movies.doAddMovieTag) ⇒ {Promise}
         * [.doFetchFavoriteMovies([obj])](#module_Movies.doFetchFavoriteMovies) ⇒ {Promise}
         * [.doFetchManyMovies([obj])](#module_Movies.doFetchManyMovies) ⇒ {Promise}
@@ -14,10 +15,12 @@
         * [.doFetchMovieCharacters([obj])](#module_Movies.doFetchMovieCharacters) ⇒ {Promise}
         * [.doFetchMovieGenres([obj])](#module_Movies.doFetchMovieGenres) ⇒ {Promise}
         * [.doFetchTagsList([obj])](#module_Movies.doFetchTagsList) ⇒ {Promise}
+        * [.doMarkMovieAsRewatched([obj])](#module_Movies.doMarkMovieAsRewatched) ⇒ {Promise}
         * [.doRateMovie([obj])](#module_Movies.doRateMovie) ⇒ {Promise}
         * [.doRemoveMovieFavorite([obj])](#module_Movies.doRemoveMovieFavorite) ⇒ {Promise}
         * [.doRemoveMovieMember([obj])](#module_Movies.doRemoveMovieMember) ⇒ {Promise}
         * [.doRemoveMovieTag([obj])](#module_Movies.doRemoveMovieTag) ⇒ {Promise}
+        * [.doUnmarkMovieAsRewatched([obj])](#module_Movies.doUnmarkMovieAsRewatched) ⇒ {Promise}
         * [.doUpdateMovieState([obj])](#module_Movies.doUpdateMovieState) ⇒ {Promise}
     * _reducers_
         * [.articles(state, action)](#module_Movies.articles) ⇒ {Object}
@@ -34,6 +37,33 @@
         * [.getMovieArticles](#module_Movies.getMovieArticles) ⇒ {Array}
         * [.getMovieGenres](#module_Movies.getMovieGenres) ⇒ {Array}
         * [.getTagsList](#module_Movies.getTagsList) ⇒ {Array}
+
+<a name="module_Movies.doAddMovieAgendaRewatch"></a>
+
+### .doAddMovieAgendaRewatch([obj])
+
+Manage agenda_rewatch option for a movie
+
+**Dispatch**: `ADD_MOVIE_AGENDA_REWATCH`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Movie ID |
+| [obj.value] | {Number} | Either 1 to activate agenda rewatch for the movie or 0 to deactivate |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doAddMovieAgendaRewatch')({
+  id: 438,
+  value: 1
+});
+```
 
 <a name="module_Movies.doAddMovieTag"></a>
 
@@ -278,6 +308,33 @@ Retrieve tags for the movies
 BetaSeries.getAction('movies', 'doFetchTagsList')();
 ```
 
+<a name="module_Movies.doMarkMovieAsRewatched"></a>
+
+### .doMarkMovieAsRewatched([obj])
+
+Rewatch movie
+
+**Dispatch**: `MARK_MOVIE_AS_REWATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Movie ID, multiple movies ids separated by commas |
+| [obj.note] | {Number} | Note for movie |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doMarkMovieAsRewatched')({
+  id: 438,
+  note: 4,
+});
+```
+
 <a name="module_Movies.doRateMovie"></a>
 
 ### .doRateMovie([obj])
@@ -377,6 +434,34 @@ Remove tag for a movie
 BetaSeries.getAction('movies', 'doRemoveMovieTag')({
   movieId: 438,
   tag: 'animation'
+});
+```
+
+<a name="module_Movies.doUnmarkMovieAsRewatched"></a>
+
+### .doUnmarkMovieAsRewatched([obj])
+
+Unmark movie as rewatched
+
+**Dispatch**: `UNMARK_MOVIE_AS_REWATCHED`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Movie ids, separated by commas |
+| [obj.all] | {Number} | All=1 means unmark all rewatched for that movie |
+| [obj.date] | {String} | Unmark movie for specific date of rewatch |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doUnmarkMovieAsRewatched')({
+  id: 438,
+  all: 1,
 });
 ```
 
