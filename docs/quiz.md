@@ -13,6 +13,7 @@
     * _selectors_
         * [.getQuiz](#module_Quiz.getQuiz) ⇒ {Array}
         * [.getQuizHistory](#module_Quiz.getQuizHistory) ⇒ {Array}
+        * [.getQuizList](#module_Quiz.getQuizList) ⇒ {Array}
 
 <a name="module_Quiz.doAnswerQuiz"></a>
 
@@ -201,6 +202,28 @@ Select quiz history from state
 ```js
 const mapStateToProps = (state, props) => ({
   quizHistory: BetaSeries.getSelector('quiz', 'getQuizHistory')(state);
+});
+```
+
+<a name="module_Quiz.getQuizList"></a>
+
+### .getQuizList
+
+Select quiz list from state
+
+**Returns**: {Array} - Quiz element or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  quizList: BetaSeries.getSelector('quiz', 'getQuizList')(state);
 });
 ```
 
