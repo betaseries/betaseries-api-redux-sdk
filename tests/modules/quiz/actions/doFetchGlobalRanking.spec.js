@@ -1,4 +1,4 @@
-import quizReducer from '../../../../lib/modules/quiz/reducers/ranking';
+import quizReducer from '../../../../lib/modules/quiz/reducers/globalRanking';
 
 const actionFile = '../lib/modules/quiz/actions/doFetchGlobalRanking';
 const quizFixture = require('../../../fixtures/quiz.json');
@@ -34,7 +34,7 @@ describe('Retrieve global ranking', () => {
 
     it('validate quiz reducer', () => {
       const quizReducerState = quizReducer(undefined, action);
-      expect(Object.keys(quizReducerState)).to.have.lengthOf(2);
+      expect(quizReducerState).to.have.lengthOf(2);
     });
   });
 });

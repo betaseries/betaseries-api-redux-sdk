@@ -12,6 +12,8 @@
         * [.doFetchQuizList([obj])](#module_Quiz.doFetchQuizList) ⇒ {Promise}
         * [.doFetchQuizRanking([obj])](#module_Quiz.doFetchQuizRanking) ⇒ {Promise}
     * _reducers_
+        * [.globalRanking(state, action)](#module_Quiz.globalRanking) ⇒ {Object}
+        * [.monthRanking(state, action)](#module_Quiz.monthRanking) ⇒ {Object}
         * [.quiz(state, action)](#module_Quiz.quiz) ⇒ {Object}
         * [.ranking(state, action)](#module_Quiz.ranking) ⇒ {Object}
     * _selectors_
@@ -20,7 +22,7 @@
         * [.getQuiz](#module_Quiz.getQuiz) ⇒ {Array}
         * [.getQuizHistory](#module_Quiz.getQuizHistory) ⇒ {Array}
         * [.getQuizList](#module_Quiz.getQuizList) ⇒ {Array}
-        * [.getQuizRanking](#module_Quiz.getQuizRanking) ⇒ {Array}
+        * [.getQuizRanking](#module_Quiz.getQuizRanking) ⇒ {Object}
 
 <a name="module_Quiz.doAnswerQuiz"></a>
 
@@ -208,6 +210,78 @@ BetaSeries.getAction('quiz', 'doFetchQuizRanking')({
   page: 1,
   nbpp: 32,
 });
+```
+
+<a name="module_Quiz.globalRanking"></a>
+
+### .globalRanking(state, action)
+
+List of global ranking for quiz
+
+**Actions listened**:
+
+ * `FETCH_GLOBAL_RANKING`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('quiz', 'globalRanking').quizGlobalRanking;
+
+// state value example
+[
+  {      // rank ID
+    rank: 1,    // ranking element
+    ...ranking,
+  },
+  ...,
+]
+```
+
+<a name="module_Quiz.monthRanking"></a>
+
+### .monthRanking(state, action)
+
+List of month ranking for quiz
+
+**Actions listened**:
+
+ * `FETCH_MONTHLY_RANKING`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('quiz', 'monthRanking').quizMonthRanking;
+
+// state value example
+{
+  '2025-01': [       // month
+    {
+       rank: 1,      // ranking element
+       ...ranking,
+    },
+  ],
+  ...,
+}
 ```
 
 <a name="module_Quiz.quiz"></a>
@@ -409,7 +483,7 @@ const mapStateToProps = (state, props) => ({
 
 Select quiz ranking by ID from state
 
-**Returns**: {Array} - Ranking element or `undefined`
+**Returns**: {Object} - Ranking element or `undefined`
 
 **Category**: selectors  
 
