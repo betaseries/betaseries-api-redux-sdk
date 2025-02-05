@@ -10,6 +10,7 @@
         * [.doFetchHomePopular([obj])](#module_Home.doFetchHomePopular) ⇒ {Promise}
         * [.doFetchHomePopularArticles([obj])](#module_Home.doFetchHomePopularArticles) ⇒ {Promise}
         * [.doFetchHomePopularPlatform([obj])](#module_Home.doFetchHomePopularPlatform) ⇒ {Promise}
+        * [.doFetchHomeQuiz([obj])](#module_Home.doFetchHomeQuiz) ⇒ {Promise}
         * [.doFetchHomeRecommendation([obj])](#module_Home.doFetchHomeRecommendation) ⇒ {Promise}
         * [.doFetchHomeTop([obj])](#module_Home.doFetchHomeTop) ⇒ {Promise}
         * [.doFetchHomeTrailers([obj])](#module_Home.doFetchHomeTrailers) ⇒ {Promise}
@@ -19,6 +20,7 @@
         * [.collections(state, action)](#module_Home.collections) ⇒ {Object}
         * [.popular(state, action)](#module_Home.popular) ⇒ {Object}
         * [.popularPlatform(state, action)](#module_Home.popularPlatform) ⇒ {Object}
+        * [.quiz(state, action)](#module_Home.quiz) ⇒ {Object}
         * [.reco(state, action)](#module_Home.reco) ⇒ {Object}
         * [.top(state, action)](#module_Home.top) ⇒ {Object}
         * [.trailers(state, action)](#module_Home.trailers) ⇒ {Object}
@@ -29,6 +31,7 @@
         * [.getHomePopular](#module_Home.getHomePopular) ⇒ {Array}
         * [.getHomePopularArticles](#module_Home.getHomePopularArticles) ⇒ {Array}
         * [.getHomePopularPlatform](#module_Home.getHomePopularPlatform) ⇒ {Array}
+        * [.getHomeQuiz](#module_Home.getHomeQuiz) ⇒ {Array}
         * [.getHomeRecommendation](#module_Home.getHomeRecommendation) ⇒ {Array}
         * [.getHomeRecoReferenceShow](#module_Home.getHomeRecoReferenceShow) ⇒ {Object}
         * [.getHomeTrailers](#module_Home.getHomeTrailers) ⇒ {Array}
@@ -170,6 +173,28 @@ Retrieve Home popular platform shows
 
 ```js
 BetaSeries.getAction('home', 'doFetchHomePopularPlatform')({ platformId: '1'});
+```
+
+<a name="module_Home.doFetchHomeQuiz"></a>
+
+### .doFetchHomeQuiz([obj])
+
+Retrieve quiz list for home page
+
+**Dispatch**: `FETCH_HOME_QUIZ`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+
+**Example**  
+
+```js
+BetaSeries.getAction('home', 'doFetchHomeQuiz')();
 ```
 
 <a name="module_Home.doFetchHomeRecommendation"></a>
@@ -419,6 +444,41 @@ BetaSeries.getReducer('home', 'popularPlatform').homePopularPlatform;
 }
 ```
 
+<a name="module_Home.quiz"></a>
+
+### .quiz(state, action)
+
+List of quiz for home page
+
+**Actions listened**:
+
+ * `FETCH_HOME_QUIZ`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('home', 'quiz').homeQuiz;
+
+// state example
+[
+  {
+    id: 384144,    // quiz id
+    ...quiz,
+  },
+  ...,
+]
+```
+
 <a name="module_Home.reco"></a>
 
 ### .reco(state, action)
@@ -660,6 +720,28 @@ const mapStateToProps = (state, props) => ({
   home: BetaSeries.getSelector('home', 'getHomePopularPlatform')(state, {
     platformId: '1',
   });
+});
+```
+
+<a name="module_Home.getHomeQuiz"></a>
+
+### .getHomeQuiz
+
+Select home quiz from state
+
+**Returns**: {Array} - Quiz elements or `undefined`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  quiz: BetaSeries.getSelector('home', 'getHomeQuiz')(state);
 });
 ```
 
