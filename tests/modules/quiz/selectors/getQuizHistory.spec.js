@@ -1,27 +1,15 @@
 import selector from '../../../../lib/modules/quiz/selectors/getQuizHistory';
 
-describe('Select quiz history from state', () => {
+describe('Select quizs from state ', () => {
   const state = {
-    quiz: {
-      3: { id: 3, active: true, user: { date: '0000' } },
-      10: { id: 10, active: true, user: { date: null } },
-      2: { id: 2, active: true, user: { date: '1111' } }
-    }
+    quiz: { 1: { id: 1, active: true, user: { date: '1111' } } },
+    quizHistory: { 3: [{ id: 1, active: true, user: { date: '1111' } }] }
   };
 
-  it('returns quiz with no answer if reducer is not empty', () => {
-    const value = selector(state);
+  it('returns quiz if exist', () => {
+    const value = selector(state, { memberId: 3 });
     expect(value).to.deep.equal([
-      { id: 2, active: true, user: { date: '1111' } },
-      { id: 3, active: true, user: { date: '0000' } }
-    ]);
-  });
-
-  it('returns quiz if user has answer at all quiz and reducer is not empty', () => {
-    const value = selector(state);
-    expect(value).to.deep.equal([
-      { id: 2, active: true, user: { date: '1111' } },
-      { id: 3, active: true, user: { date: '0000' } }
+      { id: 1, active: true, user: { date: '1111' } }
     ]);
   });
 });

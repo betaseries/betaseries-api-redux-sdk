@@ -13,6 +13,8 @@
         * [.doFetchQuizRanking([obj])](#module_Quiz.doFetchQuizRanking) ⇒ {Promise}
     * _reducers_
         * [.globalRanking(state, action)](#module_Quiz.globalRanking) ⇒ {Object}
+        * [.history(state, action)](#module_Quiz.history) ⇒ {Object}
+        * [.members(state, action)](#module_Quiz.members) ⇒ {Object}
         * [.monthRanking(state, action)](#module_Quiz.monthRanking) ⇒ {Object}
         * [.quiz(state, action)](#module_Quiz.quiz) ⇒ {Object}
         * [.ranking(state, action)](#module_Quiz.ranking) ⇒ {Object}
@@ -247,6 +249,76 @@ BetaSeries.getReducer('quiz', 'globalRanking').quizGlobalRanking;
 ]
 ```
 
+<a name="module_Quiz.history"></a>
+
+### .history(state, action)
+
+List of history quiz of members
+
+**Actions listened**:
+
+ * `FETCH_QUIZ_HISTORY`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('quiz', 'history').quizHistory;
+
+// state example
+{
+  '12': [{           // member ID
+    id: 384144,    // quiz
+    ...quiz,
+  }, ...,
+ ],
+}
+```
+
+<a name="module_Quiz.members"></a>
+
+### .members(state, action)
+
+List of quiz of members
+
+**Actions listened**:
+
+ * `FETCH_QUIZ_LIST`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('quiz', 'members').quizMembers;
+
+// state example
+{
+  '12': [{           // member ID
+    id: 384144,    // quiz
+    ...quiz,
+  }, ...,
+ ],
+}
+```
+
 <a name="module_Quiz.monthRanking"></a>
 
 ### .monthRanking(state, action)
@@ -439,7 +511,7 @@ const mapStateToProps = (state, props) => ({
 
 Select quiz history from state
 
-**Returns**: {Array} - Quiz element or `undefined`
+**Returns**: {Array} - Array of quiz or `[]`
 
 **Category**: selectors  
 
@@ -451,7 +523,8 @@ Select quiz history from state
 
 ```js
 const mapStateToProps = (state, props) => ({
-  quizHistory: BetaSeries.getSelector('quiz', 'getQuizHistory')(state);
+  quizs:
+ BetaSeries.getSelector('quizs', 'getQuizHistory')(state, { memberId: 1 });
 });
 ```
 
@@ -461,7 +534,7 @@ const mapStateToProps = (state, props) => ({
 
 Select quiz list from state
 
-**Returns**: {Array} - Quiz element or `undefined`
+**Returns**: {Array} - Array of quiz or `[]`
 
 **Category**: selectors  
 
@@ -473,7 +546,8 @@ Select quiz list from state
 
 ```js
 const mapStateToProps = (state, props) => ({
-  quizList: BetaSeries.getSelector('quiz', 'getQuizList')(state);
+  quizs:
+ BetaSeries.getSelector('quizs', 'getQuizList')(state, { memberId: 1 });
 });
 ```
 
