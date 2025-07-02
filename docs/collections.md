@@ -9,6 +9,9 @@
         * [.doFetchCollectionList([obj])](#module_Collections.doFetchCollectionList) ⇒ {Promise}
         * [.doPostCollection([obj])](#module_Collections.doPostCollection) ⇒ {Promise}
         * [.doRemoveCollection([obj])](#module_Collections.doRemoveCollection) ⇒ {Promise}
+        * [.doSubscribeCollection([obj])](#module_Collections.doSubscribeCollection) ⇒ {Promise}
+        * [.doToggleNotificationsCollection([obj])](#module_Collections.doToggleNotificationsCollection) ⇒ {Promise}
+        * [.doUnsubscribeCollection([obj])](#module_Collections.doUnsubscribeCollection) ⇒ {Promise}
     * _reducers_
         * [.collections(state, action)](#module_Collections.collections) ⇒ {Object}
         * [.members(state, action)](#module_Collections.members) ⇒ {Object}
@@ -149,6 +152,75 @@ Remove collection
 BetaSeries.getAction('collections', 'doRemoveCollection')({
   id: 438
 });
+```
+
+<a name="module_Collections.doSubscribeCollection"></a>
+
+### .doSubscribeCollection([obj])
+
+Subscribe to collection
+
+**Dispatch**: `SUBSCRIBE_COLLECTION`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Collection ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('collections', 'doSubscribeCollection')({ id: 456 });
+```
+
+<a name="module_Collections.doToggleNotificationsCollection"></a>
+
+### .doToggleNotificationsCollection([obj])
+
+Enable/disable alert collection
+
+**Dispatch**: `TOGGLE_ALERT_COLLECTION`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Collection ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('collections', 'doToggleNotificationsCollection')({ id: 456 });
+```
+
+<a name="module_Collections.doUnsubscribeCollection"></a>
+
+### .doUnsubscribeCollection([obj])
+
+Unsubscribe to collection
+
+**Dispatch**: `UNSUBSCRIBE_COLLECTION`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Collection ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('collections', 'doUnsubscribeCollection')({ id: 456 });
 ```
 
 <a name="module_Collections.collections"></a>
