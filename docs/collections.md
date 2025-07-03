@@ -7,6 +7,7 @@
         * [.doEditCollection([obj])](#module_Collections.doEditCollection) ⇒ {Promise}
         * [.doFetchCollection([obj])](#module_Collections.doFetchCollection) ⇒ {Promise}
         * [.doFetchCollectionList([obj])](#module_Collections.doFetchCollectionList) ⇒ {Promise}
+        * [.doFetchSubscribedCollectionList([obj])](#module_Collections.doFetchSubscribedCollectionList) ⇒ {Promise}
         * [.doPostCollection([obj])](#module_Collections.doPostCollection) ⇒ {Promise}
         * [.doRemoveCollection([obj])](#module_Collections.doRemoveCollection) ⇒ {Promise}
         * [.doSubscribeCollection([obj])](#module_Collections.doSubscribeCollection) ⇒ {Promise}
@@ -15,9 +16,11 @@
     * _reducers_
         * [.collections(state, action)](#module_Collections.collections) ⇒ {Object}
         * [.members(state, action)](#module_Collections.members) ⇒ {Object}
+        * [.subscribed(state, action)](#module_Collections.subscribed) ⇒ {Object}
     * _selectors_
         * [.getCollection](#module_Collections.getCollection) ⇒ {Object}
         * [.getCollectionList](#module_Collections.getCollectionList) ⇒ {Array}
+        * [.getCollectionSubscribedList](#module_Collections.getCollectionSubscribedList) ⇒ {Array}
 
 <a name="module_Collections.doEditCollection"></a>
 
@@ -96,6 +99,29 @@ Retrieve collection list
 
 ```js
 BetaSeries.getAction('collections', 'doFetchCollectionList')({ user_id: 45 });
+```
+
+<a name="module_Collections.doFetchSubscribedCollectionList"></a>
+
+### .doFetchSubscribedCollectionList([obj])
+
+Retrieve subscribed collection list
+
+**Dispatch**: `FETCH_SUBSCRIBED_COLLECTIONS_LIST`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.user_id] | {Number} | User ID (optional: connected user if not added) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('collections', 'doFetchSubscribedCollectionList')({ user_id: 45 });
 ```
 
 <a name="module_Collections.doPostCollection"></a>
@@ -293,6 +319,41 @@ BetaSeries.getReducer('collections', 'members').collectionsMembers;
 }
 ```
 
+<a name="module_Collections.subscribed"></a>
+
+### .subscribed(state, action)
+
+List of subscribed collections of members
+
+**Actions listened**:
+
+ * `FETCH_SUBSCRIBED_COLLECTIONS_LIST`
+
+**Returns**: {Object}
+
+**Category**: reducers  
+
+| Param | Type |
+| --- | --- |
+| state | {Object} | 
+| action | {Object} | 
+
+**Example**  
+
+```js
+// get reducer
+BetaSeries.getReducer('collections', 'subscribed').collectionsSubscribed;
+
+// state example
+{
+  '12': [{           // member ID
+    id: 384144,    // collection
+    ...collection,
+  }, ...,
+ ],
+}
+```
+
 <a name="module_Collections.getCollection"></a>
 
 ### .getCollection
@@ -337,6 +398,29 @@ Select collection list from state
 const mapStateToProps = (state, props) => ({
   collections:
  BetaSeries.getSelector('collections', 'getCollectionList')(state, { memberId: 1 });
+});
+```
+
+<a name="module_Collections.getCollectionSubscribedList"></a>
+
+### .getCollectionSubscribedList
+
+Select subscribed collection list from state
+
+**Returns**: {Array} - Array of collections or `[]`
+
+**Category**: selectors  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [state] | {Object} | Redux state |
+
+**Example**  
+
+```js
+const mapStateToProps = (state, props) => ({
+  collections:
+ BetaSeries.getSelector('collections', 'getCollectionSubscribedList')(state, { memberId: 1 });
 });
 ```
 
