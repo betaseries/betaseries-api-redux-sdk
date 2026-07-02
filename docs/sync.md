@@ -17,6 +17,7 @@
     * [.doUnsyncNetflix([obj])](#module_Sync.doUnsyncNetflix) ⇒ {Promise}
     * [.doUnsyncTrakt([obj])](#module_Sync.doUnsyncTrakt) ⇒ {Promise}
     * [.doUnsyncTvTime([obj])](#module_Sync.doUnsyncTvTime) ⇒ {Promise}
+    * [.doUploadTvTimeZip([obj])](#module_Sync.doUploadTvTimeZip) ⇒ {Promise}
 
 <a name="module_Sync.doFetchNetflixData"></a>
 
@@ -335,5 +336,28 @@ Unsync TVTime user
 
 ```js
 BetaSeries.getAction('sync', 'doUnsyncTvTime')();
+```
+
+<a name="module_Sync.doUploadTvTimeZip"></a>
+
+### .doUploadTvTimeZip([obj])
+
+Upload TVTime user zip file
+
+**Dispatch**: `USER_UPLOAD_TVTIME_ZIP`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.file] | {Object} | TVTime zip file from DocumentPicker (must contain uri, type, name) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('sync', 'doUploadTvTimeZip')({ file: fileObject });
 ```
 
