@@ -64,6 +64,8 @@
         * [.doUnmarkSeasonAsWatched([obj])](#module_Shows.doUnmarkSeasonAsWatched) ⇒ {Promise}
         * [.doUnmarkShowAsRewatched([obj])](#module_Shows.doUnmarkShowAsRewatched) ⇒ {Promise}
         * [.doUnmarkShowAsWatched([obj])](#module_Shows.doUnmarkShowAsWatched) ⇒ {Promise}
+        * [.doUpdateEpisodeRewatchDates([obj])](#module_Shows.doUpdateEpisodeRewatchDates) ⇒ {Promise}
+        * [.doUpdateEpisodeWatchDate([obj])](#module_Shows.doUpdateEpisodeWatchDate) ⇒ {Promise}
     * _reducers_
         * [.articles(state, action)](#module_Shows.articles) ⇒ {Object}
         * [.characters(state, action)](#module_Shows.characters) ⇒ {Object}
@@ -1608,6 +1610,62 @@ Unmark show as watched
 
 ```js
 BetaSeries.getAction('shows', 'doUnmarkShowAsWatched')({ id: '1275' });
+```
+
+<a name="module_Shows.doUpdateEpisodeRewatchDates"></a>
+
+### .doUpdateEpisodeRewatchDates([obj])
+
+Update episode rewatch dates
+
+**Dispatch**: `UPDATE_EPISODE_REWATCH_DATES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Episode ID |
+| [obj.old_date] | {String} | Date format (Y-m-d H:i:s) |
+| [obj.new_date] | {String} | Date format (Y-m-d H:i:s) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUpdateEpisodeRewatchDates')({
+  id: 438,
+  old_date: '2020-01-01 00:00:00',
+  new_date: '2020-01-02 00:00:00'
+});
+```
+
+<a name="module_Shows.doUpdateEpisodeWatchDate"></a>
+
+### .doUpdateEpisodeWatchDate([obj])
+
+Update episode watch date
+
+**Dispatch**: `UPDATE_EPISODE_WATCH_DATE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Episode ID |
+| [obj.new_date] | {String} | Date format (Y-m-d H:i:s) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('shows', 'doUpdateEpisodeWatchDate')({
+  id: 438,
+  new_date: '2020-01-02 00:00:00'
+});
 ```
 
 <a name="module_Shows.articles"></a>
