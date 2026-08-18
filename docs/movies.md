@@ -21,7 +21,9 @@
         * [.doRemoveMovieMember([obj])](#module_Movies.doRemoveMovieMember) ⇒ {Promise}
         * [.doRemoveMovieTag([obj])](#module_Movies.doRemoveMovieTag) ⇒ {Promise}
         * [.doUnmarkMovieAsRewatched([obj])](#module_Movies.doUnmarkMovieAsRewatched) ⇒ {Promise}
+        * [.doUpdateMovieRewatchDates([obj])](#module_Movies.doUpdateMovieRewatchDates) ⇒ {Promise}
         * [.doUpdateMovieState([obj])](#module_Movies.doUpdateMovieState) ⇒ {Promise}
+        * [.doUpdateMovieWatchDate([obj])](#module_Movies.doUpdateMovieWatchDate) ⇒ {Promise}
     * _reducers_
         * [.articles(state, action)](#module_Movies.articles) ⇒ {Object}
         * [.characters(state, action)](#module_Movies.characters) ⇒ {Object}
@@ -465,6 +467,35 @@ BetaSeries.getAction('movies', 'doUnmarkMovieAsRewatched')({
 });
 ```
 
+<a name="module_Movies.doUpdateMovieRewatchDates"></a>
+
+### .doUpdateMovieRewatchDates([obj])
+
+Update movie rewatch dates
+
+**Dispatch**: `UPDATE_MOVIE_REWATCH_DATES`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Movie ID |
+| [obj.old_date] | {String} | Date format (Y-m-d H:i:s) |
+| [obj.new_date] | {String} | Date format (Y-m-d H:i:s) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doUpdateMovieRewatchDates')({
+  id: 438,
+  old_date: '2020-01-01 00:00:00',
+  new_date: '2020-01-02 00:00:00'
+});
+```
+
 <a name="module_Movies.doUpdateMovieState"></a>
 
 ### .doUpdateMovieState([obj])
@@ -489,6 +520,33 @@ Add note on movie
 BetaSeries.getAction('movies', 'doUpdateMovieState')({
   movieId: 438,
   state: 2,
+});
+```
+
+<a name="module_Movies.doUpdateMovieWatchDate"></a>
+
+### .doUpdateMovieWatchDate([obj])
+
+Update movie watch date
+
+**Dispatch**: `UPDATE_MOVIE_WATCH_DATE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.id] | {Number} | Movie ID |
+| [obj.new_date] | {String} | Date format (Y-m-d H:i:s) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('movies', 'doUpdateMovieWatchDate')({
+  id: 438,
+  new_date: '2020-01-02 00:00:00'
 });
 ```
 
