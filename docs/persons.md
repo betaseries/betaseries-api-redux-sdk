@@ -4,14 +4,68 @@
 
 * [Persons](#module_Persons)
     * _actions_
+        * [.doAddPersonFavorite([obj])](#module_Persons.doAddPersonFavorite) ⇒ {Promise}
+        * [.doFetchFavoritePersons([obj])](#module_Persons.doFetchFavoritePersons) ⇒ {Promise}
         * [.doFetchPerson([obj])](#module_Persons.doFetchPerson) ⇒ {Promise}
         * [.doFetchPersonArticles([obj])](#module_Persons.doFetchPersonArticles) ⇒ {Promise}
+        * [.doRemovePersonFavorite([obj])](#module_Persons.doRemovePersonFavorite) ⇒ {Promise}
     * _reducers_
         * [.articles(state, action)](#module_Persons.articles) ⇒ {Object}
         * [.persons(state, action)](#module_Persons.persons) ⇒ {Object}
     * _selectors_
         * [.getPerson](#module_Persons.getPerson) ⇒ {Object}
         * [.getPersonArticles](#module_Persons.getPersonArticles) ⇒ {Array}
+
+<a name="module_Persons.doAddPersonFavorite"></a>
+
+### .doAddPersonFavorite([obj])
+
+Add person to favorite
+
+**Dispatch**: `ADD_PERSON_FAVORITE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.personId] | {Number} | Person ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('persons', 'doAddPersonFavorite')({
+  personId: 438
+});
+```
+
+<a name="module_Persons.doFetchFavoritePersons"></a>
+
+### .doFetchFavoritePersons([obj])
+
+Retrieve favorite persons of the member
+
+**Dispatch**: `FETCH_FAVORITE_PERSONS`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.memberId] | {Number} | Member ID |
+| [obj.start] | {Number} | Used for paginate (`0` by default) |
+| [obj.limit] | {Number} | Used for paginate (optional) |
+| [obj.summary] | {String} | Only importanzt info (optional) |
+
+**Example**  
+
+```js
+BetaSeries.getAction('persons', 'doFetchFavoritePersons')({ memberId: 1 });
+```
 
 <a name="module_Persons.doFetchPerson"></a>
 
@@ -57,6 +111,31 @@ Retrieve articles of the person
 
 ```js
 BetaSeries.getAction('persons', 'doFetchPersonArticles')({ personId: 1275 });
+```
+
+<a name="module_Persons.doRemovePersonFavorite"></a>
+
+### .doRemovePersonFavorite([obj])
+
+Remove person from favorite
+
+**Dispatch**: `REMOVE_PERSON_FAVORITE`
+
+**Returns**: {Promise}
+
+**Category**: actions  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [obj] | {Object} | Accept the following: |
+| [obj.personId] | {Number} | Person ID |
+
+**Example**  
+
+```js
+BetaSeries.getAction('persons', 'doRemovePersonFavorite')({
+  personId: 438
+});
 ```
 
 <a name="module_Persons.articles"></a>
